@@ -5203,3 +5203,1151 @@ com.thaiopensource.validate.IncorrectSchemaException
  create mode 100644 Library/Preferences/com.apple.spaces.plist
  create mode 100644 Library/Preferences/com.apple.speech.recognition.AppleSpeechRecognition.CustomCommands.plist 
 2018-11-12 00:19:09,728 [ thread 97]   INFO -  #git4idea.commands.GitHandler - [../../../../mac] git -c core.quotepath=false -c log.showSignature=false commit --amend --only -F /private/var/folders/4g/g_wwmlvd4llgsnn09vqkp0br0000gn/T/git-commit-msg-.txt -- Library/Preferences/ByHost/com.apple.iChat.37502AC5-742D-5DB1-A847-724EA8741960.plist "Library/Mobile Documents/com~apple~mail/Data/V4/SyncedSmartMailboxes.plist" Library/Logs/DeviceLink/AppleMobileDeviceHelper.00.log "Library/Mobile Documents/iCloud~com~apple~clips/Documents/.F3F97DB0-AE76-4E5C-8797-B793FB4A5405.clipsproject.icloud" Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/DiagnosticMessages/2018.07.24.asl "Library/Mobile Documents/com~apple~Pages/Documents/.Blank 3.pages.icloud" Library/Preferences/AndroidStudio3.1/tasks/GraphView.contexts.zip Library/Preferences/ByHost/com.apple.screensaver.37502AC5-742D-5DB1-A847-724EA8741960.plist Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/MobileInstallation/mobile_installation.log.0 Library/Preferences/WebStorm2018.2/tasks/fugis.contexts.zip Library/Preferences/com.apple.cloudd.plist Library/Preferences/com.apple.protectedcloudstorage.protectedcloudkeysyncing.plist Library/Preferences/com.apple.preferences.extensions.PhotoProjects.plist "Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c08007.jpg" "Library/Mobile Documents/com~apple~CloudDocs/.IMG_2099.MP4.icloud" "Library/Mobile Documents/F6266T9T75~com~apple~iMovie/Theater/.Theater.json.icloud" Library/Preferences/AndroidStudio3.1/tasks/jplone_watertrekdemo.tasks.zip Library/Preferences/PyCharmCE2018.2/options/dimensions.xml "Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c05f007.jpg" "Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c09f008.jpg" Library/Preferences/PyCharmCE2018.2/scratches/scratch.py "Library/Preferences/Unreal Engine/EpicGamesLauncher/Mac/GameUserSettings.ini" Library/Preferences/com.apple.cloudpaird.plist Library/Logs/DiagnosticReports/KeySyncTopic_2018-11-03-194619_macs-MacBook-Pro-2.diag "Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c01f006.jpg" Library/Preferences/com.apple.locationmenu.plist Library/Preferences/com.apple.bookstoreagent.plist Library/LanguageModeling/nl-dynamic.lm/tags.dat Library/Preferences/com.android.Emulator.plist "Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c06f001.jpg" Library/Preferences/PyCharmCE2018.2/tasks/Project_3___Pacman__etc.tasks.zip "Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f019.jpg" Library/Preferences/ByHost/com.apple.iTunes.37502AC5-742D-5DB1-A847-724EA8741960.plist Library/Preferences/WebStorm2018.2/tasks/GraphicsClassFall2018.contexts.zip Library/Preferences/PyCharmCE2018.2/tasks/LearningPi.tasks.zip Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180711T185547-07 Library/Preferences/PyCharmCE2018.2/tasks/AIHW5.tasks.zip "Library/Mobile Documents/com~apple~CloudDocs/.IMG_2092.MOV.icloud" Library/Preferences/com.apple.AdLib.plist Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/system.log.1.gz "Library/Mobile Documents/iCloud~is~workflow~my~workflows/Documents/.WorkflowHiddenFile" Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/stash.kb Library/Preferences/ByHost/com.apple.imservice.ids.iMessage.37502AC5-742D-5DB1-A847-724EA8741960.plist Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/MobileInstallation/mobile_installation.log.1 Library/Preferences/AndroidStudio3.1/tasks/LEO.tasks.zip "Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c09f011.jpg" Library/Passes/PaymentWebServiceContext.archive "Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f012.jpg" Library/Preferences/AndroidStudio3.1/tasks/blender_android_kotlin_master.contexts.zip Library/Preferences/com.apple.iChat.StatusMessages.plist Library/Preferences/com.apple.icloud.fmip.voiceassistantsync.plist "Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c03f011.jpg" "Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/logo.jpg" Library/Preferences/WebStorm2018.2/tasks/HW3B.tasks.zip "Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f022.jpg" "Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c02f007.jpg" Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/DiagnosticMessages/2018.07.27.asl Library/LanguageModeling/tr-dynamic.lm/meta.dat "Library/Mobile Documents/com~apple~TextInput/Dictionaries/.cdmetadata/metadata.nosync/mac~37502AC5-742D-5DB1-A847-724EA8741960/UserDictionary/87EC96A6-3CD7-49B3-9087-38622F357518.cid" Library/Preferences/ByHost/com.apple.iChat.AIM.37502AC5-742D-5DB1-A847-724EA8741960.plist Library/Preferences/com.apple.SetupAssistant.plist Library/Preferences/com.apple.EmojiPreferences.plist "Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/check1.jpg" Library/Preferences/ByHost/com.apple.loginwindow.37502AC5-742D-5DB1-A847-724EA8741960.plist Library/Preferences/WebStorm2018.2/tasks/Tesselation_of_Sierpinsky_Gasket_1.contexts.zip Library/Preferences/com.adobe.AdobeRdrCEFHelper.plist Library/Preferences/com.apple.coreservices.uiagent.plist Library/Preferences/com.apple.ipTelephony.plist "Library/Mobile Documents/com~apple~TextInput/Dictionaries/mobile~32F79F4A-18E4-580C-AB57-B8EABC1C9C9F/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/3D37E08D-4B78-4EA2-851E-406978E9F3D5.1.cdt" Library/Logs/AndroidStudio3.1/idea.log Library/Preferences/com.apple.Console.plist "Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/index.css" Library/Preferences/com.apple.DigitalColorMeter.plist "Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c02f010.jpg" Library/Preferences/com.apple.iTunesHelper.plist "Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c03f008.jpg" Library/Preferences/AndroidStudio3.1/tasks/dsensor_sample_master.contexts.zip "Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f009.jpg" Library/Preferences/AndroidStudio3.1/tasks/jplcamera.tasks.zip Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/asl/Logs/aslmanager.20180724T164154-07 Library/LanguageModeling/en-dynamic.lm/meta.dat "Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/c07.xhtml" Library/Logs/DiagnosticReports/KeySyncTopic_2018-10-31-153547_macs-MacBook-Pro-2.diag Library/LanguageModeling/fr-dynamic.lm/meta.dat Library/Preferences/PyCharmCE2018.2/tasks/Desktop.tasks.zip 
+2018-11-12 00:19:10,345 [itFor: git]   INFO -  #git4idea.commands.GitHandler - [MESH&SENSOR fa4705b] Mesh and Sensor
+ Date: Mon Nov 12 00:19:05 2018 -0800
+ 890 files changed, 308575 insertions(+)
+ create mode 100644 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/activities/DisplayMeshActivity.java
+ create mode 100644 Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/Analytics/localkeychain.db
+ create mode 100644 Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/Analytics/localkeychain.db-shm
+ create mode 100644 Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/Analytics/localkeychain.db-wal
+ create mode 100644 Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/Analytics/signin_metrics.db
+ create mode 100644 Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/Analytics/signin_metrics.db-shm
+ create mode 100644 Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/Analytics/signin_metrics.db-wal
+ create mode 100644 Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/Analytics/sos_analytics.db
+ create mode 100644 Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/Analytics/sos_analytics.db-shm
+ create mode 100644 Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/Analytics/sos_analytics.db-wal
+ create mode 100644 Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/keychain-2.db
+ create mode 100644 Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/keychain-2.db-shm
+ create mode 100644 Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/keychain-2.db-wal
+ create mode 100644 Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/otdb.db
+ create mode 100644 Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/otdb.db-shm
+ create mode 100644 Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/otdb.db-wal
+ create mode 100644 Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/stash.kb
+ create mode 100644 Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/user.kb
+ create mode 100644 Library/Keychains/login.keychain-db
+ create mode 100644 Library/Keychains/metadata.keychain-db
+ create mode 100644 Library/LanguageModeling/da-dynamic.lm/Info.plist
+ create mode 100644 Library/LanguageModeling/da-dynamic.lm/dynamic.dat
+ create mode 100644 Library/LanguageModeling/da-dynamic.lm/meta.dat
+ create mode 100644 Library/LanguageModeling/da-dynamic.lm/tags.dat
+ create mode 100644 Library/LanguageModeling/de-dynamic.lm/Info.plist
+ create mode 100644 Library/LanguageModeling/de-dynamic.lm/dynamic-lexicon.dat
+ create mode 100644 Library/LanguageModeling/de-dynamic.lm/dynamic.dat
+ create mode 100644 Library/LanguageModeling/de-dynamic.lm/meta.dat
+ create mode 100644 Library/LanguageModeling/de-dynamic.lm/tags.dat
+ create mode 100644 Library/LanguageModeling/en-dynamic.lm/Info.plist
+ create mode 100644 Library/LanguageModeling/en-dynamic.lm/dynamic-lexicon.dat
+ create mode 100644 Library/LanguageModeling/en-dynamic.lm/dynamic.dat
+ create mode 100644 Library/LanguageModeling/en-dynamic.lm/meta.dat
+ create mode 100644 Library/LanguageModeling/en-dynamic.lm/tags.dat
+ create mode 100644 Library/LanguageModeling/es-dynamic.lm/Info.plist
+ create mode 100644 Library/LanguageModeling/es-dynamic.lm/dynamic-lexicon.dat
+ create mode 100644 Library/LanguageModeling/es-dynamic.lm/dynamic.dat
+ create mode 100644 Library/LanguageModeling/es-dynamic.lm/meta.dat
+ create mode 100644 Library/LanguageModeling/es-dynamic.lm/tags.dat
+ create mode 100644 Library/LanguageModeling/fi-dynamic.lm/Info.plist
+ create mode 100644 Library/LanguageModeling/fi-dynamic.lm/dynamic-lexicon.dat
+ create mode 100644 Library/LanguageModeling/fi-dynamic.lm/dynamic.dat
+ create mode 100644 Library/LanguageModeling/fi-dynamic.lm/meta.dat
+ create mode 100644 Library/LanguageModeling/fi-dynamic.lm/tags.dat
+ create mode 100644 Library/LanguageModeling/fr-dynamic.lm/Info.plist
+ create mode 100644 Library/LanguageModeling/fr-dynamic.lm/dynamic-lexicon.dat
+ create mode 100644 Library/LanguageModeling/fr-dynamic.lm/dynamic.dat
+ create mode 100644 Library/LanguageModeling/fr-dynamic.lm/meta.dat
+ create mode 100644 Library/LanguageModeling/fr-dynamic.lm/tags.dat
+ create mode 100644 Library/LanguageModeling/it-dynamic.lm/Info.plist
+ create mode 100644 Library/LanguageModeling/it-dynamic.lm/dynamic.dat
+ create mode 100644 Library/LanguageModeling/it-dynamic.lm/meta.dat
+ create mode 100644 Library/LanguageModeling/it-dynamic.lm/tags.dat
+ create mode 100644 Library/LanguageModeling/nb-dynamic.lm/Info.plist
+ create mode 100644 Library/LanguageModeling/nb-dynamic.lm/dynamic.dat
+ create mode 100644 Library/LanguageModeling/nb-dynamic.lm/meta.dat
+ create mode 100644 Library/LanguageModeling/nb-dynamic.lm/tags.dat
+ create mode 100644 Library/LanguageModeling/nl-dynamic.lm/Info.plist
+ create mode 100644 Library/LanguageModeling/nl-dynamic.lm/dynamic.dat
+ create mode 100644 Library/LanguageModeling/nl-dynamic.lm/meta.dat
+ create mode 100644 Library/LanguageModeling/nl-dynamic.lm/tags.dat
+ create mode 100644 Library/LanguageModeling/pt-dynamic.lm/Info.plist
+ create mode 100644 Library/LanguageModeling/pt-dynamic.lm/dynamic.dat
+ create mode 100644 Library/LanguageModeling/pt-dynamic.lm/meta.dat
+ create mode 100644 Library/LanguageModeling/pt-dynamic.lm/tags.dat
+ create mode 100644 Library/LanguageModeling/sv-dynamic.lm/Info.plist
+ create mode 100644 Library/LanguageModeling/sv-dynamic.lm/dynamic.dat
+ create mode 100644 Library/LanguageModeling/sv-dynamic.lm/meta.dat
+ create mode 100644 Library/LanguageModeling/sv-dynamic.lm/tags.dat
+ create mode 100644 Library/LanguageModeling/tr-dynamic.lm/Info.plist
+ create mode 100644 Library/LanguageModeling/tr-dynamic.lm/dynamic.dat
+ create mode 100644 Library/LanguageModeling/tr-dynamic.lm/meta.dat
+ create mode 100644 Library/LanguageModeling/tr-dynamic.lm/tags.dat
+ create mode 100644 Library/LaunchAgents/com.epicgames.launcher.plist
+ create mode 100644 Library/LaunchAgents/com.google.keystone.agent.plist
+ create mode 100755 Library/Logs/Adobe/Acrobat Update Helper DC.log
+ create mode 100755 Library/Logs/Adobe/Acrobat Updater DC.log
+ create mode 100644 Library/Logs/AndroidStudio3.1/build-log/build-log.properties
+ create mode 100644 Library/Logs/AndroidStudio3.1/build-log/build.log
+ create mode 100644 Library/Logs/AndroidStudio3.1/idea.log
+ create mode 100644 Library/Logs/AndroidStudio3.1/idea.log.1
+ create mode 100644 Library/Logs/AndroidStudio3.1/idea.log.10
+ create mode 100644 Library/Logs/AndroidStudio3.1/idea.log.11
+ create mode 100644 Library/Logs/AndroidStudio3.1/idea.log.12
+ create mode 100644 Library/Logs/AndroidStudio3.1/idea.log.2
+ create mode 100644 Library/Logs/AndroidStudio3.1/idea.log.3
+ create mode 100644 Library/Logs/AndroidStudio3.1/idea.log.4
+ create mode 100644 Library/Logs/AndroidStudio3.1/idea.log.5
+ create mode 100644 Library/Logs/AndroidStudio3.1/idea.log.6
+ create mode 100644 Library/Logs/AndroidStudio3.1/idea.log.7
+ create mode 100644 Library/Logs/AndroidStudio3.1/idea.log.8
+ create mode 100644 Library/Logs/AndroidStudio3.1/idea.log.9
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/CrashReporter/com.apple.appstored/appstored.log
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/DiagnosticMessages/2018.07.24.asl
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/DiagnosticMessages/2018.07.25.asl
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/DiagnosticMessages/2018.07.26.asl
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/DiagnosticMessages/2018.07.27.asl
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/DiagnosticMessages/2018.07.28.asl
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/DiagnosticMessages/2018.07.30.asl
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/DiagnosticMessages/2018.08.05.asl
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/DiagnosticMessages/2018.09.04.asl
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/DiagnosticMessages/2018.09.12.asl
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/DiagnosticMessages/StoreData
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/MobileContainerManager/containermanagerd.log.0
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/MobileInstallation/mobile_installation.log.0
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/MobileInstallation/mobile_installation.log.1
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/SMSMigrator/IMDPersistenceMerge.log
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/SMSMigrator/SMSMigrator.log
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/2018.07.24.G80.asl
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/2018.07.25.G80.asl
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/2018.07.26.G80.asl
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/2018.07.27.G80.asl
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/2018.07.28.G80.asl
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/2018.07.30.G80.asl
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/2018.08.05.G80.asl
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/2018.09.04.G80.asl
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/2018.09.12.G80.asl
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/BB.2019.07.31.G80.asl
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180711T185547-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180711T190821-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180712T144903-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180713T001813-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180713T191112-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180714T001800-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180717T222952-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180718T002840-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180719T000447-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180720T223900-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180721T000000-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180724T002626-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180724T011930-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180724T022646-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180724T231011-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180725T000929-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180725T162049-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180725T191728-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180726T005607-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180727T000000-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180727T231243-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180728T000000-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/Logs/aslmanager.20180730T161712-07
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/asl/StoreData
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/com.apple.itunesstored/itunesstored.log
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/system.log
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/system.log.0.gz
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/system.log.1.gz
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/system.log.2.gz
+ create mode 100644 Library/Logs/CoreSimulator/03285BE9-BEA8-434B-94BE-249DDE83AD32/system.log.3.gz
+ create mode 100644 Library/Logs/CoreSimulator/C162332F-25C0-4825-9F11-FA4A00FF22D4/CrashReporter/com.apple.appstored/appstored.log
+ create mode 100644 Library/Logs/CoreSimulator/C162332F-25C0-4825-9F11-FA4A00FF22D4/DiagnosticMessages/2018.10.25.asl
+ create mode 100644 Library/Logs/CoreSimulator/C162332F-25C0-4825-9F11-FA4A00FF22D4/DiagnosticMessages/2018.11.07.asl
+ create mode 100644 Library/Logs/CoreSimulator/C162332F-25C0-4825-9F11-FA4A00FF22D4/DiagnosticMessages/StoreData
+ create mode 100644 Library/Logs/CoreSimulator/C162332F-25C0-4825-9F11-FA4A00FF22D4/MobileContainerManager/containermanagerd.log.0
+ create mode 100644 Library/Logs/CoreSimulator/C162332F-25C0-4825-9F11-FA4A00FF22D4/MobileInstallation/mobile_installation.log.0
+ create mode 100644 Library/Logs/CoreSimulator/C162332F-25C0-4825-9F11-FA4A00FF22D4/SMSMigrator/IMDPersistenceMerge.log
+ create mode 100644 Library/Logs/CoreSimulator/C162332F-25C0-4825-9F11-FA4A00FF22D4/SMSMigrator/SMSMigrator.log
+ create mode 100644 Library/Logs/CoreSimulator/C162332F-25C0-4825-9F11-FA4A00FF22D4/asl/2018.10.25.G80.asl
+ create mode 100644 Library/Logs/CoreSimulator/C162332F-25C0-4825-9F11-FA4A00FF22D4/asl/2018.11.07.G80.asl
+ create mode 100644 Library/Logs/CoreSimulator/C162332F-25C0-4825-9F11-FA4A00FF22D4/asl/BB.2019.10.31.G80.asl
+ create mode 100644 Library/Logs/CoreSimulator/C162332F-25C0-4825-9F11-FA4A00FF22D4/asl/StoreData
+ create mode 100644 Library/Logs/CoreSimulator/C162332F-25C0-4825-9F11-FA4A00FF22D4/com.apple.itunesstored/itunesstored.log
+ create mode 100644 Library/Logs/CoreSimulator/C162332F-25C0-4825-9F11-FA4A00FF22D4/system.log
+ create mode 100644 Library/Logs/CoreSimulator/CoreSimulator.log
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/CrashReporter/com.apple.appstored/appstored.log
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/DiagnosticMessages/2018.07.24.asl
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/DiagnosticMessages/2018.07.25.asl
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/DiagnosticMessages/2018.07.27.asl
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/DiagnosticMessages/StoreData
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/MobileContainerManager/containermanagerd.log.0
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/MobileInstallation/mobile_installation.log.0
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/MobileInstallation/mobile_installation.log.1
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/SMSMigrator/IMDPersistenceMerge.log
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/SMSMigrator/SMSMigrator.log
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/asl/2018.07.24.G80.asl
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/asl/2018.07.25.G80.asl
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/asl/2018.07.27.G80.asl
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/asl/BB.2019.07.31.G80.asl
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/asl/Logs/aslmanager.20180703T233809-07
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/asl/Logs/aslmanager.20180704T134733-07
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/asl/Logs/aslmanager.20180715T122329-07
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/asl/Logs/aslmanager.20180716T014908-07
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/asl/Logs/aslmanager.20180724T164154-07
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/asl/Logs/aslmanager.20180727T120040-07
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/asl/Logs/aslmanager.20180727T123019-07
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/asl/StoreData
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/com.apple.itunesstored/itunesstored.log
+ create mode 100644 Library/Logs/CoreSimulator/FB0CE7A4-48B7-4508-9C88-E7B1B399BB41/system.log
+ create mode 100644 Library/Logs/CoreSimulator/FE9EEAC9-C9A0-444E-B26A-CE3E87A0C690/CrashReporter/com.apple.appstored/appstored.log
+ create mode 100644 Library/Logs/CoreSimulator/FE9EEAC9-C9A0-444E-B26A-CE3E87A0C690/DiagnosticMessages/2018.07.03.asl
+ create mode 100644 Library/Logs/CoreSimulator/FE9EEAC9-C9A0-444E-B26A-CE3E87A0C690/DiagnosticMessages/StoreData
+ create mode 100644 Library/Logs/CoreSimulator/FE9EEAC9-C9A0-444E-B26A-CE3E87A0C690/MobileContainerManager/containermanagerd.log.0
+ create mode 100644 Library/Logs/CoreSimulator/FE9EEAC9-C9A0-444E-B26A-CE3E87A0C690/MobileInstallation/mobile_installation.log.0
+ create mode 100644 Library/Logs/CoreSimulator/FE9EEAC9-C9A0-444E-B26A-CE3E87A0C690/SMSMigrator/IMDPersistenceMerge.log
+ create mode 100644 Library/Logs/CoreSimulator/FE9EEAC9-C9A0-444E-B26A-CE3E87A0C690/SMSMigrator/SMSMigrator.log
+ create mode 100644 Library/Logs/CoreSimulator/FE9EEAC9-C9A0-444E-B26A-CE3E87A0C690/asl/2018.07.03.G80.asl
+ create mode 100644 Library/Logs/CoreSimulator/FE9EEAC9-C9A0-444E-B26A-CE3E87A0C690/asl/BB.2019.07.31.G80.asl
+ create mode 100644 Library/Logs/CoreSimulator/FE9EEAC9-C9A0-444E-B26A-CE3E87A0C690/asl/Logs/aslmanager.20180703T231550-07
+ create mode 100644 Library/Logs/CoreSimulator/FE9EEAC9-C9A0-444E-B26A-CE3E87A0C690/asl/StoreData
+ create mode 100644 Library/Logs/CoreSimulator/FE9EEAC9-C9A0-444E-B26A-CE3E87A0C690/com.apple.itunesstored/itunesstored.log
+ create mode 100644 Library/Logs/CoreSimulator/FE9EEAC9-C9A0-444E-B26A-CE3E87A0C690/system.log
+ create mode 100644 Library/Logs/CoreSimulator/Simulator.log
+ create mode 100644 Library/Logs/DeviceLink/AppleMobileDeviceHelper.00.log
+ create mode 100644 Library/Logs/DeviceLink/MDCrashReportTool.00.log
+ create mode 100644 Library/Logs/DiagnosticReports/KeySyncTopic_2018-10-28-121312_macs-MacBook-Pro-2.diag
+ create mode 100644 Library/Logs/DiagnosticReports/KeySyncTopic_2018-10-31-153547_macs-MacBook-Pro-2.diag
+ create mode 100644 Library/Logs/DiagnosticReports/KeySyncTopic_2018-11-03-194619_macs-MacBook-Pro-2.diag
+ create mode 100644 Library/Logs/DiagnosticReports/KeySyncTopic_2018-11-07-134635_macs-MacBook-Pro-2.diag
+ create mode 100644 Library/Logs/DiagnosticReports/KeySyncTopic_2018-11-11-154844_macs-MacBook-Pro-2.diag
+ create mode 100644 Library/Logs/DiagnosticReports/com.apple.WebKit.WebContent_2018-10-16-101325_macs-MacBook-Pro-2.crash
+ create mode 100644 Library/Logs/DiagnosticReports/com.apple.WebKit.WebContent_2018-10-20-205058_macs-MacBook-Pro-2.crash
+ create mode 100644 Library/Logs/DiagnosticReports/com.apple.WebKit.WebContent_2018-10-20-205122_macs-MacBook-Pro-2.crash
+ create mode 100644 Library/Logs/DiagnosticReports/knowledge-agent_2018-10-18-135336_macs-MacBook-Pro-2.crash
+ create mode 100644 Library/Logs/DiscRecording.log
+ create mode 100644 Library/Logs/FortniteGame/FortniteGame-backup-2018.09.02-20.05.53.log
+ create mode 100644 Library/Logs/FortniteGame/FortniteGame.log
+ create mode 100644 Library/Logs/FortniteGame/cef3.log
+ create mode 100644 Library/Logs/PyCharmCE2018.2/idea.log
+ create mode 100644 Library/Logs/SMSMigrator/IMDPersistenceMerge.log
+ create mode 100644 Library/Logs/SMSMigrator/SMSMigrator.log
+ create mode 100644 Library/Logs/SparkleUpdateLog.log
+ create mode 100644 Library/Logs/Sync/syncservices.log
+ create mode 100644 Library/Logs/Unreal Engine/EpicGamesLauncher/EpicGamesLauncher-backup-2018.09.05-08.44.28.log
+ create mode 100644 Library/Logs/Unreal Engine/EpicGamesLauncher/EpicGamesLauncher-backup-2018.09.05-16.39.26.log
+ create mode 100644 Library/Logs/Unreal Engine/EpicGamesLauncher/EpicGamesLauncher-backup-2018.09.06-08.19.43.log
+ create mode 100644 Library/Logs/Unreal Engine/EpicGamesLauncher/EpicGamesLauncher-backup-2018.09.06-16.04.42.log
+ create mode 100644 Library/Logs/Unreal Engine/EpicGamesLauncher/EpicGamesLauncher-backup-2018.09.07-14.43.57.log
+ create mode 100644 Library/Logs/Unreal Engine/EpicGamesLauncher/EpicGamesLauncher.log
+ create mode 100644 Library/Logs/Unreal Engine/EpicGamesLauncher/cef3.log
+ create mode 100644 Library/Logs/WebStorm2018.2/idea.log
+ create mode 100644 Library/Logs/binstar/cli.log
+ create mode 100644 Library/Logs/fsck_hfs.log
+ create mode 100644 Library/Mobile Documents/F6266T9T75~com~apple~iMovie/Theater/.Theater.json.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~CloudDocs/.IMG_1915.MOV.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~CloudDocs/.IMG_1941.MOV.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~CloudDocs/.IMG_1942.MOV.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~CloudDocs/.IMG_1958.MOV.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~CloudDocs/.IMG_1960.MOV.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~CloudDocs/.IMG_2030.MOV.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~CloudDocs/.IMG_2046.MOV.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~CloudDocs/.IMG_2092.MOV.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~CloudDocs/.IMG_2099.MP4.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~CloudDocs/.ScreenRecording_02-10-2018 07:23.MP4.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~CloudDocs/.ips-6A10BFAE-80CF-4D3E-BFC5-5CC0C4B61A39.MP4.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~CloudDocs/.ips-E05457AE-03E6-46A7-9A91-095454607437.MP4.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~CloudDocs/.sstg-5571BB39-873D-4A9A-A3A8-DB7C877340D8.MP4.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~CloudDocs/.sstg-864DE256-793D-411F-9F4C-6D84924DE956.MP4.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~CloudDocs/.sstg-CE62DE24-08D0-494A-895A-8CD69929E9C2.MP4.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~CloudDocs/IMG_2043.MOV
+ create mode 100644 Library/Mobile Documents/com~apple~CloudDocs/IMG_2056.MOV
+ create mode 100644 Library/Mobile Documents/com~apple~Pages/Documents/.Blank 2.pages.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~Pages/Documents/.Blank 3.pages.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~Pages/Documents/.Blank 4.pages.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~Pages/Documents/.Blank.pages.icloud
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/.baseline/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/baseline.zip
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/.baseline/current.nosync/mac~37502AC5-742D-5DB1-A847-724EA8741960/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/baseline.gcmodel
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/.baseline/current.nosync/mac~37502AC5-742D-5DB1-A847-724EA8741960/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/baseline.meta
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/.baseline/current.nosync/mac~37502AC5-742D-5DB1-A847-724EA8741960/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/baseline.model
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/.baseline/current.nosync/mac~37502AC5-742D-5DB1-A847-724EA8741960/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/stores/UserDictionary.db
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/.cdmetadata/metadata.nosync/mac~37502AC5-742D-5DB1-A847-724EA8741960/UserDictionary/87EC96A6-3CD7-49B3-9087-38622F357518.cid
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/.cdmetadata/metadata.nosync/mac~37502AC5-742D-5DB1-A847-724EA8741960/UserDictionary/metadata.store
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/.cdmetadata/metadata.nosync/mac~37502AC5-742D-5DB1-A847-724EA8741960/UserDictionary/metadata.store-shm
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/.cdmetadata/metadata.nosync/mac~37502AC5-742D-5DB1-A847-724EA8741960/UserDictionary/metadata.store-wal
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/mac~37502AC5-742D-5DB1-A847-724EA8741960/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/23574ABD-4C1E-4B94-A649-FDD2426E7EC3.1.cdt
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/mac~37502AC5-742D-5DB1-A847-724EA8741960/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/648581C8-F603-424E-991B-4D8E2DED981A.1.cdt
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/mac~37502AC5-742D-5DB1-A847-724EA8741960/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/E5A4ECEB-9612-47A0-8792-9BA8C4F58E80.1.cdt
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/mac~37502AC5-742D-5DB1-A847-724EA8741960/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/receipt.0.cdt
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/mobile~32F79F4A-18E4-580C-AB57-B8EABC1C9C9F/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/188B3C33-E8E7-4970-8493-6037A66CED43.1.cdt
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/mobile~32F79F4A-18E4-580C-AB57-B8EABC1C9C9F/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/2A78F450-2E1D-4084-9CA2-51D66C73E7DB.1.cdt
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/mobile~32F79F4A-18E4-580C-AB57-B8EABC1C9C9F/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/3D37E08D-4B78-4EA2-851E-406978E9F3D5.1.cdt
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/mobile~32F79F4A-18E4-580C-AB57-B8EABC1C9C9F/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/514608EB-84B6-41B4-89BB-6ED59F1C874D.1.cdt
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/mobile~32F79F4A-18E4-580C-AB57-B8EABC1C9C9F/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/F2B9145B-B963-435C-A499-360E848D4FF9.1.cdt
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/mobile~32F79F4A-18E4-580C-AB57-B8EABC1C9C9F/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/receipt.0.cdt
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/mobile~39AC8400-84FB-5EC8-9089-5E87577E771C/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/receipt.0.cdt
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/mobile~8D55CC20-AD38-517B-9C1E-1EE654EDFBD1/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/22453903-AB62-46BC-9FE2-C18DF4CDFEA2.1.cdt
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/mobile~8D55CC20-AD38-517B-9C1E-1EE654EDFBD1/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/45F70212-1F24-4D8B-8E65-C0A5EAA3A1F0.1.cdt
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/mobile~8D55CC20-AD38-517B-9C1E-1EE654EDFBD1/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/receipt.0.cdt
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/mobile~C02E1288-D716-51E5-B961-FC3F1DDB27C0/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/7EEBD126-1AF2-41A4-A8BD-716300FD48B7.1.cdt
+ create mode 100644 Library/Mobile Documents/com~apple~TextInput/Dictionaries/mobile~C02E1288-D716-51E5-B961-FC3F1DDB27C0/UserDictionary/SAlQVUhF7208e6_gvZx_zdKx1U1AzKGem3HO2pLKjgY=/receipt.0.cdt
+ create mode 100644 Library/Mobile Documents/com~apple~mail/Data/V4/SyncedRules.plist
+ create mode 100644 Library/Mobile Documents/com~apple~mail/Data/V4/SyncedSmartMailboxes.plist
+ create mode 100755 Library/Mobile Documents/iCloud~com~apple~clips/Documents/.F3F97DB0-AE76-4E5C-8797-B793FB4A5405.clipsproject.icloud
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/META-INF/container.xml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/WileyTemplate_v5.3.css
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/c01.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/c02.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/c03.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/c04.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/c05.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/c06.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/c07.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/c08.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/c09.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/content.opf
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/copy.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/cover.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/ded.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/eula.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/f01.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/f02.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/f03.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/f04.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/f05.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/f06.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/9781119181316.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/arrow.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c01f001.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c01f002.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c01f003.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c01f004.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c01f005.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c01f006.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c01f007.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c01f008.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c01f009.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c01f010.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c01f011.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c01f012.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c01f013.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c02f001.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c02f002.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c02f003.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c02f004.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c02f005.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c02f006.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c02f007.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c02f008.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c02f009.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c02f010.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c03f001.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c03f002.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c03f003.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c03f004.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c03f005.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c03f006.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c03f007.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c03f008.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c03f009.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c03f010.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c03f011.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c03f012.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f001.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f002.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f003.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f004.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f005.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f006.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f007.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f008.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f009.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f010.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f011.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f012.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f013.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f014.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f015.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f016.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f017.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f018.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f019.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f020.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f021.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c04f022.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c05f001.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c05f002.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c05f003.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c05f004.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c05f005.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c05f006.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c05f007.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c05f008.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c05f009.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c05f010.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c06f001.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c06f002.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c06f003.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c06f004.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c06f005.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c06f006.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c06f007.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c06f008.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f001.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f002.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f003.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f004.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f005.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f006.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f007.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f008.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f009.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f010.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f011.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f012.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f013.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f014.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f015.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f016.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f017.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f018.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f019.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f020.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f021.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f022.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f023.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f024.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c07f025.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c08001.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c08002.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c08003.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c08004.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c08005.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c08006.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c08007.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c08008.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c08009.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c08010.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c08011.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c08012.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c08013.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c08014.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c08015.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c09f001.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c09f002.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c09f003.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c09f004.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c09f005.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c09f006.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c09f007.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c09f008.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c09f009.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c09f010.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c09f011.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c09f012.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c09f013.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c09f014.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c09f015.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/c09f016.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/check.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/check1.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/images/logo.jpg
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/index.css
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/navigation.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/title.xhtml
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/OPS/toc.ncx
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/iTunesMetadata.plist
+ create mode 100644 Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/Front-end Development with ASPNET Core Angular and Bootstrap.epub/mimetype
+ create mode 100644 Library/Mobile Documents/iCloud~is~workflow~my~workflows/Documents/.WorkflowHiddenFile
+ create mode 100644 Library/News/actionQueue
+ create mode 100644 Library/Passes/NotificationServiceTasks_v6.archive
+ create mode 100644 Library/Passes/PaymentWebServiceContext.archive
+ create mode 100644 Library/Passes/PeerPaymentWebServiceContext.archive
+ create mode 100644 Library/Passes/RemoteDevices.archive
+ create mode 100644 Library/Passes/ScheduledActivities.archive
+ create mode 100644 Library/Passes/WebServiceTasks_v6.archive
+ create mode 100644 Library/Passes/passes23.sqlite
+ create mode 100644 Library/Personas/PersonaStore.sqlite
+ create mode 100644 Library/Personas/PersonaStore.sqlite-shm
+ create mode 100644 Library/Personas/PersonaStore.sqlite-wal
+ create mode 100644 Library/Preferences/.GlobalPreferences.plist
+ create mode 100644 Library/Preferences/.dat.nosync0306.b7LkEi
+ create mode 100644 Library/Preferences/.dat.nosync0332.gzS1lN
+ create mode 100644 Library/Preferences/Adobe/ARMDC/Support Files/com.adobe.ARMDCHelper.plist
+ create mode 100644 Library/Preferences/Adobe/ARMDC/Support Files/com.adobe.reader.dc.plist
+ create mode 100644 Library/Preferences/AndroidStudio3.1/port
+ create mode 100644 Library/Preferences/AndroidStudio3.1/port.lock
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/7777.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/7777.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/AR_Basic.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/AR_Basic.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/AR_Framework.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/AR_Framework.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/AugmentedRealityHydrology.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/AugmentedRealityHydrology.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/AugmentedRealityHydrology_Sensor.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/AugmentedRealityHydrology_Sensor.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/AugmentedRealityHydrology_fugi.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/AugmentedRealityHydrology_fugi.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/AugmentedRealityHydrology_master.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/AugmentedRealityHydrology_master.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/Desktop.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/Desktop.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/GraphView.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/GraphView.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/How_to_use_Permission.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/How_to_use_Permission.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/JPL_AR_master.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/JPL_AR_master.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/Kompas_master.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/Kompas_master.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/LEO.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/LEO.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/MasterSenior_design.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/MasterSenior_design.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/MyApplication.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/MyApplication.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/My_Application.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/My_Application.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/Permissions.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/Permissions.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/Reservoir.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/Reservoir.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/SimpleTable_master.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/SimpleTable_master.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/ToastApp.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/ToastApp.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/Workout_Master_master.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/Workout_Master_master.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/blender_android_kotlin_master.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/blender_android_kotlin_master.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/dsensor_master.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/dsensor_master.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/dsensor_sample_master.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/dsensor_sample_master.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/getExample.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/getExample.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/jplcamera.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/jplcamera.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/jplone_watertrekdemo.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/jplone_watertrekdemo.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/jplsensors.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/jplsensors.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/recycletable.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/recycletable.tasks.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/sensoTest.contexts.zip
+ create mode 100644 Library/Preferences/AndroidStudio3.1/tasks/sensoTest.tasks.zip
+ create mode 100644 Library/Preferences/ByHost/.GlobalPreferences.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.AOSKit.ExitCache.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.AOSKit.RegInfo.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.AOSPushRelay.TopicInfo.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.AddressBook.sync.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.Bluetooth.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.FaceTime.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.ManagedClient.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.QuickLookDaemon.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.ScreenSaverPhotoChooser.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.airport.agent.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.commcenter.csidata.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.coreservices.appleidauthenticationinfo.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.dock.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.finder.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.iChat.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.iChat.AIM.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.iChat.AIM.37502AC5-742D-5DB1-A847-724EA8741960.plist.rOmMD1w
+ create mode 100644 Library/Preferences/ByHost/com.apple.iChat.Jabber.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.iChat.SubNet.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.iChat.SubNet.37502AC5-742D-5DB1-A847-724EA8741960.plist.9mVedzg
+ create mode 100644 Library/Preferences/ByHost/com.apple.iChat.SubNet.37502AC5-742D-5DB1-A847-724EA8741960.plist.bvJT6q7
+ create mode 100644 Library/Preferences/ByHost/com.apple.iChat.SubNet.37502AC5-742D-5DB1-A847-724EA8741960.plist.vDS2bys
+ create mode 100644 Library/Preferences/ByHost/com.apple.iTunes.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.identityservices.idstatuscache.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.identityservicesd.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.imservice.SMS.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.imservice.ids.FaceTime.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.imservice.ids.iMessage.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.loginwindow.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.notificationcenterui.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.screensaver.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.sharingd.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.syncservices.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.systempreferences.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.apple.windowserver.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.axosoft.gitkraken.ShipIt.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/ByHost/com.postmanlabs.mac.ShipIt.37502AC5-742D-5DB1-A847-724EA8741960.plist
+ create mode 100644 Library/Preferences/FortniteGame/CrashReportClient/UE4CC-Mac-EE5C5B78F94DDD983184659E4DF40170/CrashReportClient.ini
+ create mode 100644 Library/Preferences/FortniteGame/MacClient/GameUserSettings.ini
+ create mode 100644 Library/Preferences/MobileMeAccounts.plist
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/codestyles/Default.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/consoles/.history/py/2062397d71197a8e.txt
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/debugger.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/dimensions.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/editor.codeinsight.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/editor.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/filetypes.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/find.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/ide.general.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/images.support.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/jdk.table.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/keymap.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/laf.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/options.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/packages.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/py_sdk_settings.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/recentProjectDirectories.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/runner.layout.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/scratches.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/stubIndex.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/ui.lnf.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/updates.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/usage.statistics.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/options/window.manager.xml
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/port.lock
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/scratches/Excercise#1.py
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/scratches/Excercise#2.py
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/scratches/Excercise#3.py
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/scratches/Excercise#7.py
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/scratches/Excercise#8.py
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/scratches/cb.py
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/scratches/excercie#5.py
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/scratches/excercise#18.py
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/scratches/excercise#4.py
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/scratches/excercise#6.py
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/scratches/excercise#9.py
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/scratches/pp.py
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/scratches/scratch.py
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/scratches/scratchwork.py
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/scratches/tictactoe.py
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/scratches/tuples.py
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/AIClass2018.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/AIClass2018.tasks.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/AIHW5.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/AIHW5.tasks.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/AIinClassExamples.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/AIinClassExamples.tasks.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/CS181_CS_188_UCB__master.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/CS181_CS_188_UCB__master.tasks.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/Desktop.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/Desktop.tasks.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/FallAIExcercise.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/FallAIExcercise.tasks.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/LearningPi.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/LearningPi.tasks.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/Proj3.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/Proj3.tasks.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/Project_3___Pacman__etc.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/Project_3___Pacman__etc.tasks.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/Project_3___Pacman__etc_2.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/Project_3___Pacman__etc_2.tasks.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/PycharmProjects.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/PycharmProjects.tasks.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/cartpole_random_py.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/cartpole_random_py.tasks.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/cs188_master.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/cs188_master.tasks.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/cs188_proj4_master.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/cs188_proj4_master.tasks.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/mac.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/mac.tasks.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/pythonhw_py.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/pythonhw_py.tasks.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/rl.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/rl.tasks.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/test.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/test.tasks.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/valueIterationAgents_py.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/valueIterationAgents_py.tasks.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/valueIterationAgents_rewritten_py.contexts.zip
+ create mode 100644 Library/Preferences/PyCharmCE2018.2/tasks/valueIterationAgents_rewritten_py.tasks.zip
+ create mode 100644 Library/Preferences/QuickTime Preferences
+ create mode 100644 Library/Preferences/RuneScape Preferences
+ create mode 100644 Library/Preferences/RuneScape-1 Preferences
+ create mode 100644 Library/Preferences/Unreal Engine/EpicGamesLauncher/CrashReportClient/UE4CC-Mac-0B4A7AD23843872A923C55917F683ABE/CrashReportClient.ini
+ create mode 100644 Library/Preferences/Unreal Engine/EpicGamesLauncher/CrashReportClient/UE4CC-Mac-2499EA2E444D63F23F7F7185AC479DD5/CrashReportClient.ini
+ create mode 100644 Library/Preferences/Unreal Engine/EpicGamesLauncher/CrashReportClient/UE4CC-Mac-857A91B2E246ED7544AD76A8CA4DBBEB/CrashReportClient.ini
+ create mode 100644 Library/Preferences/Unreal Engine/EpicGamesLauncher/CrashReportClient/UE4CC-Mac-91C9CB4D6F42DD18F388FCB4BDD5C4C2/CrashReportClient.ini
+ create mode 100644 Library/Preferences/Unreal Engine/EpicGamesLauncher/CrashReportClient/UE4CC-Mac-F926F0FD4543F90C4F845C97A01C605C/CrashReportClient.ini
+ create mode 100644 Library/Preferences/Unreal Engine/EpicGamesLauncher/Mac/Compat.ini
+ create mode 100644 Library/Preferences/Unreal Engine/EpicGamesLauncher/Mac/EditorPerProjectUserSettings.ini
+ create mode 100644 Library/Preferences/Unreal Engine/EpicGamesLauncher/Mac/Engine.ini
+ create mode 100644 Library/Preferences/Unreal Engine/EpicGamesLauncher/Mac/Game.ini
+ create mode 100644 Library/Preferences/Unreal Engine/EpicGamesLauncher/Mac/GameUserSettings.ini
+ create mode 100644 Library/Preferences/Unreal Engine/EpicGamesLauncher/Mac/Hardware.ini
+ create mode 100644 Library/Preferences/Unreal Engine/EpicGamesLauncher/Mac/Input.ini
+ create mode 100644 Library/Preferences/Unreal Engine/EpicGamesLauncher/Mac/Lightmass.ini
+ create mode 100644 Library/Preferences/Unreal Engine/EpicGamesLauncher/Mac/PortalRegions.ini
+ create mode 100644 Library/Preferences/WebStorm2018.2/codestyles/Default.xml
+ create mode 100644 Library/Preferences/WebStorm2018.2/eval/WebStorm182.evaluation.key
+ create mode 100644 Library/Preferences/WebStorm2018.2/options/debugger.xml
+ create mode 100644 Library/Preferences/WebStorm2018.2/options/dimensions.xml
+ create mode 100644 Library/Preferences/WebStorm2018.2/options/filetypes.xml
+ create mode 100644 Library/Preferences/WebStorm2018.2/options/ide.general.xml
+ create mode 100644 Library/Preferences/WebStorm2018.2/options/images.support.xml
+ create mode 100644 Library/Preferences/WebStorm2018.2/options/keymap.xml
+ create mode 100644 Library/Preferences/WebStorm2018.2/options/laf.xml
+ create mode 100644 Library/Preferences/WebStorm2018.2/options/options.xml
+ create mode 100644 Library/Preferences/WebStorm2018.2/options/other.xml
+ create mode 100644 Library/Preferences/WebStorm2018.2/options/project.default.xml
+ create mode 100644 Library/Preferences/WebStorm2018.2/options/projectView.xml
+ create mode 100644 Library/Preferences/WebStorm2018.2/options/recentProjectDirectories.xml
+ create mode 100644 Library/Preferences/WebStorm2018.2/options/stubIndex.xml
+ create mode 100644 Library/Preferences/WebStorm2018.2/options/updates.xml
+ create mode 100644 Library/Preferences/WebStorm2018.2/options/usage.statistics.xml
+ create mode 100644 Library/Preferences/WebStorm2018.2/options/window.manager.xml
+ create mode 100644 Library/Preferences/WebStorm2018.2/port.lock
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/08_28.contexts.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/08_28.tasks.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/AI.contexts.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/AI.tasks.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/Graphics.contexts.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/Graphics.tasks.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/GraphicsClassFall2018.contexts.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/GraphicsClassFall2018.tasks.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/Graphics_HW2.contexts.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/Graphics_HW2.tasks.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/HW3A.contexts.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/HW3A.tasks.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/HW3A_3_js.contexts.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/HW3A_3_js.tasks.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/HW3B.contexts.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/HW3B.tasks.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/Hw3.contexts.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/Hw3.tasks.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/Tesselation_of_Sierpinsky_Gasket_1.contexts.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/Tesselation_of_Sierpinsky_Gasket_1.tasks.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/Triangle.contexts.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/Triangle.tasks.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/Udemy_webGL.contexts.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/Udemy_webGL.tasks.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/WebGL_Examples_2.contexts.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/WebGL_Examples_2.tasks.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/WebGL_Examples_3.contexts.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/WebGL_Examples_3.tasks.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/fugis.contexts.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/fugis.tasks.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/hw5team.contexts.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/tasks/hw5team.tasks.zip
+ create mode 100644 Library/Preferences/WebStorm2018.2/user.web.token
+ create mode 100644 Library/Preferences/WebStorm2018.2/webstorm.key
+ create mode 100644 Library/Preferences/ckkeyrolld.plist
+ create mode 100644 Library/Preferences/com.adobe.AdobeRdrCEFHelper.plist
+ create mode 100644 Library/Preferences/com.adobe.Reader.plist
+ create mode 100644 Library/Preferences/com.adobe.crashreporter.plist
+ create mode 100644 Library/Preferences/com.android.Emulator.plist
+ create mode 100644 Library/Preferences/com.apple.AdLib.plist
+ create mode 100644 Library/Preferences/com.apple.AddressBook.plist
+ create mode 100644 Library/Preferences/com.apple.AddressBook.sync.plist
+ create mode 100644 Library/Preferences/com.apple.AppleMediaServices.plist
+ create mode 100644 Library/Preferences/com.apple.AppleMultitouchMouse.plist
+ create mode 100644 Library/Preferences/com.apple.AppleMultitouchTrackpad.plist
+ create mode 100644 Library/Preferences/com.apple.Automator.plist
+ create mode 100644 Library/Preferences/com.apple.BezelServices.plist
+ create mode 100644 Library/Preferences/com.apple.BluetoothFileExchange.plist
+ create mode 100644 Library/Preferences/com.apple.CallHistorySyncHelper.plist
+ create mode 100644 Library/Preferences/com.apple.CharacterPaletteIM.plist
+ create mode 100644 Library/Preferences/com.apple.CharacterPicker.plist
+ create mode 100644 Library/Preferences/com.apple.Chess.plist
+ create mode 100644 Library/Preferences/com.apple.ColorSyncCalibrator.plist
+ create mode 100644 Library/Preferences/com.apple.CommCenter.counts.plist
+ create mode 100644 Library/Preferences/com.apple.Console.plist
+ create mode 100644 Library/Preferences/com.apple.CoreDuet.plist
+ create mode 100644 Library/Preferences/com.apple.CoreGraphics.plist
+ create mode 100644 Library/Preferences/com.apple.DictionaryServices.plist
+ create mode 100644 Library/Preferences/com.apple.DigitalColorMeter.plist
+ create mode 100644 Library/Preferences/com.apple.DiskUtility.plist
+ create mode 100644 Library/Preferences/com.apple.EmojiCache.plist
+ create mode 100644 Library/Preferences/com.apple.EmojiPreferences.plist
+ create mode 100644 Library/Preferences/com.apple.FaceTime.plist
+ create mode 100644 Library/Preferences/com.apple.FileStatsAgent.plist
+ create mode 100644 Library/Preferences/com.apple.FolderActionsDispatcher.plist
+ create mode 100644 Library/Preferences/com.apple.FontRegistry.user.plist
+ create mode 100644 Library/Preferences/com.apple.GEO.plist
+ create mode 100644 Library/Preferences/com.apple.HIToolbox.plist
+ create mode 100644 Library/Preferences/com.apple.Image_Capture.plist
+ create mode 100644 Library/Preferences/com.apple.LaunchServices.QuarantineEventsV2
+ create mode 100644 Library/Preferences/com.apple.LaunchServices/com.apple.launchservices.secure.plist
+ create mode 100644 Library/Preferences/com.apple.Messages.plist
+ create mode 100644 Library/Preferences/com.apple.MobileDeviceCrashCopy.plist
+ create mode 100644 Library/Preferences/com.apple.PhotoBooth.plist
+ create mode 100644 Library/Preferences/com.apple.Preferences.plist
+ create mode 100644 Library/Preferences/com.apple.Preview.plist
+ create mode 100644 Library/Preferences/com.apple.PubSubAgent.plist
+ create mode 100644 Library/Preferences/com.apple.QuickLookDaemon.plist
+ create mode 100644 Library/Preferences/com.apple.QuickTimePlayerX.plist
+ create mode 100644 Library/Preferences/com.apple.Safari.SafeBrowsing.plist
+ create mode 100644 Library/Preferences/com.apple.Safari.SandboxBroker.plist
+ create mode 100644 Library/Preferences/com.apple.SafariBookmarksSyncAgent.plist
+ create mode 100644 Library/Preferences/com.apple.SafariCloudHistoryPushAgent.plist
+ create mode 100644 Library/Preferences/com.apple.ServicesMenu.Services.plist
+ create mode 100644 Library/Preferences/com.apple.SetupAssistant.plist
+ create mode 100644 Library/Preferences/com.apple.SharedWebCredentials.plist
+ create mode 100644 Library/Preferences/com.apple.Siri.plist
+ create mode 100644 Library/Preferences/com.apple.SpeechRecognitionCore.plist
+ create mode 100644 Library/Preferences/com.apple.Spotlight.plist
+ create mode 100644 Library/Preferences/com.apple.SystemProfiler.plist
+ create mode 100644 Library/Preferences/com.apple.TMHelperAgent.plist
+ create mode 100644 Library/Preferences/com.apple.TelephonyUtilities.plist
+ create mode 100644 Library/Preferences/com.apple.Terminal.plist
+ create mode 100644 Library/Preferences/com.apple.TextEdit.plist
+ create mode 100644 Library/Preferences/com.apple.UserAccountUpdater.plist
+ create mode 100644 Library/Preferences/com.apple.WebKit.WebContent.plist
+ create mode 100644 Library/Preferences/com.apple.accounts.plist
+ create mode 100644 Library/Preferences/com.apple.accountsd.plist
+ create mode 100644 Library/Preferences/com.apple.airplay.plist
+ create mode 100644 Library/Preferences/com.apple.appstore.commerce.plist
+ create mode 100644 Library/Preferences/com.apple.appstore.plist
+ create mode 100644 Library/Preferences/com.apple.appstored.plist
+ create mode 100644 Library/Preferences/com.apple.archiveutility.plist
+ create mode 100644 Library/Preferences/com.apple.assistant.backedup.plist
+ create mode 100644 Library/Preferences/com.apple.assistant.plist
+ create mode 100644 Library/Preferences/com.apple.assistant.support.plist
+ create mode 100644 Library/Preferences/com.apple.assistant_service.plist
+ create mode 100644 Library/Preferences/com.apple.bird.plist
+ create mode 100644 Library/Preferences/com.apple.bookstoreagent.plist
+ create mode 100644 Library/Preferences/com.apple.calculateframework.plist
+ create mode 100644 Library/Preferences/com.apple.cloudd.plist
+ create mode 100644 Library/Preferences/com.apple.cloudpaird.plist
+ create mode 100644 Library/Preferences/com.apple.cmfsyncagent.plist
+ create mode 100644 Library/Preferences/com.apple.commcenter.callservices.plist
+ create mode 100644 Library/Preferences/com.apple.commerce.configurator.plist
+ create mode 100644 Library/Preferences/com.apple.commerce.knownclients.plist
+ create mode 100644 Library/Preferences/com.apple.commerce.plist
+ create mode 100644 Library/Preferences/com.apple.configurator.ui.commerce.plist
+ create mode 100644 Library/Preferences/com.apple.controlstrip.plist
+ create mode 100644 Library/Preferences/com.apple.coreauthd.plist
+ create mode 100644 Library/Preferences/com.apple.coreservices.uiagent.plist
+ create mode 100644 Library/Preferences/com.apple.coreservices.useractivityd.dynamicuseractivites.plist
+ create mode 100644 Library/Preferences/com.apple.corespotlightui.plist
+ create mode 100644 Library/Preferences/com.apple.dashboard.client.plist
+ create mode 100644 Library/Preferences/com.apple.dashboard.plist
+ create mode 100644 Library/Preferences/com.apple.dock.plist
+ create mode 100644 Library/Preferences/com.apple.driver.AppleBluetoothMultitouch.mouse.plist
+ create mode 100644 Library/Preferences/com.apple.driver.AppleBluetoothMultitouch.trackpad.plist
+ create mode 100644 Library/Preferences/com.apple.driver.AppleHIDMouse.plist
+ create mode 100644 Library/Preferences/com.apple.dt.Xcode.plist
+ create mode 100644 Library/Preferences/com.apple.dt.xcodebuild.plist
+ create mode 100644 Library/Preferences/com.apple.facetime.bag.plist
+ create mode 100644 Library/Preferences/com.apple.finder.plist
+ create mode 100644 Library/Preferences/com.apple.frameworks.diskimages.diuiagent.plist
+ create mode 100644 Library/Preferences/com.apple.gamecenter.plist
+ create mode 100644 Library/Preferences/com.apple.gamed.plist
+ create mode 100644 Library/Preferences/com.apple.help.plist
+ create mode 100644 Library/Preferences/com.apple.helpviewer.plist
+ create mode 100644 Library/Preferences/com.apple.iApps.plist
+ create mode 100644 Library/Preferences/com.apple.iBooksX.commerce.plist
+ create mode 100644 Library/Preferences/com.apple.iCal.plist
+ create mode 100644 Library/Preferences/com.apple.iChat.AIM.plist
+ create mode 100644 Library/Preferences/com.apple.iChat.Jabber.plist
+ create mode 100644 Library/Preferences/com.apple.iChat.Jabber.plist.dYLT8Z9
+ create mode 100644 Library/Preferences/com.apple.iChat.StatusMessages.plist
+ create mode 100644 Library/Preferences/com.apple.iChat.plist
+ create mode 100644 Library/Preferences/com.apple.iPod.plist
+ create mode 100644 Library/Preferences/com.apple.iTunes.eq.plist
+ create mode 100644 Library/Preferences/com.apple.iTunes.plist
+ create mode 100644 Library/Preferences/com.apple.iTunesHelper.plist
+ create mode 100644 Library/Preferences/com.apple.ibtool.plist
+ create mode 100644 Library/Preferences/com.apple.icloud.fmfd.notbackedup.plist
+ create mode 100644 Library/Preferences/com.apple.icloud.fmfd.plist
+ create mode 100644 Library/Preferences/com.apple.icloud.fmip.clientconfiguration.plist
+ create mode 100644 Library/Preferences/com.apple.icloud.fmip.voiceassistantsync.plist
+ create mode 100644 Library/Preferences/com.apple.identityservicesd.plist
+ create mode 100644 Library/Preferences/com.apple.ids.deviceproperties.plist
+ create mode 100644 Library/Preferences/com.apple.ids.subservices.plist
+ create mode 100644 Library/Preferences/com.apple.imagecapture.plist
+ create mode 100644 Library/Preferences/com.apple.imagent.plist
+ create mode 100644 Library/Preferences/com.apple.imdpersistence.IMDPersistenceAgent.plist
+ create mode 100644 Library/Preferences/com.apple.imdsmsrecordstore.plist
+ create mode 100644 Library/Preferences/com.apple.imessage.bag.plist
+ create mode 100644 Library/Preferences/com.apple.imessage.plist
+ create mode 100644 Library/Preferences/com.apple.imservice.ids.FaceTime.plist
+ create mode 100644 Library/Preferences/com.apple.imservice.ids.iMessage.plist
+ create mode 100644 Library/Preferences/com.apple.internal.ck.plist
+ create mode 100644 Library/Preferences/com.apple.ipTelephony.plist
+ create mode 100644 Library/Preferences/com.apple.iphonesimulator.plist
+ create mode 100644 Library/Preferences/com.apple.java.util.prefs.plist
+ create mode 100644 Library/Preferences/com.apple.keyboardservicesd.plist
+ create mode 100644 Library/Preferences/com.apple.locationmenu.plist
+ create mode 100644 Library/Preferences/com.apple.loginwindow.plist
+ create mode 100644 Library/Preferences/com.apple.madrid.plist
+ create mode 100644 Library/Preferences/com.apple.mail.plist
+ create mode 100644 Library/Preferences/com.apple.menuextra.battery.plist
+ create mode 100644 Library/Preferences/com.apple.menuextra.clock.plist
+ create mode 100644 Library/Preferences/com.apple.mmcs.plist
+ create mode 100644 Library/Preferences/com.apple.ncprefs.plist
+ create mode 100644 Library/Preferences/com.apple.notificationcenterui.plist
+ create mode 100644 Library/Preferences/com.apple.parsecd.plist
+ create mode 100644 Library/Preferences/com.apple.passd.plist
+ create mode 100644 Library/Preferences/com.apple.pipagent.plist
+ create mode 100644 Library/Preferences/com.apple.preference.general.plist
+ create mode 100644 Library/Preferences/com.apple.preferences.extensions.FinderSync.plist
+ create mode 100644 Library/Preferences/com.apple.preferences.extensions.PhotoEditing.plist
+ create mode 100644 Library/Preferences/com.apple.preferences.extensions.PhotoProjects.plist
+ create mode 100644 Library/Preferences/com.apple.preferences.extensions.ServicesWithUI.plist
+ create mode 100644 Library/Preferences/com.apple.preferences.extensions.ShareMenu.plist
+ create mode 100644 Library/Preferences/com.apple.preferences.extensions.SharedLinks.plist
+ create mode 100644 Library/Preferences/com.apple.preferences.extensions.XcodeSourceControlHost.plist
+ create mode 100644 Library/Preferences/com.apple.preferences.extensions.XcodeSourceEditor.plist
+ create mode 100644 Library/Preferences/com.apple.proactive.PersonalizationPortrait.plist
+ create mode 100644 Library/Preferences/com.apple.protectedcloudstorage.protectedcloudkeysyncing.plist
+ create mode 100644 Library/Preferences/com.apple.registration.plist
+ create mode 100644 Library/Preferences/com.apple.routined.plist
+ create mode 100644 Library/Preferences/com.apple.scheduler.plist
+ create mode 100644 Library/Preferences/com.apple.screencapture.plist
+ create mode 100644 Library/Preferences/com.apple.screensaver.plist
+ create mode 100644 Library/Preferences/com.apple.scriptmenu.plist
+ create mode 100644 Library/Preferences/com.apple.searchd.plist
+ create mode 100644 Library/Preferences/com.apple.security.KCN.plist
+ create mode 100644 Library/Preferences/com.apple.security.cloudkeychainproxy3.keysToRegister.plist
+ create mode 100644 Library/Preferences/com.apple.sharingd.plist
+ create mode 100644 Library/Preferences/com.apple.siri.context.service.plist
+ create mode 100644 Library/Preferences/com.apple.sms.plist
+ create mode 100644 Library/Preferences/com.apple.spaces.plist
+ create mode 100644 Library/Preferences/com.apple.speech.recognition.AppleSpeechRecognition.CustomCommands.plist 
+2018-11-12 00:19:10,937 [thread 113]   INFO - g.FileBasedIndexProjectHandler - Reindexing refreshed files: 0 to update, calculated in 0ms 
+2018-11-12 00:19:21,589 [ice Thread]   INFO - .openapi.util.LowMemoryWatcher - Low memory signal received. 
+2018-11-12 00:19:23,609 [thread 110]   INFO -  #git4idea.commands.GitHandler - [../../../../mac] git -c core.quotepath=false -c log.showSignature=false push --progress --porcelain origin refs/heads/MESH&SENSOR:MESH&SENSOR 
+2018-11-12 00:19:24,298 [eam of git]   INFO -  #git4idea.commands.GitHandler - Enumerating objects: 911, done. 
+2018-11-12 00:19:24,340 [eam of git]   INFO -  #git4idea.commands.GitHandler - Counting objects: 100% (911/911), done. 
+2018-11-12 00:19:24,340 [eam of git]   INFO -  #git4idea.commands.GitHandler - Delta compression using up to 8 threads. 
+2018-11-12 00:19:25,306 [eam of git]   INFO -  #git4idea.commands.GitHandler - Compressing objects: 100% (840/840), done. 
+2018-11-12 00:19:33,595 [eam of git]   INFO -  #git4idea.commands.GitHandler - Writing objects: 100% (910/910), 18.85 MiB | 2.27 MiB/s, done. 
+2018-11-12 00:19:33,595 [eam of git]   INFO -  #git4idea.commands.GitHandler - Total 910 (delta 160), reused 0 (delta 0) 
+2018-11-12 00:19:34,225 [eam of git]   INFO -  #git4idea.commands.GitHandler - remote: Resolving deltas: 100% (160/160), done. 
+2018-11-12 00:19:38,361 [eam of git]   INFO -  #git4idea.commands.GitHandler - To https://github.com/leonardoobay/Arwatertrek.git 
+2018-11-12 00:19:38,361 [eam of git]   INFO -  #git4idea.commands.GitHandler - refs/heads/MESH&SENSOR:refs/heads/MESH&SENSOR	465dd93..fa4705b 
+2018-11-12 00:19:38,362 [eam of git]   INFO -  #git4idea.commands.GitHandler - Done 
+2018-11-12 00:19:38,362 [thread 110]   INFO -  #git4idea.commands.GitHandler - git push took 14754 ms. Command parameters: 
+/usr/local/bin/git -c core.quotepath=false -c log.showSignature=false push --progress --porcelain origin refs/heads/MESH&SENSOR:MESH&SENSOR 
+2018-11-12 00:19:45,809 [ice Thread]   INFO - .openapi.util.LowMemoryWatcher - Low memory signal received. 
+2018-11-12 00:19:48,948 [ice Thread]   INFO - .openapi.util.LowMemoryWatcher - Low memory signal received. 
+2018-11-12 00:23:15,086 [ thread 97]   INFO -         #git4idea.commands.Git - VirtualFile for path [Library/Preferences/com.apple.xpc.activity2.plist.YD8ZTWF] is null 
+2018-11-12 00:23:15,087 [ thread 97]   INFO -         #git4idea.commands.Git - VirtualFile for path [Library/Preferences/knowledge-agent.plist.kIC1IRR] is null 
+2018-11-12 00:23:24,193 [thread 110]   INFO -  #git4idea.commands.GitHandler - [../../../../mac] git -c core.quotepath=false -c log.showSignature=false add --ignore-errors -- Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/activities/MainActivity.java 
+2018-11-12 00:25:14,075 [e-1024-b01]   INFO - rd.FirstRunWizardFrameProvider - Overriding welcome frame to be resizable 
+2018-11-12 00:25:24,543 [e-1024-b01]   INFO - idea.project.IndexingSuspender - Subscribing project 'Project '/Users/mac/Desktop/LEO/AugmentedRealityHydrology-Sensor' AugmentedRealityHydrology-Sensor' to indexing suspender events (com.android.tools.idea.project.IndexingSuspender@7b957640) 
+2018-11-12 00:25:24,544 [e-1024-b01]   INFO - ellij.project.impl.ProjectImpl - 149 project components initialized in 42 ms 
+2018-11-12 00:25:24,544 [e-1024-b01]   INFO - le.impl.ModuleManagerComponent - 0 module(s) loaded in 0 ms 
+2018-11-12 00:25:24,568 [e-1024-b01]   INFO - e.project.sync.GradleSyncState - Started sync with Gradle for project 'AugmentedRealityHydrology-Sensor'. 
+2018-11-12 00:25:24,568 [e-1024-b01]   INFO - idea.project.IndexingSuspender - Consuming IndexingSuspender activation event: SYNC_STARTED 
+2018-11-12 00:25:24,573 [ thread 97]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2018-11-12 00:25:24,574 [ thread 97]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2018-11-12 00:25:24,599 [ thread 97]   INFO - xecution.GradleExecutionHelper - Passing command-line args to Gradle Tooling API: -Didea.version=3.1 -Djava.awt.headless=true -Pandroid.injected.build.model.only=true -Pandroid.injected.build.model.only.advanced=true -Pandroid.injected.invoked.from.ide=true -Pandroid.injected.build.model.only.versioned=3 -Pandroid.injected.studio.version=3.1.4.0 -Pandroid.builder.sdkDownload=false --init-script /private/var/folders/4g/g_wwmlvd4llgsnn09vqkp0br0000gn/T/ijinit.gradle 
+2018-11-12 00:25:25,060 [thread 121]   INFO - agnostic.FrequentEventDetector - Too many events posted, #3. Event: java.awt.event.InvocationEvent[INVOCATION_DEFAULT,runnable=Delay: 0ms; com.intellij.util.Alarm$Request@153b5240: com.intellij.build.BuildTreeConsoleView$6@5246040 Objects: [Resolve runner.aar (com.android.support.test:runner:0.5)],notifier=null,catchExceptions=false,when=1542011125060] on sun.lwawt.macosx.LWCToolkit@73a9099d 
+2018-11-12 00:25:25,110 [thread 121]   INFO - agnostic.FrequentEventDetector - Too many events posted, #3. Event: java.awt.event.InvocationEvent[INVOCATION_DEFAULT,runnable=Delay: 0ms; com.intellij.util.Alarm$Request@680d5ee: com.intellij.build.BuildTreeConsoleView$6@7c73a374 Objects: [Apply org.gradle.api.internal.artifacts.transform.VariantAttributeMatchingCache$1@48dd2aab to play-services-basement.aar (com.google.android.gms:play-services-basement:11.0.2)],notifier=null,catchExceptions=false,when=1542011125109] on sun.lwawt.macosx.LWCToolkit@73a9099d 
+2018-11-12 00:25:25,151 [thread 121]   INFO - agnostic.FrequentEventDetector - Too many events posted, #1. Event: java.awt.event.InvocationEvent[INVOCATION_DEFAULT,runnable=com.intellij.build.MultipleBuildsView$$Lambda$1365/450838038@4a8a715e,notifier=null,catchExceptions=false,when=1542011125151] on sun.lwawt.macosx.LWCToolkit@73a9099d 
+2018-11-12 00:25:25,214 [thread 121]   INFO - agnostic.FrequentEventDetector - Too many events posted, #3. Event: java.awt.event.InvocationEvent[INVOCATION_DEFAULT,runnable=Delay: 0ms; com.intellij.util.Alarm$Request@16ea09c3: com.intellij.build.BuildTreeConsoleView$6@676b2f85 Objects: [Apply org.gradle.api.internal.artifacts.transform.VariantAttributeMatchingCache$1@3085de9b to support-core-utils.aar (com.android.support:support-core-utils:26.1.0)],notifier=null,catchExceptions=false,when=1542011125214] on sun.lwawt.macosx.LWCToolkit@73a9099d 
+2018-11-12 00:25:25,343 [ thread 97]   INFO - e.project.sync.GradleSyncState - Started setup of project 'AugmentedRealityHydrology-Sensor'. 
+2018-11-12 00:25:25,497 [thread 124]   INFO - .diagnostic.PerformanceWatcher - Pushing properties took 0ms; general responsiveness: ok; EDT responsiveness: ok 
+2018-11-12 00:25:25,499 [thread 124]   INFO - .diagnostic.PerformanceWatcher - Indexable file iteration took 1ms; general responsiveness: ok; EDT responsiveness: ok 
+2018-11-12 00:25:25,579 [ thread 97]   INFO - tartup.impl.StartupManagerImpl - ExternalSystemStartupActivity run in 156ms under project opening modal progress 
+2018-11-12 00:25:25,584 [ thread 97]   INFO - .diagnostic.PerformanceWatcher - Post-startup activities under progress took 161ms; general responsiveness: ok; EDT responsiveness: ok 
+2018-11-12 00:25:25,703 [e-1024-b01]   INFO - j.ide.ui.OptionsTopHitProvider - 72 ms spent to cache options in project 
+2018-11-12 00:25:25,709 [e-1024-b01]   INFO - tartup.impl.StartupManagerImpl - /Users/mac/Desktop/LEO/AugmentedRealityHydrology-Sensor/.idea case-sensitivity: expected=false actual=false 
+2018-11-12 00:25:25,710 [ thread 97]   INFO - pl.projectlevelman.NewMappings - VCS Root: [] - [<Project>] 
+2018-11-12 00:25:25,755 [e-1024-b01]   INFO - tor.impl.FileEditorManagerImpl - Project opening took 1263 ms 
+2018-11-12 00:25:25,797 [ thread 97]   INFO -       #com.jetbrains.cidr.lang - Clearing symbols finished in 0 s. 
+2018-11-12 00:25:25,798 [ thread 97]   INFO -       #com.jetbrains.cidr.lang - Building symbols in FAST mode, 0 source files from total 0 project files 
+2018-11-12 00:25:25,806 [ thread 97]   INFO -       #com.jetbrains.cidr.lang - Loading Module Maps finished in 0 s. 
+2018-11-12 00:25:25,808 [ thread 97]   INFO -       #com.jetbrains.cidr.lang - Saving Module Maps finished in 0 s. 
+2018-11-12 00:25:25,808 [ thread 97]   INFO -       #com.jetbrains.cidr.lang - Saving Module Maps finished in 0 s. 
+2018-11-12 00:25:25,808 [ thread 97]   INFO -       #com.jetbrains.cidr.lang - Loaded 0 tables for 0 files (0 project files) 
+2018-11-12 00:25:25,808 [ thread 97]   INFO -       #com.jetbrains.cidr.lang - Building symbols for 0 source files 
+2018-11-12 00:25:25,810 [ thread 97]   INFO -       #com.jetbrains.cidr.lang - Building symbols for 0 unused headers 
+2018-11-12 00:25:25,811 [ thread 97]   INFO -       #com.jetbrains.cidr.lang - Building symbols finished in 0 s. 
+2018-11-12 00:25:25,812 [ thread 97]   INFO -       #com.jetbrains.cidr.lang - Saving modified symbols for 0 files (0 tables of total 0) 
+2018-11-12 00:25:25,812 [ thread 97]   INFO -       #com.jetbrains.cidr.lang - Saving symbols finished in 0 s. 
+2018-11-12 00:25:25,823 [e-1024-b01]   INFO - idea.project.IndexingSuspender - Starting batch update for project: Project '/Users/mac/Desktop/LEO/AugmentedRealityHydrology-Sensor' AugmentedRealityHydrology-Sensor 
+2018-11-12 00:25:25,984 [e-1024-b01]   INFO - ule.android.SdkModuleSetupStep - Set Android SDK 'Android API 26 Platform' (/Users/mac/Library/Android/sdk) to module 'arlib' 
+2018-11-12 00:25:26,019 [e-1024-b01]   INFO - ule.android.SdkModuleSetupStep - Set Android SDK 'Android API 26 Platform' (/Users/mac/Library/Android/sdk) to module 'watertrekapp' 
+2018-11-12 00:25:26,179 [ thread 97]   INFO - etup.post.PluginVersionUpgrade - Gradle model version: 3.1.4, recommended version for IDE: 3.1.4 
+2018-11-12 00:25:26,184 [ thread 97]   INFO - ild.invoker.GradleBuildInvoker - About to execute Gradle tasks: [:watertrekapp:generateDebugSources, :arlib:generateDebugSources] 
+2018-11-12 00:25:26,210 [e-1024-b01]   INFO - idea.project.IndexingSuspender - Consuming IndexingSuspender activation event: BUILD_EXECUTOR_CREATED 
+2018-11-12 00:25:26,215 [ thread 97]   INFO - e.project.sync.GradleSyncState - Gradle sync finished in 1s 646ms 
+2018-11-12 00:25:26,218 [thread 125]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2018-11-12 00:25:26,221 [thread 125]   INFO - ild.invoker.GradleBuildInvoker - Build command line options: [--configure-on-demand, -Pandroid.injected.invoked.from.ide=true, -Pandroid.injected.generateSourcesOnly=true] 
+2018-11-12 00:25:26,227 [thread 125]   INFO - xecution.GradleExecutionHelper - Passing command-line args to Gradle Tooling API: --configure-on-demand -Pandroid.injected.invoked.from.ide=true -Pandroid.injected.generateSourcesOnly=true 
+2018-11-12 00:25:26,246 [e-1024-b01]   INFO - idea.project.IndexingSuspender - Consuming IndexingSuspender deactivation event: SYNC_FINISHED 
+2018-11-12 00:25:26,247 [e-1024-b01]   INFO - idea.project.IndexingSuspender - IndexingSuspender deactivation event received and ignored: SYNC_FINISHED 
+2018-11-12 00:25:26,250 [e-1024-b01]   INFO - idea.project.IndexingSuspender - Consuming IndexingSuspender activation event: BUILD_STARTED 
+2018-11-12 00:25:26,349 [thread 124]   INFO -       #com.jetbrains.cidr.lang - Clearing symbols finished in 0 s. 
+2018-11-12 00:25:26,350 [thread 124]   INFO -       #com.jetbrains.cidr.lang - Building symbols in FAST mode, 0 source files from total 0 project files 
+2018-11-12 00:25:26,391 [thread 124]   INFO -       #com.jetbrains.cidr.lang - Loading Module Maps finished in 0 s. 
+2018-11-12 00:25:26,404 [thread 124]   INFO -       #com.jetbrains.cidr.lang - Saving Module Maps finished in 0 s. 
+2018-11-12 00:25:26,405 [thread 124]   INFO -       #com.jetbrains.cidr.lang - Saving Module Maps finished in 0 s. 
+2018-11-12 00:25:26,405 [thread 124]   INFO -       #com.jetbrains.cidr.lang - Loaded 0 tables for 0 files (0 project files) 
+2018-11-12 00:25:26,405 [thread 124]   INFO -       #com.jetbrains.cidr.lang - Building symbols for 0 source files 
+2018-11-12 00:25:26,411 [thread 124]   INFO -       #com.jetbrains.cidr.lang - Building symbols for 0 unused headers 
+2018-11-12 00:25:26,416 [thread 124]   INFO -       #com.jetbrains.cidr.lang - Building symbols finished in 0 s. 
+2018-11-12 00:25:26,418 [thread 124]   INFO -       #com.jetbrains.cidr.lang - Saving modified symbols for 0 files (0 tables of total 0) 
+2018-11-12 00:25:26,418 [thread 124]   INFO -       #com.jetbrains.cidr.lang - Saving symbols finished in 0 s. 
+2018-11-12 00:25:28,032 [e-1024-b01]   INFO - idea.project.IndexingSuspender - Consuming IndexingSuspender deactivation event: BUILD_FINISHED 
+2018-11-12 00:25:28,033 [e-1024-b01]   INFO - idea.project.IndexingSuspender - Finishing batch update for project: Project '/Users/mac/Desktop/LEO/AugmentedRealityHydrology-Sensor' AugmentedRealityHydrology-Sensor 
+2018-11-12 00:25:28,035 [e-1024-b01]   INFO - pl.ProjectRootManagerComponent - project roots have changed 
+2018-11-12 00:25:28,080 [e-1024-b01]   INFO - ild.invoker.GradleBuildInvoker - Gradle build finished in 1s 860ms 
+2018-11-12 00:25:28,085 [e-1024-b01]   INFO - pl.ProjectRootManagerComponent - project roots have changed 
+2018-11-12 00:25:28,123 [e-1024-b01]   INFO - pl.ProjectRootManagerComponent - project roots have changed 
+2018-11-12 00:25:28,158 [thread 121]   INFO - .diagnostic.PerformanceWatcher - Pushing properties took 5ms; general responsiveness: ok; EDT responsiveness: ok 
+2018-11-12 00:25:28,177 [thread 121]   INFO - .diagnostic.PerformanceWatcher - Indexable file iteration took 19ms; general responsiveness: ok; EDT responsiveness: ok 
+2018-11-12 00:25:34,316 [e-1024-b01]   INFO -                git4idea.GitVcs - Git version: 2.18.0.0 (UNIX) 
+2018-11-12 00:25:34,326 [e-1024-b01]   INFO - pl.projectlevelman.NewMappings - VCS Root: [Git] - [/Users/mac] 
+2018-11-12 00:26:02,816 [thread 110]   INFO - g.FileBasedIndexProjectHandler - Reindexing refreshed files: 0 to update, calculated in 0ms 
+2018-11-12 00:26:48,206 [e-1024-b01]   INFO -                         github - Empty token 
+org.jetbrains.plugins.github.exceptions.GithubAuthenticationException: Empty token
+	at org.jetbrains.plugins.github.util.GithubUtil.checkAuthData(GithubUtil.java:261)
+	at org.jetbrains.plugins.github.ui.GithubLoginDialog.lambda$doOKAction$0(GithubLoginDialog.java:68)
+	at org.jetbrains.plugins.github.util.GithubUtil$1.compute(GithubUtil.java:277)
+	at com.intellij.openapi.progress.Task$WithResult.run(Task.java:326)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$TaskRunnable.run(CoreProgressManager.java:713)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$5.run(CoreProgressManager.java:397)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$1(CoreProgressManager.java:157)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:543)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:488)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:94)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:144)
+	at com.intellij.openapi.application.impl.ApplicationImpl.lambda$null$10(ApplicationImpl.java:575)
+	at com.intellij.openapi.application.impl.ApplicationImpl$1.run(ApplicationImpl.java:315)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-11-12 00:26:55,246 [e-1024-b01]   INFO -                         github - Request response: 401 Unauthorized - Bad credentials 
+org.jetbrains.plugins.github.exceptions.GithubAuthenticationException: Request response: 401 Unauthorized - Bad credentials
+	at org.jetbrains.plugins.github.api.GithubConnection.checkStatusCode(GithubConnection.java:272)
+	at org.jetbrains.plugins.github.api.GithubConnection.doRequest(GithubConnection.java:149)
+	at org.jetbrains.plugins.github.api.GithubConnection.request(GithubConnection.java:129)
+	at org.jetbrains.plugins.github.api.GithubConnection.getRequest(GithubConnection.java:78)
+	at org.jetbrains.plugins.github.api.GithubApiUtil.load(GithubApiUtil.java:93)
+	at org.jetbrains.plugins.github.api.GithubApiUtil.getCurrentUser(GithubApiUtil.java:237)
+	at org.jetbrains.plugins.github.util.GithubUtil.testConnection(GithubUtil.java:127)
+	at org.jetbrains.plugins.github.util.GithubUtil.checkAuthData(GithubUtil.java:268)
+	at org.jetbrains.plugins.github.ui.GithubLoginDialog.lambda$doOKAction$0(GithubLoginDialog.java:68)
+	at org.jetbrains.plugins.github.util.GithubUtil$1.compute(GithubUtil.java:277)
+	at com.intellij.openapi.progress.Task$WithResult.run(Task.java:326)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$TaskRunnable.run(CoreProgressManager.java:713)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$5.run(CoreProgressManager.java:397)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$1(CoreProgressManager.java:157)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:543)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:488)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:94)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:144)
+	at com.intellij.openapi.application.impl.ApplicationImpl.lambda$null$10(ApplicationImpl.java:575)
+	at com.intellij.openapi.application.impl.ApplicationImpl$1.run(ApplicationImpl.java:315)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-11-12 00:29:39,988 [J pool 0/7]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2018-11-12 00:29:39,989 [J pool 0/7]   INFO -       ScriptTemplatesProviders - [kts] loading script definitions [org.gradle.kotlin.dsl.KotlinInitScript] using cp: /Users/mac/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-kotlin-dsl-tooling-builders-0.13.1.jar:/Users/mac/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-core-4.4.jar:/Users/mac/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-kotlin-dsl-0.13.1.jar:/Users/mac/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-kotlin-dsl-tooling-models-0.13.1.jar:/Users/mac/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-core-api-4.4.jar:/Users/mac/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/kotlin-stdlib-1.1.51.jar 
+2018-11-12 00:29:39,991 [J pool 0/7]   WARN -       ScriptTemplatesProviders - [kts] cannot load script definition class org.gradle.kotlin.dsl.KotlinInitScript 
+java.lang.ClassNotFoundException: org.gradle.kotlin.dsl.KotlinInitScript
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.jetbrains.kotlin.idea.core.script.ScriptDefinitionsManagerKt.loadDefinitionsFromTemplates(ScriptDefinitionsManager.kt:176)
+	at org.jetbrains.kotlin.idea.core.script.GradleScriptDefinitionsContributor.doLoadGradleTemplates(GradleScriptTemplateProvider.kt:204)
+	at org.jetbrains.kotlin.idea.core.script.GradleScriptDefinitionsContributor.loadGradleTemplates(GradleScriptTemplateProvider.kt:148)
+	at org.jetbrains.kotlin.idea.core.script.GradleScriptDefinitionsContributor.loadDefinitions(GradleScriptTemplateProvider.kt:100)
+	at org.jetbrains.kotlin.idea.core.script.GradleScriptDefinitionsContributor.getDefinitions(GradleScriptTemplateProvider.kt:88)
+	at org.jetbrains.kotlin.idea.core.script.ScriptDefinitionsManager.safeGetDefinitions(ScriptDefinitionsManager.kt:138)
+	at org.jetbrains.kotlin.idea.core.script.ScriptDefinitionsManager.reloadScriptDefinitions(ScriptDefinitionsManager.kt:102)
+	at org.jetbrains.kotlin.idea.core.script.ScriptDefinitionsManager.getCurrentDefinitions(ScriptDefinitionsManager.kt:88)
+	at org.jetbrains.kotlin.script.LazyScriptDefinitionProvider.getCachedDefinitions(KotlinScriptDefinitionProvider.kt:63)
+	at org.jetbrains.kotlin.script.LazyScriptDefinitionProvider.findScriptDefinition(KotlinScriptDefinitionProvider.kt:81)
+	at org.jetbrains.kotlin.script.KotlinScriptDefinitionProviderKt.findScriptDefinition(KotlinScriptDefinitionProvider.kt:41)
+	at org.jetbrains.kotlin.script.KotlinScriptDefinitionProviderKt.getScriptDefinition(KotlinScriptDefinitionProvider.kt:46)
+	at org.jetbrains.kotlin.idea.core.script.dependencies.KotlinScriptResolveScopeProvider.getResolveScope(KotlinScriptResolveScopeProvider.kt:35)
+	at com.intellij.psi.impl.file.impl.ResolveScopeManagerImpl.lambda$new$0(ResolveScopeManagerImpl.java:63)
+	at com.intellij.util.containers.ConcurrentFactoryMap$5.create(ConcurrentFactoryMap.java:234)
+	at com.intellij.util.containers.ConcurrentFactoryMap.get(ConcurrentFactoryMap.java:62)
+	at com.intellij.psi.impl.file.impl.ResolveScopeManagerImpl.getResolveScopeFromProviders(ResolveScopeManagerImpl.java:81)
+	at com.intellij.psi.impl.file.impl.ResolveScopeManagerImpl.getResolveScope(ResolveScopeManagerImpl.java:143)
+	at com.intellij.psi.impl.compiled.ClsJavaCodeReferenceElementImpl.resolveElement(ClsJavaCodeReferenceElementImpl.java:256)
+	at com.intellij.psi.impl.compiled.ClsJavaCodeReferenceElementImpl.advancedResolveImpl(ClsJavaCodeReferenceElementImpl.java:128)
+	at com.intellij.psi.impl.compiled.ClsJavaCodeReferenceElementImpl.access$000(ClsJavaCodeReferenceElementImpl.java:43)
+	at com.intellij.psi.impl.compiled.ClsJavaCodeReferenceElementImpl$Resolver.resolve(ClsJavaCodeReferenceElementImpl.java:121)
+	at com.intellij.psi.impl.compiled.ClsJavaCodeReferenceElementImpl$Resolver.resolve(ClsJavaCodeReferenceElementImpl.java:115)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:197)
+	at com.intellij.openapi.util.RecursionManager$2.doPreventingRecursion(RecursionManager.java:112)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:196)
+	at com.intellij.psi.impl.compiled.ClsJavaCodeReferenceElementImpl.multiResolve(ClsJavaCodeReferenceElementImpl.java:223)
+	at com.intellij.psi.impl.compiled.ClsJavaCodeReferenceElementImpl.advancedResolve(ClsJavaCodeReferenceElementImpl.java:213)
+	at com.intellij.psi.impl.source.PsiClassReferenceType.resolveGenerics(PsiClassReferenceType.java:191)
+	at com.intellij.psi.impl.TypeCorrector.correctType(TypeCorrector.java:60)
+	at com.intellij.psi.impl.PsiClassImplUtil.correctType(PsiClassImplUtil.java:735)
+	at com.intellij.psi.impl.ScopedClassHierarchy.calcImmediateSupersWithCapturing(ScopedClassHierarchy.java:165)
+	at com.intellij.psi.impl.ScopedClassHierarchy.lambda$getImmediateSupersWithCapturing$2(ScopedClassHierarchy.java:148)
+	at com.intellij.openapi.util.RecursionManager$2.doPreventingRecursion(RecursionManager.java:112)
+	at com.intellij.psi.impl.ScopedClassHierarchy.getImmediateSupersWithCapturing(ScopedClassHierarchy.java:148)
+	at com.intellij.psi.impl.PsiClassImplUtil.getScopeCorrectedSuperTypes(PsiClassImplUtil.java:740)
+	at com.intellij.psi.impl.PsiClassImplUtil.processSuperTypes(PsiClassImplUtil.java:750)
+	at com.intellij.psi.impl.PsiClassImplUtil.processDeclarationsInClassNotCached(PsiClassImplUtil.java:724)
+	at com.intellij.psi.impl.PsiClassImplUtil.processDeclarationsInClass(PsiClassImplUtil.java:479)
+	at com.intellij.psi.impl.PsiClassImplUtil.lambda$processDeclarationsInClassNotCached$2(PsiClassImplUtil.java:725)
+	at com.intellij.psi.impl.PsiClassImplUtil.processSuperTypes(PsiClassImplUtil.java:755)
+	at com.intellij.psi.impl.PsiClassImplUtil.processDeclarationsInClassNotCached(PsiClassImplUtil.java:724)
+	at com.intellij.psi.impl.PsiClassImplUtil.lambda$createMembersMap$1(PsiClassImplUtil.java:406)
+	at com.intellij.util.containers.ConcurrentFactoryMap$4.create(ConcurrentFactoryMap.java:223)
+	at com.intellij.util.containers.ConcurrentFactoryMap.get(ConcurrentFactoryMap.java:62)
+	at com.intellij.psi.impl.PsiClassImplUtil$MembersMap.get(PsiClassImplUtil.java:359)
+	at com.intellij.psi.impl.PsiClassImplUtil$MembersMap.access$000(PsiClassImplUtil.java:351)
+	at com.intellij.psi.impl.PsiClassImplUtil.processCachedMembersByName(PsiClassImplUtil.java:558)
+	at com.intellij.psi.impl.PsiClassImplUtil.processDeclarationsInClass(PsiClassImplUtil.java:476)
+	at com.intellij.psi.impl.PsiClassImplUtil.processDeclarationsInClass(PsiClassImplUtil.java:453)
+	at com.intellij.psi.impl.source.PsiClassImpl.processDeclarations(PsiClassImpl.java:488)
+	at com.intellij.psi.scope.util.PsiScopesUtil.treeWalkUp(PsiScopesUtil.java:69)
+	at com.intellij.psi.scope.util.PsiScopesUtil.treeWalkUp(PsiScopesUtil.java:51)
+	at com.intellij.psi.scope.util.PsiScopesUtil.resolveAndWalk(PsiScopesUtil.java:218)
+	at com.intellij.psi.scope.util.PsiScopesUtil.resolveAndWalk(PsiScopesUtil.java:149)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.resolve(PsiJavaCodeReferenceElementImpl.java:496)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.access$100(PsiJavaCodeReferenceElementImpl.java:61)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:387)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl$OurGenericsResolver.resolve(PsiJavaCodeReferenceElementImpl.java:379)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.lambda$resolveWithCaching$1(ResolveCache.java:197)
+	at com.intellij.openapi.util.RecursionManager$2.doPreventingRecursion(RecursionManager.java:112)
+	at com.intellij.psi.impl.source.resolve.ResolveCache.resolveWithCaching(ResolveCache.java:196)
+	at com.intellij.psi.impl.PsiImplUtil.multiResolveImpl(PsiImplUtil.java:724)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.getCanonicalText(PsiJavaCodeReferenceElementImpl.java:300)
+	at com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl.getCanonicalText(PsiJavaCodeReferenceElementImpl.java:291)
+	at com.intellij.psi.impl.source.PsiClassReferenceType.getText(PsiClassReferenceType.java:257)
+	at com.intellij.psi.impl.source.PsiClassReferenceType.getCanonicalText(PsiClassReferenceType.java:243)
+	at org.intellij.plugins.intelliLang.util.PsiUtilEx.isString(PsiUtilEx.java:94)
+	at org.intellij.plugins.intelliLang.util.PsiUtilEx.isStringOrStringArray(PsiUtilEx.java:102)
+	at org.intellij.plugins.intelliLang.util.PsiUtilEx.isLanguageAnnotationTarget(PsiUtilEx.java:124)
+	at org.intellij.plugins.intelliLang.util.AnnotationUtilEx.getAnnotationFrom(AnnotationUtilEx.java:204)
+	at org.intellij.plugins.intelliLang.util.AnnotationUtilEx.getAnnotationFrom(AnnotationUtilEx.java:249)
+	at org.intellij.plugins.intelliLang.inject.java.ConcatenationInjector$InjectionProcessor.processAnnotationInjections(ConcatenationInjector.java:309)
+	at org.intellij.plugins.intelliLang.inject.java.ConcatenationInjector$InjectionProcessor.process(ConcatenationInjector.java:288)
+	at org.intellij.plugins.intelliLang.inject.java.ConcatenationInjector$InjectionProcessor.access$200(ConcatenationInjector.java:123)
+	at org.intellij.plugins.intelliLang.inject.java.ConcatenationInjector$InjectionProcessor$1MyAnnoVisitor.visitVariable(ConcatenationInjector.java:222)
+	at org.intellij.plugins.intelliLang.util.AnnotationUtilEx.visitAnnotatedElementInner(AnnotationUtilEx.java:173)
+	at org.intellij.plugins.intelliLang.util.AnnotationUtilEx.visitAnnotatedElements(AnnotationUtilEx.java:132)
+	at org.intellij.plugins.intelliLang.inject.java.ConcatenationInjector$InjectionProcessor.processInjections(ConcatenationInjector.java:278)
+	at org.intellij.plugins.intelliLang.inject.java.ConcatenationInjector.getLanguagesToInject(ConcatenationInjector.java:119)
+	at com.intellij.psi.impl.source.tree.injected.JavaConcatenationInjectorManager.doCompute(JavaConcatenationInjectorManager.java:103)
+	at com.intellij.psi.impl.source.tree.injected.JavaConcatenationInjectorManager.access$300(JavaConcatenationInjectorManager.java:41)
+	at com.intellij.psi.impl.source.tree.injected.JavaConcatenationInjectorManager$BaseConcatenation2InjectorAdapter.getLanguagesToInject(JavaConcatenationInjectorManager.java:145)
+	at com.intellij.psi.impl.source.tree.injected.InjectedPsiCachedValueProvider$MyInjProcessor.process(InjectedPsiCachedValueProvider.java:82)
+	at com.intellij.psi.impl.source.tree.injected.InjectedLanguageManagerImpl.processInPlaceInjectorsFor(InjectedLanguageManagerImpl.java:470)
+	at com.intellij.psi.impl.source.tree.injected.InjectedPsiCachedValueProvider.doCompute(InjectedPsiCachedValueProvider.java:62)
+	at com.intellij.psi.impl.source.tree.injected.InjectedLanguageUtil.probeElementsUp(InjectedLanguageUtil.java:328)
+	at com.intellij.psi.impl.source.tree.injected.InjectedLanguageUtil.enumerate(InjectedLanguageUtil.java:145)
+	at com.intellij.codeInsight.daemon.impl.InjectedGeneralHighlightingPass.lambda$getInjectedPsiFiles$3(InjectedGeneralHighlightingPass.java:184)
+	at com.intellij.concurrency.ApplierCompleter.execAndForkSubTasks(ApplierCompleter.java:133)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1130)
+	at com.intellij.concurrency.ApplierCompleter.lambda$wrapInReadActionAndIndicator$1(ApplierCompleter.java:105)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:543)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:488)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:94)
+	at com.intellij.concurrency.ApplierCompleter.wrapInReadActionAndIndicator(ApplierCompleter.java:116)
+	at com.intellij.concurrency.ApplierCompleter.lambda$compute$0(ApplierCompleter.java:96)
+	at com.intellij.openapi.application.impl.ReadMostlyRWLock.executeByImpatientReader(ReadMostlyRWLock.java:143)
+	at com.intellij.openapi.application.impl.ApplicationImpl.executeByImpatientReader(ApplicationImpl.java:229)
+	at com.intellij.concurrency.ApplierCompleter.compute(ApplierCompleter.java:96)
+	at java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:731)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+2018-11-12 00:29:39,992 [J pool 0/7]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2018-11-12 00:29:39,993 [J pool 0/7]   INFO -       ScriptTemplatesProviders - [kts] loading script definitions [org.gradle.kotlin.dsl.KotlinSettingsScript] using cp: /Users/mac/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-kotlin-dsl-tooling-builders-0.13.1.jar:/Users/mac/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-core-4.4.jar:/Users/mac/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-kotlin-dsl-0.13.1.jar:/Users/mac/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-kotlin-dsl-tooling-models-0.13.1.jar:/Users/mac/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-core-api-4.4.jar:/Users/mac/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/kotlin-stdlib-1.1.51.jar 
+2018-11-12 00:29:40,028 [J pool 0/7]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2018-11-12 00:29:40,029 [J pool 0/7]   INFO -       ScriptTemplatesProviders - [kts] loading script definitions [org.gradle.kotlin.dsl.KotlinBuildScript] using cp: /Users/mac/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-kotlin-dsl-tooling-builders-0.13.1.jar:/Users/mac/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-core-4.4.jar:/Users/mac/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-kotlin-dsl-0.13.1.jar:/Users/mac/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-kotlin-dsl-tooling-models-0.13.1.jar:/Users/mac/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-core-api-4.4.jar:/Users/mac/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/kotlin-stdlib-1.1.51.jar 
+2018-11-12 00:29:40,046 [J pool 0/7]   INFO -       ScriptTemplatesProviders - [kts] loading script definitions [] using cp:  
+2018-11-12 00:29:40,728 [thread 116]   INFO - attrs.AttributeDefinitionsImpl - Found tag with unknown parent: AndroidManifest.AndroidManifestSupportsInput 
+2018-11-12 00:29:40,728 [thread 116]   INFO - attrs.AttributeDefinitionsImpl - Found tag with unknown parent: AndroidManifest.AndroidManifestCompatibleScreens 
+2018-11-12 00:29:43,844 [thread 127]   INFO -  #git4idea.commands.GitHandler - [../../../../mac] git -c core.quotepath=false -c log.showSignature=false commit --only -F /private/var/folders/4g/g_wwmlvd4llgsnn09vqkp0br0000gn/T/git-commit-msg-.txt -- Library/Logs/AndroidStudio3.1/idea.log Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/activities/MainActivity.java Library/LanguageModeling/nl-dynamic.lm/meta.dat Library/Preferences/com.apple.finder.plist Library/Preferences/.GlobalPreferences.plist Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/keychain-2.db-shm Library/LanguageModeling/nl-dynamic.lm/dynamic.dat Library/Preferences/AndroidStudio3.1/tasks/AugmentedRealityHydrology_Sensor.tasks.zip 
