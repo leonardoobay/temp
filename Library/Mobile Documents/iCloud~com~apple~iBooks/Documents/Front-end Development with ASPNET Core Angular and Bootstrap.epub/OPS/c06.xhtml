@@ -1,0 +1,1558 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+   
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      
+      <title>Building Your Application with Gulp and webpack</title>
+      
+      <link href="WileyTemplate_v5.3.css" rel="stylesheet" type="text/css" />
+      
+      <meta content="urn:uuid:68078093-7b10-42b9-8f32-0db0ecece3d2" name="Adept.expected.resource" />
+      
+   </head>
+   
+   <body epub:type="bodymatter">
+      
+      <section epub:type="chapter">
+         
+         <header>
+            
+            <h1><span epub:type="pagebreak" id="Page_145" title="145"></span><a id="c6"></a><span class="chapterNumber">6</span><br /><span class="chapterTitle">Building Your Application with Gulp and webpack</span></h1>
+         </header>
+         
+         <section>
+            <span id="c6-sec-0001"></span>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3">
+                  
+                  <h3>WHAT’S IN THIS CHAPTER?</h3>
+                  
+                  <ul class="check1" id="c6-list-0001">
+                     
+                     <li id="c6-li-0001">The role of build automation systems</li>
+                     
+                     <li id="c6-li-0002">Introduction to webpack</li>
+                     
+                     <li id="c6-li-0003">A more in depth overview of Gulp</li>
+                     
+                     <li id="c6-li-0004">How Visual Studio 2017 integrates with Gulp and build systems</li>
+                     
+                  </ul>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p>Build systems have been around in the world of server‐side software development for
+               many years, starting from <code>make</code> files used for compiling C/C++ code or simple batch files used in the '80s and '90s
+               and evolving into task‐based systems with the arrival of Java’s Ant in early 2000.
+               And from Ant, NAnt and later MSBuild came to life and brought task‐based build automation
+               systems to .NET.
+            </p>
+            
+            <p>Until recently, front‐end development did not require as many build steps as server‐side
+               developments, but with the increasing complexity of JavaScript‐based applications,
+               front‐end‐specific build systems started to appear.
+            </p>
+            
+            <p>This chapter covers Gulp and webpack, two of many build automation systems for front‐end
+               development. It also covers the features of Visual Studio 2017 that make working with
+               them easier and more integrated into the IDE.
+            </p>
+            
+            <p>Before seeing these tools in practice, you will have a look at the typical operations
+               that are performed in the context of front‐end builds.
+            </p>
+            
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3">
+                  
+                  <h3><span epub:type="pagebreak" id="Page_146" title="146"></span>WROX.COM CODE DOWNLOADS FOR THIS CHAPTER
+                  </h3>
+                  
+                  <p>The <a href="http://wrox.com">wrox.com</a> code downloads for this chapter are found at <a href="http://www.wrox.com"><code>www.wrox.com</code></a> Search for the book’s ISBN (978‐1‐119‐18131‐6), and you will find the code in the
+                     <a href="c06.xhtml">chapter 6</a> download and individually named according to the names throughout the chapter.
+                  </p>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+         </section>
+         
+         <section>
+            <span id="c6-sec-0002"></span>
+            
+            <h2 id="head-2-118">WHAT FRONT‐END BUILD SYSTEMS ARE FOR</h2>
+            
+            <p>In the context of server‐side compiled languages, build systems are used to compile
+               code into binaries, to run tests, to compute metrics, and to perform transformations
+               of configuration files from development to a production setup. Other typical operations
+               include moving files around and creating release files.
+            </p>
+            
+            <p>Front‐end build systems are also used for more or less the same reasons as server‐side
+               build systems because even front‐end development requires “compiling” code files into
+               “binaries” (for example Less or Sass to CSS or TypeScript to JavaScript) or running
+               JavaScript test suites or metrics (JSLint for example). However, front‐end development
+               also requires some tasks that are specific to JavaScript and CSS development and that
+               are used during the development phase and not just during the final release. One such
+               task is automatically including references to Bower files. Another example is minification
+               and concatenation of JavaScript and CSS files to reduce the size and number of files
+               downloaded by the client.
+            </p>
+            
+            <p>The rest of the chapter explains how to perform some of the most common tasks. It
+               will show how to:
+            </p>
+            
+            <ul class="check" id="c6-list-0002">
+               
+               <li id="c6-li-0005">Automatically include references to Bower packages</li>
+               
+               <li id="c6-li-0006">Compile Sass files to CSS</li>
+               
+               <li id="c6-li-0007">Compile TypeScript to JavaScript</li>
+               
+               <li id="c6-li-0008">Combine and minify JavaScript and CSS files</li>
+               
+               <li id="c6-li-0009">Run JSLint to detect JavaScript problems</li>
+               
+               <li id="c6-li-0010">Perform tasks and automatically reload the browser when changes are detected in a
+                  file
+               </li>
+               
+            </ul>
+            
+            <p>The tool used to show how to perform these tasks is Gulp, since it is the tool the
+               .NET community is mostly leaning toward. Later in the chapter there is also a quick
+               introduction to webpack, which was already briefly mentioned in <a href="c03.xhtml">Chapter 3</a> since it is used by the Angular Command Line tool and is gaining a lot of traction
+               in the front‐end development community.
+            </p>
+            
+         </section>
+         
+         <section>
+            <span id="c6-sec-0003"></span>
+            
+            <h2 id="head-2-119">A DEEPER LOOK AT GULP</h2>
+            
+            <p>The first JavaScript task runner was Grunt, but despite its relatively large user
+               base, its adoption is constantly dropping in favor of Gulp, which has been developed
+               to overcome the problems of Grunt. The approach is very different. It is code‐based
+               instead of being configuration‐based. Steps of the build process are connected together
+               using Node.js streams, where the output of one step streams into the input of the
+               following. That is why it is called “the streaming build system.”
+            </p>
+            
+            <section>
+               <span id="c6-sec-0004"></span>
+               
+               <h3 id="head-3-91"><span epub:type="pagebreak" id="Page_147" title="147"></span>Getting Started with Gulp
+               </h3>
+               
+               <p>Gulp must be installed via NPM. First install the command‐line tool:</p>
+               
+               <blockquote>
+                  <pre id="c6-code-0001"><code>npm install --global gulp-cli</code> </pre>
+                  </blockquote>
+               
+               <p>Then, within the project’s folder, also install the <code>gulp</code> package itself, again from NPM:
+               </p>
+               
+               <blockquote>
+                  <pre id="c6-code-0002"><code>npm install gulp --save-dev</code> </pre>
+                  </blockquote>
+               
+            </section>
+            
+            <section>
+               <span id="c6-sec-0005"></span>
+               
+               <h3 id="head-3-92">The Gulpfile.js File</h3>
+               
+               <p>As already mentioned, build automation with Gulp is done with code instead of by configuring
+                  a series of tasks. For this reason <code>gulpfile.js</code> looks like a standard Node.js code file.
+               </p>
+               
+               <p>A <code>gulpfile.js</code> file starts with the initialization of the <code>gulp</code> library itself and of all the plugins and modules that will be used in the build
+                  script. This is done by using the Node.js <code>require()</code> function.
+               </p>
+               
+               <blockquote>
+                  <pre id="c6-code-0003"><code>var gulp = require("gulp"),</code>
+<code>    del = require("del"),</code>
+<code>    concat = require("gulp-concat"),</code>
+<code>    cssmin = require("gulp-cssmin"),</code>
+<code>    uglify = require("gulp-uglify");</code> </pre>
+                  </blockquote>
+               
+               <p>Once all the external libraries are loaded, the build process can be developed using
+                  Gulp’s APIs. There are just four top‐level methods in the Gulp APIs. Two are used
+                  to define entry points for tasks, and two are for representing input files and the
+                  output folder.
+               </p>
+               
+               <section>
+                  <span id="c6-sec-0006"></span>
+                  
+                  <h4 id="head-4-42">gulp.task()</h4>
+                  
+                  <p>The <code>task</code> method defines a gulp task. Its parameters are:
+                  </p>
+                  
+                  <ul class="check" id="c6-list-0003">
+                     
+                     <li id="c6-li-0011"><code>name</code>, which is the name of the task
+                     </li>
+                     
+                     <li id="c6-li-0012"><code>deps</code>, an optional array of the other tasks on which the task being defined depends on
+                        (and that have to be completed before the task can run)
+                     </li>
+                     
+                     <li id="c6-li-0013"><code>fn</code>, the function to be executed
+                     </li>
+                     
+                  </ul>
+                  
+                  <p>An example of a call to this method is:</p>
+                  
+                  <blockquote>
+                     <pre id="c6-code-0004"><code>gulp.task("dist", ["build"], function(){</code>
+<code>  //do something after the build task has run</code>
+<code>});</code> </pre>
+                     </blockquote>
+                  
+                  <p>The task named <code>default</code> will be executed if you launch the gulp process without specifying any task.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c6-code-0005"><code>gulp.task("default",["dist","build"])</code> </pre>
+                     </blockquote>
+                  
+                  <p>An important point to mention is that all tasks are executed for maximum concurrency,
+                     which means that all tasks are launched at the same time in parallel. If you want
+                     tasks to be executed in a specific order, in addition to specifying the dependencies
+                     with the parameter <code>deps</code>, the task’s function must have a “hint” that tells the system when it is done with
+                     its job. This can be achieved by accepting a callback function, by returning a stream
+                     object, or by returning a promise.
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c6-sec-0007"></span>
+                  
+                  <h4 id="head-4-43"><span epub:type="pagebreak" id="Page_148" title="148"></span>gulp.watch()
+                  </h4>
+                  
+                  <p>The <code>watch</code> method is used to run a task or a function when the specified files change. Its parameters
+                     are:
+                  </p>
+                  
+                  <ul class="check" id="c6-list-0004">
+                     
+                     <li id="c6-li-0014"><code>glob</code>: Either a string or an array of strings representing the files to watch, using the
+                        typical wildcards normally used in command‐line tools (such as <code>scripts/*.js</code>)
+                     </li>
+                     
+                     <li id="c6-li-0015"><code>opts</code>: Options used to configure the watch process, for example <code>interval</code> to specify how frequently to check for changes or <code>debounceDelay</code> to delay the execution if there are many changes in rapid succession
+                     </li>
+                     
+                     <li id="c6-li-0016"><code>tasks</code>: The array of tasks to be executed
+                     </li>
+                     
+                     <li id="c6-li-0017"><code>cb</code>: The callback function to be executed
+                     </li>
+                     
+                  </ul>
+                  
+                  <p>The two parameters <code>tasks</code> and <code>cb</code> cannot be specified together. Hence, there are two variation of the <code>watch</code> method. There is one that specifies tasks to run:
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c6-code-0006"><code>gulp.watch("js/*.js",["jshint"])</code> </pre>
+                     </blockquote>
+                  
+                  <p>And there is a version that executes a function:</p>
+                  
+                  <blockquote>
+                     <pre id="c6-code-0007"><code>gulp.watch('js/*.js', function(event) {</code>
+<code>  console.log('File ' + event.path + ' was ' + event.type);</code>
+<code>});</code> </pre>
+                     </blockquote>
+                  
+               </section>
+               
+               <section>
+                  <span id="c6-sec-0008"></span>
+                  
+                  <h4 id="head-4-44">gulp.src()</h4>
+                  
+                  <p>This method usually is the starting point of each task. It returns a stream of files
+                     (hence the name of “streaming build system”) that can be piped into the various plugins
+                     that make up the task. If you want the task to be a dependency for another task, this
+                     is the stream that has to be returned by the task’s function.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c6-code-0008"><code>return gulp.src("js/*.js")</code>
+<code>  .concat(...)</code>
+<code>  .pipe(uglify())</code>
+<code>  .pipe(gulp.dest("lib"));</code> </pre>
+                     </blockquote>
+                  
+               </section>
+               
+               <section>
+                  <span id="c6-sec-0009"></span>
+                  
+                  <h4 id="head-4-45">gulp.dest()</h4>
+                  
+                  <p>This method is used as a function inside a <code>pipe</code> method. It takes the stream and will write the files to the specified folder.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c6-code-0009"><code>.pipe(gulp.dest("lib"));</code> </pre>
+                     </blockquote>
+                  
+               </section>
+               
+            </section>
+            
+            <section>
+               <span id="c6-sec-0010"></span>
+               
+               <h3 id="head-3-93">A Typical Gulp Build File</h3>
+               
+               <p>Now you will see how to put all this information into practice by implementing a typical
+                  build file. There are several steps in doing this, but the core aspects include the
+                  following:
+               </p>
+               
+               <ol class="decimal" id="c6-list-0005">
+                  
+                  <li id="c6-li-0018">JavaScript files are checked for possible errors.</li>
+                  
+                  <li id="c6-li-0019">JavaScript and CSS files are concatenated into a single file.</li>
+                  
+                  <li id="c6-li-0020">The concatenated JavaScript file is then minified.</li>
+                  
+               </ol>
+               
+               <p><span epub:type="pagebreak" id="Page_149" title="149"></span>As an example take the file structure shown in <a href="#c6-fig-0001" id="R_c6-fig-0001">Figure 6‐1</a>.
+               </p>
+               
+               <figure> <img alt="Illustration of Project’s file structure." src="images/c06f001.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c6-fig-0001" id="c6-fig-0001"><b>FIGURE 6-1</b></a><b>:</b></span> Project’s file structure
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>First, the plugins need to be installed, as always with <code>npm install … ‐‐save‐dev</code>:
+               </p>
+               
+               <ul class="check" id="c6-list-0006">
+                  
+                  <li id="c6-li-0021"><code>gulp‐concat</code> is used to concatenate multiple files into one.
+                  </li>
+                  
+                  <li id="c6-li-0022"><code>gulp‐uglify</code> is used to minify the JavaScript files.
+                  </li>
+                  
+                  <li id="c6-li-0023"><code>gulp‐cssmin</code> is used to minify the CSS files.
+                  </li>
+                  
+                  <li id="c6-li-0024"><code>del</code> is a standard deep deletion npm package.
+                  </li>
+                  
+               </ul>
+               
+               <p>In the build process, first you are going to delete the old artifacts and then do
+                  all the rest.
+               </p>
+               
+               <blockquote>
+                  <pre id="c6-code-0010"><code>gulp.task("clean", function() {</code>
+<code>  return del("lib/*");</code>
+<code>});</code> </pre>
+                  </blockquote>
+               
+               <p>The next step is the concatenation and minification of scripts and CSS files.</p>
+               
+               <p>Scripts are treated using the following task:</p>
+               
+               <blockquote>
+                  <pre id="c6-code-0011"><code>gulp.task("minjs", ["clean"], function(){</code>
+<code>  return gulp.src("src/scripts/*.js")</code>
+<code>    .pipe(concat("all.min.js"))</code>
+<code>    .pipe(uglify())</code>
+<code>    .pipe(gulp.dest("lib"));</code>
+<code>});</code> </pre>
+                  </blockquote>
+               
+               <p>The JavaScript files are read in memory and concatenated into an <code>all.min.js</code> file (still in memory). This file is what was minified and finally saved to the <code>lib</code> folder.
+               </p>
+               
+               <p>You do the same for the minification of the CSS files by just replacing <code>uglify</code> with <code>cssmin</code> (gulp has a separate plugin for this).
+               </p>
+               
+               <blockquote>
+                  <pre id="c6-code-0012"><code>gulp.task("mincss", ["clean"], function(){</code>
+<code>  return gulp.src("src/css/*.css")</code>
+<code>    .pipe(concat("styles.css"))</code>
+<code>    .pipe(cssmin())</code>
+<code>    .pipe(gulp.dest("lib"));</code>
+<code>});</code> </pre>
+                  </blockquote>
+               
+               <p><span epub:type="pagebreak" id="Page_150" title="150"></span>The <code>gulpfile.js</code> file, complete with all the <code>require</code> statements and the definition of the default task, is shown in <a href="#c6-fea-0001">Listing 6‐1</a>.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c6-fea-0001"></span> 
+                     
+                     <h2 id="head-2-120">LISTING 6-1: Gulpfile.js</h2>
+                     
+                     <section>
+                        <span id="c6-sec-0011"></span>
+                        
+                        <blockquote>
+                           <pre id="c6-code-0013"><code>var gulp  = require('gulp'),</code>
+<code>    del = require('del'),</code>
+<code>    concat = require('gulp-concat'),</code>
+<code>    cssmin = require('gulp-cssmin'),</code>
+<code>    uglify = require('gulp-uglify');</code>
+<code></code>
+<code>gulp.task("clean", function() {</code>
+<code>  return del("lib/*");</code>
+<code>});</code>
+<code></code>
+<code>gulp.task("minjs", ["clean"], function(){</code>
+<code>  return gulp.src("src/scripts/*.js")</code>
+<code>    .pipe(concat("all.min.js"))</code>
+<code>    .pipe(uglify())</code>
+<code>    .pipe(gulp.dest("lib"));</code>
+<code>});</code>
+<code></code>
+<code>gulp.task("mincss", ["clean"], function(){</code>
+<code>  return gulp.src("src/css/*.css")</code>
+<code>    .pipe(concat("styles.css"))</code>
+<code>    .pipe(cssmin())</code>
+<code>    .pipe(gulp.dest("lib"));</code>
+<code>});</code>
+<code></code>
+<code>gulp.task("default", ["mincss","minjs"]);</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+            <section>
+               <span id="c6-sec-0012"></span>
+               
+               <h3 id="head-3-94">More Gulp Recipes</h3>
+               
+               <p>There is much more that can be done with Gulp than just minifying and combining files.
+                  Gulp plugins’ repository counts more than 2800 plugins. On top of that, Gulp is just
+                  a standard Node.js file, so any npm package can be used.
+               </p>
+               
+               <p>The following sections discuss some recipes for other common tasks.</p>
+               
+               <section>
+                  <span id="c6-sec-0013"></span>
+                  
+                  <h4 id="head-4-46">Naming Output Files from a Package Name</h4>
+                  
+                  <p>The content of the <code>package.json</code> file can be read and its values reused with Gulp. Because it is a JSON object, it
+                     can be read and loaded in memory with the <code>require</code> method:
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c6-code-0014"><code>var pkg = require('./package.json')</code> </pre>
+                     </blockquote>
+                  
+                  <p>Then the concatenated script file can be named after it:</p>
+                  
+                  <blockquote>
+                     <pre id="c6-code-0015"><code>pkg.name+"-"+pkg.version+".min.js"</code> </pre>
+                     </blockquote>
+                  
+                  <p><span epub:type="pagebreak" id="Page_151" title="151"></span>The JavaScript minification task now looks like this:
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c6-code-0016"><code><b>var pkg = require('./package.json');</b></code>
+<code></code>
+<code>gulp.task("minjs", ["clean","lint"], function(){</code>
+<code>  return gulp.src("src/scripts/*.js")</code>
+<code>    <b>.pipe(concat(pkg.name + "‐" + pkg.version + ".min.js"))</b></code>
+<code>    .pipe(uglify())</code>
+<code>    .pipe(gulp.dest("lib"));</code>
+<code>});</code> </pre>
+                     </blockquote>
+                  
+               </section>
+               
+               <section>
+                  <span id="c6-sec-0014"></span>
+                  
+                  <h4 id="head-4-47">Generating Source maps</h4>
+                  
+                  <p>Minification reduces the size of scripts, but it makes it impossible to debug code.
+                     One solution to this is to create source maps that can be used by JavaScript debugging
+                     tools to map the minified source to the original code.
+                  </p>
+                  
+                  <p>In order to generate source maps with Gulp, you need to install the <code>gulp‐sourcemaps</code> plugin. The simplest way of using the plugin is to call the <code>init()</code> method before any processing starts, read the original files, and finally call the
+                     <code>write()</code> method to write the maps on disk.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c6-code-0017"><code>return gulp.src("src/scripts/*.js")</code>
+<code>  <b>.pipe(sourcemaps.init())</b></code>
+<code>    .pipe(concat(pkg.name+"-"+pkg.version+".min.js"))</code>
+<code>    .pipe(uglify())</code>
+<code>  <b>.pipe(sourcemaps.write())</b></code>
+<code>  .pipe(gulp.dest("lib"));</code> </pre>
+                     </blockquote>
+                  
+                  <p>By calling the <code>write()</code> method without parameters, the source map is saved embedded into the destination
+                     file, but by passing a path relative to the destination, like <code>sourcemaps.write('.')</code>, a separate file will be saved with the same filename as the destination, plus the
+                     <code>.map</code> extension.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature1">
+                        
+                        <h3>NOTE</h3>
+                        
+                        <p><i>The plugins used between</i> <code>init</code> <i>and</i> <code>write</code> <i>must support</i> <code>gulp‐sourcemaps</code>, <i>like the ones used in the samples in this book:</i> <code>uglify</code>, <code>concat</code>, <i>and</i> <code>cssmin</code>.
+                        </p>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+               </section>
+               
+               <section>
+                  <span id="c6-sec-0015"></span>
+                  
+                  <h4 id="head-4-48">Checking JavaScript Using JSHint</h4>
+                  
+                  <p>Running JSHint can also be done with Gulp by using the <code>gulp‐jshint</code> plugin. It is easy to use. First you execute the <code>jshint()</code> method, and then pipe the result into the <code>jshint.reporter('REPORTER‐NAME')</code> method to print the result of the analysis on the console.
+                  </p>
+                  
+                  <p>There are many reporters in the wild and all the JSHint reporters should also work
+                     within this plugin. The most popular, used in the context of <code>gulp‐jshint</code>, is the default that comes with the plugin, <code>default</code>, and optional <code>jshint‐stylish</code>. <a href="#c6-fig-0002" id="R_c6-fig-0002">Figure 6‐2</a> shows how the output of the two reporters compare. Default is on top and the stylish
+                     on the bottom.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Default and stylish reporters compared." src="images/c06f002.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c6-fig-0002" id="c6-fig-0002"><b>FIGURE 6-2</b></a><b>:</b></span> Default and stylish reporters compared
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <p><span epub:type="pagebreak" id="Page_152" title="152"></span>In addition, if you do not want the task to go on even if there are warnings or errors,
+                     the <code>fail</code> reporter can be used to stop the execution of the build process. The following snippet
+                     shows a task that runs JSHint, prints the report, and fails if some errors happen.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c6-code-0018"><code>gulp.task("lint", function() {</code>
+<code>  return gulp.src("src/scripts/*.js")</code>
+<code>    .pipe(jshint())</code>
+<code>    .pipe(jshint.reporter('jshint-stylish'))</code>
+<code>    <b>.pipe(jshint.reporter('fail'));</b></code>
+<code>});</code> </pre>
+                     </blockquote>
+                  
+                  <p>This stops the execution of all the tasks that depend on the <code>lint</code> task, as shown in <a href="#c6-fig-0003" id="R_c6-fig-0003">Figure 6‐3</a>.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Execution stopped after JSHint failed." src="images/c06f003.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c6-fig-0003" id="c6-fig-0003"><b>FIGURE 6-3</b></a><b>:</b></span> Execution stopped after JSHint failed
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+               </section>
+               
+               <section>
+                  <span id="c6-sec-0016"></span>
+                  
+                  <h4 id="head-4-49"><span epub:type="pagebreak" id="Page_153" title="153"></span>Executing Tasks When Files Change
+                  </h4>
+                  
+                  <p>Gulp has a <code>watch</code> method that triggers the execution of tasks when files change. For example, if you
+                     want to run JSHint every time a JavaScript file changes, you can create a new task
+                     and within that task call the <code>watch</code> method.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c6-code-0019"><code>gulp.task('watch', function() {</code>
+<code>  gulp.watch('src/scripts/*.js', ['lint']);</code>
+<code>});</code> </pre>
+                     </blockquote>
+                  
+                  <p>Then launch Gulp specifying the <code>watch</code> task: <code>gulp watch</code>. As soon as a JavaScript file is saved in the <code>scripts</code> folder, the JSHint check will start.
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c6-sec-0017"></span>
+                  
+                  <h4 id="head-4-50">Managing Bower Dependencies</h4>
+                  
+                  <p>Bower installs all the dependencies in a subfolder of the project, named <code>bower_components</code>. As seen in <a href="c05.xhtml">Chapter 5</a>, the easy way to include these dependencies in an HTML file is to directly reference
+                     the components inside the Bower’s folder. This might be okay in development, but it
+                     is not a good approach for deploying the application because a Bower package is basically
+                     its git repository, so it includes a lot of files you do not want in the production
+                     environment.
+                  </p>
+                  
+                  <p>A better approach is to copy to a different folder only the files needed to run the
+                     application. This can be done manually, or it can be automated with Gulp.
+                  </p>
+                  
+                  <p>To make this easier, there is a Gulp plugin called <code>main‐bower‐files</code> that goes through all the dependencies defined in <code>bower.json</code> and for each of them takes the main files defined by the developer of the package.
+                     These files are the ones needed to use the library. Its usage is straightforward:
+                     Just call the plugin to define the source files for the task and then pipe them to
+                     the destination folder. <a href="#c6-fea-0002">Listing 6‐2</a> copies the components to the folder <code>dist/libs</code>.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c6-fea-0002"></span> 
+                        
+                        <h2 id="head-2-121"><span epub:type="pagebreak" id="Page_154" title="154"></span>LISTING 6-2: Managing Bower components with Gulp
+                        </h2>
+                        
+                        <section>
+                           <span id="c6-sec-0018"></span>
+                           
+                           <blockquote>
+                              <pre id="c6-code-0020"><code>var gulp = require('gulp');</code>
+<code>var mainBowerFiles = require('main-bower-files');</code>
+<code></code>
+<code>gulp.task("default", function(){</code>
+<code>  return gulp.src(mainBowerFiles())</code>
+<code>    .pipe(gulp.dest("dist/lib"));</code>
+<code>  });</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature1">
+                        
+                        <h3>WARNING</h3>
+                        
+                        <p><i>Not all Bower packages define the main files correctly. Bootstrap, for example, includes
+                              a .less file as main but not the CSS file or the fonts. In such cases you can override
+                              the file returned by</i> <code>mainBowerFiles</code><i>, either in your bower.json file or directly in the</i> <code>gulp</code> <i>task.</i></p>
+                        
+                        <blockquote>
+                           <pre id="c6-code-0021"><code>gulp.task("default", function(){</code>
+<code>  return gulp.src(mainBowerFiles({</code>
+<code>            overrides: {</code>
+<code>                bootstrap: {</code>
+<code>                    main: [</code>
+<code>                        './dist/js/bootstrap.js',</code>
+<code>                        './dist/css/*.min.css',</code>
+<code>                        './dist/fonts/*.*'</code>
+<code>                    ]</code>
+<code>                }</code>
+<code>            }</code>
+<code>  }))</code>
+<code>    .pipe(gulp.dest("dist/lib"));</code>
+<code>});</code> </pre>
+                           </blockquote>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  
+               </section>
+               
+               <section>
+                  <span id="c6-sec-0019"></span>
+                  
+                  <h4 id="head-4-51">Replacing References Directly in the HTML Files</h4>
+                  
+                  <p>Earlier in the chapter you saw how to concatenate and minify JavaScript and CSS files.
+                     Wouldn’t it be nice if you could also update the reference inside the HTML files?
+                     This is possible thanks to a very powerful plugin called <code>gulp‐inject</code>.
+                  </p>
+                  
+                  <p>It takes a list of references and inserts them into HTML files in an area delimited
+                     by special comments. While adding the new references, it deletes whatever was between
+                     these comments. This way, the development version of the HTML file references the
+                     individual JavaScript and CSS files, while the production version generated with the
+                     Gulp task references the combined and minified version.
+                  </p>
+                  
+                  <p>Now you will take a look at how this is done. First, the HTML file must contain the
+                     scripts surrounded by the comments.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c6-code-0022"><code>&lt;!-- inject:js --&gt;</code>
+<code>  &lt;script src="/scripts/athletesFactory.js"&gt;&lt;/script&gt;</code>
+<code>  &lt;script src="/scripts/averageFactory.js"&gt;&lt;/script&gt;</code>
+<code>  &lt;script src="/scripts/raceController.js"&gt;&lt;/script&gt;</code>
+<code>&lt;!-- endinject --&gt;</code> </pre>
+                     </blockquote>
+                  
+                  <p><span epub:type="pagebreak" id="Page_155" title="155"></span>Then the minification happens inside the <code>gulp</code> task as shown in <a href="#c6-fea-0003">Listing 6‐3</a>.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c6-fea-0003"></span> 
+                        
+                        <h2 id="head-2-122">LISTING 6-3: Replacing script references via Gulp</h2>
+                        
+                        <section>
+                           <span id="c6-sec-0020"></span>
+                           
+                           <blockquote>
+                              <pre id="c6-code-0023"><code>var gulp  = require('gulp'),</code>
+<code>    concat = require('gulp-concat'),</code>
+<code>    inject = require('gulp-inject'),</code>
+<code>    cssmin = require('gulp-cssmin'),</code>
+<code>    uglify = require('gulp-uglify');</code>
+<code></code>
+<code>var pkg = require('./package.json');</code>
+<code>var fileName = pkg.name+"-"+pkg.version+".min.js";</code>
+<code></code>
+<code>gulp.task("minjs", function(){</code>
+<code>  return gulp.src("./src/scripts/*.js")</code>
+<code>    .pipe(concat(fileName))</code>
+<code>    .pipe(uglify())</code>
+<code>    .pipe(gulp.dest("./dist/lib"));</code>
+<code>});</code>
+<code></code>
+<code>gulp.task("mincss", function(){</code>
+<code>  return gulp.src("./src/css/*.css")</code>
+<code>    .pipe(concat("styles.css"))</code>
+<code>    .pipe(cssmin())</code>
+<code>    .pipe(gulp.dest("./dist/lib"));</code>
+<code>});</code>
+<code></code>
+<code>gulp.task("inject",["minjs","mincss"], function(){</code>
+<code>  return gulp.src("./src/index.html")</code>
+<code>    <b>.pipe(inject(gulp.src(["./dist/lib/*.js","./dist/lib/*.css"]),</b></code>
+<code>        <b>{ignorePath: 'dist'}))</b></code>
+<code>    .pipe(gulp.dest("./dist"));</code>
+<code>});</code>
+<code></code>
+<code>gulp.task("default", ["inject"]);</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p>In <a href="#c6-fea-0003">Listing 6‐3</a> you can see how the <code>gulp‐inject</code> plugin works. It receives the HTML file stream as input via piping, and it outputs
+                     the version modified with the references to the files specified as parameters.
+                  </p>
+                  
+                  <p>After the task has run, the references in the HTML file will change to the minified
+                     script and styles that were copied to the <code>dist</code> folder.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c6-code-0024"><code>&lt;!-- inject:css --&gt;</code>
+<code>&lt;link rel="stylesheet" href="/lib/styles.css"&gt;</code>
+<code>&lt;!-- endinject --&gt;</code>
+<code></code>
+<code>&lt;!-- inject:js --&gt;</code>
+<code>&lt;script src="/lib/gulp-inject-sample-0.0.1.min.js"&gt;&lt;/script&gt;</code>
+<code>&lt;!-- endinject --&gt;</code> </pre>
+                     </blockquote>
+                  
+               </section>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c6-sec-0021"></span>
+            
+            <h2 id="head-2-123"><span epub:type="pagebreak" id="Page_156" title="156"></span>INTRODUCTION TO WEBPACK
+            </h2>
+            
+            <p>Webpack is <i>module bundler</i> that loads all the dependencies of a JavaScript application and bundles them to optimize
+               the loading time in the browser. Although it is not strictly speaking a task runner,
+               webpack can be used to accomplish most of the tasks performed by Gulp, like minification,
+               bundling, and linting. Let’s see how this works.
+            </p>
+            
+            <section>
+               <span id="c6-sec-0022"></span>
+               
+               <h3 id="head-3-95">webpack’s Main Concepts</h3>
+               
+               <p>Webpack has a bit steeper learning curve compared to Gulp, so before seeing some examples,
+                  let’s have a look at the main concepts: <i>entry</i>, <i>output</i>, <i>loaders</i>, and <i>plugins</i>. It all starts with the entry point of the application, which is where webpack starts
+                  to follow the dependencies tree from. The end of the process is the output, which
+                  is where webpack will save the bundle once it has completed its job. Between the entry
+                  and the output, all the processing happens, which is done by loaders and plugins.
+               </p>
+               
+               <p>Webpack is a JavaScript module bundler, which means that it discovers JavaScript modules
+                  and their dependencies and bundles them. However, webpack can also treat .css files,
+                  sass files, TypeScript files, and even images and .html files. Loaders are used to
+                  “convert” any kind of file in a module treatable by webpack. Plugins do not work on
+                  the individual source files but are used to perform general operations on the final
+                  output of the bundling.
+               </p>
+               
+               <p>The configuration of webpack is stored in a <code>webpack.config.js</code> file.
+               </p>
+               
+               <p>Let’s now see how to use webpack to perform the same operations done with Gulp in
+                  <a href="#c6-fea-0001">Listing 6‐1</a>.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c6-sec-0023"></span>
+               
+               <h3 id="head-3-96">Using webpack</h3>
+               
+               <p>The first step is obviously installing webpack. This is done with NPM. It could be
+                  installed globally like the other tools, but it is a better practice to install it
+                  on a per‐project basis to avoid version conflicts between different projects on the
+                  same machine.
+               </p>
+               
+               <p>Once you have a new folder and have an empty <code>package.json</code> file in the folder, you can run <code>npm install webpack ‐‐save‐dev</code> to install webpack and add it as a development reference for the project.
+               </p>
+               
+               <section>
+                  <span id="c6-sec-0024"></span>
+                  
+                  <h4 id="head-4-52">Bundling JavaScript</h4>
+                  
+                  <p>Next is creating the <code>webpack.config.js</code> file with the minimum configuration, which specifies the entry file and the output
+                     file for the bundle. The configuration file in <a href="#c6-fea-0004">Listing 6‐4</a> instructs webpack to start discovering dependencies from the file <code>./src/index.js</code> and store the bundled version in a file <code>bundle.js</code>. For the automatic discovery to work, it is not enough to have just a bunch of files
+                     in the same folder. They have to reference each other using the ECMAScript 5 export/import
+                     of modules. <a href="#c6-fea-0005">Listing 6‐5</a> shows how the two files used in this example are linked together.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c6-fea-0004"></span> 
+                        
+                        <h2 id="head-2-124"><span epub:type="pagebreak" id="Page_157" title="157"></span>LISTING 6-4: Simple webpack configuration file (webpack.config.js)
+                        </h2>
+                        
+                        <section>
+                           <span id="c6-sec-0025"></span>
+                           
+                           <blockquote>
+                              <pre id="c6-code-0025"><code>var path = require('path');</code>
+<code></code>
+<code>module.exports = {</code>
+<code>  entry: './src/index.js',</code>
+<code>  output: {</code>
+<code>    filename: 'bundle.js',</code>
+<code>    path: path.resolve(__dirname, 'dist')</code>
+<code>  }</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p> </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c6-fea-0005"></span> 
+                        
+                        <h2 id="head-2-125">LISTING 6-5: JavaScript files used in the sample</h2>
+                        
+                        <section>
+                           <span id="c6-sec-0026"></span>
+                           
+                           <h4><i>INDEX.JS</i></h4>
+                           
+                           <blockquote>
+                              <pre id="c6-code-0026"><code><b>import {greet} from './greeting.js';</b></code>
+<code></code>
+<code>  function component() {</code>
+<code>    var element = document.createElement('div');</code>
+<code></code>
+<code>    element.innerHTML = greet("readers");</code>
+<code>    element.classList.add('hello');</code>
+<code></code>
+<code>    return element;</code>
+<code>  }</code>
+<code>  document.body.appendChild(component());</code>
+</pre>
+                              </blockquote>
+                           
+                           <h4><i>GREET.JS</i></h4>
+                           
+                           <blockquote>
+                              <pre id="c6-code-0026a"><code><b>export</b> function greet(who) {</code>
+<code>    return "Hello " + who;</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p>Notice the use of <code>import</code> to import the dependency and <code>export</code> to export the function for other files to use. Now just running webpack without any
+                     additional configuration will bundle the two files together into one file.
+                  </p>
+                  
+                  <p>To run webpack, since it’s just installed locally in the project, there are two options.
+                     The first is to use its relative path <code>./node_modules/.bin/webpack</code>. This is where all the executables are stored when installed via npm. The other option
+                     is to use an <i>npm script</i>. To do so, just add a script element to the package.json file and later just type
+                     <code>npm run build</code> to execute webpack. The following snippet shows what needs to be added.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c6-code-0027"><code>"scripts": {</code>
+<code>  "build": "webpack"</code>
+<code>},</code> </pre>
+                     </blockquote>
+                  
+               </section>
+               
+               <section>
+                  <span id="c6-sec-0027"></span>
+                  
+                  <h4 id="head-4-53"><span epub:type="pagebreak" id="Page_158" title="158"></span>Bundling Stylesheets
+                  </h4>
+                  
+                  <p>In order to add stylesheets to the bundle, you must trick webpack into thinking the
+                     .css file is another module and installing and configuring the right module loader.
+                     The first part is done by importing the .css file as if it was another javascript
+                     module:
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c6-code-0028"><code>import './style.css';</code> </pre>
+                     </blockquote>
+                  
+                  <p>Then the style and CSS loaders must be installed via npm and configured inside the
+                     <code>webpack.config.js</code> file.
+                  </p>
+                  
+                  <p>This is the command to install the two modules:</p>
+                  
+                  <blockquote>
+                     <pre id="c6-code-0029"><code>npm install style-loader css-loader --save-dev</code> </pre>
+                     </blockquote>
+                  
+                  <p><a href="#c6-fea-0006">Listing 6‐6</a> shows the configuration file after the CSS loader has been added.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c6-fea-0006"></span> 
+                        
+                        <h2 id="head-2-126">LISTING 6-6: webpack.config.js with css loader</h2>
+                        
+                        <section>
+                           <span id="c6-sec-0028"></span>
+                           
+                           <blockquote>
+                              <pre id="c6-code-0030"><code>var path = require('path');</code>
+<code></code>
+<code></code>
+<code>module.exports = {</code>
+<code>  entry: './src/index.js',</code>
+<code>  output: {</code>
+<code>    filename: 'bundle.js',</code>
+<code>    path: path.resolve(__dirname, 'dist')</code>
+<code>  },</code>
+<code>   <b>module: {</b></code>
+<code>     <b>rules: [</b></code>
+<code>       <b>{</b></code>
+<code>         <b>test: /\.css$/,</b></code>
+<code>         <b>use: [</b></code>
+<code>           <b>'style‐loader',</b></code>
+<code>           <b>'css‐loader'</b></code>
+<code>         <b>]</b></code>
+<code>       <b>}</b></code>
+<code>     <b>]</b></code>
+<code>   <b>}</b></code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p><a href="#c6-fea-0006">Listing 6‐6</a> shows how loaders are added within a <code>module</code> property. Each different module loader needs a <code>test</code> to specify when the loader must be used and a list of loaders to use. The test could
+                     be a RegEx with the extension of the files or a more complex function.
+                  </p>
+                  
+                  <p>Once webpack is run, the style will be bundled together with the JavaScript files
+                     and injected into the header section of the HTML file at runtime. If you want the
+                     style to be referenced in the HTML file from its own file, you need to use the <b>ExtractTextWebpackPlugin</b>. <a href="#c6-fea-0007">Listing 6‐7</a> shows what the configuration file looks like with this plugin.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c6-fea-0007"></span> 
+                        
+                        <h2 id="head-2-127"><span epub:type="pagebreak" id="Page_159" title="159"></span>LISTING 6-7: webpack.config.js using the extract‐text‐webpack‐plugin
+                        </h2>
+                        
+                        <section>
+                           <span id="c6-sec-0029"></span>
+                           
+                           <blockquote>
+                              <pre id="c6-code-0031"><code>var path = require('path');</code>
+<code>const ExtractTextPlugin = require("extract-text-webpack-plugin");</code>
+<code></code>
+<code>module.exports = {</code>
+<code>  entry: './src/index.js',</code>
+<code>  output: {</code>
+<code>    filename: 'bundle.js',</code>
+<code>    path: path.resolve(__dirname, 'dist')</code>
+<code>  },</code>
+<code>   module: {</code>
+<code>     rules: [</code>
+<code>       {</code>
+<code>         test: /\.css$/,</code>
+<code>         <b>use: ExtractTextPlugin.extract({</b></code>
+<code>          <b>fallback: "style‐loader",</b></code>
+<code>          <b>use: "css‐loader"</b></code>
+<code>        <b>})</b></code>
+<code>       }</code>
+<code>     ]</code>
+<code>   },</code>
+<code>  <b>plugins: [</b></code>
+<code>    <b>new ExtractTextPlugin("styles.css")</b></code>
+<code>  <b>]</b></code>
+<code>};</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p>With this change, now the CSS files get bundled into just one file instead of being
+                     injected into the header section of the HTML file.
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c6-sec-0030"></span>
+                  
+                  <h4 id="head-4-54">Minifying and Adding Sourcemaps</h4>
+                  
+                  <p>After having bundled the files, you still need to minify them. This is done using
+                     another plugin, called <b>UglifyJsPlugin</b>. To use this plugin, it’s enough to add it to the list of plugins (after having imported
+                     it into the configuration file).
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c6-code-0032"><code>new webpack.optimize.UglifyJsPlugin()</code> </pre>
+                     </blockquote>
+                  
+                  <p>In order to have sourcemaps for both JavaScript and .css files, another parameter,
+                     called <code>devtool</code>, must be specified in the configuration. This can have many different values based
+                     on the type of sourcemap needed (inline or in a separate file) and its accuracy. <a href="#c6-fea-0008">Listing 6‐8</a> shows the configuration file after minification with sourcemaps has been added.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c6-fea-0008"></span> 
+                        
+                        <h2 id="head-2-128">LISTING 6-8: webpack.config.js with minification and sourcemaps</h2>
+                        
+                        <section>
+                           <span id="c6-sec-0031"></span>
+                           
+                           <blockquote>
+                              <pre id="c6-code-0033"><code>var path = require('path');</code>
+<code>const webpack = require('webpack');</code>
+<code>const ExtractTextPlugin = require("extract-text-webpack-plugin");</code>
+<code></code>
+<code><span epub:type="pagebreak" id="Page_160" title="160"></span>module.exports = {</code>
+<code>  entry: './src/index.js',</code>
+<code>  output: {</code>
+<code>    filename: 'bundle.js',</code>
+<code>    path: path.resolve(__dirname, 'dist')</code>
+<code>  },</code>
+<code>  <b>devtool: "source‐map",</b></code>
+<code>   module: {</code>
+<code>     rules: [</code>
+<code>       {</code>
+<code>         test: /\.css$/,</code>
+<code>         use: ExtractTextPlugin.extract({</code>
+<code>          fallback: "style-loader",</code>
+<code>          use: "css-loader"</code>
+<code>        })</code>
+<code>       }</code>
+<code>     ]</code>
+<code>   },</code>
+<code>  plugins: [</code>
+<code>    new ExtractTextPlugin("styles.css"),</code>
+<code>    new webpack.optimize.UglifyJsPlugin(<b>{sourceMap:true}</b>)</code>
+<code>  ]</code>
+<code>};</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+               </section>
+               
+            </section>
+            
+            <section>
+               <span id="c6-sec-0032"></span>
+               
+               <h3 id="head-3-97">More Things webpack Can Do</h3>
+               
+               <p>Although webpack is a module bundler, thanks to the different loader it is not limited
+                  to bundling JavaScript files. It can treat styles (also sass and less), script files
+                  that require some transpiling (like TypeScript, CoffeScript, or ECMAScript2015), images,
+                  fonts, and many types of files. Additionally, it can run JSHint while loading JavaScript
+                  file. Via plugins it can also automatically add script and style tags into the HTML
+                  file (using the HtmlWebpackPlugin), minify the bundle as seen earlier, compress files,
+                  and do much more.
+               </p>
+               
+               <p>However, it is a module bundler, so it doesn’t have the flexibility of a general purpose
+                  task runner like Gulp, and it requires that applications are written in a modular
+                  way, which is not always done, especially when not using the latest JavaScript frameworks.
+               </p>
+               
+               <p>But if you use Angular via the CLI, you get webpack compilation and bundling automatically
+                  without doing anything.
+               </p>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c6-sec-0033"></span>
+            
+            <h2 id="head-2-129">VISUAL STUDIO 2017 AND BUILD SYSTEMS</h2>
+            
+            <p>Now that you know about Gulp, it is important to understand how it is integrated into
+               Visual Studio 2017.
+            </p>
+            
+            <section>
+               <span id="c6-sec-0034"></span>
+               
+               <h3 id="head-3-98">The Bundler and Minifier Extension</h3>
+               
+               <p>Microsoft realized that developers use task runners mostly for minifying and bundling
+                  files, so the ASP.NET Core project template doesn’t include a <code>gulpfile.js</code> file. Instead it includes the <code>bundleconfig.json</code> file, which contains the configuration for a new feature of Visual Studio 2017: the
+                  Bundler and <span epub:type="pagebreak" id="Page_161" title="161"></span>Minifier. The Bundler and Minifier simplifies the process of managing CSS and JavaScript
+                  files by providing menu items for creating bundles during development in Visual Studio.
+               </p>
+               
+               <p>Minification of a file can simply be configured by right‐clicking on the file in the
+                  Project Explorer and selecting Bundler &amp; Minifier <img alt="image" src="images/arrow.jpg" /> Minify File, and bundles can be created by selecting multiple files and selecting
+                  Bundler &amp; Minifier <img alt="image" src="images/arrow.jpg" /> Bundle and Minify File (see <a href="#c6-fig-0004" id="R_c6-fig-0004">Figure 6‐4</a>).
+               </p>
+               
+               <figure> <img alt="Illustration of The Bundler and Minifier menu items." src="images/c06f004.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c6-fig-0004" id="c6-fig-0004"><b>FIGURE 6-4</b></a><b>:</b></span> The Bundler and Minifier menu items
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>These commands from the menu just update the <code>bundleconfig.json</code> file. <a href="#c6-fea-0009">Listing 6‐9</a> shows an example of bundling configuration.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c6-fea-0009"></span> 
+                     
+                     <h2 id="head-2-130">LISTING 6-9: An example of bundleconfig.json file</h2>
+                     
+                     <section>
+                        <span id="c6-sec-0035"></span>
+                        
+                        <blockquote>
+                           <pre id="c6-code-0034"><code>[</code>
+<code>  {</code>
+<code>    "outputFileName": "wwwroot/css/site.min.css",</code>
+<code>    "inputFiles": [</code>
+<code>      "wwwroot/css/site.css"</code>
+<code>    ]</code>
+<code>  },</code>
+<code>  {</code>
+<code>    "outputFileName": "wwwroot/js/site.min.js",</code>
+<code>    "inputFiles": [</code>
+<code>      "wwwroot/js/site.js"</code>
+<code>    ] ,</code>
+<code>    "minify": {</code>
+<code>      "enabled": true</code>
+<code>    }</code>
+<code>  },</code>
+<code>  {</code>
+<code>    "outputFileName": "wwwroot/js/bundle.js",</code>
+<code>    "inputFiles": [</code>
+<code>        "wwwroot/js/site2.js",</code>
+<code>        "wwwroot/js/site.js"</code>
+<code>    ],</code>
+<code>    <b>"sourceMap": true</b></code>
+<code>  }</code>
+<code>]</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p><span epub:type="pagebreak" id="Page_162" title="162"></span>The file contains a list of bundles, each one defined by the output file name, a list
+                  of input files, and optional additional configuration settings, like enabling source
+                  maps.
+               </p>
+               
+               <p>This new feature doesn’t preclude the usage of Gulp. If the front‐end build process
+                  becomes more than just bundling files, a gulpfile that uses the <code>bundleconfig.json</code> file can be created from the menu (<a href="#c6-fig-0005" id="R_c6-fig-0005">Figure 6‐5</a>), and it can then be expanded to include other tasks. This way the configuration
+                  of the bundles can still be done via menu items, making it easier to manage, even
+                  when using Gulp.
+               </p>
+               
+               <figure> <img alt="Illustration of Convert to Gulp." src="images/c06f005.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c6-fig-0005" id="c6-fig-0005"><b>FIGURE 6-5</b></a><b>:</b></span> Convert to Gulp
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p><a href="#c6-fea-0010">Listing 6‐10</a> shows the <code>gulpfile.js</code> file created by the Bundler &amp; Minifier extension.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c6-fea-0010"></span> 
+                     
+                     <h2 id="head-2-131">LISTING 6-10: Gulpfile.js generated by the Bundler &amp; Minifier extension</h2>
+                     
+                     <section>
+                        <span id="c6-sec-0036"></span>
+                        
+                        <blockquote>
+                           <pre id="c6-code-0035"><code>"use strict";</code>
+<code></code>
+<code>var gulp = require("gulp"),</code>
+<code>    concat = require("gulp-concat"),</code>
+<code>    cssmin = require("gulp-cssmin"),</code>
+<code>    htmlmin = require("gulp-htmlmin"),</code>
+<code>    uglify = require("gulp-uglify"),</code>
+<code>    merge = require("merge-stream"),</code>
+<code>    del = require("del"),</code>
+<code>    bundleconfig = require("./bundleconfig.json");</code>
+<code></code>
+<code>var regex = {</code>
+<code>    css: /\.css$/,</code>
+<code>    html: /\.(html|htm)$/,</code>
+<code>    js: /\.js$/</code>
+<code>};</code>
+<code></code>
+<code>gulp.task("min", ["min:js", "min:css", "min:html"]);</code>
+<code></code>
+<code>gulp.task("min:js", function () {</code>
+<code><span epub:type="pagebreak" id="Page_163" title="163"></span>    var tasks = getBundles(regex.js).map(function (bundle) {</code>
+<code>        return gulp.src(bundle.inputFiles, { base: "." })</code>
+<code>            .pipe(concat(bundle.outputFileName))</code>
+<code>            .pipe(uglify())</code>
+<code>            .pipe(gulp.dest("."));</code>
+<code>    });</code>
+<code>    return merge(tasks);</code>
+<code>});</code>
+<code></code>
+<code>gulp.task("min:css", function () {</code>
+<code>    var tasks = getBundles(regex.css).map(function (bundle) {</code>
+<code>        return gulp.src(bundle.inputFiles, { base: "." })</code>
+<code>            .pipe(concat(bundle.outputFileName))</code>
+<code>            .pipe(cssmin())</code>
+<code>            .pipe(gulp.dest("."));</code>
+<code>    });</code>
+<code>    return merge(tasks);</code>
+<code>});</code>
+<code></code>
+<code>gulp.task("min:html", function () {</code>
+<code>    var tasks = getBundles(regex.html).map(function (bundle) {</code>
+<code>        return gulp.src(bundle.inputFiles, { base: "." })</code>
+<code>            .pipe(concat(bundle.outputFileName))</code>
+<code>            .pipe(htmlmin({ collapseWhitespace: true, minifyCSS: true, minifyJS: true }))</code>
+<code>            .pipe(gulp.dest("."));</code>
+<code>    });</code>
+<code>    return merge(tasks);</code>
+<code>});</code>
+<code></code>
+<code>gulp.task("clean", function () {</code>
+<code>    var files = bundleconfig.map(function (bundle) {</code>
+<code>        return bundle.outputFileName;</code>
+<code>    });</code>
+<code></code>
+<code>    return del(files);</code>
+<code>});</code>
+<code></code>
+<code>gulp.task("watch", function () {</code>
+<code>    getBundles(regex.js).forEach(function (bundle) {</code>
+<code>        gulp.watch(bundle.inputFiles, ["min:js"]);</code>
+<code>    });</code>
+<code></code>
+<code>    getBundles(regex.css).forEach(function (bundle) {</code>
+<code>        gulp.watch(bundle.inputFiles, ["min:css"]);</code>
+<code>    });</code>
+<code></code>
+<code>    getBundles(regex.html).forEach(function (bundle) {</code>
+<code>        gulp.watch(bundle.inputFiles, ["min:html"]);</code>
+<code>    });</code>
+<code>});</code>
+<code></code>
+<code>function getBundles(regexPattern) {</code>
+<code>    return bundleconfig.filter(function (bundle) {</code>
+<code>        return regexPattern.test(bundle.outputFileName);</code>
+<code>    });</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+            <section>
+               <span id="c6-sec-0037"></span>
+               
+               <h3 id="head-3-99"><span epub:type="pagebreak" id="Page_164" title="164"></span>The Task Runner Explorer
+               </h3>
+               
+               <p>Tasks, both from the bundler and minifier and for Gulp, can also be run manually via
+                  the Task Runner Explorer. This window can be opened by right‐clicking on the <code>gulpfile.js</code> file from the Project Explorer (see <a href="#c6-fig-0006" id="R_c6-fig-0006">Figure 6‐6</a>) or from the View <img alt="image" src="images/arrow.jpg" /> Other Windows <img alt="image" src="images/arrow.jpg" /> Task Runner Explorer menu item.
+               </p>
+               
+               <figure> <img alt="Illustration of Opening the Task Runner Explorer." src="images/c06f006.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c6-fig-0006" id="c6-fig-0006"><b>FIGURE 6-6</b></a><b>:</b></span> Opening the Task Runner Explorer
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>The Task Runner Explorer shows all the tasks available inside the <code>gulpfile.js</code> file and all the file bundles specified in the <code>bundleconfig.json</code> file. It also allows you to specify which tasks to run when some operation runs in
+                  Visual Studio. A task can be configured to run:
+               </p>
+               
+               <ul class="check" id="c6-list-0007">
+                  
+                  <li id="c6-li-0025">When the project is opened</li>
+                  
+                  <li id="c6-li-0026">When the Clean operation is invoked</li>
+                  
+                  <li id="c6-li-0027">Before the build of the project starts</li>
+                  
+                  <li id="c6-li-0028">After the build of the project completes</li>
+                  
+               </ul>
+               
+               <p><a href="#c6-fig-0007" id="R_c6-fig-0007">Figure 6‐7</a> depicts the Task Runner Explorer showing the tasks in the tree on the left, the bindings
+                  of tasks and VS operations on the right, and the dropdown menu to configure those
+                  bindings.
+               </p>
+               
+               <figure> <img alt="Illustration of The Task Runner Explorer in action." src="images/c06f007.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c6-fig-0007" id="c6-fig-0007"><b>FIGURE 6-7</b></a><b>:</b></span> The Task Runner Explorer in action
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+            </section>
+            
+            <section>
+               <span id="c6-sec-0038"></span>
+               
+               <h3 id="head-3-100">IntelliSense for Gulp</h3>
+               
+               <p>Finally, since gulp files are just JavaScript files, the standard JavaScript IntelliSense
+                  triggers autocomplete and shows information about gulp and gulp’s plugin methods,
+                  as shown on <a href="#c6-fig-0008" id="R_c6-fig-0008">Figure 6‐8</a>.
+               </p>
+               
+               <figure> <img alt="Illustration of Intellisense for Gulp." src="images/c06f008.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c6-fig-0008" id="c6-fig-0008"><b>FIGURE 6-8</b></a><b>:</b></span> IntelliSense for Gulp
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c6-sec-0039"></span>
+            
+            <h2 id="head-2-132"><span epub:type="pagebreak" id="Page_165" title="165"></span>SUMMARY
+            </h2>
+            
+            <p>Even though build automation tools have existed for more than 40 years, they were
+               just recently brought to the world of front‐end development. Eventually, .NET web
+               development, while still using MSBuild, also started adopting these front‐end build
+               systems like Gulp.
+            </p>
+            
+            <p>Grunt was the first tool to appear, but recently Gulp, thanks to its more code‐based
+               approach, is getting more traction, and Microsoft has chosen it as the default build
+               tool supported inside Visual Studio and ASP.NET Core projects.
+            </p>
+            
+            <p>In this chapter you learned how to prepare your front‐end artifacts for release. The
+               next chapter explains how to leverage those tasks to deploy projects to your servers,
+               either on premise or on the cloud, and on demand or in continuous deployment fashion.
+            </p>
+            
+         </section>
+         
+      </section>
+   </body>
+   
+</html>

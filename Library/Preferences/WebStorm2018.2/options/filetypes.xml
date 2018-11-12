@@ -1,0 +1,11 @@
+<application>
+  <component name="FileTypeManager" version="17">
+    <extensionMap>
+      <mapping pattern="HW2B_README" type="PLAIN_TEXT" />
+      <mapping pattern="HW2BREADME" type="PLAIN_TEXT" />
+      <mapping pattern="HW2BREADME.txt" type="PLAIN_TEXT" />
+      <mapping ext="md" type="PLAIN_TEXT" />
+      <mapping ext="readme" type="PLAIN_TEXT" />
+    </extensionMap>
+  </component>
+</application>

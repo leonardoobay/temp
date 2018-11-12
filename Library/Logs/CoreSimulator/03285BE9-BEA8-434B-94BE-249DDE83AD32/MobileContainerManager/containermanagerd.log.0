@@ -1,0 +1,100 @@
+Wed Jul 11 14:48:25 2018 [919] <notice> (0x10a17c380) main: containermanagerd performing first boot initialization
+Wed Jul 11 14:48:25 2018 [919] <notice> (0x10a17c380) -[MCMMigrationStatus _migrateFromManyMarkerFilesToOne]: Migrating from many marker files down to one
+Wed Jul 11 14:48:25 2018 [919] <notice> (0x10a17c380) -[MCMMigrationStatus isBuildUpgrade]: Did not find last build info; we must be upgrading from pre-9.3.1 or this is an erase install.
+Wed Jul 11 14:48:25 2018 [919] <notice> (0x10a17c380) -[MCMClientConnection _regenerateAllSystemContainerPaths]: Rolling system container directory UUIDs on disk
+Wed Jul 11 14:48:25 2018 [919] <notice> (0x10a17c380) -[MCMMigrationStatus writeCurrentBuildInfoToDisk]: Saved last build version of 15F79
+Wed Jul 11 14:48:25 2018 [919] <notice> (0x10a17c380) main: containermanagerd first boot cleanup complete
+Wed Jul 11 14:48:26 2018 [919] <notice> (0x700001721000) -[MCMContainerMigrator performDataMigratorMigrationWithError:]: Performing Data Migration on 15F79
+Wed Jul 11 14:48:26 2018 [919] <notice> (0x700001721000) -[MCMFileManager standardizeAllSystemContainerACLsAtURL:error:]: Potential containers requiring ACL migration: (
+    "82BC7EAA-F31F-49CD-986F-A032F615C495/ -- file:///Users/mac/Library/Developer/CoreSimulator/Devices/03285BE9-BEA8-434B-94BE-249DDE83AD32/data/Containers/Data/System/",
+    "6569AE4C-55BF-42FF-A41B-609D27FD7317/ -- file:///Users/mac/Library/Developer/CoreSimulator/Devices/03285BE9-BEA8-434B-94BE-249DDE83AD32/data/Containers/Data/System/"
+)
+Wed Jul 11 14:48:26 2018 [919] <notice> (0x700001721000) -[MCMFileManager standardizeAllSystemContainerACLsAtURL:error:]: Potential containers requiring ACL migration: (
+    "systemgroup.com.apple.configurationprofiles/ -- file:///Users/mac/Library/Developer/CoreSimulator/Devices/03285BE9-BEA8-434B-94BE-249DDE83AD32/data/Containers/Shared/SystemGroup/"
+)
+Wed Jul 11 14:48:26 2018 [919] <notice> (0x700001721000) -[MCMMigrationStatus setMigrationCompleteForType:]: Migration completed on 15F79 for ACLMigration
+Wed Jul 11 14:48:26 2018 [919] <notice> (0x700001721000) -[MCMCodeSigningMapping _onQueue_migrateAppGroupIdsFromDataContainersToFile]: Performing group ID migration
+Wed Jul 11 14:48:26 2018 [919] <notice> (0x700001721000) -[MCMMigrationStatus setMigrationCompleteForType:]: Migration completed on 15F79 for GroupIdMigration
+Wed Jul 11 14:48:26 2018 [919] <notice> (0x700001721000) -[MCMCodeSigningMapping _onQueue_migrateCachedCodeSigningInfoFromBundleContainersToMapping]: Performing code signing migration
+Wed Jul 11 14:48:26 2018 [919] <notice> (0x700001721000) -[MCMMigrationStatus setMigrationCompleteForType:]: Migration completed on 15F79 for CodeSigningMigration
+Wed Jul 11 14:48:29 2018 [919] <notice> (0x7000017a4000) -[MCMContainerMigrator performPerUserDataMigrationForClientConnection:withError:]: Container data migration requested for current mobile user
+Wed Jul 11 14:48:29 2018 [919] <notice> (0x7000017a4000) -[MCMContainerMigrator performPerUserDataMigrationForClientConnection:withError:]: Performing Per User Subdirectory Migration for 501 on 15F79
+Wed Jul 11 14:48:29 2018 [919] <notice> (0x7000017a4000) -[MCMMigrationStatus setMigrationCompleteForType:]: Migration completed on 15F79 for SubdirectoryMigration
+Wed Jul 11 14:52:40 2018 [1150] <notice> (0x109d1f380) main: containermanagerd performing first boot initialization
+Wed Jul 11 14:52:40 2018 [1150] <notice> (0x109d1f380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Wed Jul 11 14:52:40 2018 [1150] <notice> (0x109d1f380) main: containermanagerd first boot cleanup complete
+Wed Jul 11 14:56:10 2018 [1344] <notice> (0x109cd6380) main: containermanagerd performing first boot initialization
+Wed Jul 11 14:56:10 2018 [1344] <notice> (0x109cd6380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Wed Jul 11 14:56:10 2018 [1344] <notice> (0x109cd6380) main: containermanagerd first boot cleanup complete
+Wed Jul 11 18:50:47 2018 [1538] <notice> (0x107fed380) main: containermanagerd performing first boot initialization
+Wed Jul 11 18:50:47 2018 [1538] <notice> (0x107fed380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Wed Jul 11 18:50:47 2018 [1538] <notice> (0x107fed380) main: containermanagerd first boot cleanup complete
+Wed Jul 11 19:03:21 2018 [1890] <notice> (0x107180380) main: containermanagerd performing first boot initialization
+Wed Jul 11 19:03:21 2018 [1890] <notice> (0x107180380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Wed Jul 11 19:03:21 2018 [1890] <notice> (0x107180380) main: containermanagerd first boot cleanup complete
+Thu Jul 12 14:39:02 2018 [2627] <notice> (0x10ead0380) main: containermanagerd performing first boot initialization
+Thu Jul 12 14:39:02 2018 [2627] <notice> (0x10ead0380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Thu Jul 12 14:39:02 2018 [2627] <notice> (0x10ead0380) main: containermanagerd first boot cleanup complete
+Thu Jul 12 14:44:03 2018 [2870] <notice> (0x10b5f4380) main: containermanagerd performing first boot initialization
+Thu Jul 12 14:44:03 2018 [2870] <notice> (0x10b5f4380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Thu Jul 12 14:44:03 2018 [2870] <notice> (0x10b5f4380) main: containermanagerd first boot cleanup complete
+Fri Jul 13 19:06:13 2018 [751] <notice> (0x10621e380) main: containermanagerd performing first boot initialization
+Fri Jul 13 19:06:13 2018 [751] <notice> (0x10621e380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Fri Jul 13 19:06:13 2018 [751] <notice> (0x10621e380) main: containermanagerd first boot cleanup complete
+Tue Jul 17 22:24:47 2018 [896] <notice> (0x1070dd380) main: containermanagerd performing first boot initialization
+Tue Jul 17 22:24:47 2018 [896] <notice> (0x1070dd380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Tue Jul 17 22:24:48 2018 [896] <notice> (0x1070dd380) main: containermanagerd first boot cleanup complete
+Wed Jul 18 01:08:57 2018 [3872] <notice> (0x10bc3c380) main: containermanagerd performing first boot initialization
+Wed Jul 18 01:08:57 2018 [3872] <notice> (0x10bc3c380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Wed Jul 18 01:08:57 2018 [3872] <notice> (0x10bc3c380) main: containermanagerd first boot cleanup complete
+Wed Jul 18 23:57:02 2018 [716] <notice> (0x102e18380) main: containermanagerd performing first boot initialization
+Wed Jul 18 23:57:02 2018 [716] <notice> (0x102e18380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Wed Jul 18 23:57:02 2018 [716] <notice> (0x102e18380) main: containermanagerd first boot cleanup complete
+Wed Jul 18 23:59:47 2018 [923] <notice> (0x104615380) main: containermanagerd performing first boot initialization
+Wed Jul 18 23:59:47 2018 [923] <notice> (0x104615380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Wed Jul 18 23:59:47 2018 [923] <notice> (0x104615380) main: containermanagerd first boot cleanup complete
+Thu Jul 19 00:46:50 2018 [2139] <notice> (0x10549f380) main: containermanagerd performing first boot initialization
+Thu Jul 19 00:46:50 2018 [2139] <notice> (0x10549f380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Thu Jul 19 00:46:50 2018 [2139] <notice> (0x10549f380) main: containermanagerd first boot cleanup complete
+Fri Jul 20 22:34:01 2018 [1020] <notice> (0x10c3db380) main: containermanagerd performing first boot initialization
+Fri Jul 20 22:34:01 2018 [1020] <notice> (0x10c3db380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Fri Jul 20 22:34:01 2018 [1020] <notice> (0x10c3db380) main: containermanagerd first boot cleanup complete
+Tue Jul 24 00:21:26 2018 [1489] <notice> (0x104fa4380) main: containermanagerd performing first boot initialization
+Tue Jul 24 00:21:26 2018 [1489] <notice> (0x104fa4380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Tue Jul 24 00:21:26 2018 [1489] <notice> (0x104fa4380) main: containermanagerd first boot cleanup complete
+Tue Jul 24 01:14:22 2018 [2615] <notice> (0x1078fc380) main: containermanagerd performing first boot initialization
+Tue Jul 24 01:14:22 2018 [2615] <notice> (0x1078fc380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Tue Jul 24 01:14:23 2018 [2615] <notice> (0x1078fc380) main: containermanagerd first boot cleanup complete
+Tue Jul 24 02:21:46 2018 [4254] <notice> (0x109fe1380) main: containermanagerd performing first boot initialization
+Tue Jul 24 02:21:46 2018 [4254] <notice> (0x109fe1380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Tue Jul 24 02:21:46 2018 [4254] <notice> (0x109fe1380) main: containermanagerd first boot cleanup complete
+Tue Jul 24 23:05:11 2018 [803] <notice> (0x1113dd380) main: containermanagerd performing first boot initialization
+Tue Jul 24 23:05:11 2018 [803] <notice> (0x1113dd380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Tue Jul 24 23:05:11 2018 [803] <notice> (0x1113dd380) main: containermanagerd first boot cleanup complete
+Wed Jul 25 16:15:49 2018 [673] <notice> (0x10fe02380) main: containermanagerd performing first boot initialization
+Wed Jul 25 16:15:49 2018 [673] <notice> (0x10fe02380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Wed Jul 25 16:15:49 2018 [673] <notice> (0x10fe02380) main: containermanagerd first boot cleanup complete
+Wed Jul 25 17:36:38 2018 [2043] <notice> (0x110bf3380) main: containermanagerd performing first boot initialization
+Wed Jul 25 17:36:38 2018 [2043] <notice> (0x110bf3380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Wed Jul 25 17:36:38 2018 [2043] <notice> (0x110bf3380) main: containermanagerd first boot cleanup complete
+Wed Jul 25 19:12:28 2018 [2203] <notice> (0x1117fb380) main: containermanagerd performing first boot initialization
+Wed Jul 25 19:12:28 2018 [2203] <notice> (0x1117fb380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Wed Jul 25 19:12:29 2018 [2203] <notice> (0x1117fb380) main: containermanagerd first boot cleanup complete
+Fri Jul 27 23:07:44 2018 [1076] <notice> (0x10da99380) main: containermanagerd performing first boot initialization
+Fri Jul 27 23:07:44 2018 [1076] <notice> (0x10da99380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Fri Jul 27 23:07:44 2018 [1076] <notice> (0x10da99380) main: containermanagerd first boot cleanup complete
+Sat Jul 28 00:39:07 2018 [4001] <notice> (0x1088c8380) main: containermanagerd performing first boot initialization
+Sat Jul 28 00:39:07 2018 [4001] <notice> (0x1088c8380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Sat Jul 28 00:39:07 2018 [4001] <notice> (0x1088c8380) main: containermanagerd first boot cleanup complete
+Mon Jul 30 15:41:55 2018 [771] <notice> (0x10c749380) main: containermanagerd performing first boot initialization
+Mon Jul 30 15:41:55 2018 [771] <notice> (0x10c749380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Mon Jul 30 15:41:55 2018 [771] <notice> (0x10c749380) main: containermanagerd first boot cleanup complete
+Sun Aug  5 22:36:04 2018 [1150] <notice> (0x10eba9380) main: containermanagerd performing first boot initialization
+Sun Aug  5 22:36:04 2018 [1150] <notice> (0x10eba9380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Sun Aug  5 22:36:04 2018 [1150] <notice> (0x10eba9380) main: containermanagerd first boot cleanup complete
+Tue Sep  4 23:29:25 2018 [3603] <notice> (0x10e09b380) main: containermanagerd performing first boot initialization
+Tue Sep  4 23:29:25 2018 [3603] <notice> (0x10e09b380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Tue Sep  4 23:29:25 2018 [3603] <notice> (0x10e09b380) main: containermanagerd first boot cleanup complete
+Wed Sep 12 09:56:11 2018 [950] <notice> (0x10d05f380) main: containermanagerd performing first boot initialization
+Wed Sep 12 09:56:11 2018 [950] <notice> (0x10d05f380) -[MCMMigrationStatus isBuildUpgrade]: Current build version (15F79 / (null)) equal to last version recorded (15F79 / (null)); skipping upgrade
+Wed Sep 12 09:56:11 2018 [950] <notice> (0x10d05f380) main: containermanagerd first boot cleanup complete

@@ -1,0 +1,5 @@
+2018-10-24 23:54:00 +0000: ===== JavaUpdater.app =====
+2018-10-24 23:54:05 +0000: Extracting /Users/mac/Library/Application Support/Java/Java 10.0.99.0.10/jre-bin-10.0.99+b10-macosx-x86_64.dmg as a DMG
+2018-10-24 23:54:08 +0000: copyItemAtPath:/Volumes/E555FB04-B7A1-429C-8D85-86E8834B7A72/.background toPath:/Users/mac/Library/Application Support/Java/Java 10.0.99.0.10/.background
+2018-10-24 23:54:08 +0000: copyItemAtPath:/Volumes/E555FB04-B7A1-429C-8D85-86E8834B7A72/.DS_Store toPath:/Users/mac/Library/Application Support/Java/Java 10.0.99.0.10/.DS_Store
+2018-10-24 23:54:08 +0000: copyItemAtPath:/Volumes/E555FB04-B7A1-429C-8D85-86E8834B7A72/Java Remove.app toPath:/Users/mac/Library/Application Support/Java/Java 10.0.99.0.10/Java Remove.app

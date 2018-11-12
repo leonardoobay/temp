@@ -1,0 +1,885 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+   
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      
+      <title>Deploying ASP.NET Core</title>
+      
+      <link href="WileyTemplate_v5.3.css" rel="stylesheet" type="text/css" />
+      
+      <meta content="urn:uuid:68078093-7b10-42b9-8f32-0db0ecece3d2" name="Adept.expected.resource" />
+      
+   </head>
+   
+   <body epub:type="bodymatter">
+      
+      <section epub:type="chapter">
+         
+         <header>
+            
+            <h1><span epub:type="pagebreak" id="Page_167" title="167"></span><a id="c7"></a><span class="chapterNumber">7</span><br /><span class="chapterTitle">Deploying ASP.NET Core</span></h1>
+         </header>
+         
+         <section>
+            <span id="c7-sec-0001"></span>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3">
+                  
+                  <h3>WHAT’S IN THIS CHAPTER?</h3>
+                  
+                  <ul class="check1" id="c7-list-0001">
+                     
+                     <li id="c7-li-0001">The new hosting model of ASP.NET Core</li>
+                     
+                     <li id="c7-li-0002">How to deploy on‐premise</li>
+                     
+                     <li id="c7-li-0003">How to use Azure</li>
+                     
+                     <li id="c7-li-0004">Continuous deployment with git and Azure</li>
+                     
+                     <li id="c7-li-0005">How to deploy to Docker Containers</li>
+                     
+                  </ul>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p>After having learned how to build front‐end applications with ASP.NET Core MVC, Angular,
+               Bootstrap, and Gulp, it is finally time to show the application to other people. In
+               order to do this, you need to deploy applications.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3">
+                  
+                  <h3>WROX.COM CODE DOWNLOADS FOR THIS CHAPTER</h3>
+                  
+                  <p>The <a href="http://wrox.com">wrox.com</a> code downloads for this chapter are found at <a href="http://www.wrox.com"><code>www.wrox.com</code></a> Search for the book’s ISBN (978‐1‐119‐18131‐6), and you will find the code in the
+                     <a href="c07.xhtml">chapter 7</a> download and individually named according to the names throughout the chapter.
+                  </p>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+         </section>
+         
+         <section>
+            <span id="c7-sec-0002"></span>
+            
+            <h2 id="head-2-133">THE NEW HOSTING MODEL OF ASP.NET CORE</h2>
+            
+            <p>Before exploring the deployment of ASP.NET Core applications, it is important to understand
+               how they are hosted inside servers.
+            </p>
+            
+            <p>In classic ASP.NET, applications are DLLs that are hosted inside the IIS Application
+               Pool (also known as Worker Process, <code>w3wp.exe</code>). They are instantiated from IIS’s runtime manager. When requests come in, they are
+               sent to the <code>HttpRuntime</code> of the right site, which lives inside an AppPool. In short, they are basically modules
+               controlled by IIS itself.
+            </p>
+            
+            <p><span epub:type="pagebreak" id="Page_168" title="168"></span>In ASP.NET Core, it is totally different. Console applications run their own web server
+               using Kestrel. Each application already hosts itself and can directly respond to requests
+               over HTTP, so you might be wondering why you need IIS in first place. The reason is
+               that Kestrel is a web server that has been optimized for performance, but it lacks
+               all the management features that IIS has. So it is okay to run applications directly
+               on Kestrel for development, but you need IIS for exposing them to the outside world.
+            </p>
+            
+            <p>In this case IIS basically acts as a reverse proxy, receiving the requests and forwarding
+               them to the ASP.NET Core application self‐hosted on a Kestrel web server. Then it
+               waits for the execution pipeline to complete its processing and sends back the HTTP
+               output to the originator of the request.
+            </p>
+            
+            <p>This is accomplished by <code>AspNetCoreModule</code>, which calls the <code>dotnet run</code> command to fire up the application the first time it is requested. The <code>AspNetCoreModule</code> makes sure the application stays loaded should it crash, and the module keeps the
+               mapping of the HTTP port on which the application is running. This module is configured
+               via the <code>web.config</code> file in the root of the application. <a href="#c7-fea-0001">Listing 7‐1</a> shows a sample of the configuration.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"><span id="c7-fea-0001"></span> 
+                  
+                  <h2 id="head-2-134">LISTING 7-1: web.config that configures the AspNetCoreModule</h2>
+                  
+                  <section>
+                     <span id="c7-sec-0003"></span>
+                     
+                     <blockquote>
+                        <pre id="c7-code-0001"><code>&lt;configuration&gt;</code>
+<code>  &lt;system.webServer&gt;</code>
+<code>    &lt;handlers&gt;</code>
+<code>      &lt;add name="aspNetCore" path="*" verb="*"</code>
+<code>        modules="AspNetCoreModule"</code>
+<code>        resourceType="Unspecified"/&gt;</code>
+<code>    &lt;/handlers&gt;</code>
+<code>    &lt;aspNetCore</code>
+<code>        processPath="dotnet"</code>
+<code>        arguments=".\PublishingSample.dll"</code>
+<code>        stdoutLogEnabled="false"</code>
+<code>        stdoutLogFile=".\logs\stdout"/&gt;</code>
+<code>  &lt;/system.webServer&gt;</code>
+<code>&lt;/configuration&gt;</code> </pre>
+                        </blockquote>
+                     
+                  </section>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p>The important configuration attributes are <code>processPath</code>, which contains the path to the executable that will listen to HTTP requests, and
+               <code>arguments</code>, with the arguments to pass to the process. In standard ASP.NET Core applications,
+               <code>processPath</code> is <code>dotnet</code> and <code>arguments</code> is the path to the DLL with the actual application.
+            </p>
+            
+         </section>
+         
+         <section>
+            <span id="c7-sec-0004"></span>
+            
+            <h2 id="head-2-135">INSTALLING ON INTERNET INFORMATION SERVICES ON PREMISE</h2>
+            
+            <p>Now that you understand the background theory, it’s important to see how to install
+               the application on IIS.
+            </p>
+            
+            <section>
+               <span id="c7-sec-0005"></span>
+               
+               <h3 id="head-3-101"><span epub:type="pagebreak" id="Page_169" title="169"></span>Making Sure All Is Well
+               </h3>
+               
+               <p>Normally, applications are installed on a server, but if you do not have access to
+                  one, you can follow the steps of this book on your local development machine. Before
+                  starting, make sure IIS is installed. If you know it is already installed, you can
+                  skip this part and go straight to the “Installing AspNetCoreModule” section.
+               </p>
+               
+               <p>The first step is to check whether IIS is installed. Type <b>http://localhost</b> in a browser: If you get the welcome page of <a href="#c7-fig-0001" id="R_c7-fig-0001">Figure 7‐1</a>, all is good. Otherwise, if you get a server not found error, it means the local
+                  website is not running, either because IIS is not installed or it is stopped.
+               </p>
+               
+               <figure> <img alt="Illustration of Welcome page from IIS 10." src="images/c07f001.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0001" id="c7-fig-0001"><b>FIGURE 7-1</b></a><b>:</b></span> Welcome page from IIS 10
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>Now try to turn it on. For that, open IIS Manager. Select All Apps <img alt="image" src="images/arrow.jpg" /> Windows Administrative tools), open the Default Web Site, and press the Start button
+                  under Manage website, as shown in the Actions bar on the right side of <a href="#c7-fig-0002" id="R_c7-fig-0002">Figure 7‐2</a>.
+               </p>
+               
+               <figure> <img alt="Illustration of IIS Manager screen." src="images/c07f002.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0002" id="c7-fig-0002"><b>FIGURE 7-2</b></a><b>:</b></span> IIS Manager
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p><span epub:type="pagebreak" id="Page_170" title="170"></span>If you do not have the IIS Manager, it means that Internet Information Services has
+                  not been installed on your machine. In order to install it, open the Windows Features
+                  window (accessible from Control Panel <img alt="image" src="images/arrow.jpg" /> Programs <img alt="image" src="images/arrow.jpg" /> Turn Windows features on or off) and check both World Wide Web Services and IIS Management
+                  Console, as in <a href="#c7-fig-0003" id="R_c7-fig-0003">Figure 7‐3</a>, and then click OK.
+               </p>
+               
+               <figure> <img alt="Illustration of Windows Features." src="images/c07f003.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0003" id="c7-fig-0003"><b>FIGURE 7-3</b></a><b>:</b></span> Windows Features
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+            </section>
+            
+            <section>
+               <span id="c7-sec-0006"></span>
+               
+               <h3 id="head-3-102"><span epub:type="pagebreak" id="Page_171" title="171"></span>Installing AspNetCoreModule
+               </h3>
+               
+               <p>The glue between IIS and ASP.NET Core is provided by <code>AspNetCoreModule</code>. This module is installed as part of the .NET Core Windows Server Hosting bundle
+                  that also installs the .NET Core Runtime and .NET Core Library, providing a very convenient
+                  way to enable .NET Core hosting on web servers. <code>AspNetCoreModule</code> is also installed as part of the .NET Core SDK, so if you are running the SDK on
+                  your development machine, you should already have the module.
+               </p>
+               
+               <p>Either way, you should now be able to see the <code>AspNetCoreModule</code> in the list of modules in the IIS Manager (<a href="#c7-fig-0004" id="R_c7-fig-0004">Figure 7‐4</a>).
+               </p>
+               
+               <figure> <img alt="Illustration of Modules with AspNetCoreModule highlighted." src="images/c07f004.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0004" id="c7-fig-0004"><b>FIGURE 7-4</b></a><b>:</b></span> IIS Modules with AspNetCoreModule highlighted
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+            </section>
+            
+            <section>
+               <span id="c7-sec-0007"></span>
+               
+               <h3 id="head-3-103">Publishing Applications via the Command Line</h3>
+               
+               <p>With the setup of the infrastructure finalized (which luckily has to be done only
+                  once), it is time to publish the application.
+               </p>
+               
+               <p>The simple way of deploying is by using the <code>dotnet publish</code> command. By default this command publishes the application into the <code>./bin/[configuration]/[framework]/publish</code> folder, using the framework that has been specified as TargetFramework and building
+                  it in Debug mode.
+               </p>
+               
+               <p>This publishing operation builds the application in the same way as the <code>dotnet build</code> command, but it also copies all the dependencies and references into a self‐contained
+                  folder that can easily be copied to the destination IIS folder (<a href="#c7-fig-0005" id="R_c7-fig-0005">Figure 7‐5</a>). In addition to these, the <code>publish</code> command also runs all the MSBuild targets specified in the project file and can,
+                  for example, run the bundling and minification of scripts and styles.
+               </p>
+               
+               <figure> <img alt="Illustration of the self-contained folder with application code and all dependencies." src="images/c07f005.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0005" id="c7-fig-0005"><b>FIGURE 7-5</b></a><b>:</b></span> The self‐contained folder with application code and all dependencies
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p><span epub:type="pagebreak" id="Page_172" title="172"></span>It also creates a <code>web.config</code> file (or to update the file if it already existed) in the root folder so that it
+                  contains the right values similar to what is shown in <a href="#c7-fea-0001">Listing 7‐1</a>.
+               </p>
+               
+               <p>The default folder is hidden inside the structure. You probably want to publish in
+                  Release mode. The <code>publish</code> command is usually issued by specifying all the options:
+               </p>
+               
+               <blockquote>
+                  <pre id="c7-code-0002"><code>dotnet publish</code>
+<code>      --framework netcoreapp1.1 </code>
+<code>      --output "c:\temp\PublishSample" </code>
+<code>      --configuration Release</code> </pre>
+                  </blockquote>
+               
+            </section>
+            
+            <section>
+               <span id="c7-sec-0008"></span>
+               
+               <h3 id="head-3-104">Creating the Website</h3>
+               
+               <p>The last step obviously is the creation of the web site (or web application) inside
+                  IIS. The procedure is very simple and is done just as with any other IIS website,
+                  with just one small peculiarity. Since IIS will only act as a proxy without executing
+                  any .NET code, an application pool must be configured to not instantiate a .NET runtime.
+                  This is done by selecting the No Managed Code option (<a href="#c7-fig-0006" id="R_c7-fig-0006">Figure 7‐6</a>).
+               </p>
+               
+               <figure> <img alt="Illustration of Creating AppPool with No Managed Code." src="images/c07f006.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0006" id="c7-fig-0006"><b>FIGURE 7-6</b></a><b>:</b></span> Creating AppPool with No Managed Code
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p><span epub:type="pagebreak" id="Page_173" title="173"></span>Once this is done, a website (or a virtual application) can be created by specifying
+                  this newly created AspNetCore application pool and the folder where the application
+                  has been published (<a href="#c7-fig-0007" id="R_c7-fig-0007">Figure 7‐7</a>).
+               </p>
+               
+               <figure> <img alt="Illustration of Creating a new virtual application in IIS." src="images/c07f007.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0007" id="c7-fig-0007"><b>FIGURE 7-7</b></a><b>:</b></span> Creating a new virtual application in IIS
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>Now browse to <code>http://localhost/PublishSample</code> and enjoy the ASP.NET Core application served via IIS.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c7-sec-0009"></span>
+               
+               <h3 id="head-3-105">Publishing the Applications via Visual Studio</h3>
+               
+               <p>Publishing with <code>dotnet publish</code> doesn’t deploy the application remotely, and it also doesn’t support incremental
+                  updates. Therefore, a better option when developing within Visual Studio is to use
+                  the Publish dialog, accessible both from the Solution Explorer contextual menu and
+                  from the new overview screen introduced with Visual Studio 2017.
+               </p>
+               
+               <p>Typically, when deploying to a remote server, your system admin will have provided
+                  a publish profile. When you import it, Visual Studio will create a PowerShell script
+                  based on the information coming from the Publish dialog. This will call a PowerShell
+                  module, which will perform the actual WebDeploy operation.
+               </p>
+               
+               <p>If you do not have a publishing profile provided by the system admin, you can also
+                  create a custom publish profile, by configuring the connection parameters to your
+                  server. For testing on a remote IIS that has been configured as shown in this chapter
+                  (and on which Web Deploy has been correctly configured), <a href="#c7-fig-0008" id="R_c7-fig-0008">Figure 7‐8</a> contains the parameters to specify.
+               </p>
+               
+               <figure> <img alt="Illustration of IIS publishing profile." src="images/c07f008.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0008" id="c7-fig-0008"><b>FIGURE 7-8</b></a><b>:</b></span> IIS publishing profile
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c7-sec-0010"></span>
+            
+            <h2 id="head-2-136"><span epub:type="pagebreak" id="Page_174" title="174"></span>DEPLOYING ON AZURE
+            </h2>
+            
+            <p>Instead of deploying on‐premise, another option is to deploy applications on the cloud.
+               This mitigates a lot of the server configuration nightmare seen in the previous section
+               and provides a more integrated experience into Visual Studio when using Azure. Other
+               cloud hosting solutions are generally provisioning virtual machines, so deploying
+               there is similar to doing it on a remote IIS that you manage yourself.
+            </p>
+            
+            <p>On Azure, two approaches are possible. The first involves using the Publish dialog
+               and Web Deploy, while the second, used more in continuous deployment scenarios, uses
+               git and builds the application directly on Azure using Kudu.
+            </p>
+            
+            <section>
+               <span id="c7-sec-0011"></span>
+               
+               <h3 id="head-3-106">Deploying to Azure from Visual Studio with Web Deploy</h3>
+               
+               <p>Deploying on Azure from Visual Studio is not much different from the procedure for
+                  IIS on‐premises, especially if all resources are already created on Azure. In this
+                  case just download the publishing profile from the Azure portal (<a href="#c7-fig-0009" id="R_c7-fig-0009">Figure 7‐9</a>) and then import it from the Publish dialog.
+               </p>
+               
+               <figure> <img alt="Illustration of Getting a publishing profile from the Azure portal." src="images/c07f009.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0009" id="c7-fig-0009"><b>FIGURE 7-9</b></a><b>:</b></span> Getting a publishing profile from the Azure portal
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>The differences appear when new resources are needed. In this case there is no need
+                  to go in the Azure portal because everything can be done directly from the Publish
+                  Dialog by selecting <span epub:type="pagebreak" id="Page_175" title="175"></span>Microsoft Azure App Service as the publishing target (see <a href="#c7-fig-0010" id="R_c7-fig-0010">Figure 7‐10</a>). In this screen, you can also choose to connect to an existing App Service (see
+                  <a href="#c7-fig-0011" id="R_c7-fig-0011">Figure 7‐11</a>) by selecting Select Existing and clicking the Publish button or to create a new
+                  one by selecting Create New.
+               </p>
+               
+               <figure> <img alt="Illustration of Selecting Microsoft Azure App Service as the publishing target." src="images/c07f010.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0010" id="c7-fig-0010"><b>FIGURE 7-10</b></a><b>:</b></span> Selecting Microsoft Azure App Service as the publishing target
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <figure> <img alt="Illustration of the App Service dialog." src="images/c07f011.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0011" id="c7-fig-0011"><b>FIGURE 7-11</b></a><b>:</b></span> The App Service dialog
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p><span epub:type="pagebreak" id="Page_176" title="176"></span>Clicking the Publish button brings the Create App Service dialog (see <a href="#c7-fig-0012" id="R_c7-fig-0012">Figure 7‐12</a>). In this screen you can choose whether to put the new app service into an existing
+                  resource group and service plan or, as it is a best practice when creating a completely
+                  new and isolated application, create a new resource group and service plan.
+               </p>
+               
+               <figure> <img alt="Illustration of the Create App Service dialog." src="images/c07f012.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0012" id="c7-fig-0012"><b>FIGURE 7-12</b></a><b>:</b></span> The Create App Service dialog
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>For this example, call the resource group as the app name, and keep the auto‐generated
+                  name for the service plan (make sure you select free as the size, as shown in <a href="#c7-fig-0013" id="R_c7-fig-0013">Figure 7‐13</a> so that you do not get charged for trying it out). At this point additional services
+                  (other app services or SQL databases) can be added.
+               </p>
+               
+               <figure> <img alt="Illustration of Configure App Service Plan dialog." src="images/c07f013.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0013" id="c7-fig-0013"><b>FIGURE 7-13</b></a><b>:</b></span> Configure App Service Plan dialog
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p><span epub:type="pagebreak" id="Page_177" title="177"></span><span epub:type="pagebreak" id="Page_178" title="178"></span>Now click on Create and everything will be created on Azure and the publishing profile
+                  will be created inside Visual Studio. See <a href="#c7-fig-0014" id="R_c7-fig-0014">Figure 7‐14</a>.
+               </p>
+               
+               <figure> <img alt="Illustration of Publish on Azure Profile." src="images/c07f014.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0014" id="c7-fig-0014"><b>FIGURE 7-14</b></a><b>:</b></span> Publish on Azure Profile
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>From here on, the process is the same as seen before when using Web Deploy. You can
+                  choose Configuration (Release or Debug), Framework, database options, and you can
+                  preview what is going to be deployed on the server.
+               </p>
+               
+               <p>The actual publishing via Web Deploy consists on Visual Studio running <code>dotnet publish</code> to create the file bundle on a temporary folder, followed by Web Deploy moving the
+                  files to the server.
+               </p>
+               
+               <p>The beauty of Web Deploy compared to the other deployment method is the incremental
+                  publish. If files are changed later (for example the <code>About.cshtml</code> file), Web Deploy compares the new file with what has already been published and
+                  just sends the new files. From the Publish screen you can access the preview window
+                  (<a href="#c7-fig-0015" id="R_c7-fig-0015">Figure 7‐15</a>) that shows what will happen when the actual deploy happens.
+               </p>
+               
+               <figure> <img alt="Illustration of Web Deploy Preview screen." src="images/c07f015.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0015" id="c7-fig-0015"><b>FIGURE 7-15</b></a><b>:</b></span> Web Deploy Preview
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature1">
+                     
+                     <h3>NOTE</h3>
+                     
+                     <p><i>The preview also shows the files that are created during the publish process, like
+                           the updated</i> <code>web.config</code><i>, the DLLs, the minified style‐sheets, and the various dependency configuration files.</i></p>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+            <section>
+               <span id="c7-sec-0012"></span>
+               
+               <h3 id="head-3-107"><span epub:type="pagebreak" id="Page_179" title="179"></span>Continuous Deployment to Azure with Git
+               </h3>
+               
+               <p>The other approach to deploy on Azure is via git and the continuous deployment features
+                  of Azure. The main difference of this approach is that instead of building in Visual
+                  Studio (or on a build machine) and later deploying to Azure, only the code is pushed
+                  to Azure while all the building and publishing happens directly on Azure via Kudu.
+               </p>
+               
+               <section>
+                  <span id="c7-sec-0013"></span>
+                  
+                  <h4 id="head-4-55">Configuring the Azure Web App</h4>
+                  
+                  <p>In order to have continuous deployment happening, the web app has to be configured
+                     on the Azure portal. This can be done by selecting the web app to be configured, finding
+                     the Deployment Source menu item inside Settings, and choosing the source. Here you
+                     find many different sources (<a href="#c7-fig-0016" id="R_c7-fig-0016">Figure 7‐16</a>), both source control services like Visual Studio Team Services, git (both from GitHub
+                     and local) and Bitbucket, and file sharing services like OneDrive or Dropbox.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Deployment sources screen." src="images/c07f016.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c7-fig-0016" id="c7-fig-0016"><b>FIGURE 7-16</b></a><b>:</b></span> Deployment sources
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <p><span epub:type="pagebreak" id="Page_180" title="180"></span>For the sake of this book, it is easier to select Local Git Repository so that the
+                     code can be pushed directly from your machine without creating additional services,
+                     but any other source can be configured if necessary. Configuration steps for the other
+                     options might be different though.
+                  </p>
+                  
+                  <p>Now in the overview pane of the web app, you can see the git clone URL (<a href="#c7-fig-0017" id="R_c7-fig-0017">Figure 7‐17</a>), which is the one that needs to be configured as remote to the local git repository
+                     that contains the code to be deployed.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Git clone url in the overview pane." src="images/c07f017.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c7-fig-0017" id="c7-fig-0017"><b>FIGURE 7-17</b></a><b>:</b></span> Git clone url in the overview pane
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+               </section>
+               
+               <section>
+                  <span id="c7-sec-0014"></span>
+                  
+                  <h4 id="head-4-56">Configuring the Local Repository</h4>
+                  
+                  <p>Now some code has to be pushed to the Azure repository. There are various way of doing
+                     this. One is cloning the empty repository and creating an application inside it. Another
+                     is by creating the application in Visual Studio and checking the Add to Source Control
+                     flag in the project creation dialog. In this case the git repository on Azure must
+                     be specified as remote for the local repository. This can be achieved in many ways,
+                     but staying within Visual Studio, the remote can be configured from the Repository
+                     Settings in Team Explorer (<a href="#c7-fig-0018" id="R_c7-fig-0018">Figure 7‐18</a>).
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Adding remote in Visual Studio." src="images/c07f018.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c7-fig-0018" id="c7-fig-0018"><b>FIGURE 7-18</b></a><b>:</b></span> Add remote in Visual Studio
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <p><span epub:type="pagebreak" id="Page_181" title="181"></span><span epub:type="pagebreak" id="Page_182" title="182"></span>Now the code can be pushed to the remote, either directly from Visual Studio or from
+                     the command line. As part of the push operation, Azure launches the publish command,
+                     which restores all NuGet packages and builds the application using the project file.
+                     Every time a commit is pushed to the repository, the publish process starts, effectively
+                     implementing a continuous deployment scenario.
+                  </p>
+                  
+                  <p>On Azure portal you can see the list of deployments and the log of each one of them.
+                     These are accessible from the same menu item used before to configure the Deployment
+                     Source (<a href="#c7-fig-0019" id="R_c7-fig-0019">Figure 7‐19</a>).
+                  </p>
+                  
+                  <figure> <img alt="Illustration of List of deployments." src="images/c07f019.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c7-fig-0019" id="c7-fig-0019"><b>FIGURE 7-19</b></a><b>:</b></span> List of deployments
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature1">
+                        
+                        <h3>NOTE</h3>
+                        
+                        <p><i>If you created the remote within Visual Studio, the remote is not tracked by the local
+                              repository, so the first time you want to push, you have to do it from the Command
+                              Prompt and type:</i></p>
+                        
+                        <blockquote>
+                           <pre id="c7-code-0003"><code>git push -u azure master</code> </pre>
+                           </blockquote>
+                        
+                        <p><i>The</i> <code>‐u</code> <i>option instructs git to start tracking the remote branch.</i></p>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  
+                  
+                  <p><span epub:type="pagebreak" id="Page_183" title="183"></span>In addition to these features, Azure also supports the concept of a deployment slot.
+                     It is like a “sub‐web app” that works like a normal web app and can be used as a staging
+                     environment on which deployment can be tested before swapping the slot to the production
+                     application.
+                  </p>
+                  
+               </section>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c7-sec-0015"></span>
+            
+            <h2 id="head-2-137">DEPLOYING TO DOCKER CONTAINERS</h2>
+            
+            <p>Visual Studio 2017 also supports publishing ASP.NET Core applications to Docker containers
+               using the official aspnetcore Linux image for Docker provided by Microsoft. Visual
+               Studio 2017 even supports debugging ASP.NET Core applications from within a Docker
+               container, but that is not a feature installed by default, so a few steps are needed.
+            </p>
+            
+            <section>
+               <span id="c7-sec-0016"></span>
+               
+               <h3 id="head-3-108">Installing the Docker Support</h3>
+               
+               <p>First, you have to install the Docker tools for Visual Studio 2017. This is done by
+                  opening the Visual Studio Installer application, modifying your current installation
+                  of Visual Studio, selecting the .NET Core Cross‐Platform Development toolset, and
+                  on the right sidebar selecting the Container Development Tools optional component
+                  (<a href="#c7-fig-0020" id="R_c7-fig-0020">Figure 7‐20</a>).
+               </p>
+               
+               <figure> <img alt="Illustration of The .NET Core cross-platform development workload dialog." src="images/c07f020.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0020" id="c7-fig-0020"><b>FIGURE 7-20</b></a><b>:</b></span> The .NET Core cross‐platform development workload dialog
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>With the tools installed, you can create a new ASP.NET Core application and select
+                  Enable Docker Support directly from the new application dialog. This dialog, shown
+                  in <a href="#c7-fig-0021" id="R_c7-fig-0021">Figure 7‐21</a>, also points to the link for installing Docker for Windows, which is a pre‐requisite
+                  for running Docker.
+               </p>
+               
+               <figure> <img alt="Illustration of The Enable Docker Support option in the New Application dialog." src="images/c07f021.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0021" id="c7-fig-0021"><b>FIGURE 7-21</b></a><b>:</b></span> The Enable Docker Support option in the New Application dialog
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>This adds a few files to the project, the most important of which is the <code>Dockerfile</code> file. This file contains the instructions used by the Docker to build the container.
+                  <a href="#c7-fea-0002">Listing 7‐2</a> shows the one used by Visual Studio 2017.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c7-fea-0002"></span> 
+                     
+                     <h2 id="head-2-138"><span epub:type="pagebreak" id="Page_184" title="184"></span>LISTING 7-2: Dockerfile
+                     </h2>
+                     
+                     <section>
+                        <span id="c7-sec-0017"></span>
+                        
+                        <blockquote>
+                           <pre id="c7-code-0004"><code>FROM microsoft/aspnetcore:2.0</code>
+<code>ARG source</code>
+<code>WORKDIR /app</code>
+<code>EXPOSE 80</code>
+<code>COPY ${source:-obj/Docker/publish} .</code>
+<code>ENTRYPOINT ["dotnet", "DockerSample.dll"]</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>This file instructs Docker to create a new container starting from the <code>microsoft/aspnetcore</code> official image, version 2.0, create a folder called <code>app</code> inside the newly create container, and copy there the files in the folder specified
+                  as argument <code>source</code> or by default all the content of the folder <code>obj/Docker/publish</code>.
+               </p>
+               
+               <p>It also makes the container listen to port 80 and defines, with the <code>ENTRYPOINT</code> command, the executable that will be run when the container is started. In this example,
+                  <code>the dotnet DockerSample.dll</code> command will be run to start the ASP.NET Core application.
+               </p>
+               
+               <p>If you now debug the application, it won’t run in IIS Express as usual, but it will
+                  run inside the Docker container created using the <code>Dockerfile</code> of <a href="#c7-fea-0002">Listing 7‐2</a>. This is also clearly visible by the label on the debug button in the toolbar (<a href="#c7-fig-0022" id="R_c7-fig-0022">Figure 7‐22</a>).
+               </p>
+               
+               <figure> <img alt="Illustration of Debugging with Docker toolbar button." src="images/c07f022.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0022" id="c7-fig-0022"><b>FIGURE 7-22</b></a><b>:</b></span> Debugging with Docker toolbar button
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p><span epub:type="pagebreak" id="Page_185" title="185"></span>As additional proof that the application is running inside the container, you can
+                  replace the <code>About</code> action in the application template with the following code that shows the operating
+                  system on which the code is running.
+               </p>
+               
+               <blockquote>
+                  <pre id="c7-code-0005"><code>public IActionResult About()</code>
+<code>{</code>
+<code>    ViewData["Message"] = System.Runtime.InteropServices.RuntimeInformation.OSDescription;</code>
+<code>    return View();</code>
+<code>}</code> </pre>
+                  </blockquote>
+               
+               <p>When running inside Docker, it shows “Linux Moby” (<a href="#c7-fig-0023" id="R_c7-fig-0023">Figure 7‐23</a>), which is the distribution used by Microsoft for the official aspnetcore docker
+                  image.
+               </p>
+               
+               <figure> <img alt="Illustration of The operating system in Docker." src="images/c07f023.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0023" id="c7-fig-0023"><b>FIGURE 7-23</b></a><b>:</b></span> The operating system in Docker
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>If you want to add Docker to an application you have already created, you can do so
+                  from the Add menu in the Solution Explorer (<a href="#c7-fig-0024" id="R_c7-fig-0024">Figure 7‐24</a>).
+               </p>
+               
+               <figure> <img alt="Illustration of Selecting Docker Support from the Add menu." src="images/c07f024.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0024" id="c7-fig-0024"><b>FIGURE 7-24</b></a><b>:</b></span> Selecting Docker Support from the Add menu
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+            </section>
+            
+            <section>
+               <span id="c7-sec-0018"></span>
+               
+               <h3 id="head-3-109"><span epub:type="pagebreak" id="Page_186" title="186"></span>Publishing a Docker Image
+               </h3>
+               
+               <p>From within Visual Studio 2017, you can also publish a Docker image directly to Azure
+                  by using the usual Publish dialog, selecting Container Registry, and following the
+                  same steps shown previously in the chapter. But what if you just want an image to
+                  run on your own Docker server? At the moment, you have to rely on the command line,
+                  both for dotnet and for Docker.
+               </p>
+               
+               <p>After opening the command prompt on the project’s folder, first publish the application
+                  using the <code>dotnet publish</code> command:
+               </p>
+               
+               <blockquote>
+                  <pre id="c7-code-0006"><code>dotnet publish -o obj/Docker/publish</code> </pre>
+                  </blockquote>
+               
+               <p>Here you specify the <code>obj/Docker/publish</code> path because it is the default used in the <code>Dockerfile</code>.
+               </p>
+               
+               <p>Then you run the <code>docker build</code> command to create the image for the container:
+               </p>
+               
+               <blockquote>
+                  <pre id="c7-code-0007"><code>docker build -t dockersample .</code> </pre>
+                  </blockquote>
+               
+               <p>The <code>‐t</code> parameter specifies the name of the image and <code>.</code> is the path to the <code>Dockerfile</code>.
+               </p>
+               
+               <p>If you now run the <code>docker images</code> command to list all the images in your system (<a href="#c7-fig-0025" id="R_c7-fig-0025">Figure 7‐25</a>), you will see the newly created <code>dockersample</code>, together with the <code>microsoft/aspnetcore</code>, which has been downloaded from the docker repository in order to built it.
+               </p>
+               
+               <figure> <img alt="Illustration of List of docker images." src="images/c07f025.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c7-fig-0025" id="c7-fig-0025"><b>FIGURE 7-25</b></a><b>:</b></span> List of docker images
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>Now you can run the image directly using the <code>docker run</code> command:
+               </p>
+               
+               <blockquote>
+                  <pre id="c7-code-0008"><code>docker run -t -p 8080:80 dockersample</code> </pre>
+                  </blockquote>
+               
+               <p><span epub:type="pagebreak" id="Page_187" title="187"></span>The parameter <code>‐p</code> tells the docker daemon to redirect the port 80 of the container to the port 8080
+                  in the host. Now you can visit the application by going to the URL <code>http://localhost:8080</code>.
+               </p>
+               
+               <p>If you want to move the image to another server, you can save it to disk with the
+                  <code>docker save</code> command, copy it to your server, and load it with the <code>docker load</code> command.
+               </p>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c7-sec-0019"></span>
+            
+            <h2 id="head-2-139">SUMMARY</h2>
+            
+            <p>Hosting with ASP.NET Core is different from hosting with classic ASP.NET. Such a model
+               might seem like a step backward, but in the next chapter you will see that this allows
+               hosting ASP.NET Core applications on web servers that are different from IIS, even
+               on different operating systems. To provide for the additional steps needed to deploy
+               ASP.NET Core apps, taking care of all the build systems used to prepare applications
+               for production and the capability to publish to other operating systems as well, Microsoft
+               developed a range of better deployment tools. From simple manual deployment on a local
+               server to continuous deployment via staging environments, the tooling provided within
+               Visual Studio simplifies operations. But what about deploying to other operating systems?
+               The next chapter covers how to develop ASP.NET Core applications without the help
+               of Visual Studio, even when running on MacOS.
+            </p>
+            
+         </section>
+         
+      </section>
+      
+   </body>
+   
+</html>

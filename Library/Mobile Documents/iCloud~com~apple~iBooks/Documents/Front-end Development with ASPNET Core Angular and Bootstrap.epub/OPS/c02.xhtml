@@ -1,0 +1,1603 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+   
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      
+      <title>The Front‐End Developer Toolset</title>
+      
+      <link href="WileyTemplate_v5.3.css" rel="stylesheet" type="text/css" />
+      
+      <meta content="urn:uuid:68078093-7b10-42b9-8f32-0db0ecece3d2" name="Adept.expected.resource" />
+      
+   </head>
+   
+   <body epub:type="bodymatter">
+      
+      <section epub:type="chapter">
+         
+         <header>
+            
+            <h1><span epub:type="pagebreak" id="Page_37" title="37"></span><a id="c02"></a><span class="chapterNumber">2</span><br /><span class="chapterTitle">The Front‐End Developer Toolset</span></h1>
+         </header>
+         
+         <section>
+            <span id="c02-sec-0001"></span>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3">
+                  
+                  <h3>WHAT’S IN THIS CHAPTER?</h3>
+                  
+                  <ul class="check1" id="c02-list-0001">
+                     
+                     <li id="c02-li-0001">The types of tools used in front‐end development</li>
+                     
+                     <li id="c02-li-0002">The main actors in each type of tool</li>
+                     
+                  </ul>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p id="c02-para-0003">After the previous chapter's brief overview of what comes with the latest server‐side
+               frameworks, ASP.NET Core and ASP.NET Core MVC, this chapter gives you a foundation
+               in front‐end development, showing when you need additional tools to get your work
+               done more efficiently.
+            </p>
+            
+            <p>The chapter covers the following categories of tools:</p>
+            
+            <ul class="check" id="c02-list-0002">
+               
+               <li id="c02-li-0003"><b>JavaScript frameworks:</b> These frameworks help you build complex web interfaces by bringing to front‐end development
+                  the best practices that are typical of server‐side systems, like the model‐view‐controller
+                  (MVC) pattern, the model‐view‐view model (MVVM), dependency injection (DI), routing,
+                  and many others.
+               </li>
+               
+               <li id="c02-li-0004"><b>CSS frameworks:</b> Developers are generally bad at making web apps look good and consistent. CSS frameworks
+                  provide a set of styles and UI components with which you can build web applications
+                  that look as if they were created by professional designers. CSS frameworks also help
+                  address the issue of responsive design that adapts to multiple resolutions and screen
+                  sizes and can also apply complex animations and transitions.
+               </li>
+               
+               <li id="c02-li-0005"><b>Package managers:</b> Systems are becoming more and more a mix and match of different components, many
+                  of which depend on other components. Managing all these dependencies and correct versions
+                  would be a nightmare if it wasn't for package managers.
+               </li>
+               
+               <li id="c02-li-0006"><span epub:type="pagebreak" id="Page_38" title="38"></span><b>Build systems:</b> If you are coming from a pure .NET background, you probably have used some build
+                  systems already, like NAnt or MSBuild. The front‐end development world came out with
+                  their own build systems, which are made specifically for managing the build of front‐end
+                  systems.
+               </li>
+               
+               <li id="c02-li-0007"><b>Languages:</b> These extend beyond C# or VB.NET. Most of the tools from the previous categories
+                  are built and must be used with JavaScript or other domain‐specific languages (DSL).
+               </li>
+               
+            </ul>
+            
+            <p>This chapter provides an overview of the most popular tools for each of the aforementioned
+               categories, starting with the most fundamental of them, namely the additional languages
+               you need to know.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3">
+                  
+                  <h3>WROX.COM CODE DOWNLOADS FOR THIS CHAPTER</h3>
+                  
+                  <p id="c02-para-0006">The <a href="http://wrox.com">wrox.com</a> code downloads for this chapter are found at <a href="http://www.wrox.com"><code>www.wrox.com</code></a> Search for the book's ISBN (978‐1‐119‐18131‐6), and you will find the code in the
+                     <a href="c02.xhtml">chapter 2</a> download and individually named according to the names throughout the chapter.
+                  </p>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+         </section>
+         
+         <section>
+            <span id="c02-sec-0002"></span>
+            
+            <h2 id="head-2-25">ADDITIONAL LANGUAGES YOU HAVE TO KNOW</h2>
+            
+            <p id="c02-para-0007">C#, standard client‐side JavaScript, and CSS are not the only languages needed for
+               developing web applications the “front‐end developer” way. Many of the tools described
+               in this book rely on another version of JavaScript, Node.JS, and other domain‐specific
+               languages like Sass/Less and JSON.
+            </p>
+            
+            <section>
+               <span id="c02-sec-0003"></span>
+               
+               <h3 id="head-3-28">Node.js</h3>
+               
+               <p id="c02-para-0008">Node.js isn't actually a language. Node.js is more of a platform for building very
+                  fast and scalable network applications. It's built on top of Chrome V8 JavaScript
+                  runtime (the same JavaScript engine used inside Google Chrome).
+               </p>
+               
+               <p id="c02-para-0009">Node.js is an asynchronous event‐based framework with non‐blocking input/output (I/O),
+                  which basically means that applications don't consume CPU cycles when they are waiting
+                  for I/O operations (reading from or writing to a data stream, be it a file on a disk,
+                  an HTTP connection, standard output, or anything else that “streams” data) or waiting
+                  for any other event to happen.
+               </p>
+               
+               <p id="c02-para-0010">If you have never seen it, <a href="#c02-fea-0001">Listing 2‐1</a> is the standard “Hello World” example for Node.js. It loads the <code><code>http</code></code> module, it creates the <code><code>server</code></code> object by specifying the function that should be executed when a response comes in,
+                  and it starts listening for an HTTP connection on port 8080.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c02-fea-0001"></span> 
+                     
+                     <h2 id="head-2-26">LISTING 2-1: Node.js Hello World sample</h2>
+                     
+                     <section>
+                        <span id="c02-sec-0004"></span>
+                        
+                        <blockquote>
+                           <pre id="c02-code-0001"><code>var http = require('http');</code>
+<code></code>
+<code>var server = http.createServer(function (req, res) {</code>
+<code><span epub:type="pagebreak" id="Page_39" title="39"></span>  res.writeHead(200, {'Content-Type': 'text/plain'});</code>
+<code>  res.end('Hello ASP.NET Core developers!\n');</code>
+<code>});</code>
+<code></code>
+<code>server.listen(8080);</code>
+<code></code>
+<code>console.log('Server running at http://127.0.0.1:8080/');</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p id="c02-para-0012">But I/O is not just related to HTTP. I/O also deals with reading and writing files
+                  from disk or memory streams, so Node.js also has been popular for building command‐line
+                  tools and utilities. The reason I'm mentioning it in an ASP.NET web development book
+                  is because the most popular build tools in the “front‐end world” are developed with
+                  Node.js.
+               </p>
+               
+               <p id="c02-para-0013">Another reason to use Node.js is because this framework comes with a very useful tool,
+                  the Node Package Manager (NPM), that is introduced later in this chapter and covered
+                  in more detail in <a href="c05.xhtml">Chapter 5</a>, “Managing Dependencies with NuGet and Bower”.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c02-sec-0005"></span>
+               
+               <h3 id="head-3-29">JSON</h3>
+               
+               <p id="c02-para-0014">Strictly speaking, JSON (JavaScript Object Notation) is not a language, but rather
+                  a data‐interchange format meant to be easily parsed and generated by machine while
+                  being easy to read and write for humans. As the name implies, it's essentially the
+                  serialization of a JavaScript object. As <a href="#c02-fea-0002">Listing 2‐2</a> shows, it's an object whose properties are a series of key‐value pairs, where the
+                  key is always a string, and the value can be either a string/number/Boolean value,
+                  another object (enclosed within curly brackets), or an array of values (in square
+                  brackets).
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c02-fea-0002"></span> 
+                     
+                     <h2 id="head-2-27">LISTING 2-2: JSON data</h2>
+                     
+                     <section>
+                        <span id="c02-sec-0006"></span>
+                        
+                        <blockquote>
+                           <pre id="c02-code-0002"><code>{</code>
+<code>  "name":"Simone Chiaretta",</code>
+<code>  "age": 42,</code>
+<code>  "address": {</code>
+<code>    "city":"Brussels",</code>
+<code>    "country":"Belgium"</code>
+<code>  },</code>
+<code>  "hobbies": [</code>
+<code>    "triathlon",</code>
+<code>    "web development",</code>
+<code>    "jigsaw puzzles"</code>
+<code>  ],</code>
+<code>  "employed": true</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p id="c02-para-0016">Parsing a JSON text with the JavaScript <code><code>eval</code></code> function will put the data structure that is serialized in the file directly into
+                  memory. However, that's not recommended as the <code><code>eval</code></code> function executes everything, so there can be security issues. JavaScript has a native
+                  parsing function, <code><code>JSON.parse(jsonText)</code></code>, that after validating the text excludes the malicious and possibly security‐threatening
+                  code, and returns just the “sanitized” data structure.
+               </p>
+               
+               <p id="c02-para-0017"><span epub:type="pagebreak" id="Page_40" title="40"></span>The opposite operation, writing a JSON text from a JavaScript object, is also natively
+                  supported with the function <code><code>JSON.stringify(myObject)</code></code>.
+               </p>
+               
+               <p id="c02-para-0018">Given the native support in JavaScript for parsing and writing JSON strings, this
+                  format is also used to send data back and forth between clients and servers in single
+                  page applications over Ajax calls.
+               </p>
+               
+               <p id="c02-para-0019">Over time, thanks to the easy human readability, JSON has also started being used
+                  as a format for configuration files. In ASP.NET Core projects, the preferred format
+                  for configuration files is JSON. In addition to this, all the package managers' configuration
+                  files are in JSON format too.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c02-sec-0007"></span>
+               
+               <h3 id="head-3-30">Sass and Less</h3>
+               
+               <p id="c02-para-0020">If you have used CSS you might have noticed that at first it seems like an easy syntax
+                  to work with, but if not carefully organized it becomes a maintenance nightmare. If
+                  you want to change the color of something, you might have to change it in many different
+                  class definitions. Also, to specify the size of boxes, usually you have to do some
+                  math to get the right padding, margin, and border size.
+               </p>
+               
+               <p id="c02-para-0021">To overcome these problems, more than five years ago the Ruby community developed
+                  two meta‐languages that would then compile to standard CSS: Sass (which stands for
+                  Syntactically Awesome Stylesheets) and Less. By adopting this approach they could
+                  introduce such concepts as variables, functions, mixins, and nesting and still get
+                  a standard CSS file. Sass and Less both started as Ruby tools, but later compilers
+                  in other languages were written, so now they can be integrated in any development
+                  workflow and IDE, including Visual Studio.
+               </p>
+               
+               <p id="c02-para-0022">Now you will look at how some of the basic features are implemented in both languages
+                  and how they translate to CSS.
+               </p>
+               
+               <p id="c02-para-0023">First, consider the basic principle of each language, variables.</p>
+               
+               <p>In Sass variables are identified by the prefix <code><code>$</code></code>:
+               </p>
+               
+               <blockquote>
+                  <pre id="c02-code-0003"><code>$dark-blue: #3bbfce;</code>
+<code>#header {</code>
+<code>  color: $dark-blue;</code>
+<code>}</code>
+<code>h2 {</code>
+<code>  color: $dark-blue;</code>
+<code>}</code> </pre>
+                  </blockquote>
+               
+               <p>Less uses <code><code>@</code></code> as the prefix:
+               </p>
+               
+               <blockquote>
+                  <pre id="c02-code-0004"><code>@dark-blue: #3bbfce;</code>
+<code></code>
+<code>#header {</code>
+<code>  color: @dark-blue;</code>
+<code>}</code>
+<code>h2 {</code>
+<code>  color: @dark-blue;</code>
+<code>}</code> </pre>
+                  </blockquote>
+               
+               <p><span epub:type="pagebreak" id="Page_41" title="41"></span>And they both compile to the following CSS:
+               </p>
+               
+               <blockquote>
+                  <pre id="c02-code-0005"><code>#header {</code>
+<code>  color: #3bbfce;</code>
+<code>}</code>
+<code>h2 {</code>
+<code>  color: #3bbfce;</code>
+<code>}</code> </pre>
+                  </blockquote>
+               
+               <p id="c02-para-0027">Another basic feature is mixins, which basically are more CSS properties that can
+                  be included in many classes' definitions. They can also accept parameters.
+               </p>
+               
+               <p>In Sass the concept of inclusion is very obvious in the syntax. The mixin is defined
+                  by the keywork <code><code>@mixin</code></code> and is used with the keyword <code><code>@include</code></code>:
+               </p>
+               
+               <blockquote>
+                  <pre id="c02-code-0006"><code>@mixin menu-border($width: 1px) {</code>
+<code>  border-top: dotted $width black;</code>
+<code>  border-bottom: solid $width*2 black;</code>
+<code>}</code>
+<code></code>
+<code>#menu {</code>
+<code>  @include menu-border</code>
+<code>}</code>
+<code></code>
+<code>#side-menu {</code>
+<code>  @include menu-border(2px)</code>
+<code>}</code> </pre>
+                  </blockquote>
+               
+               <p>On the other hand, Less doesn't introduce any new syntax but just repurposes the standard
+                  class syntax of CSS, basically allowing classes to be part of other classes:
+               </p>
+               
+               <blockquote>
+                  <pre id="c02-code-0007"><code>.menu-border(@width: 1px) {</code>
+<code>  border-top: dotted @width black;</code>
+<code>  border-bottom: solid @width*2 black;</code>
+<code>}</code>
+<code></code>
+<code>#menu {</code>
+<code>  .menu-border</code>
+<code>}</code>
+<code></code>
+<code>#side-menu {</code>
+<code>  .menu-border(2px)</code>
+<code>}</code> </pre>
+                  </blockquote>
+               
+               <p>Both syntaxes compile to the following lines of code:</p>
+               
+               <blockquote>
+                  <pre id="c02-code-0008"><code>#menu {</code>
+<code>  border-top: dotted 1px black;</code>
+<code>  border-bottom: solid 2px black;</code>
+<code>}</code>
+<code></code>
+<code>#side-menu {</code>
+<code>  border-top: dotted 2px black;</code>
+<code>  border-bottom: solid 4px black;</code>
+<code>}</code> </pre>
+                  </blockquote>
+               
+               <p id="c02-para-0031"><span epub:type="pagebreak" id="Page_42" title="42"></span>Sass is bit more explicit in the syntax, while Less reuses the standard CSS as much
+                  as possible, but at the end of the day they are pretty similar, so the choice of which
+                  one to use is up to you.
+               </p>
+               
+               <p id="c02-para-0032">I encourage you to read about the other features on their respective websites and
+                  experiment with them to determine which one you like better. But the choice probably
+                  boils down to which CSS framework you want to use. Out of the four covered in this
+                  chapter, two use Sass (Primer CSS and Material Design Lite) and two use Less (Bootstrap
+                  CSS and Semantic UI).
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c02-sec-0008"></span>
+               
+               <h3 id="head-3-31">The Future of JavaScript</h3>
+               
+               <p id="c02-para-0033">JavaScript is based on an evolving standard, ECMAScript, which in 2015 reached version
+                  6, often referred to as ES6. This version brings new interesting features, for example,
+                  classes (with constructors, getter, setter, and inheritance), modules and a modules
+                  loader, the “arrow” syntax (the lambda expressions of C#), and standard data structures
+                  like Map, Set, and many others.
+               </p>
+               
+               <p id="c02-para-0034">Even though the major browsers are implementing ES6 features in their latest versions,
+                  older versions do not support them, so it probably will take a while before ES6 can
+                  be used in web development. But just as Sass and Less overcame some of the limitations
+                  of CSS, there are meta‐languages that implement part of these new specifications.
+                  One of them is TypeScript.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c02-sec-0009"></span>
+               
+               <h3 id="head-3-32">TypeScript</h3>
+               
+               <p id="c02-para-0035">While waiting for the various JavaScript engines to catch up with ES6 features, Microsoft
+                  released TypeScript. It introduces support for classes, modules, and arrow syntax
+                  as proposed by ES6 and also other concepts that are currently not available in JavaScript,
+                  such as strong typing, interfaces, generics, and more.
+               </p>
+               
+               <p id="c02-para-0036">But this is not a Microsoft version of JavaScript. Similar to Sass and Less, which
+                  compile to standard CSS, TypeScript compiles to standard JavaScript. It also performs
+                  static analysis and reports on possible misuses and type errors.
+               </p>
+               
+               <p>As previously mentioned, one of the features of TypeScript is strong typing. In reality
+                  strong typing is just type annotations that are checked at compile time:
+               </p>
+               
+               <blockquote>
+                  <pre id="c02-code-0009"><code>function add(x: number, y: number): number {</code>
+<code>  return x+y;</code>
+<code>}</code>
+<code></code>
+<code>var sum = add(2,3);</code>
+<code>var wrongSun = add("hello","world");</code> </pre>
+                  </blockquote>
+               
+               <p id="c02-para-0038">The first call to the function <code><code>add</code></code> is correct. It compiles correctly and when executed it returns the right value.
+               </p>
+               
+               <p id="c02-para-0039">The second call, on the other hand, is wrong. Although it executes correctly, it won't
+                  pass the compilation because the static analysis understands that “hello” is not a
+                  number and is not what the function <code><code>add</code></code> is expecting.
+               </p>
+               
+               <p id="c02-para-0040"><a href="#c02-fea-0003">Listing 2‐3</a> shows how a class with constructor, public methods, private fields, and accessors
+                  is defined in TypeScript.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c02-fea-0003"></span> 
+                     
+                     <h2 id="head-2-28"><span epub:type="pagebreak" id="Page_43" title="43"></span>LISTING 2-3: A TypeScript Class
+                     </h2>
+                     
+                     <section>
+                        <span id="c02-sec-0010"></span>
+                        
+                        <blockquote>
+                           <pre id="c02-code-0010"><code>class Greeter {</code>
+<code>  public greeting: string;</code>
+<code>  private _name: string;</code>
+<code></code>
+<code>  constructor(message: string) {</code>
+<code>    this.greeting = message;</code>
+<code>  }</code>
+<code>  </code>
+<code>  greet() {</code>
+<code>    return this.greeting + ", " + this._name+"!";</code>
+<code>  }</code>
+<code>  </code>
+<code>  get name(): string {</code>
+<code>    return this._name;</code>
+<code>  }</code>
+<code></code>
+<code>  set name(newName: string) {</code>
+<code>    this._name = newName;</code>
+<code>  }</code>
+<code>}</code>
+<code></code>
+<code>let greeter = new Greeter("Hello");</code>
+<code>greeter.name="World";</code>
+<code></code>
+<code>alert(greeter.greet()); //Says "Hello, World!" </code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p id="c02-para-0042">Here I've shown just a few features, but I encourage you to dive more deeply into
+                  TypeScript, as it's the way you'll be writing JavaScript applications in Angular,
+                  which becomes much more productive with TypeScript.
+               </p>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c02-sec-0011"></span>
+            
+            <h2 id="head-2-29">JAVASCRIPT FRAMEWORKS</h2>
+            
+            <p id="c02-para-0043">As you would never develop a server‐side application by manually handling HTTP requests
+               and responses, you should also not build client‐side interactions by directly manipulating
+               the DOM and managing the state of the application in simple JavaScript classes. For
+               this purpose JavaScript application frameworks, such as Angular, React, or others,
+               should be used.
+            </p>
+            
+            <p id="c02-para-0044">If you have been in this industry for a few years, you might have noticed how quickly
+               JavaScript frameworks rise and fall, some faster than others. The next few sections
+               provide a brief overview of the ones that are popular at the moment and, given their
+               corporate backing and relatively long existence, might be here to stay for still some
+               time.
+            </p>
+            
+            <section>
+               <span id="c02-sec-0012"></span>
+               
+               <h3 id="head-3-33">Angular</h3>
+               
+               <p id="c02-para-0045">The Angular framework is currently maintained by Google together with a community
+                  of individual and corporate developers. Angular is a client‐side framework built around
+                  the idea of extending HTML with new elements called web <i>components</i> that add additional behaviors. Components can <span epub:type="pagebreak" id="Page_44" title="44"></span>be either HTML attributes or elements. They have associated templates that render
+                  a component's data by using expressions written inside double curly‐braces (<code><code>{{  }}</code></code>). <a href="#c02-fea-0004">Listing 2‐4</a> showcases the main components of a basic Angular application using two‐way binding.
+                  Notice that the application is divided into various files.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c02-fea-0004"></span> 
+                     
+                     <h2 id="head-2-30">LISTING 2-4: Simple Angular application</h2>
+                     
+                     <section>
+                        <span id="c02-sec-0013"></span>
+                        
+                        <h4><i>INDEX.HTML: THE MAIN HTML FILE</i></h4>
+                        
+                        <blockquote>
+                           <pre id="c02-code-0011"><code>&lt;!doctype html&gt;</code>
+<code>&lt;html&gt;</code>
+<code>&lt;head&gt;</code>
+<code>  &lt;meta charset="utf-8"&gt;</code>
+<code>  &lt;title&gt;Hello Angular&lt;/title&gt;</code>
+<code>  &lt;base href="/"&gt;</code>
+<code>&lt;/head&gt;</code>
+<code>&lt;body&gt;</code>
+<code>  &lt;app‐root&gt;Loading…&lt;/app‐root&gt;</code>
+<code>&lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                           </blockquote>
+                        
+                        <h4><i>MAIN.TS: APPLICATION STARTUP FILE</i></h4> 
+                        
+                        <blockquote>
+                           <pre id="c02-code-0012"><code>import './polyfills.ts';</code>
+<code></code>
+<code>import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';</code>
+<code>import { enableProdMode } from '@angular/core';</code>
+<code>import { AppModule } from './app/app.module';</code>
+<code></code>
+<code></code>
+<code>platformBrowserDynamic().bootstrapModule(AppModule);</code> </pre>
+                           </blockquote>
+                        
+                        <h4><i>APP.MODULE.TS: APP MODULE DEFINITION FILE</i></h4>
+                        
+                        <blockquote>
+                           <pre id="c02-code-0013"><code>import { BrowserModule } from '@angular/platform-browser';</code>
+<code>import { NgModule } from '@angular/core';</code>
+<code>import { FormsModule } from '@angular/forms';</code>
+<code>import { HttpModule } from '@angular/http';</code>
+<code></code>
+<code>import { AppComponent } from './app.component';</code>
+<code></code>
+<code>@NgModule({</code>
+<code>  declarations: [</code>
+<code>    AppComponent</code>
+<code>  ],</code>
+<code>  imports: [</code>
+<code>    BrowserModule,</code>
+<code>    FormsModule,</code>
+<code>    HttpModule</code>
+<code>  ],</code>
+<code>  providers: [],</code>
+<code>  bootstrap: [AppComponent]</code>
+<code>})</code>
+<code><span epub:type="pagebreak" id="Page_45" title="45"></span>export class AppModule { }</code> </pre>
+                           </blockquote>
+                        
+                        <h4><i>APP.COMPONENT.TS: APP COMPONENT APPLICATION FILE</i></h4> 
+                        
+                        <blockquote>
+                           <pre id="c02-code-0014"><code>import { Component } from '@angular/core';</code>
+<code></code>
+<code>@Component({</code>
+<code>  selector: 'app-root',</code>
+<code>  templateUrl: './app.component.html',</code>
+<code>  styleUrls: ['./app.component.css']</code>
+<code>})</code>
+<code>export class AppComponent {</code>
+<code></code>
+<code>  public firstName: string = "Simone";</code>
+<code>  public lastName: string = "Chiaretta";</code>
+<code></code>
+<code> fullName() {</code>
+<code>    return `${this.firstName} ${this.lastName}`;</code>
+<code>  }</code>
+<code></code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                        <h4><i>APP.COMPONENT.HTML: APP COMPONENT TEMPLATE FILE </i></h4>
+                        
+                        <blockquote>
+                           <pre id="c02-code-0015"><code>&lt;form&gt;</code>
+<code>  &lt;div&gt;</code>
+<code>    &lt;label for="firstName"&gt;First name:&lt;/label&gt; </code>
+<code>    &lt;input name="firstName" [(ngModel)]="firstName"&gt; </code>
+<code>  &lt;/div&gt;</code>
+<code>  &lt;div&gt;</code>
+<code>    &lt;label for="lastName"&gt;Last name:&lt;/label&gt; </code>
+<code>    &lt;input name="lastName" [(ngModel)]="lastName"&gt; </code>
+<code>  &lt;/div&gt;</code>
+<code>&lt;/form&gt;</code>
+<code></code>
+<code>&lt;hr/&gt;</code>
+<code>&lt;h1&gt;Hello &lt;span&gt;{{ fullName() }}&lt;/span&gt;!&lt;/h1&gt;</code>
+</pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>It all starts with the <code><code>app-root</code></code> element, which defines the root component from which the bootstrapping of the application
+                  will start, defined in the <code><code>main.ts</code></code> file. You can then see, split into three files, the <code><code>app</code></code> component:
+               </p>
+               
+               <ul class="check" id="c02-list-0003">
+                  
+                  <li id="c02-li-0008"><code><code>app.module.ts</code></code>, which, among other things, defines all the components in the application.
+                  </li>
+                  
+                  <li id="c02-li-0009"><code><code>app.component.ts</code></code>, which defines the actual component (which html element, which template, which style)
+                     and its behvior.
+                  </li>
+                  
+                  <li id="c02-li-0010"><code><code>app.component.html</code></code> is the template that contains the HTML markup rendered by the component.
+                  </li>
+                  
+               </ul>
+               
+               <p id="c02-para-0052">Another important directive is <code><code>[(ngModel)]</code></code>, which binds the form element to properties of the model of the component.
+               </p>
+               
+               <p id="c02-para-0053">As you have probably noticed, the JavaScript code of the Angular application is written
+                  with TypeScript.
+               </p>
+               
+               <p id="c02-para-0054"><span epub:type="pagebreak" id="Page_46" title="46"></span>There is much more to Angular than just these basic features. There is dependency‐injection,
+                  templating, routing, modules, testing, and the possibility to define custom directives.
+                  The next chapter covers all of these features in detail.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c02-sec-0014"></span>
+               
+               <h3 id="head-3-34">Knockout</h3>
+               
+               <p id="c02-para-0055">Knockout is a JavaScript framework that is particularly popular in the Microsoft developer's
+                  world. Originally developed by Microsoft developer Steve Sanderson, this framework
+                  implements the model‐view‐view model pattern. In a certain sense its syntax is pretty
+                  similar to Angular, even if it has fewer features and requires a bit more of work
+                  to define which properties support two‐way databinding and which do not. It also supports
+                  templating in order to reuse the same code snippets across the application.
+               </p>
+               
+               <p id="c02-para-0056"><a href="#c02-fea-0005">Listing 2‐5</a> shows the same “Hello World” form from the previous section written with Knockout.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c02-fea-0005"></span> 
+                     
+                     <h2 id="head-2-31">LISTING 2-5: Sample application with Knockout</h2>
+                     
+                     <section>
+                        <span id="c02-sec-0015"></span>
+                        
+                        <blockquote>
+                           <pre id="c02-code-0016"><code>&lt;!doctype html&gt;</code>
+<code>&lt;html&gt;</code>
+<code>  &lt;head&gt;</code>
+<code>    &lt;title&gt;Hello Knockout!&lt;/title&gt;</code>
+<code>    &lt;script src="knockout-min.js"&gt;&lt;/script&gt;</code>
+<code>  &lt;/head&gt;</code>
+<code>  &lt;body&gt;</code>
+<code>  &lt;div&gt;</code>
+<code>    &lt;p&gt;First name: &lt;input data-bind="value: firstName"/&gt;&lt;/p&gt;</code>
+<code>    &lt;p&gt;Last name: &lt;input data-bind="value: lastName"/&gt;&lt;/p&gt;</code>
+<code>      &lt;hr&gt;</code>
+<code>    &lt;h1&gt;Hello &lt;span data-bind="text: fullName"&gt;&lt;/span&gt;!&lt;/h1&gt;</code>
+<code>    &lt;/div&gt;</code>
+<code>  &lt;/body&gt;</code>
+<code></code>
+<code>  &lt;script&gt;</code>
+<code>  function ViewModel() {</code>
+<code>      this.firstName = ko.observable("Simone");</code>
+<code>      this.lastName = ko.observable("Chiaretta");</code>
+<code></code>
+<code>      this.fullName = ko.computed(function() {</code>
+<code>          return this.firstName() + " " + this.lastName();</code>
+<code>      }, this);</code>
+<code>  }</code>
+<code></code>
+<code>  ko.applyBindings(new ViewModel());</code>
+<code>  &lt;/script&gt;</code>
+<code></code>
+<code>&lt;/html&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p id="c02-para-0058">The main component in this simple application is in the <code><code>ViewModel</code></code> function, which defines the properties of the view model with the functions <code><code>ko.observable</code></code> and <code><code>ko.computed</code></code>. The first instructs the framework that a given property has to be “observed” and
+                  should be considered by the <span epub:type="pagebreak" id="Page_47" title="47"></span>two‐way binding mechanism. The second function defines a property that depends on
+                  other properties and that is updated whenever they change.
+               </p>
+               
+               <p>The properties are then bound to the UI with the <code><code>data-bind</code></code> attribute:
+               </p>
+               
+               <ul class="check" id="c02-list-0004">
+                  
+                  <li id="c02-li-0011">The <code><code>value</code></code> binding is used in the form's elements. This associates the value of the element
+                     with a property in the view model.
+                  </li>
+                  
+                  <li id="c02-li-0012">The <code><code>text</code></code> binding is used whenever you want to display the text value of a property of expressions.
+                  </li>
+                  
+               </ul>
+               
+               <p id="c02-para-0060">The glue between the HTML template and the view model is the last line of code in
+                  the sample: <code><code>ko.applyBindings(new ViewModel());</code></code>.
+               </p>
+               
+               <p id="c02-para-0061">Knockout has a less steep learning curve than Angular, but it also has limited functionality
+                  and its development has recently slowed down. For this reason it won't be covered
+                  in more detail in this book. Nevertheless, if you need to build a simpler application
+                  and don't require the power (and complexity) of Angular, I recommend that you have
+                  a look at the official website and follow the live tutorial.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c02-sec-0016"></span>
+               
+               <h3 id="head-3-35">React</h3>
+               
+               <p id="c02-para-0062">One more JavaScript framework worth mentioning is React. React is developed and maintained
+                  by Facebook, and it's a JavaScript library for building user interfaces without aiming
+                  at also taking care about the rest of the application. React is based on the concept
+                  of self‐contained components that render the HTML needed and that can optionally manage
+                  their own internal state. See <a href="#c02-fea-0006">Listing 2‐6</a> for a simple React application. Notice that the code is split in multiple files.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c02-fea-0006"></span> 
+                     
+                     <h2 id="head-2-32">LISTING 2-6: Simple Hello World app with React</h2>
+                     
+                     <section>
+                        <span id="c02-sec-0017"></span>
+                        
+                        <h4><i>INDEX.HTML: THE MAIN HTML FILE</i></h4>
+                        
+                        <blockquote>
+                           <pre id="c02-code-0017"><code>&lt;!doctype html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>  &lt;head&gt;</code>
+<code>    &lt;title&gt;Hello React!&lt;/title&gt;</code>
+<code>  &lt;/head&gt;</code>
+<code>  &lt;body&gt;</code>
+<code>    &lt;div id="greet"&gt;&lt;/div&gt;</code>
+<code>  &lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                           </blockquote>
+                        
+                        <h4><i>INDEX.JS: THE APPLICATION STARTUP FILE</i></h4>
+                        
+                        <blockquote>
+                           <pre id="c02-code-0018"><code>import React from 'react';</code>
+<code>import ReactDOM from 'react-dom';</code>
+<code>import Greeter from './Greeter';</code>
+<code></code>
+<code>ReactDOM.render(</code>
+<code><span epub:type="pagebreak" id="Page_48" title="48"></span>  &lt;Greeter firstName="Simone" /&gt;,</code>
+<code>  document.getElementById('greet')</code>
+<code>);</code> </pre>
+                           </blockquote>
+                        
+                        <h4><i>GREETER.JS: THE FILE WITH THE COMPONENT</i></h4>
+                        
+                        <blockquote>
+                           <pre id="c02-code-0019"><code>import React, { Component } from 'react';</code>
+<code></code>
+<code>class Greeter extends React.Component {</code>
+<code>  constructor(props) {</code>
+<code>    super(props);</code>
+<code>    this.state = {firstName: props.firstName, lastName: props.lastName};</code>
+<code></code>
+<code>    this.handleFirstNameChange = this.handleFirstNameChange.bind(this);</code>
+<code>    this.handleLastNameChange = this.handleLastNameChange.bind(this);</code>
+<code>  }</code>
+<code></code>
+<code>  handleFirstNameChange(event) {</code>
+<code>    this.setState({firstName: event.target.value}); </code>
+<code>  }</code>
+<code>  </code>
+<code>  handleLastNameChange(event) {</code>
+<code>    this.setState({lastName: event.target.value});</code>
+<code>  }</code>
+<code></code>
+<code>  render() {</code>
+<code>    return (</code>
+<code>      &lt;div&gt;</code>
+<code>      &lt;form&gt;</code>
+<code>        &lt;div&gt;</code>
+<code>          &lt;label&gt;</code>
+<code>            First name:</code>
+<code>            &lt;input type="text" value={this.state.firstName} onChange={this.handleFirstNameChange}/&gt;</code>
+<code>          &lt;/label&gt; </code>
+<code>        &lt;/div&gt;</code>
+<code>        &lt;div&gt;</code>
+<code>          &lt;label&gt;</code>
+<code>            Last name:</code>
+<code>            &lt;input type="text" value={this.state.lastName} onChange={this.handleLastNameChange}/&gt;</code>
+<code>          &lt;/label&gt; </code>
+<code>        &lt;/div&gt;</code>
+<code>      &lt;/form&gt;</code>
+<code>      &lt;hr/&gt;</code>
+<code>      &lt;h1&gt;Hello &lt;span&gt;{this.state.firstName} {this.state.lastName}&lt;/span&gt;!&lt;/h1&gt;</code>
+<code>      &lt;/div&gt;</code>
+<code>    );</code>
+<code>  }</code>
+<code>}</code>
+<code></code>
+<code>export default Greeter;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p id="c02-para-0066">As you can see from the example in <a href="#c02-fea-0006">Listing 2‐6</a>, the code is more convoluted than in Knockout but a bit more similar to Angular.
+                  It requires, even for small forms like this one, the code to be converted <span epub:type="pagebreak" id="Page_49" title="49"></span>into a component. Even with the help of the “strange” mixed JavaScript/XML syntax
+                  called JSX (the one used for the <code><code>render</code></code> method) that is used to simplify the outputting of HTML elements, React still performs
+                  direct DOM manipulation (actually virtual DOM).
+               </p>
+               
+               <p>React has this syntax because it was designed to handle the dynamic content load of
+                  Facebook where data input is a minor part of the interaction and hundreds of elements
+                  are dynamically added to pages. In order to do it in the fastest possible way, it
+                  had to directly manipulate the DOM, without going through template parsing and two‐way
+                  binding. If you don't have such a scenario but just a standard data‐bound REST application,
+                  Angular is probably a better fit.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature1">
+                     
+                     <h3>NOTE</h3>
+                     
+                     <p id="c02-para-0068"><i>In <a href="#c02-fea-0006">Listing 2‐6</a> you can see a “strange” syntax at the beginning of the two JavaScript files:</i> <code><code>import * from *</code></code><i>. This is an ES6 feature that is used to define and import modules. In using the React
+                           build tools, this syntax is converted to “standard” JavaScript using the Babel transpiler.</i></p>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+            <section>
+               <span id="c02-sec-0018"></span>
+               
+               <h3 id="head-3-36">jQuery</h3>
+               
+               <p id="c02-para-0069">One last notable mention goes to jQuery, probably the most well‐known and most used
+                  JavaScript library. jQuery is a library that simplifies the selection of HTML elements,
+                  DOM manipulation, event handling, animations, and Ajax calls. It does this using an
+                  API that abstracts the implementation differences across various browsers. It was
+                  first introduced in 2006, when it was common practice to write the same features multiple
+                  times to address the differences between browsers.
+               </p>
+               
+               <p>jQuery is not a full application framework like Angular, Knockout, and React, but
+                  it is just a utility library that helps build interactive interfaces in HTML. For
+                  this reason this book doesn't contain a more detailed coverage of jQuery.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature1">
+                     
+                     <h3>NOTE</h3>
+                     
+                     <p id="c02-para-0071"><i>A very concise and effective way to explain the difference between a framework and
+                           a library is this: “A framework calls your code, while your code calls a library.</i>”
+                     </p>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c02-sec-0019"></span>
+            
+            <h2 id="head-2-33">CSS FRAMEWORKS</h2>
+            
+            <p id="c02-para-0072">Front‐end developers and designers hate reinventing the wheel for each project they
+               work on. For this reason, until a few years ago, web designers had their own small
+               home‐grown set of CSS classes and HTML snippets that they reused in all their works.
+               In 2010 the development team working on Twitter decided to release their home‐grown
+               CSS library for public use. Later other companies and teams did the same, but only
+               very few of them rivaled Bootstrap.
+            </p>
+            
+            <p id="c02-para-0073"><span epub:type="pagebreak" id="Page_50" title="50"></span>The next sections, after giving an introduction to Bootstrap, also cover GitHub's
+               CSS framework, Primer, the still relatively new but promising Material Design Lite,
+               developed by Google, and Semantic UI, a framework with a more component‐oriented approach
+               to CSS.
+            </p>
+            
+            <section>
+               <span id="c02-sec-0020"></span>
+               
+               <h3 id="head-3-37">Bootstrap</h3>
+               
+               <p id="c02-para-0074">The most popular CSS framework is the one originally released as Twitter Blueprint.
+                  It was called that because it was developed to bring consistency across the various
+                  sites developed at Twitter. Later it was renamed to Bootstrap when it was released
+                  as an open‐source project in the summer of 2011. It then came to be the most popular
+                  library on GitHub, with more than 100,000 stars.
+               </p>
+               
+               <p id="c02-para-0075">Bootstrap contains a set of CSS‐ and HTML‐based templates for styling forms, elements,
+                  buttons, navigation, typography, and a range of other UI components. It also comes
+                  with optional JavaScript plugins to add interactivity to components.
+               </p>
+               
+               <p>Bootstrap is mobile‐first, based on a responsive 12‐columns grid system for the layout
+                  of the components on the screen. As example here is the code for a grid that automatically
+                  adapts to the screen size of the device.
+               </p>
+               
+               <blockquote>
+                  <pre id="c02-code-0020"><code>&lt;div class="row"&gt;</code>
+<code>  &lt;div class="col-xs-12 col-sm-6 col-md-8"&gt;.col-xs-12 .col-sm-6 .col-md-8&lt;/div&gt;</code>
+<code>  &lt;div class="col-xs-6 col-md-4"&gt;.col-xs-6 .col-md-4&lt;/div&gt;</code>
+<code>&lt;/div&gt;</code> </pre>
+                  </blockquote>
+               
+               <p>This example of a responsive grid displays differently in different sizes:</p>
+               
+               <ul class="check" id="c02-list-0005">
+                  
+                  <li id="c02-li-0013">On a normal desktop the two cells will appear one next to the other, the first using
+                     eight columns, the second using four. (Grid behavior for normal sized screens is defined
+                     by the classes that start with <code><code>col-md-</code></code>.)
+                  </li>
+                  
+                  <li id="c02-li-0014">On a smartphone (or XS screen, identified by the class's prefix <code><code>col-xs-</code></code>), the first cell will occupy the full width, while the second will go on a new line
+                     and use half width.
+                  </li>
+                  
+                  <li id="c02-li-0015">On a tablet (small screens, identified with <code><code>col-sm-</code></code>), the first cell will use only six columns, and the second inherits the smaller size
+                     definition, so the two cells will occupy half width each.
+                  </li>
+                  
+               </ul>
+               
+               <p id="c02-para-0078">If you are wondering how the components look, just look at Twitter. The look and feel
+                  of an application fully developed with Bootstrap is just like the famous social network.
+                  See <a href="#c02-fig-0001" id="R_c02-fig-0001">Figures 2‐1</a> and <a href="#c02-fig-0002" id="R_c02-fig-0002">2‐2</a>.
+               </p>
+               
+               <figure> <img alt="Illustration of Drop down menu with Bootstrap." src="images/c02f001.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c02-fig-0001" id="c02-fig-0001"><b>FIGURE 2-1</b></a><b>:</b></span> Drop down menu with Bootstrap
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <figure> <img alt="Illustration of the Navigation bar." src="images/c02f002.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c02-fig-0002" id="c02-fig-0002"><b>FIGURE 2-2</b></a><b>:</b></span> Navigation bar
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p id="c02-para-0079"><span epub:type="pagebreak" id="Page_51" title="51"></span>Apart from standard navigation and menus, one interesting component is called “Jumbotron,”
+                  shown in <a href="#c02-fig-0003" id="R_c02-fig-0003">Figure 2‐3</a>. It's meant to be used as the main headline to catch the visitor's attention.
+               </p>
+               
+               <figure> <img alt="Illustration of the Jumbotron component: used as the main headline to catch the visitor’s attention." src="images/c02f003.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c02-fig-0003" id="c02-fig-0003"><b>FIGURE 2-3</b></a><b>:</b></span> Jumbotron
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p id="c02-para-0080">Of course you can change the style and build your own theme with the colors of your
+                  brand. This can be done by changing some variables in the Bootstrap files and then
+                  recompiling the CSS file or by using the Customize Bootstrap download page on the
+                  official website.
+               </p>
+               
+               <p id="c02-para-0081">This was just a brief introduction to this powerful CSS framework, but <a href="c04.xhtml">Chapter 4</a> goes into more detail.
+               </p>
+               
+               <p id="c02-para-0082">Bootstrap is not the only CSS framework, as many others have been released (and many
+                  have disappeared), especially grid systems. There are three other CSS frameworks that
+                  are particularly worth mentioning, the first of which is GitHub's Primer CSS.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c02-sec-0021"></span>
+               
+               <h3 id="head-3-38">Primer CSS</h3>
+               
+               <p id="c02-para-0083">GitHub released its internal design guidelines as an open‐source project known as
+                  Primer CSS. This framework is not as fully featured as Bootstrap. For example, despite
+                  having a grid system, it is not responsive. But if you like the approach of GitHub
+                  to UI design, this framework is easy to use and nicely done. It also includes the
+                  famous <i>octicons</i>. See <a href="#c02-fig-0004" id="R_c02-fig-0004">Figure 2‐4</a>.
+               </p>
+               
+               <p id="c02-para-0084">An interesting component is called “blankslate,” which should be used when a content
+                  area has no content to show. See <a href="#c02-fig-0005" id="R_c02-fig-0005">Figure 2‐5</a>.
+               </p>
+               
+               <figure> <img alt="Illustration of Navigation with Primer CSS." src="images/c02f004.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c02-fig-0004" id="c02-fig-0004"><b>FIGURE 2-4</b></a><b>:</b></span> Navigation with Primer CSS
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <figure> <img alt="Illustration of Blankslate component." src="images/c02f005.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c02-fig-0005" id="c02-fig-0005"><b>FIGURE 2-5</b></a><b>:</b></span> Blankslate component
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p id="c02-para-0085"><span epub:type="pagebreak" id="Page_52" title="52"></span>Since style is pretty much a personal choice, if you are not a big fan of the Twitter
+                  or GitHub styles, you might like Google's Material Design Lite.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c02-sec-0022"></span>
+               
+               <h3 id="head-3-39">Material Design Lite</h3>
+               
+               <p id="c02-para-0086">Material Design Lite (MDL) is a CSS framework created by Google to bring the Material
+                  Design philosophy to the web. Unlike the Bootstrap and Primer CSS frameworks, Material
+                  Design Lite is a combination of CSS and JavaScript where elements' style and classes
+                  from the framework are enhanced at runtime by the JavaScript library, which adds additional
+                  behaviors to the components. As you can see from the samples of components shown in
+                  <a href="#c02-fig-0006" id="R_c02-fig-0006">Figures 2‐6</a> and <a href="#c02-fig-0007" id="R_c02-fig-0007">2‐7</a>, this design is very similar to the look and feel of Android apps.
+               </p>
+               
+               <figure> <img alt="Illustration of Navigation with MDL." src="images/c02f006.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c02-fig-0006" id="c02-fig-0006"><b>FIGURE 2-6</b></a><b>:</b></span> Navigation with MDL
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <figure> <img alt="Illustration of Buttons with MDL." src="images/c02f007.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c02-fig-0007" id="c02-fig-0007"><b>FIGURE 2-7</b></a><b>:</b></span> Buttons with MDL
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p id="c02-para-0087">The official website also provides some templates of websites built with Material
+                  Design Lite that can be used as a starting point.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c02-sec-0023"></span>
+               
+               <h3 id="head-3-40">Semantic UI</h3>
+               
+               <p id="c02-para-0088">One last CSS framework worth mentioning is Semantic UI. As the name implies, it gives
+                  to CSS classes names that are easier to understand than those of the other frameworks.
+                  For example, to style a button with the primary color, you use <code><code>&lt;button class="ui primary button"&gt;</code></code>.
+               </p>
+               
+               <p>Semantic UI has its own responsive layout as well, which is designed around a 16‐column
+                  grid:
+               </p>
+               
+               <blockquote>
+                  <pre id="c02-code-0021"><code>&lt;div class="ui grid"&gt;</code>
+<code>  &lt;div class="four wide column"&gt;&lt;/div&gt;</code>
+<code>  &lt;div class="four wide column"&gt;&lt;/div&gt;</code>
+<code>  &lt;div class="four wide column"&gt;&lt;/div&gt;</code>
+<code>  &lt;div class="four wide column"&gt;&lt;/div&gt;</code>
+<code>  &lt;div class="two wide column"&gt;&lt;/div&gt;</code>
+<code>  &lt;div class="eight wide column"&gt;&lt;/div&gt;</code>
+<code>  &lt;div class="six wide column"&gt;&lt;/div&gt;</code>
+<code>&lt;/div&gt;</code> </pre>
+                  </blockquote>
+               
+               <p id="c02-para-0090">This natural language naming is just the tip of the more profound and almost philosophical
+                  reasoning that led to the creation of Semantic UI, whose goal is to lower the technical
+                  barriers that lie between the concepts of programming and their correlating concepts
+                  in human meaning.
+               </p>
+               
+               <p id="c02-para-0091"><span epub:type="pagebreak" id="Page_53" title="53"></span>Sematic UI comes with a default theme, but additional themes that give the look and
+                  feel of Bootstrap, Primer CSS, and Material Design are available.
+               </p>
+               
+               <p id="c02-para-0092">This book doesn't cover Semantic UI more than what is in this small introduction,
+                  but if you are intrigued by its approach, I recommend you have a look at their learning
+                  site: <a href="http://learnsemantic.com/"><code>http://learnsemantic.com/</code></a></p>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c02-sec-0024"></span>
+            
+            <h2 id="head-2-34">PACKAGE MANAGERS</h2>
+            
+            <p id="c02-para-0093">With the many components, libraries, and tools needed for developing modern web applications
+               with ASP.NET Core MVC, something is needed to keep everything neatly organized, automating
+               installations and updates and keeping all dependencies in check. This is where package
+               managers come in handy. They download components and tools from official repositories,
+               manage all dependencies, and make it easy to set up a local copy of a project's development
+               environment just by checking it out from the source repository.
+            </p>
+            
+            <p>This book covers the following package managers:</p>
+            
+            <ul class="check" id="c02-list-0006">
+               
+               <li id="c02-li-0016">NuGet, for managing .NET libraries and components</li>
+               
+               <li id="c02-li-0017">Bower, for JavaScript and CSS frameworks</li>
+               
+               <li id="c02-li-0018">NPM, for tools and server-side JavaScript libraries</li>
+               
+            </ul>
+            
+            <p id="c02-para-0095">Bower is specifically made for client‐side dependencies, but NuGet and NPM can be
+               used for a bit of everything, which is the way they are used in the course of this
+               book.
+            </p>
+            
+            <section>
+               <span id="c02-sec-0025"></span>
+               
+               <h3 id="head-3-41">NuGet</h3>
+               
+               <p id="c02-para-0096">NuGet is the default package manager in .NET and has been integrated into Visual Studio
+                  for several versions. With ASP.NET Core, all the references of a project are saved
+                  as <code><code>PackageReference</code></code> in the project definition (<code><code>.csproj</code></code>) file, as shown in <a href="#c02-fea-0007">Listing 2‐7</a>. Everything, even references to core libraries of the Base Class Library (all grouped
+                  inside the Microsoft.AspNet.Core.All metapackage), is retrieved via NuGet packages.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c02-fea-0007"></span> 
+                     
+                     <h2 id="head-2-35">LISTING 2-7: WebApplication.csproj</h2>
+                     
+                     <section>
+                        <span id="c02-sec-0026"></span>
+                        
+                        <blockquote>
+                           <pre id="c02-code-0022"><code>&lt;Project Sdk="Microsoft.NET.Sdk.Web"&gt;</code>
+<code>  &lt;PropertyGroup&gt;</code>
+<code>    &lt;TargetFramework&gt;netcoreapp2.0&lt;/TargetFramework&gt;</code>
+<code>  &lt;/PropertyGroup&gt;</code>
+<code>  &lt;ItemGroup&gt;</code>
+<code>    &lt;PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0"/&gt;</code>
+<code>    &lt;PackageReference Include="Newtonsoft.Json" Version="10.0.3"/&gt;</code>
+<code>  &lt;/ItemGroup&gt;</code>
+<code>  &lt;ItemGroup&gt;</code>
+<code>    &lt;DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0"/&gt;</code>
+<code>  &lt;/ItemGroup&gt;</code>
+<code>&lt;/Project&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p><span epub:type="pagebreak" id="Page_54" title="54"></span>Apart from manually adding them to the <code><code>.csproj</code></code> file, as with the previous version, packages can be installed either via the newly
+                  redesigned Package Manager UI (shown in <a href="#c02-fig-0008" id="R_c02-fig-0008">Figure 2‐8</a>) or via the package manager console:
+               </p>
+               
+               <blockquote>
+                  <pre id="c02-code-0023"><code>PM&gt; Install-Package Newtonsoft.Json</code> </pre>
+                  </blockquote>
+               
+               <figure> <img alt="Illustration of Package Manager interface in Visual Studio 2017." src="images/c02f008.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c02-fig-0008" id="c02-fig-0008"><b>FIGURE 2-8</b></a><b>:</b></span> Package Manager interface in Visual Studio 2017
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p id="c02-para-0099">If you used NuGet in previous versions of ASP.NET, there is a big conceptual difference
+                  to take into consideration when using ASP.NET Core. With ASP.NET Core, only server‐side
+                  dependencies should be referenced and retrieved via NuGet. For client‐side dependencies
+                  Microsoft decided to rely on another very popular package manager—Bower, which was
+                  designed for this purpose.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c02-sec-0027"></span>
+               
+               <h3 id="head-3-42">Bower</h3>
+               
+               <p id="c02-para-0100">Bower is a very simple tool to use. Just as with NuGet, what is needed is to specify
+                  in a JSON file called <code><code>bower.json</code></code> the packages that are referenced in a project, as shown in <a href="#c02-fea-0008">Listing 2‐8</a>.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c02-fea-0008"></span> 
+                     
+                     <h2 id="head-2-36">LISTING 2-8: Bower.json</h2>
+                     
+                     <section>
+                        <span id="c02-sec-0028"></span>
+                        
+                        <blockquote>
+                           <pre id="c02-code-0024"><code>{</code>
+<code>  "name": "asp.net",</code>
+<code>  "private": true,</code>
+<code>  "dependencies": {</code>
+<code>    "bootstrap": "3.3.6",</code>
+<code>    "jquery": "2.2.0",</code>
+<code>    "jquery-validation": "1.14.0",</code>
+<code><span epub:type="pagebreak" id="Page_55" title="55"></span>    "jquery-validation-unobtrusive": "3.2.6",</code>
+<code>    "jquery-file-upload":"https://github.com/blueimp/jQuery-File-Upload/"</code>
+<code>  }</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>As you might have noticed in <a href="#c02-fea-0008">Listing 2‐8</a>, the packages can be specified with many notations:
+               </p>
+               
+               <ul class="check" id="c02-list-0007">
+                  
+                  <li id="c02-li-0019">The most common is just to use the package name registered on Bower.io. When referenced
+                     this way, Bower will download the whole git repository that was specified when the
+                     package was registered.
+                  </li>
+                  
+                  <li id="c02-li-0020">Another option is to specify directly the git or svn repository from which to download
+                     the package.
+                  </li>
+                  
+                  <li id="c02-li-0021">Finally, also a standard URL can be used. In this case the package will be downloaded
+                     from the URL where it is stored (and extracted if the file is an archive).
+                  </li>
+                  
+               </ul>
+               
+               <p id="c02-para-0103">When you type <code><code>bower install</code></code> on the console, all the packages are directly downloaded from their location and
+                  saved in a folder named <code><code>bower_components</code></code>. And here Bower stops. How to use them is up to you. You can directly reference the
+                  files from their download location, or, as is recommended to keep things tidy, you
+                  can copy the needed files (remember that Bower could download the whole git repository)
+                  inside your application's folder structure.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c02-sec-0029"></span>
+               
+               <h3 id="head-3-43">NPM</h3>
+               
+               <p id="c02-para-0104">Node Package Manager (NPM) was originally developed to manage Node.js server‐side
+                  packages, but it later also became popular for distributing command‐line tools developed
+                  with Node.js. As with the other package managers, NPM downloads the packages that
+                  are specified in a manifest file called <code><code>package.json</code></code> and installs them in a sub‐folder of your project called <code><code>node_modules</code></code>.
+               </p>
+               
+               <p id="c02-para-0105">Normally packages should be specified in a <code><code>dependencies</code></code> node, but in the context of an ASP.NET Core project, NPM will be mainly used to install
+                  the task runner and its plugins, so in this case they are inside the <code><code>devDependencies</code></code> node, as shown in <a href="#c02-fea-0009">Listing 2‐9</a>.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c02-fea-0009"></span> 
+                     
+                     <h2 id="head-2-37">LISTING 2-9: package.json</h2>
+                     
+                     <section>
+                        <span id="c02-sec-0030"></span>
+                        
+                        <blockquote>
+                           <pre id="c02-code-0025"><code>{</code>
+<code>  "name": "app",</code>
+<code>  "version": "1.0.0",</code>
+<code>  "private": true,</code>
+<code>  "devDependencies": {</code>
+<code>    "del": "^2.2.2",</code>
+<code>    "gulp": "^3.9.1",</code>
+<code>    "gulp-concat": "^2.6.1",</code>
+<code>    "gulp-cssmin": "^0.1.7",</code>
+<code>    "gulp-htmlmin": "^3.0.0",</code>
+<code>    "gulp-uglify": "^2.0.0",</code>
+<code>    "merge-stream": "^1.0.1"</code>
+<code>  }</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+            <section>
+               <span id="c02-sec-0031"></span>
+               
+               <h3 id="head-3-44"><span epub:type="pagebreak" id="Page_56" title="56"></span>The Folder Structure
+               </h3>
+               
+               <p id="c02-para-0107">To wrap up this section about package managers I want to show how all these references
+                  and manifest files look in the Solution Explorer window and on the file system. Essentially
+                  each project could have three types of dependencies, which are defined in their respective
+                  manifest files:<code><code>.csproj</code></code> for NuGet server‐side references, <code><code>bower.json</code></code> for Bower client‐side components, and <code><code>package.json</code></code> for the build tools. <a href="#c02-fig-0009" id="R_c02-fig-0009">Figure 2‐9</a> demonstrates where the Solution Explorer shows all the dependencies in the project's
+                  tree.
+               </p>
+               
+               <figure> <img alt="Illustration of Dependencies as shown in Solution Explorer." src="images/c02f009.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c02-fig-0009" id="c02-fig-0009"><b>FIGURE 2-9</b></a><b>:</b></span> Dependencies as shown in Solution Explorer
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p id="c02-para-0108">On the underlying file system, the packages are stored in various subfolders: <code><code>wwwroot/libs</code></code> for Bower components (Visual Studio stores them in a location different from the
+                  default one) and <code><code>node_modules</code></code> for NPM packages. See <a href="#c02-fig-0010" id="R_c02-fig-0010">Figure 2.10</a>.
+               </p>
+               
+               <figure> <img alt="Illustration of Dependencies’ folders on the file system." src="images/c02f010.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c02-fig-0010" id="c02-fig-0010"><b>FIGURE 2-10</b></a><b>:</b></span> Dependencies' folders on the file system
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c02-sec-0032"></span>
+            
+            <h2 id="head-2-38">TASK RUNNERS</h2>
+            
+            <p id="c02-para-0109">Task runners automate the final step of your development workflow: the build and release
+               of the application. This is nothing new in the world of server‐side development. You've
+               probably been automating your builds with MSBuild scripts or NAnt tasks for years,
+               but the concept of task runners is pretty new in the front‐end world.
+            </p>
+            
+            <p id="c02-para-0110">At this moment you might be wondering why you should embrace these “new kids on the
+               block.” This is a very legitimate question. The main reason is that the task runners
+               made for front‐end use are completely server‐side language‐agnostic. Therefore, they
+               can be used by anyone and thus they have a much larger community, which translates
+               into many more ready‐to‐use tasks. However, not all your experience is lost. As explained
+               in <a href="c01.xhtml">Chapter 1</a>, the project definition of an ASP.NET Core project is still done with MSBuild, so
+               it can still be used for building applications.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature1">
+                  
+                  <h3><span epub:type="pagebreak" id="Page_57" title="57"></span>NOTE
+                  </h3>
+                  
+                  <p id="c02-para-0112"><i>Recently, a part of the front-end development community, mostly using Linux-based
+                        machines or Macs, has stopped using task runners entirely and is using a feature of
+                        npm called</i> npm scripts<i>. These are just a way to call commands of the operating system, Node.js apps built
+                        on purpose to build their app or the development tools that come together with the
+                        framework they are using, like one that come with Angular or React.</i></p>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p id="c02-para-0113">The main actor in this category is Gulp. Gulp is code‐based and it relies on super‐small
+               interconnected plugins instead of stand‐alone tasks executed one after the other.
+               If that sounds a bit unclear, <a href="#c02-fea-0010">Listing 2‐10</a> should help clarify things.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"><span id="c02-fea-0010"></span> 
+                  
+                  <h2 id="head-2-39">LISTING 2-10: Sample of Gulp configuration file</h2>
+                  
+                  <section>
+                     <span id="c02-sec-0033"></span>
+                     
+                     <blockquote>
+                        <pre id="c02-code-0026"><code>var gulp = require('gulp');</code>
+<code>var jshint = require('gulp-jshint');</code>
+<code>var concat = require('gulp-concat');</code>
+<code>var minifyCss = require('gulp-minify-css');</code>
+<code></code>
+<code>gulp.task('default', function(done){</code>
+<code>  gulp.src('src/**/*.js')</code>
+<code>    .pipe(jshint())</code>
+<code>    .pipe(concat('bundle.js'))</code>
+<code>    .pipe(gulp.dest('dist '))</code>
+<code>    .on('end', done);</code>
+<code>});</code>
+<code></code>
+<code>gulp.watch('src/**/*.js', ['default']);</code> </pre>
+                        </blockquote>
+                     
+                  </section>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p id="c02-para-0115">It's just code. The task begins by stating which source files it has to process, with
+               <code><code>gulp.src()</code></code>. Following that, the operations are plugged one into the other with the <code><code>pipe(…)</code></code> function, and finally the resulting file is saved with <code><code>gulp.dest()</code></code>.
+            </p>
+            
+            <p id="c02-para-0116">This was a very brief introduction to Gulp, which is described in more detail in <a href="c06.xhtml">Chapter 6</a>.
+            </p>
+            
+         </section>
+         
+         <section>
+            <span id="c02-sec-0034"></span>
+            
+            <h2 id="head-2-40">SUMMARY</h2>
+            
+            <p id="c02-para-0117">Modern web development on the Microsoft technlogcy stack is not just C# and ASP.NET
+               anymore. It is achieved with a mix of different tools and frameworks, each built with
+               the best language for the purpose. This proliferation of additional components adds
+               to the complexity of choosing what to use. This choice is made more difficult due
+               to the volatility and short life of some of them. The upcoming chapters go into more
+               detail about the most popular of those options: Angular and Bootstrap CSS.
+            </p>
+            
+         </section>
+         
+      </section>
+   </body>
+   
+</html>

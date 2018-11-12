@@ -1,0 +1,399 @@
+
+fsck_hfs started at Thu Jul  5 16:52:50 2018
+** /dev/rdisk2s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking Journaled HFS Plus volume.
+   The volume name is Skype
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume Skype appears to be OK.
+fsck_hfs completed at Thu Jul  5 16:52:50 2018
+
+
+fsck_hfs started at Thu Jul  5 22:18:43 2018
+** /dev/rdisk3s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is Epic Games Launcher
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume Epic Games Launcher appears to be OK.
+fsck_hfs completed at Thu Jul  5 22:18:43 2018
+
+
+fsck_hfs started at Mon Jul 16 15:08:30 2018
+** /dev/rdisk2s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is Discord
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume Discord appears to be OK.
+fsck_hfs completed at Mon Jul 16 15:08:30 2018
+
+
+fsck_hfs started at Wed Jul 18 18:01:01 2018
+** /dev/rdisk2s2 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is Google Chrome
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume Google Chrome appears to be OK.
+fsck_hfs completed at Wed Jul 18 18:01:01 2018
+
+
+fsck_hfs started at Sat Jul 28 00:31:13 2018
+** /dev/rdisk2s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is Install GitKraken
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume Install GitKraken appears to be OK.
+fsck_hfs completed at Sat Jul 28 00:31:14 2018
+
+
+fsck_hfs started at Sat Jul 28 12:30:33 2018
+** /dev/rdisk2s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is Git 2.18.0 Mavericks Intel Universal
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume Git 2.18.0 Mavericks Intel Universal appears to be OK.
+fsck_hfs completed at Sat Jul 28 12:30:33 2018
+
+
+fsck_hfs started at Sat Jul 28 12:35:31 2018
+** /dev/rdisk3s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is Git 2.18.0 Mavericks Intel Universal
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume Git 2.18.0 Mavericks Intel Universal appears to be OK.
+fsck_hfs completed at Sat Jul 28 12:35:31 2018
+
+
+fsck_hfs started at Thu Aug  2 22:29:36 2018
+** /dev/rdisk2s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is uTorrent
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume uTorrent appears to be OK.
+fsck_hfs completed at Thu Aug  2 22:29:36 2018
+
+
+fsck_hfs started at Sun Aug 12 23:26:53 2018
+** /dev/rdisk2s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is PyCharm CE
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume PyCharm CE appears to be OK.
+fsck_hfs completed at Sun Aug 12 23:26:53 2018
+
+
+fsck_hfs started at Mon Aug 13 21:05:18 2018
+** /dev/rdisk3s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is Android Studio 3.1.4
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume Android Studio 3.1.4 appears to be OK.
+fsck_hfs completed at Mon Aug 13 21:05:19 2018
+
+
+fsck_hfs started at Sat Aug 25 14:06:59 2018
+** /dev/rdisk2s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking Journaled HFS Plus volume.
+   The volume name is Blender
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume Blender appears to be OK.
+fsck_hfs completed at Sat Aug 25 14:06:59 2018
+
+
+fsck_hfs started at Sun Aug 26 12:20:32 2018
+** /dev/rdisk3s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is AcroRdrDC_1801120058_MUI
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume AcroRdrDC_1801120058_MUI appears to be OK.
+fsck_hfs completed at Sun Aug 26 12:20:33 2018
+
+
+fsck_hfs started at Tue Aug 28 08:32:48 2018
+** /dev/rdisk2s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is WebStorm
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume WebStorm appears to be OK.
+fsck_hfs completed at Tue Aug 28 08:32:48 2018
+
+
+fsck_hfs started at Tue Aug 28 08:34:01 2018
+** /dev/rdisk3s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is Eclipse
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume Eclipse appears to be OK.
+fsck_hfs completed at Tue Aug 28 08:34:01 2018
+
+
+fsck_hfs started at Tue Aug 28 08:37:24 2018
+** /dev/rdisk4s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is Java 8 Update 181
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume Java 8 Update 181 appears to be OK.
+fsck_hfs completed at Tue Aug 28 08:37:24 2018
+
+
+fsck_hfs started at Tue Aug 28 08:38:36 2018
+** /dev/rdisk5s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is Java 8 Update 181
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume Java 8 Update 181 appears to be OK.
+fsck_hfs completed at Tue Aug 28 08:38:36 2018
+
+
+fsck_hfs started at Wed Aug 29 16:45:35 2018
+** /dev/rdisk3s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is Java 8 Update 181
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume Java 8 Update 181 appears to be OK.
+fsck_hfs completed at Wed Aug 29 16:45:35 2018
+
+
+fsck_hfs started at Wed Aug 29 16:51:31 2018
+** /dev/rdisk4s3 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is Java for macOS 2017-001
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume Java for macOS 2017-001 appears to be OK.
+fsck_hfs completed at Wed Aug 29 16:51:31 2018
+
+
+fsck_hfs started at Wed Aug 29 16:54:25 2018
+** /dev/rdisk5s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is JDK 10.0.2
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume JDK 10.0.2 appears to be OK.
+fsck_hfs completed at Wed Aug 29 16:54:25 2018
+
+
+fsck_hfs started at Mon Sep  3 22:59:34 2018
+** /dev/rdisk2s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking Journaled HFS Plus volume.
+   The volume name is Sublime Text
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume Sublime Text appears to be OK.
+fsck_hfs completed at Mon Sep  3 22:59:34 2018
+
+
+fsck_hfs started at Thu Sep  6 19:42:58 2018
+** /dev/rdisk2s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is TeamViewer
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume TeamViewer appears to be OK.
+fsck_hfs completed at Thu Sep  6 19:42:58 2018
+
+
+fsck_hfs started at Wed Sep 26 16:20:19 2018
+** /dev/rdisk2s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is Git 2.18.0 Mavericks Intel Universal
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume Git 2.18.0 Mavericks Intel Universal appears to be OK.
+fsck_hfs completed at Wed Sep 26 16:20:19 2018
+
+
+fsck_hfs started at Wed Sep 26 16:28:34 2018
+** /dev/rdisk3s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.50.6).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is Git 2.18.0 Mavericks Intel Universal
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume Git 2.18.0 Mavericks Intel Universal appears to be OK.
+fsck_hfs completed at Wed Sep 26 16:28:34 2018
+
+
+fsck_hfs started at Sat Oct 27 01:33:41 2018
+** /dev/rdisk2s2 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.200.4).
+** Checking non-journaled HFS Plus Volume.
+   The volume name is GeForce NOW
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume GeForce NOW appears to be OK.
+fsck_hfs completed at Sat Oct 27 01:33:41 2018
+
+
+fsck_hfs started at Sun Oct 28 23:35:19 2018
+** /dev/rdisk3s1 (NO WRITE)
+   Executing fsck_hfs (version hfs-407.200.4).
+** Checking Journaled HFS Plus volume.
+   The volume name is RuneScape
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume RuneScape appears to be OK.
+fsck_hfs completed at Sun Oct 28 23:35:19 2018
+

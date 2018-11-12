@@ -1,0 +1,315 @@
+﻿Log file open, 09/05/18 08:44:28
+AppSettings: Version: 7.14.2-4231683+++Portal+Release-Live
+AppSettings: CommandLine:  -silent
+AppSettings: RunningCommandlet: false
+AppSettings: ForwardMessage: false
+AppSettings: ForcedRestart: false
+AppSettings: bAllowMultipleInstances: false
+AppSettings: bBootstrap: false
+AppSettings: bSilent: true
+AppSettings: bForceDeprecated: false
+AppSettings: bDoesCompiledPlatformMatch: true
+AppSettings: bIsUnattended: false
+AppSettings: bAllowFullAppTesting: false
+AppSettings: bIsExecutingAutomation: false
+AppSettings: Mode: default
+LogInit: MacPlatform: Running 64bit App: true
+LogInit: MacPlatform: Running 64bit OS: true
+LogPlatformFile: Not using cached read wrapper
+LogInit: Display: RandInit(-461852632) SRandInit(-461852602).
+LogTaskGraph: Started task graph with 4 named threads and 7 total threads with 1 sets of task threads.
+LogPluginManager: Mounting plugin VisualStudioSourceCodeAccess
+LogPluginManager: Mounting plugin XCodeSourceCodeAccess
+LogPluginManager: Mounting plugin MessagingDebugger
+LogPluginManager: Mounting plugin UdpMessaging
+LogInit: Build: 7.14.2-4231683+++Portal+Release-Live
+LogInit: Engine Version: 4.18.0-4231683+++Portal+Release-Live
+LogInit: Compatible Engine Version: 4.18.0-4231683+++Portal+Release-Live
+LogInit: Net CL: 4231683
+LogInit: Compiled (64-bit): Jul 25 2018 14:12:37
+LogInit: Compiled with Clang: 9.1.0 (clang-902.0.39.1)
+LogInit: Build Configuration: Shipping
+LogInit: Branch Name: ++Portal+Release-Live
+LogInit: Command line:  -silent -SaveToUserDir -Messaging
+LogInit: Base directory: /Applications/Epic Games Launcher.app/Contents/UE4/EpicGamesLauncher/Binaries/Mac/
+LogInit: Installed Engine Build: 1
+LogInit: Presizing for max 100000 objects, including 0 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+LogInit: Object subsystem initialized
+[2018.09.05-15.44.28:265][  0]LogInit: macOS 10.13.5 (17F77)
+[2018.09.05-15.44.28:265][  0]LogInit: Model: MacBookPro13,3
+[2018.09.05-15.44.28:265][  0]LogInit: CPU: Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz
+[2018.09.05-15.44.28:265][  0]LogInit: CPU Page size=4096, Cores=4, HT=8
+[2018.09.05-15.44.28:265][  0]LogInit: Computer: macs-MacBook-Pro-2.local
+[2018.09.05-15.44.28:265][  0]LogInit: User: mac
+[2018.09.05-15.44.28:265][  0]LogInit: High frequency timer resolution =1000.000000 MHz
+[2018.09.05-15.44.28:265][  0]LogInit: Power Source: Battery Power
+[2018.09.05-15.44.28:265][  0]LogInit: Memory total: Physical=16.0GB (16GB approx) Pagefile=0.0GB Virtual=16.0GB
+[2018.09.05-15.44.28:322][  0]LogAssetRegistry: FAssetRegistry took 0.0220 seconds to start up
+[2018.09.05-15.44.28:323][  0]LogUObjectArray: 217 objects as part of root set at end of initial load.
+[2018.09.05-15.44.28:323][  0]LogUObjectAllocator: 36656 out of 0 bytes used by permanent object pool.
+[2018.09.05-15.44.28:323][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
+[2018.09.05-15.44.28:323][  0]LogInit: Using OS detected language (en-US).
+[2018.09.05-15.44.28:323][  0]LogInit: Using OS detected locale (en-US).
+[2018.09.05-15.44.28:327][  0]LogTextLocalizationManager: No specific localization for 'en-US' exists, so the 'en' localization will be used.
+[2018.09.05-15.44.28:336][  0]LogPackageLocalizationCache: Processed 2 localized package path(s) for 2 prioritized culture(s) in 0.000062 seconds
+[2018.09.05-15.44.28:361][  0]LogTaskGraph: Started task graph with 4 named threads and 7 total threads with 1 sets of task threads.
+[2018.09.05-15.44.28:486][  0]LogSlate: Using Freetype 2.4.12
+[2018.09.05-15.44.28:488][  0]LogSlate: SlateFontCache - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2018.09.05-15.44.28:660][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2018.09.05-15.44.28:660][  0]FUdpSocketBuilder: Failed to subscribe UdpMessageMulticastSocket to multicast group 230.0.0.1
+[2018.09.05-15.44.28:660][  0]FUdpSocketBuilder: Failed to create and initialize socket UdpMessageMulticastSocket (last error: 21)
+[2018.09.05-15.44.28:660][  0]LogUdpMessaging: Warning: StartTransport failed to create multicast socket on 0.0.0.0:0, joined to 230.0.0.1:6666 with TTL 1
+[2018.09.05-15.44.28:677][  0]Portal: Constructing App Data Access Layer
+[2018.09.05-15.44.28:678][  0]LogBuildInfoRepository: Using LauncherLabel Live-Belica
+[2018.09.05-15.44.28:723][  0]LogSelfUpdateService: Initialising for EpicGamesLauncher 7.14.2-4231683+++Portal+Release-Live-Mac.
+[2018.09.05-15.44.28:724][  0]LogStreaming: Warning: Failed to read file '/Users/mac/Library/Application Support/Epic/EpicGamesLauncher/Data/LauncherUpdate.manifest' error.
+[2018.09.05-15.44.28:724][  0]Portal: Constructing App Domain Layer
+[2018.09.05-15.44.28:992][  0]Portal: Constructing App Presentation Layer
+[2018.09.05-15.44.28:997][  0]FCommunityPortalManagerImpl::SetUnrealEnginePortalViewModel UEPVM:2
+[2018.09.05-15.44.28:998][  0]Portal: Constructing App UI Layer
+[2018.09.05-15.44.29:105][  3]LogHttp: Warning: didFailWithError. Http request failed - The Internet connection appears to be offline. https://launcherwaitingroom-public-service-prod06.ol.epicgames.com/waitingroom/api/waitingroom: 0x7fa782f44340
+[2018.09.05-15.44.29:105][  3]LogHttp: Warning: didFailWithError. Http request failed - The Internet connection appears to be offline. https://account-public-service-prod03.ol.epicgames.com/account/api/oauth/token: 0x7fa782f453e0
+[2018.09.05-15.44.29:140][  4]LogHttp: Warning: Retry 1 on https://launcherwaitingroom-public-service-prod06.ol.epicgames.com/waitingroom/api/waitingroom
+[2018.09.05-15.44.29:140][  4]LogHttp: Warning: Retry exhausted on https://account-public-service-prod03.ol.epicgames.com/account/api/oauth/token
+[2018.09.05-15.44.29:140][  4]LogOnline: Warning: OSS: Invalid response. CorrId=0 code=0 errorcode=ConnectionFailure errormessage=Connection to the server failed. errorraw=ConnectionFailure
+[2018.09.05-15.44.29:140][  4]LogOnline: Warning: OSS: Client auth request failed. Connection to the server failed.
+[2018.09.05-15.44.29:147][  4]LogHttp: Warning: didFailWithError. Http request failed - The Internet connection appears to be offline. https://launcherwaitingroom-public-service-prod06.ol.epicgames.com/waitingroom/api/waitingroom: 0x7fa77cf5b190
+[2018.09.05-15.44.29:147][  4]FCommunityPortalManagerImpl: Change State CPManagerState_Init->CPManagerState_WaitingRoom
+[2018.09.05-15.44.29:147][  4][SignInRouter] GoToUrl('/waiting-room')
+[2018.09.05-15.44.29:147][  4][SignInRouter]    Resolved To: '/waiting-room'
+[2018.09.05-15.44.29:147][  4][SignInRouter]    Best Match: waiting-room
+[2018.09.05-15.44.29:158][  4][SignInRouter]    Navigation Complete.
+[2018.09.05-15.44.29:179][  5]LogHttp: Warning: Request cancelled on https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/public/webresource/backgroundImg/fortnite
+[2018.09.05-15.44.29:179][  5]LogOnline: Warning: OSS: Invalid response. CorrId=UE4-75f6ed4b51413953d378df99f3864e5f-F3CFC201A84E5FC73F9036B8579F7893-BAB2FF1E664AE9A90A96CEA42D043ADC code=0 errorcode=ConnectionFailure errormessage=Connection to the server failed. errorraw=ConnectionFailure
+[2018.09.05-15.44.29:179][  5]LogOnline: Warning: OSS: QueryWebRequest request failed.
+[2018.09.05-15.44.29:179][  5]LogOnline: Warning: OSS: Request:
+[2018.09.05-15.44.29:179][  5]LogOnline: Warning: OSS: https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/public/webresource/backgroundImg/fortnite
+[2018.09.05-15.44.29:179][  5]LogOnline: Warning: OSS: ErrorMessage:
+[2018.09.05-15.44.29:179][  5]LogOnline: Warning: OSS: Connection to the server failed.
+[2018.09.05-15.44.29:179][  5]LogPortal: Error: FWebContentServiceImpl::OnQueryWebContentComplete FALSE LA-MCP
+[2018.09.05-15.44.29:231][  6]Manifest Check:   0x0x7fa782695820   Version:   ++Fortnite+Release-5.30-CL-4318921-Mac   AppName:   Fortnite  CPAM Line: 2247 Desc: HandleInstalledManifestReceived 
+[2018.09.05-15.44.29:231][  6]FCommunityPortalAppManagerImpl: Keeping discovered manifest
+[2018.09.05-15.44.29:231][  6]LogHttp: Warning: Lockout of 5.000000s on https://launcherwaitingroom-public-service-prod06.ol.epicgames.com/waitingroom/api/waitingroom
+[2018.09.05-15.44.36:390][ 92]LogHttp: Warning: Retry 2 on https://launcherwaitingroom-public-service-prod06.ol.epicgames.com/waitingroom/api/waitingroom
+[2018.09.05-15.44.37:705][116]LogHttp: Warning: Success on https://launcherwaitingroom-public-service-prod06.ol.epicgames.com/waitingroom/api/waitingroom
+[2018.09.05-15.44.37:748][117]FCommunityPortalManagerImpl: Change State CPManagerState_WaitingRoom->CPManagerState_UserLogin
+[2018.09.05-15.44.37:748][117][SignInRouter] GoToUrl('/epic-login')
+[2018.09.05-15.44.37:748][117][SignInRouter]    Resolved To: '/epic-login'
+[2018.09.05-15.44.37:748][117][SignInRouter]    Best Match: epic-login
+[2018.09.05-15.44.38:485][119]FCommunityPortalManagerImpl: Change State CPManagerState_UserLogin->CPManagerState_SelfUpdateCheck
+[2018.09.05-15.44.38:902][126]LogSelfUpdateService: Launcher build response 7.14.2-4231683+++Portal+Release-Live-Mac.
+[2018.09.05-15.44.38:902][126]LogSelfUpdateService: Launcher is up-to-date with the latest available version.
+[2018.09.05-15.44.38:902][126]LogSelfUpdateService: Waiting for next version update.
+[2018.09.05-15.44.38:902][126]LogEmsContentProvider: Content build response ++Portal+Main+prod-CL-4341984-Mac.
+[2018.09.05-15.44.38:965][126]LogBuildPatchServices: FBuildPatchInstaller CTOR Configuration.InstallManifest Check:   0x0x7fa77cdde860
+[2018.09.05-15.44.38:965][126]LogBuildPatchServices: FBuildPatchInstaller CTOR Configuration.CurrentManifest Check:   0x0x7fa77cdde860
+[2018.09.05-15.44.38:965][126]LogBuildPatchServices: FBuildPatchInstaller CTOR CurrentBuildManifest Check:   0x0x7fa77cdde860
+[2018.09.05-15.44.38:965][126]LogBuildPatchServices: FBuildPatchInstaller CTOR NewBuildManifest Check:   0x0x7fa77cdde860
+[2018.09.05-15.44.38:966][126]LogEmsContentProvider: Installer started.
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: InstallManifest: 0x0x7fa77cdde860
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: InstallManifest Version: ++Portal+Main+prod-CL-4341984-Mac
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: CurrentManifest: 0x0x7fa77cdde860
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: CurrentManifest Version: ++Portal+Main+prod-CL-4341984-Mac
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: InstallDirectory: /Users/mac/Library/Application Support/Epic/EpicGamesLauncher/Data/EMS/EpicGamesLauncher
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: StagingDirectory: /Users/mac/Library/Application Support/Epic/EpicGamesLauncher/Data/EMS/stage/
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: BackupDirectory: 
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: CloudDirectories: https://epicgames-download1.akamaized.net/Builds/UnrealEngineLauncher/CloudDir
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: CloudDirectories: https://epicgames-download1.akamaized.net/Builds/UnrealEngineLauncher/CloudDir
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: CloudDirectories: https://download.epicgames.com/Builds/UnrealEngineLauncher/CloudDir
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: CloudDirectories: https://download2.epicgames.com/Builds/UnrealEngineLauncher/CloudDir
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: CloudDirectories: https://download3.epicgames.com/Builds/UnrealEngineLauncher/CloudDir
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: CloudDirectories: https://download4.epicgames.com/Builds/UnrealEngineLauncher/CloudDir
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: InstallTags: 
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: ValidTags: 
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: InstallMode: EInstallMode::NonDestructiveInstall
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: VerifyMode: EVerifyMode::ShaVerifyAllFiles
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: bIsRepair: true
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: bRunRequiredPrereqs: true
+[2018.09.05-15.44.38:967][126]LogBuildPatchServices: Build Config: bAllowConcurrentExecution: false
+[2018.09.05-15.44.38:967][127]FCommunityPortalManagerImpl: Change State CPManagerState_SelfUpdateCheck->CPManagerState_WaitEms
+[2018.09.05-15.44.39:026][128]LogBuildPatchServices: Starting Installation
+[2018.09.05-15.44.39:026][128]LogBuildPatchServices: Requiring 0 files
+[2018.09.05-15.44.39:113][129]LogBuildPatchServices: Performing a repair operation
+[2018.09.05-15.44.39:113][129]BuildPatchResumeData file found 0
+[2018.09.05-15.44.39:113][129]LogBuildPatchServices: File construction complete
+[2018.09.05-15.44.39:113][129][SignInRouter]    Canceling in progress navigation. New command issued.
+[2018.09.05-15.44.39:113][129][SignInRouter]    Navigation Canceled.
+[2018.09.05-15.44.39:113][129][SignInRouter] RedirectToUrl('https://accounts.launcher-website-prod07.ol.epicgames.com/login/launcher?redirectUrl=https%3A%2F%2Faccounts.launcher-website-prod07.ol.epicgames.com%2Flogin%2FshowPleaseWait%3Fclient_id%3D24a1bff3f90749efbfcbc576c626a282%26rememberEmail%3Dfalse&client_id=24a1bff3f90749efbfcbc576c626a282&isLauncher=true')
+[2018.09.05-15.44.39:113][129][SignInRouter]    Resolved To: '/login/launcher?redirectUrl=https%3A%2F%2Faccounts.launcher-website-prod07.ol.epicgames.com%2Flogin%2FshowPleaseWait%3Fclient_id%3D24a1bff3f90749efbfcbc576c626a282%26rememberEmail%3Dfalse&client_id=24a1bff3f90749efbfcbc576c626a282&isLauncher=true'
+[2018.09.05-15.44.39:113][129][SignInRouter]    Best Match: login
+[2018.09.05-15.44.39:200][130]LogBuildPatchServices: Staged install complete
+[2018.09.05-15.44.39:200][130]LogBuildPatchServices: Running backup and stage relocation
+[2018.09.05-15.44.39:200][130]LogBuildPatchServices: Relocation complete 1
+[2018.09.05-15.44.39:266][131]LogBuildPatchServices: Verifying install
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Verify stage complete 1
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Deleting staging area.
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Reset MM.
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: AppName: EpicGamesLauncherContent
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: AppInstalledVersion: ++Portal+Main+prod-CL-4341984-Mac
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: AppPatchVersion: ++Portal+Main+prod-CL-4341984-Mac
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: CloudDirectory: https://epicgames-download1.akamaized.net/Builds/UnrealEngineLauncher/CloudDir
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: NumFilesInBuild: 261
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: NumFilesOutdated: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: NumFilesToRemove: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: NumChunksRequired: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: ChunksQueuedForDownload: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: ChunksLocallyAvailable: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: ChunksInChunkDbs: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: NumChunksDownloaded: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: NumChunksRecycled: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: NumChunksReadFromChunkDbs: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: NumFailedDownloads: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: NumBadDownloads: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: NumAbortedDownloads: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: NumRecycleFailures: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: NumChunksStoreBooted: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: NumDriveStoreChunkLoads: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: NumDriveStoreLoadFailures: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: NumChunkDbChunksFailed: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: TotalDownloadedData: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: AverageDownloadSpeed: 0 bytes (0 B, 0 B) /sec
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: PeakDownloadSpeed: 0 bytes (0 B, 0 B) /sec
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: TotalReadData: 5902703
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: AverageDiskReadSpeed: 98,820,296.169 bytes (98.82 MB, 94.242 MiB) /sec
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: PeakDiskReadSpeed: 98,820,296.169 bytes (98.82 MB, 94.242 MiB) /sec
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: TotalWrittenData: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: AverageDiskWriteSpeed: 0 bytes (0 B, 0 B) /sec
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: PeakDiskWriteSpeed: 0 bytes (0 B, 0 B) /sec
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: NumFilesConstructed: 0
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: InitializeTime: 63 ms
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: TheoreticalDownloadTime: 0 ms
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: ConstructTime: 11 ms
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: MoveFromStageTime: 8 ms
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: FileAttributesTime: 40 ms
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: VerifyTime: 68 ms
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: CleanUpTime: 0 ms
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: PrereqTime: 0 ms
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: ProcessPausedTime: 0 ms
+[2018.09.05-15.44.39:298][132]LogBuildPatchServices: Build Stat: ProcessActiveTime: 320 ms
+[2018.09.05-15.44.39:299][132]LogBuildPatchServices: Build Stat: ProcessExecuteTime: 320 ms
+[2018.09.05-15.44.39:299][132]LogBuildPatchServices: Build Stat: ProcessSuccess: TRUE
+[2018.09.05-15.44.39:299][132]LogBuildPatchServices: Build Stat: ErrorCode: OK
+[2018.09.05-15.44.39:299][132]LogBuildPatchServices: Build Stat: FailureReasonText: The operation was successful.
+[2018.09.05-15.44.39:299][132]LogBuildPatchServices: Build Stat: FailureType: SUCCESS
+[2018.09.05-15.44.39:299][132]LogBuildPatchServices: Build Stat: NumInstallRetries: 0
+[2018.09.05-15.44.39:299][132]LogBuildPatchServices: Build Stat: FinalProgressValue: 1.000000
+[2018.09.05-15.44.39:299][132]LogBuildPatchServices: Build Stat: OverallRequestSuccessRate: 1.000000
+[2018.09.05-15.44.39:299][132]LogBuildPatchServices: Build Stat: ExcellentDownloadHealthTime: 35 ms
+[2018.09.05-15.44.39:299][132]LogBuildPatchServices: Build Stat: GoodDownloadHealthTime: 0 ms
+[2018.09.05-15.44.39:299][132]LogBuildPatchServices: Build Stat: OkDownloadHealthTime: 0 ms
+[2018.09.05-15.44.39:299][132]LogBuildPatchServices: Build Stat: PoorDownloadHealthTime: 0 ms
+[2018.09.05-15.44.39:299][132]LogBuildPatchServices: Build Stat: DisconnectedDownloadHealthTime: 0 ms
+[2018.09.05-15.44.39:299][132]LogBuildPatchServices: Build Stat: AverageMemoryStoreUse: 0.0
+[2018.09.05-15.44.39:299][132]LogBuildPatchServices: Build Stat: PeakMemoryStoreUse: 0
+[2018.09.05-15.44.39:299][132]LogBuildPatchServices: Build Stat: AverageMemoryStoreRetained: 0.0
+[2018.09.05-15.44.39:299][132]LogBuildPatchServices: Build Stat: PeakMemoryStoreRetained: 0
+[2018.09.05-15.44.39:299][132]LogBuildPatchServices: Build Stat: MemoryStoreSize: 336
+[2018.09.05-15.44.39:299][132]LogEmsContentProvider: Installer complete. Success:1.
+[2018.09.05-15.44.39:307][132]LogEmsContentProvider: Waiting for next version update.
+[2018.09.05-15.44.39:366][134]FAccountService::AutoSignIn
+[2018.09.05-15.44.39:366][134]FCommunityPortalManagerImpl: Change State CPManagerState_WaitEms->CPManagerState_LoggingIn
+[2018.09.05-15.44.40:121][148][SignInRouter]    Navigation Complete.
+[2018.09.05-15.44.40:553][156]FAccountService::OnLoginComplete - 0 TRUE 1b0ec2b03cef4df1b81e051a416bfcfb 
+[2018.09.05-15.44.40:559][156]Portal: Constructing User Data Access Layer
+[2018.09.05-15.44.40:559][156]Portal: Constructing User Domain Layer
+[2018.09.05-15.44.40:822][156]Portal: Constructing User Presentation Layer
+[2018.09.05-15.44.40:920][156]LogStreaming: Warning: Failed to read file '../../Content/New UI/UE/library_win32_background_2560x1440.png' error.
+[2018.09.05-15.44.40:920][156]LogSlateOpenGL: Could not find file for Slate texture: [../../Content/New UI/UE/library_win32_background_2560x1440.png] '../../Content/New UI/UE/library_win32_background_2560x1440.png'
+[2018.09.05-15.44.40:920][156]LogStreaming: Warning: Failed to read file '../../Content/New UI/UE/UnrealEngine_logo_192x192.png' error.
+[2018.09.05-15.44.40:920][156]LogSlateOpenGL: Could not find file for Slate texture: [../../Content/New UI/UE/UnrealEngine_logo_192x192.png] '../../Content/New UI/UE/UnrealEngine_logo_192x192.png'
+[2018.09.05-15.44.41:056][156]Portal: Constructing User UI Layer
+[2018.09.05-15.44.41:126][156]FUnrealEnginePortalViewModelImple_UpdateLauncherViewModel: LauncherViewModel is valid
+[2018.09.05-15.44.41:145][156]FAccountService::OnLoginChanged - LoggedIn 0
+[2018.09.05-15.44.41:210][157]FCommunityPortalManagerImpl: Change State CPManagerState_LoggingIn->CPManagerState_LaunchWebSession
+[2018.09.05-15.44.41:213][157][SignInRouter] GoToUrl('/waiting-room')
+[2018.09.05-15.44.41:213][157][SignInRouter]    Resolved To: '/waiting-room'
+[2018.09.05-15.44.41:213][157][SignInRouter]    Best Match: waiting-room
+[2018.09.05-15.44.41:213][157][SignInRouter]    Navigation Complete.
+[2018.09.05-15.44.41:498][163]FCommunityPortalManagerImpl: Change State CPManagerState_LaunchWebSession->CPManagerState_LaunchInfo
+[2018.09.05-15.44.42:886][186][MainRouter] Refresh() failed. No location to refresh.
+[2018.09.05-15.44.42:886][186][MainRouter]    Navigation Canceled.
+[2018.09.05-15.44.42:887][186][MainRouter] GoToUrl('/fortnite')
+[2018.09.05-15.44.42:887][186][MainRouter]    Resolved To: '/fortnite'
+[2018.09.05-15.44.42:887][186][MainRouter]    Best Match: fortnite
+[2018.09.05-15.44.42:906][186][MainRouter]    Navigation Complete.
+[2018.09.05-15.44.42:906][186]FCommunityPortalManagerImpl: Change State CPManagerState_LaunchInfo->CPManagerState_Launch
+[2018.09.05-15.44.42:906][186][SignInRouter] GoToUrl('/null')
+[2018.09.05-15.44.42:906][186][SignInRouter]    Resolved To: '/null'
+[2018.09.05-15.44.42:906][186][SignInRouter]    Best Match: null
+[2018.09.05-15.44.42:934][186][SignInRouter]    Navigation Complete.
+[2018.09.05-18.16.50:357][749][MainRouter] GoToUrl('/fortnite')
+[2018.09.05-18.16.50:357][749][MainRouter]    Resolved To: '/fortnite'
+[2018.09.05-18.16.50:357][749][MainRouter]    Best Match: fortnite
+[2018.09.05-18.16.50:357][749][MainRouter]    Navigation Stopped. Already at location.
+[2018.09.05-18.16.50:357][749][MainRouter]    Navigation Canceled.
+[2018.09.05-18.16.50:393][749]LogSlateStyle: Warning: Unable to find Slate Widget Style 'Social.Callout.CheckboxGreen'. Using FCheckBoxStyle defaults instead.
+[2018.09.05-18.16.50:393][749]LogSlateStyle: Warning: Unable to find Slate Widget Style 'Social.Callout.CloseButtonGreen'. Using FButtonStyle defaults instead.
+[2018.09.05-18.16.50:403][749]SCommunityPortalMainImpl::Construct UEPVM:4
+[2018.09.05-18.16.50:448][749]~SCommunityPortalMainImpl UEPVM:2
+[2018.09.05-18.16.50:452][749]LogSlateStyle: Warning: Unable to find Slate Widget Style 'Social.Callout.CheckboxGreen'. Using FCheckBoxStyle defaults instead.
+[2018.09.05-18.16.50:452][749]LogSlateStyle: Warning: Unable to find Slate Widget Style 'Social.Callout.CloseButtonGreen'. Using FButtonStyle defaults instead.
+[2018.09.05-18.16.50:458][749]SCommunityPortalMainImpl::Construct UEPVM:4
+[2018.09.05-18.16.50:459][749]FCommunityPortalManagerImpl::RequestExit
+[2018.09.05-18.16.50:459][749]FCommunityPortalManagerImpl: Change State CPManagerState_Launch->CPManagerState_PreShutdownCleanup
+[2018.09.05-18.16.50:460][749]LogSlate: Request Window 'Epic Games Launcher' being destroyed
+[2018.09.05-18.16.50:464][749]~SCommunityPortalMainImpl UEPVM:2
+[2018.09.05-18.16.50:465][749]FCommunityPortalManagerImpl: Change State CPManagerState_PreShutdownCleanup->CPManagerState_Shutdown
+[2018.09.05-18.16.50:465][749]FUnrealEnginePortalViewModelImple_ResetLauncherViewModel: LauncherViewModel is null
+[2018.09.05-18.16.50:467][749]FApplicationImpl::Run Main loop exit. GC_Try:-0.568401 GC_Time:0.161336 GC_Skip:0
+[2018.09.05-18.16.50:501][749]Portal: Destroying User UI Layer
+[2018.09.05-18.16.50:503][749][MainRouter] RedirectToUrl('/null')
+[2018.09.05-18.16.50:503][749][MainRouter]    Resolved To: '/null'
+[2018.09.05-18.16.50:504][749][MainRouter]    Best Match: null
+[2018.09.05-18.16.50:504][749][MainRouter]    Navigation Complete.
+[2018.09.05-18.16.50:505][749][MainRouter] Refresh('/null')
+[2018.09.05-18.16.50:505][749][MainRouter]    Best Match: invalid - [0] states compared
+[2018.09.05-18.16.50:505][749][MainRouter]    Navigation Canceled.
+[2018.09.05-18.16.50:509][749]Portal: Destroying User Presentation Layer
+[2018.09.05-18.16.50:513][749]FLauncherViewModelImple: Destroying LauncherViewModel
+[2018.09.05-18.16.50:517][749]Portal: Destroying User Domain Layer
+[2018.09.05-18.16.50:525][749]Portal: Destroying User Data Access Layer
+[2018.09.05-18.16.50:525][749]Portal: Destroying App UI Layer
+[2018.09.05-18.16.50:525][749][SignInRouter] RedirectToUrl('/null')
+[2018.09.05-18.16.50:525][749][SignInRouter]    Resolved To: '/null'
+[2018.09.05-18.16.50:525][749][SignInRouter]    Best Match: null
+[2018.09.05-18.16.50:525][749][SignInRouter]    Navigation Stopped. Already at location.
+[2018.09.05-18.16.50:525][749][SignInRouter]    Navigation Canceled.
+[2018.09.05-18.16.50:525][749][SignInRouter] Refresh('/null')
+[2018.09.05-18.16.50:525][749][SignInRouter]    Best Match: invalid - [0] states compared
+[2018.09.05-18.16.50:525][749][SignInRouter]    Navigation Canceled.
+[2018.09.05-18.16.50:525][749]Portal: Destroying App Presentation Layer
+[2018.09.05-18.16.50:525][749]FCommunityPortalManagerImpl_SetUnrealEnginePortalViewModel: UnrealEnginePortalViewModel is null
+[2018.09.05-18.16.50:525][749]FCommunityPortalManagerImpl::SetUnrealEnginePortalViewModel UEPVM:1
+[2018.09.05-18.16.50:525][749]~FPresentationImpl UEPVM:0
+[2018.09.05-18.16.50:526][749]Portal: Destroying App Domain Layer
+[2018.09.05-18.16.50:528][749]Portal: Destroying App Data Access Layer
+[2018.09.05-18.16.50:558][749]LogExit: Preparing to exit.
+[2018.09.05-18.16.51:578][749]LogExit: Object subsystem successfully closed.
+[2018.09.05-18.16.51:580][749]BuildPatchServicesModule: Shutting Down
+[2018.09.05-18.16.51:580][749]VeryVerbose: BuildPatchServicesModule: Removing Ticker
+[2018.09.05-18.16.51:580][749]VeryVerbose: BuildPatchServicesModule: Finished shutting down
+[2018.09.05-18.16.51:766][749]LogModuleManager: Shutting down and abandoning module DesktopPlatform (56)
+[2018.09.05-18.16.51:766][749]LogModuleManager: Shutting down and abandoning module WidgetCarousel (54)
+[2018.09.05-18.16.51:766][749]LogModuleManager: Shutting down and abandoning module PortalUI (52)
+[2018.09.05-18.16.51:766][749]LogModuleManager: Shutting down and abandoning module PortalPresentation (50)
+[2018.09.05-18.16.51:766][749]LogModuleManager: Shutting down and abandoning module PortalRpc (48)
+[2018.09.05-18.16.51:766][749]LogModuleManager: Shutting down and abandoning module PortalServices (46)
+[2018.09.05-18.16.51:766][749]LogModuleManager: Shutting down and abandoning module PortalDomain (44)
+[2018.09.05-18.16.51:766][749]LogModuleManager: Shutting down and abandoning module PortalDataAccess (42)
+[2018.09.05-18.16.51:766][749]LogModuleManager: Shutting down and abandoning module HardwareSurvey (40)
+[2018.09.05-18.16.51:766][749]LogModuleManager: Shutting down and abandoning module MessagingDebugger (34)
+[2018.09.05-18.16.51:767][749]LogModuleManager: Shutting down and abandoning module UdpMessaging (32)
+[2018.09.05-18.16.51:937][749]LogModuleManager: Shutting down and abandoning module Networking (31)
+[2018.09.05-18.16.51:937][749]LogModuleManager: Shutting down and abandoning module Messaging (26)
+[2018.09.05-18.16.51:937][749]LogModuleManager: Shutting down and abandoning module AutomationDriver (24)
+[2018.09.05-18.16.51:937][749]LogModuleManager: Shutting down and abandoning module ImageWrapper (22)
+[2018.09.05-18.16.51:937][749]LogModuleManager: Shutting down and abandoning module InputCore (20)
+[2018.09.05-18.16.51:937][749]LogModuleManager: Shutting down and abandoning module DirectoryWatcher (18)
+[2018.09.05-18.16.51:937][749]LogModuleManager: Shutting down and abandoning module WebBrowser (16)
+[2018.09.05-18.16.51:964][749]LogModuleManager: Shutting down and abandoning module XMPP (11)
+[2018.09.05-18.16.51:965][749]LogModuleManager: Shutting down and abandoning module AnalyticsET (8)
+[2018.09.05-18.16.51:965][749]LogModuleManager: Shutting down and abandoning module HTTP (7)
+[2018.09.05-18.16.53:087][749]LogModuleManager: Shutting down and abandoning module CoreUObject (4)
+[2018.09.05-18.16.53:087][749]LogModuleManager: Shutting down and abandoning module SandboxFile (2)
+[2018.09.05-18.16.53:087][749]LogExit: Exiting.
+[2018.09.05-18.16.53:090][749]Log file closed, 09/05/18 11:16:53

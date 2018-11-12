@@ -1,0 +1,509 @@
+Sep 21, 2018 at 1:51:21 PM: Log created
+Sep 21, 2018 at 1:51:21 PM : **************************
+Sep 21, 2018 at 1:51:21 PM : ARM Application invoked...
+Sep 21, 2018 at 1:51:21 PM : ARM Application arguments 2
+Sep 21, 2018 at 1:51:21 PM : process id=1393, path: /Users/mac/Library/Application Support/Adobe/com.adobe.ARMDCHelper/Adobe Acrobat Updater.app
+Sep 21, 2018 at 1:51:21 PM : ** Processing registration information for product com.adobe.reader.dc
+Sep 21, 2018 at 1:51:21 PM :    PlistReader : Optional Plist key {ProductName} is not present.
+Sep 21, 2018 at 1:51:21 PM :    PlistReader : Optional plist key {VersionExt} is not present.
+Sep 21, 2018 at 1:51:21 PM :    PlistReader : Product registration plist parsing done.
+Sep 21, 2018 at 1:51:21 PM :    Checking updates for product Adobe Acrobat Reader DC .
+Sep 21, 2018 at 1:51:21 PM :    Fetching payload content from https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt
+Sep 21, 2018 at 1:51:21 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt' contents: '18.011.20063'
+Sep 21, 2018 at 1:51:21 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt' contents: '18.011.20063'
+Sep 21, 2018 at 1:51:21 PM : Installed app '/Applications/Adobe Acrobat Reader DC.app' version: '18.011.20058'
+Sep 21, 2018 at 1:51:21 PM :    Updates available.
+Sep 21, 2018 at 1:51:21 PM : ** Processing registration information for product com.adobe.reader.servicesupdater.dc
+Sep 21, 2018 at 1:51:21 PM :    PlistReader : Optional Plist key {ProductName} is not present.
+Sep 21, 2018 at 1:51:21 PM :    PlistReader : Product registration plist parsing done.
+Sep 21, 2018 at 1:51:21 PM :    Checking updates for product Adobe Acrobat Reader DC .
+Sep 21, 2018 at 1:51:21 PM :    Fetching payload content from https:/armmf.adobe.com/arm-manifests/mac/ServicesUpdater/reader/DC/current_version.txt
+Sep 21, 2018 at 1:51:21 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/ServicesUpdater/reader/DC/current_version.txt' contents: '15.007.20033.0'
+Sep 21, 2018 at 1:51:21 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/ServicesUpdater/reader/DC/current_version.txt' contents: '15.007.20033.0'
+Sep 21, 2018 at 1:51:21 PM : Installed app '/Applications/Adobe Acrobat Reader DC.app' version: '18.011.20058' versionExt: '18.011.20055.0' 
+Sep 21, 2018 at 1:51:21 PM : No update available. Application Adobe Acrobat Reader DC is up-to-date. 
+Sep 21, 2018 at 1:51:21 PM : ** Self-updates are enabled, checking self update...
+Sep 21, 2018 at 1:51:21 PM : ** Processing registration information for product com.adobe.ARMDCHelper
+Sep 21, 2018 at 1:51:21 PM :    PlistReader : Optional Plist key {ProductName} is not present.
+Sep 21, 2018 at 1:51:21 PM :    PlistReader : Optional plist key {VersionExt} is not present.
+Sep 21, 2018 at 1:51:21 PM :    PlistReader : Optional plist key {FeatureLockDown} is not present.
+Sep 21, 2018 at 1:51:21 PM :    PlistReader : Product registration plist parsing done.
+Sep 21, 2018 at 1:51:21 PM :    Recently checked for update, so not checking again.
+Sep 21, 2018 at 1:51:21 PM : *****  Starting update to com.adobe.reader.dc  *****
+Sep 21, 2018 at 1:51:21 PM : OS Version : (
+    10,
+    13,
+    6
+)
+Sep 21, 2018 at 1:51:21 PM :    PlistReader : Optional Plist key {ProductName} is not present.
+Sep 21, 2018 at 1:51:21 PM :    PlistReader : Optional plist key {VersionExt} is not present.
+Sep 21, 2018 at 1:51:21 PM :    PlistReader : Product registration plist parsing done.
+Sep 21, 2018 at 1:51:21 PM : Setting update mode to [3].
+Sep 21, 2018 at 1:51:21 PM : Current update mode [3], registered mode [0].
+Sep 21, 2018 at 1:51:21 PM : For Adobe Acrobat Reader DC, installed bundle version is 18.011.20058
+Sep 21, 2018 at 1:51:21 PM : WARNING: Old xml type manifest references [https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.xml] .
+Sep 21, 2018 at 1:51:21 PM : Manifest location obtained : https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.arm
+Sep 21, 2018 at 1:51:21 PM : Downloading manifest from : https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.arm
+Sep 21, 2018 at 1:51:21 PM :    Fetching payload content from https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.arm
+Sep 21, 2018 at 1:51:21 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.arm' contents size 18345
+Sep 21, 2018 at 1:51:21 PM : Signing information of the updater : 
+
+Sep 21, 2018 at 1:51:21 PM : Package "com.adobe.reader.dc.arm":
+   Status: signed by a certificate trusted by Mac OS X
+   Certificate Chain:
+    1. Developer ID Installer: Adobe Systems, Inc. (JQ525L2MZD)
+       SHA1 fingerprint: F8 32 AC 81 E4 A3 FE A7 19 8E 1C 00 34 A2 F5 B4 F1 A2 BB 55
+       -----------------------------------------------------------------------------
+    2. Developer ID Certification Authority
+       SHA1 fingerprint: 3B 16 6C 3B 7D C4 B7 51 C9 FE 2A FA B9 13 56 41 E3 88 E1 86
+       -----------------------------------------------------------------------------
+    3. Apple Root CA
+       SHA1 fingerprint: 61 1E 5B 66 2C 59 3A 08 FF 58 D1 4A E2 24 52 D1 98 DF 6C 60
+
+
+Sep 21, 2018 at 1:51:21 PM : Signing verification Successful.
+Sep 21, 2018 at 1:51:21 PM : Asset to be extracted: ReaderManifest.xml .
+Sep 21, 2018 at 1:51:21 PM : ARMManifestSchemaParser starts parsing...
+Sep 21, 2018 at 1:51:21 PM : ARMManifestSchemaParser ends parsing...
+Sep 21, 2018 at 1:51:21 PM : Product manifest [file:///Users/mac/Library/Application%20Support/Adobe/com.adobe.ARMDCHelper/download/manifests/ReaderManifest.xml] parsing done.
+Sep 21, 2018 at 1:51:21 PM : continue: Specified customInfo Value not present for ID :  FAILED 
+Sep 21, 2018 at 1:51:21 PM : Download Action Items :  {
+    "dld_Patch_Incr" = "<ARMNextManifestDownloadActionItem: 0x60800009a5e0>";
+} 
+Sep 21, 2018 at 1:51:21 PM : Execute Action Items :  {
+    "exe_cmd_Patch_Incr" = "<ARMNextManifestExecuteActionItem: 0x608000049e70>";
+} 
+Sep 21, 2018 at 1:51:21 PM :    Fetching payload content from https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt
+Sep 21, 2018 at 1:51:21 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt' contents: '18.011.20063'
+Sep 21, 2018 at 1:51:21 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt' contents: '18.011.20063'
+Sep 21, 2018 at 1:51:21 PM : For /Applications/Adobe Acrobat Reader DC.app, 1 updates to be applied
+Sep 21, 2018 at 1:51:21 PM : Downloading update installers...
+Sep 21, 2018 at 1:51:21 PM : Downloading updates from = http:/ardownload.adobe.com/pub/adobe/reader/mac/AcrobatDC/1801120063/AcroRdrDCUpd1801120063_MUI_incr.pkg
+Sep 21, 2018 at 1:51:24 PM : Download from http:/ardownload.adobe.com/pub/adobe/reader/mac/AcrobatDC/1801120063/AcroRdrDCUpd1801120063_MUI_incr.pkg: finished
+Sep 21, 2018 at 1:51:25 PM : Hash information of the updater : 798a997f48dc3811582f091868f53326adae20cda887df5009d0767f54a27128 */Users/mac/Library/Application Support/Adobe/com.adobe.ARMDCHelper/download/updaters/AcroRdrDCUpd1801120063_MUI_incr.pkg
+
+Sep 21, 2018 at 1:51:25 PM : Signing information of the updater : 
+
+Sep 21, 2018 at 1:51:25 PM : Package "AcroRdrDCUpd1801120063_MUI_incr.pkg":
+   Status: signed by a certificate trusted by Mac OS X
+   Certificate Chain:
+    1. Developer ID Installer: Adobe Systems, Inc. (JQ525L2MZD)
+       SHA1 fingerprint: F8 32 AC 81 E4 A3 FE A7 19 8E 1C 00 34 A2 F5 B4 F1 A2 BB 55
+       -----------------------------------------------------------------------------
+    2. Developer ID Certification Authority
+       SHA1 fingerprint: 3B 16 6C 3B 7D C4 B7 51 C9 FE 2A FA B9 13 56 41 E3 88 E1 86
+       -----------------------------------------------------------------------------
+    3. Apple Root CA
+       SHA1 fingerprint: 61 1E 5B 66 2C 59 3A 08 FF 58 D1 4A E2 24 52 D1 98 DF 6C 60
+
+
+Sep 21, 2018 at 1:51:25 PM : Signing verification Successful.
+Sep 21, 2018 at 1:51:27 PM : Hash information of the updater : 6c74505b82524998971ce235a0267e79d930d6e04d172fcbe551fd9ac56faa06 */Users/mac/Library/Application Support/Adobe/com.adobe.ARMDCHelper/download/ARMDCHammer
+
+Sep 21, 2018 at 1:51:27 PM : checking whether to install priviledged helper tool for com.adobe.ARMDC.SMJobBlessHelper
+Sep 21, 2018 at 1:51:27 PM : Installed priviledged helper tool: /Library/PrivilegedHelperTools/com.adobe.ARMDC.SMJobBlessHelper
+Sep 21, 2018 at 1:51:27 PM : CurrentVersion (string): 1.0.15
+Sep 21, 2018 at 1:51:27 PM : InstalledVersion (string): 1.0.15
+Sep 21, 2018 at 1:51:27 PM : Min compatible tool version (string): 1.0.5
+Sep 21, 2018 at 1:51:27 PM : code-signing passed, no need to install the helper tool!
+Sep 21, 2018 at 1:51:27 PM : OS Version:-- 10.10 or higher.
+Sep 21, 2018 at 1:51:27 PM : checking whether to install priviledged helper tool for com.adobe.ARMDC.Communicator
+Sep 21, 2018 at 1:51:27 PM : Installed priviledged helper tool: /Library/PrivilegedHelperTools/com.adobe.ARMDC.Communicator
+Sep 21, 2018 at 1:51:27 PM : CurrentVersion (string): 1.0.15
+Sep 21, 2018 at 1:51:27 PM : InstalledVersion (string): 1.0.15
+Sep 21, 2018 at 1:51:27 PM : Min compatible tool version (string): 1.0.5
+Sep 21, 2018 at 1:51:27 PM : code-signing passed, no need to install the helper tool!
+Sep 21, 2018 at 1:51:27 PM : OS Version:-- 10.10 or higher.
+Sep 21, 2018 at 1:51:27 PM : Launched Communicator...
+Sep 21, 2018 at 1:51:27 PM : Launched SMJobBlessHelper, now the app is waiting for done notification
+Sep 21, 2018 at 1:51:28 PM : Received Validation notification from ARMHammer: Completed 0.00
+Sep 21, 2018 at 1:51:28 PM :  waiting for notification, time elapsed : [0] 
+Sep 21, 2018 at 1:51:31 PM : Received Validation notification from ARMHammer: Completed 100.00
+Sep 21, 2018 at 1:51:33 PM : sent install notification to ARMHammer
+Sep 21, 2018 at 1:51:56 PM : Successfully updated, showing the done dialog!
+Sep 21, 2018 at 1:51:56 PM : ***** Ending update to /Applications/Adobe Acrobat Reader DC.app
+Sep 21, 2018 at 1:51:56 PM : ARM Application Done.
+Sep 21, 2018 at 1:51:56 PM : *********************
+Oct 1, 2018 at 1:16:34 PM : **************************
+Oct 1, 2018 at 1:16:34 PM : ARM Application invoked...
+Oct 1, 2018 at 1:16:34 PM : ARM Application arguments 2
+Oct 1, 2018 at 1:16:34 PM : process id=2696, path: /Users/mac/Library/Application Support/Adobe/com.adobe.ARMDCHelper/Adobe Acrobat Updater.app
+Oct 1, 2018 at 1:16:34 PM : ** Processing registration information for product com.adobe.reader.dc
+Oct 1, 2018 at 1:16:34 PM :    PlistReader : Optional Plist key {ProductName} is not present.
+Oct 1, 2018 at 1:16:34 PM :    PlistReader : Optional plist key {VersionExt} is not present.
+Oct 1, 2018 at 1:16:34 PM :    PlistReader : Product registration plist parsing done.
+Oct 1, 2018 at 1:16:34 PM :    Checking updates for product Adobe Acrobat Reader DC .
+Oct 1, 2018 at 1:16:34 PM :    Fetching payload content from https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt
+Oct 1, 2018 at 1:16:34 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt' contents: '19.008.20071'
+Oct 1, 2018 at 1:16:34 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt' contents: '19.008.20071'
+Oct 1, 2018 at 1:16:34 PM : Installed app '/Applications/Adobe Acrobat Reader DC.app' version: '18.011.20063'
+Oct 1, 2018 at 1:16:34 PM :    Updates available.
+Oct 1, 2018 at 1:16:34 PM : ** Processing registration information for product com.adobe.reader.servicesupdater.dc
+Oct 1, 2018 at 1:16:34 PM :    PlistReader : Optional Plist key {ProductName} is not present.
+Oct 1, 2018 at 1:16:34 PM :    PlistReader : Product registration plist parsing done.
+Oct 1, 2018 at 1:16:34 PM :    Checking updates for product Adobe Acrobat Reader DC .
+Oct 1, 2018 at 1:16:34 PM :    Fetching payload content from https:/armmf.adobe.com/arm-manifests/mac/ServicesUpdater/reader/DC/current_version.txt
+Oct 1, 2018 at 1:16:34 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/ServicesUpdater/reader/DC/current_version.txt' contents: '15.007.20033.0'
+Oct 1, 2018 at 1:16:34 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/ServicesUpdater/reader/DC/current_version.txt' contents: '15.007.20033.0'
+Oct 1, 2018 at 1:16:34 PM : Installed app '/Applications/Adobe Acrobat Reader DC.app' version: '18.011.20063' versionExt: '18.011.20055.0' 
+Oct 1, 2018 at 1:16:34 PM : No update available. Application Adobe Acrobat Reader DC is up-to-date. 
+Oct 1, 2018 at 1:16:34 PM : ** Self-updates are enabled, checking self update...
+Oct 1, 2018 at 1:16:34 PM : ** Processing registration information for product com.adobe.ARMDCHelper
+Oct 1, 2018 at 1:16:34 PM :    PlistReader : Optional Plist key {ProductName} is not present.
+Oct 1, 2018 at 1:16:34 PM :    PlistReader : Optional plist key {VersionExt} is not present.
+Oct 1, 2018 at 1:16:34 PM :    PlistReader : Optional plist key {FeatureLockDown} is not present.
+Oct 1, 2018 at 1:16:34 PM :    PlistReader : Product registration plist parsing done.
+Oct 1, 2018 at 1:16:34 PM :    Recently checked for update, so not checking again.
+Oct 1, 2018 at 1:16:34 PM : *****  Starting update to com.adobe.reader.dc  *****
+Oct 1, 2018 at 1:16:34 PM : OS Version : (
+    10,
+    13,
+    6
+)
+Oct 1, 2018 at 1:16:34 PM :    PlistReader : Optional Plist key {ProductName} is not present.
+Oct 1, 2018 at 1:16:34 PM :    PlistReader : Optional plist key {VersionExt} is not present.
+Oct 1, 2018 at 1:16:34 PM :    PlistReader : Product registration plist parsing done.
+Oct 1, 2018 at 1:16:34 PM : Setting update mode to [3].
+Oct 1, 2018 at 1:16:34 PM : Current update mode [3], registered mode [0].
+Oct 1, 2018 at 1:16:34 PM : For Adobe Acrobat Reader DC, installed bundle version is 18.011.20063
+Oct 1, 2018 at 1:16:34 PM : WARNING: Old xml type manifest references [https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.xml] .
+Oct 1, 2018 at 1:16:34 PM : Manifest location obtained : https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.arm
+Oct 1, 2018 at 1:16:34 PM : Downloading manifest from : https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.arm
+Oct 1, 2018 at 1:16:34 PM :    Fetching payload content from https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.arm
+Oct 1, 2018 at 1:16:34 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.arm' contents size 18537
+Oct 1, 2018 at 1:16:35 PM : Signing information of the updater : 
+
+Oct 1, 2018 at 1:16:35 PM : Package "com.adobe.reader.dc.arm":
+   Status: signed by a certificate trusted by Mac OS X
+   Certificate Chain:
+    1. Developer ID Installer: Adobe Systems, Inc. (JQ525L2MZD)
+       SHA1 fingerprint: F8 32 AC 81 E4 A3 FE A7 19 8E 1C 00 34 A2 F5 B4 F1 A2 BB 55
+       -----------------------------------------------------------------------------
+    2. Developer ID Certification Authority
+       SHA1 fingerprint: 3B 16 6C 3B 7D C4 B7 51 C9 FE 2A FA B9 13 56 41 E3 88 E1 86
+       -----------------------------------------------------------------------------
+    3. Apple Root CA
+       SHA1 fingerprint: 61 1E 5B 66 2C 59 3A 08 FF 58 D1 4A E2 24 52 D1 98 DF 6C 60
+
+
+Oct 1, 2018 at 1:16:35 PM : Signing verification Successful.
+Oct 1, 2018 at 1:16:35 PM : Asset to be extracted: ReaderManifest.xml .
+Oct 1, 2018 at 1:16:35 PM : ARMManifestSchemaParser starts parsing...
+Oct 1, 2018 at 1:16:35 PM : ARMManifestSchemaParser ends parsing...
+Oct 1, 2018 at 1:16:35 PM : Product manifest [file:///Users/mac/Library/Application%20Support/Adobe/com.adobe.ARMDCHelper/download/manifests/ReaderManifest.xml] parsing done.
+Oct 1, 2018 at 1:16:35 PM : continue: Specified customInfo Value not present for ID :  FAILED 
+Oct 1, 2018 at 1:16:35 PM : Download Action Items :  {
+    "dld_Patch_Incr" = "<ARMNextManifestDownloadActionItem: 0x60800008b950>";
+} 
+Oct 1, 2018 at 1:16:35 PM : Execute Action Items :  {
+    "exe_cmd_Patch_Incr" = "<ARMNextManifestExecuteActionItem: 0x60800024f6f0>";
+} 
+Oct 1, 2018 at 1:16:35 PM :    Fetching payload content from https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt
+Oct 1, 2018 at 1:16:35 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt' contents: '19.008.20071'
+Oct 1, 2018 at 1:16:35 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt' contents: '19.008.20071'
+Oct 1, 2018 at 1:16:35 PM : For /Applications/Adobe Acrobat Reader DC.app, 1 updates to be applied
+Oct 1, 2018 at 1:16:35 PM : Downloading update installers...
+Oct 1, 2018 at 1:16:35 PM : Downloading updates from = http:/ardownload.adobe.com/pub/adobe/reader/mac/AcrobatDC/1900820071/AcroRdrDCUpd1900820071_MUI_incr.pkg
+Oct 1, 2018 at 1:17:11 PM : Download from http:/ardownload.adobe.com/pub/adobe/reader/mac/AcrobatDC/1900820071/AcroRdrDCUpd1900820071_MUI_incr.pkg: finished
+Oct 1, 2018 at 1:17:12 PM : Hash information of the updater : b5d9b4a3af6dcfadf25ed24b679e7db0c5b3bcac2a4393e7e43eb34c4514e672 */Users/mac/Library/Application Support/Adobe/com.adobe.ARMDCHelper/download/updaters/AcroRdrDCUpd1900820071_MUI_incr.pkg
+
+Oct 1, 2018 at 1:17:13 PM : Signing information of the updater : 
+
+Oct 1, 2018 at 1:17:13 PM : Package "AcroRdrDCUpd1900820071_MUI_incr.pkg":
+   Status: signed by a certificate trusted by Mac OS X
+   Certificate Chain:
+    1. Developer ID Installer: Adobe Systems, Inc. (JQ525L2MZD)
+       SHA1 fingerprint: F8 32 AC 81 E4 A3 FE A7 19 8E 1C 00 34 A2 F5 B4 F1 A2 BB 55
+       -----------------------------------------------------------------------------
+    2. Developer ID Certification Authority
+       SHA1 fingerprint: 3B 16 6C 3B 7D C4 B7 51 C9 FE 2A FA B9 13 56 41 E3 88 E1 86
+       -----------------------------------------------------------------------------
+    3. Apple Root CA
+       SHA1 fingerprint: 61 1E 5B 66 2C 59 3A 08 FF 58 D1 4A E2 24 52 D1 98 DF 6C 60
+
+
+Oct 1, 2018 at 1:17:13 PM : Signing verification Successful.
+Oct 1, 2018 at 1:17:14 PM : Hash information of the updater : 6c74505b82524998971ce235a0267e79d930d6e04d172fcbe551fd9ac56faa06 */Users/mac/Library/Application Support/Adobe/com.adobe.ARMDCHelper/download/ARMDCHammer
+
+Oct 1, 2018 at 1:17:14 PM : checking whether to install priviledged helper tool for com.adobe.ARMDC.SMJobBlessHelper
+Oct 1, 2018 at 1:17:14 PM : Installed priviledged helper tool: /Library/PrivilegedHelperTools/com.adobe.ARMDC.SMJobBlessHelper
+Oct 1, 2018 at 1:17:14 PM : CurrentVersion (string): 1.0.15
+Oct 1, 2018 at 1:17:14 PM : InstalledVersion (string): 1.0.15
+Oct 1, 2018 at 1:17:14 PM : Min compatible tool version (string): 1.0.5
+Oct 1, 2018 at 1:17:14 PM : code-signing passed, no need to install the helper tool!
+Oct 1, 2018 at 1:17:14 PM : OS Version:-- 10.10 or higher.
+Oct 1, 2018 at 1:17:14 PM : checking whether to install priviledged helper tool for com.adobe.ARMDC.Communicator
+Oct 1, 2018 at 1:17:14 PM : Installed priviledged helper tool: /Library/PrivilegedHelperTools/com.adobe.ARMDC.Communicator
+Oct 1, 2018 at 1:17:14 PM : CurrentVersion (string): 1.0.15
+Oct 1, 2018 at 1:17:14 PM : InstalledVersion (string): 1.0.15
+Oct 1, 2018 at 1:17:14 PM : Min compatible tool version (string): 1.0.5
+Oct 1, 2018 at 1:17:14 PM : code-signing passed, no need to install the helper tool!
+Oct 1, 2018 at 1:17:14 PM : OS Version:-- 10.10 or higher.
+Oct 1, 2018 at 1:17:14 PM : Launched Communicator...
+Oct 1, 2018 at 1:17:14 PM : Launched SMJobBlessHelper, now the app is waiting for done notification
+Oct 1, 2018 at 1:17:15 PM : Received Validation notification from ARMHammer: Completed 0.00
+Oct 1, 2018 at 1:17:15 PM :  waiting for notification, time elapsed : [0] 
+Oct 1, 2018 at 1:17:20 PM : Received Validation notification from ARMHammer: Completed 100.00
+Oct 1, 2018 at 1:17:21 PM : sent install notification to ARMHammer
+Oct 1, 2018 at 1:17:46 PM :  waiting for notification, time elapsed : [30] 
+Oct 1, 2018 at 1:18:16 PM :  waiting for notification, time elapsed : [60] 
+Oct 1, 2018 at 1:18:46 PM :  waiting for notification, time elapsed : [90] 
+Oct 1, 2018 at 1:19:00 PM : Successfully updated, showing the done dialog!
+Oct 1, 2018 at 1:19:00 PM : ***** Ending update to /Applications/Adobe Acrobat Reader DC.app
+Oct 1, 2018 at 1:19:00 PM : ARM Application Done.
+Oct 1, 2018 at 1:19:00 PM : *********************
+Oct 10, 2018 at 11:00:59 PM : **************************
+Oct 10, 2018 at 11:00:59 PM : ARM Application invoked...
+Oct 10, 2018 at 11:00:59 PM : ARM Application arguments 2
+Oct 10, 2018 at 11:00:59 PM : process id=12763, path: /Users/mac/Library/Application Support/Adobe/com.adobe.ARMDCHelper/Adobe Acrobat Updater.app
+Oct 10, 2018 at 11:00:59 PM : ** Processing registration information for product com.adobe.reader.dc
+Oct 10, 2018 at 11:00:59 PM :    PlistReader : Optional Plist key {ProductName} is not present.
+Oct 10, 2018 at 11:00:59 PM :    PlistReader : Optional plist key {VersionExt} is not present.
+Oct 10, 2018 at 11:00:59 PM :    PlistReader : Product registration plist parsing done.
+Oct 10, 2018 at 11:00:59 PM :    Checking updates for product Adobe Acrobat Reader DC .
+Oct 10, 2018 at 11:00:59 PM :    Fetching payload content from https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt
+Oct 10, 2018 at 11:00:59 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt' contents: '19.008.20074'
+Oct 10, 2018 at 11:00:59 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt' contents: '19.008.20074'
+Oct 10, 2018 at 11:00:59 PM : Installed app '/Applications/Adobe Acrobat Reader DC.app' version: '19.008.20071'
+Oct 10, 2018 at 11:00:59 PM :    Updates available.
+Oct 10, 2018 at 11:00:59 PM : ** Processing registration information for product com.adobe.reader.servicesupdater.dc
+Oct 10, 2018 at 11:00:59 PM :    PlistReader : Optional Plist key {ProductName} is not present.
+Oct 10, 2018 at 11:00:59 PM :    PlistReader : Product registration plist parsing done.
+Oct 10, 2018 at 11:00:59 PM :    Checking updates for product Adobe Acrobat Reader DC .
+Oct 10, 2018 at 11:00:59 PM :    Fetching payload content from https:/armmf.adobe.com/arm-manifests/mac/ServicesUpdater/reader/DC/current_version.txt
+Oct 10, 2018 at 11:00:59 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/ServicesUpdater/reader/DC/current_version.txt' contents: '15.007.20033.0'
+Oct 10, 2018 at 11:00:59 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/ServicesUpdater/reader/DC/current_version.txt' contents: '15.007.20033.0'
+Oct 10, 2018 at 11:00:59 PM : Installed app '/Applications/Adobe Acrobat Reader DC.app' version: '19.008.20071' versionExt: '19.008.20071.0' 
+Oct 10, 2018 at 11:00:59 PM : No update available. Application Adobe Acrobat Reader DC is up-to-date. 
+Oct 10, 2018 at 11:00:59 PM : ** Self-updates are enabled, checking self update...
+Oct 10, 2018 at 11:00:59 PM : ** Processing registration information for product com.adobe.ARMDCHelper
+Oct 10, 2018 at 11:00:59 PM :    PlistReader : Optional Plist key {ProductName} is not present.
+Oct 10, 2018 at 11:00:59 PM :    PlistReader : Optional plist key {VersionExt} is not present.
+Oct 10, 2018 at 11:00:59 PM :    PlistReader : Optional plist key {FeatureLockDown} is not present.
+Oct 10, 2018 at 11:00:59 PM :    PlistReader : Product registration plist parsing done.
+Oct 10, 2018 at 11:00:59 PM :    Recently checked for update, so not checking again.
+Oct 10, 2018 at 11:00:59 PM : *****  Starting update to com.adobe.reader.dc  *****
+Oct 10, 2018 at 11:00:59 PM : OS Version : (
+    10,
+    13,
+    6
+)
+Oct 10, 2018 at 11:00:59 PM :    PlistReader : Optional Plist key {ProductName} is not present.
+Oct 10, 2018 at 11:00:59 PM :    PlistReader : Optional plist key {VersionExt} is not present.
+Oct 10, 2018 at 11:00:59 PM :    PlistReader : Product registration plist parsing done.
+Oct 10, 2018 at 11:00:59 PM : Setting update mode to [3].
+Oct 10, 2018 at 11:00:59 PM : Current update mode [3], registered mode [0].
+Oct 10, 2018 at 11:00:59 PM : For Adobe Acrobat Reader DC, installed bundle version is 19.008.20071
+Oct 10, 2018 at 11:00:59 PM : WARNING: Old xml type manifest references [https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.xml] .
+Oct 10, 2018 at 11:00:59 PM : Manifest location obtained : https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.arm
+Oct 10, 2018 at 11:00:59 PM : Downloading manifest from : https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.arm
+Oct 10, 2018 at 11:00:59 PM :    Fetching payload content from https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.arm
+Oct 10, 2018 at 11:00:59 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.arm' contents size 18533
+Oct 10, 2018 at 11:00:59 PM : Signing information of the updater : 
+
+Oct 10, 2018 at 11:00:59 PM : Package "com.adobe.reader.dc.arm":
+   Status: signed by a certificate trusted by Mac OS X
+   Certificate Chain:
+    1. Developer ID Installer: Adobe Systems, Inc. (JQ525L2MZD)
+       SHA1 fingerprint: F8 32 AC 81 E4 A3 FE A7 19 8E 1C 00 34 A2 F5 B4 F1 A2 BB 55
+       -----------------------------------------------------------------------------
+    2. Developer ID Certification Authority
+       SHA1 fingerprint: 3B 16 6C 3B 7D C4 B7 51 C9 FE 2A FA B9 13 56 41 E3 88 E1 86
+       -----------------------------------------------------------------------------
+    3. Apple Root CA
+       SHA1 fingerprint: 61 1E 5B 66 2C 59 3A 08 FF 58 D1 4A E2 24 52 D1 98 DF 6C 60
+
+
+Oct 10, 2018 at 11:00:59 PM : Signing verification Successful.
+Oct 10, 2018 at 11:00:59 PM : Asset to be extracted: ReaderManifest.xml .
+Oct 10, 2018 at 11:01:00 PM : ARMManifestSchemaParser starts parsing...
+Oct 10, 2018 at 11:01:00 PM : ARMManifestSchemaParser ends parsing...
+Oct 10, 2018 at 11:01:00 PM : Product manifest [file:///Users/mac/Library/Application%20Support/Adobe/com.adobe.ARMDCHelper/download/manifests/ReaderManifest.xml] parsing done.
+Oct 10, 2018 at 11:01:00 PM : continue: Specified customInfo Value not present for ID :  FAILED 
+Oct 10, 2018 at 11:01:00 PM : Download Action Items :  {
+    "dld_Patch_Incr" = "<ARMNextManifestDownloadActionItem: 0x60800009dab0>";
+} 
+Oct 10, 2018 at 11:01:00 PM : Execute Action Items :  {
+    "exe_cmd_Patch_Incr" = "<ARMNextManifestExecuteActionItem: 0x60800005ed50>";
+} 
+Oct 10, 2018 at 11:01:00 PM :    Fetching payload content from https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt
+Oct 10, 2018 at 11:01:00 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt' contents: '19.008.20074'
+Oct 10, 2018 at 11:01:00 PM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt' contents: '19.008.20074'
+Oct 10, 2018 at 11:01:00 PM : For /Applications/Adobe Acrobat Reader DC.app, 1 updates to be applied
+Oct 10, 2018 at 11:01:00 PM : Downloading update installers...
+Oct 10, 2018 at 11:01:00 PM : Downloading updates from = http:/ardownload.adobe.com/pub/adobe/reader/mac/AcrobatDC/1900820074/AcroRdrDCUpd1900820074_MUI_incr.pkg
+Oct 10, 2018 at 11:01:04 PM : Download from http:/ardownload.adobe.com/pub/adobe/reader/mac/AcrobatDC/1900820074/AcroRdrDCUpd1900820074_MUI_incr.pkg: finished
+Oct 10, 2018 at 11:01:04 PM : Hash information of the updater : 87fbfdbd2dabc2cdff2a36aef94a74876201da70f6d8aaaf0c9f02ef98158dbf */Users/mac/Library/Application Support/Adobe/com.adobe.ARMDCHelper/download/updaters/AcroRdrDCUpd1900820074_MUI_incr.pkg
+
+Oct 10, 2018 at 11:01:05 PM : Signing information of the updater : 
+
+Oct 10, 2018 at 11:01:05 PM : Package "AcroRdrDCUpd1900820074_MUI_incr.pkg":
+   Status: signed by a certificate trusted by Mac OS X
+   Certificate Chain:
+    1. Developer ID Installer: Adobe Systems, Inc. (JQ525L2MZD)
+       SHA1 fingerprint: F8 32 AC 81 E4 A3 FE A7 19 8E 1C 00 34 A2 F5 B4 F1 A2 BB 55
+       -----------------------------------------------------------------------------
+    2. Developer ID Certification Authority
+       SHA1 fingerprint: 3B 16 6C 3B 7D C4 B7 51 C9 FE 2A FA B9 13 56 41 E3 88 E1 86
+       -----------------------------------------------------------------------------
+    3. Apple Root CA
+       SHA1 fingerprint: 61 1E 5B 66 2C 59 3A 08 FF 58 D1 4A E2 24 52 D1 98 DF 6C 60
+
+
+Oct 10, 2018 at 11:01:05 PM : Signing verification Successful.
+Oct 10, 2018 at 11:01:06 PM : Hash information of the updater : 6c74505b82524998971ce235a0267e79d930d6e04d172fcbe551fd9ac56faa06 */Users/mac/Library/Application Support/Adobe/com.adobe.ARMDCHelper/download/ARMDCHammer
+
+Oct 10, 2018 at 11:01:06 PM : checking whether to install priviledged helper tool for com.adobe.ARMDC.SMJobBlessHelper
+Oct 10, 2018 at 11:01:06 PM : Installed priviledged helper tool: /Library/PrivilegedHelperTools/com.adobe.ARMDC.SMJobBlessHelper
+Oct 10, 2018 at 11:01:06 PM : CurrentVersion (string): 1.0.15
+Oct 10, 2018 at 11:01:06 PM : InstalledVersion (string): 1.0.15
+Oct 10, 2018 at 11:01:06 PM : Min compatible tool version (string): 1.0.5
+Oct 10, 2018 at 11:01:06 PM : code-signing passed, no need to install the helper tool!
+Oct 10, 2018 at 11:01:06 PM : OS Version:-- 10.10 or higher.
+Oct 10, 2018 at 11:01:06 PM : checking whether to install priviledged helper tool for com.adobe.ARMDC.Communicator
+Oct 10, 2018 at 11:01:06 PM : Installed priviledged helper tool: /Library/PrivilegedHelperTools/com.adobe.ARMDC.Communicator
+Oct 10, 2018 at 11:01:06 PM : CurrentVersion (string): 1.0.15
+Oct 10, 2018 at 11:01:06 PM : InstalledVersion (string): 1.0.15
+Oct 10, 2018 at 11:01:06 PM : Min compatible tool version (string): 1.0.5
+Oct 10, 2018 at 11:01:06 PM : code-signing passed, no need to install the helper tool!
+Oct 10, 2018 at 11:01:06 PM : OS Version:-- 10.10 or higher.
+Oct 10, 2018 at 11:01:06 PM : Launched Communicator...
+Oct 10, 2018 at 11:01:06 PM : Launched SMJobBlessHelper, now the app is waiting for done notification
+Oct 10, 2018 at 11:01:07 PM : Received Validation notification from ARMHammer: Completed 0.00
+Oct 10, 2018 at 11:01:07 PM :  waiting for notification, time elapsed : [0] 
+Oct 10, 2018 at 11:01:11 PM : Received Validation notification from ARMHammer: Completed 100.00
+Oct 10, 2018 at 11:01:12 PM : sent install notification to ARMHammer
+Oct 10, 2018 at 11:01:37 PM : Successfully updated, showing the done dialog!
+Oct 10, 2018 at 11:01:37 PM : ***** Ending update to /Applications/Adobe Acrobat Reader DC.app
+Oct 10, 2018 at 11:01:38 PM : ARM Application Done.
+Oct 10, 2018 at 11:01:38 PM : *********************
+Oct 24, 2018 at 10:40:32 AM : **************************
+Oct 24, 2018 at 10:40:32 AM : ARM Application invoked...
+Oct 24, 2018 at 10:40:32 AM : ARM Application arguments 2
+Oct 24, 2018 at 10:40:32 AM : process id=3179, path: /Users/mac/Library/Application Support/Adobe/com.adobe.ARMDCHelper/Adobe Acrobat Updater.app
+Oct 24, 2018 at 10:40:32 AM : ** Processing registration information for product com.adobe.reader.dc
+Oct 24, 2018 at 10:40:32 AM :    PlistReader : Optional Plist key {ProductName} is not present.
+Oct 24, 2018 at 10:40:32 AM :    PlistReader : Optional plist key {VersionExt} is not present.
+Oct 24, 2018 at 10:40:32 AM :    PlistReader : Product registration plist parsing done.
+Oct 24, 2018 at 10:40:32 AM :    Checking updates for product Adobe Acrobat Reader DC .
+Oct 24, 2018 at 10:40:32 AM :    Fetching payload content from https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt
+Oct 24, 2018 at 10:40:32 AM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt' contents: '19.008.20080'
+Oct 24, 2018 at 10:40:32 AM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt' contents: '19.008.20080'
+Oct 24, 2018 at 10:40:32 AM : Installed app '/Applications/Adobe Acrobat Reader DC.app' version: '19.008.20074'
+Oct 24, 2018 at 10:40:32 AM :    Updates available.
+Oct 24, 2018 at 10:40:32 AM : ** Processing registration information for product com.adobe.reader.servicesupdater.dc
+Oct 24, 2018 at 10:40:32 AM :    PlistReader : Optional Plist key {ProductName} is not present.
+Oct 24, 2018 at 10:40:32 AM :    PlistReader : Product registration plist parsing done.
+Oct 24, 2018 at 10:40:32 AM :    Checking updates for product Adobe Acrobat Reader DC .
+Oct 24, 2018 at 10:40:32 AM :    Fetching payload content from https:/armmf.adobe.com/arm-manifests/mac/ServicesUpdater/reader/DC/current_version.txt
+Oct 24, 2018 at 10:40:32 AM : URL 'https:/armmf.adobe.com/arm-manifests/mac/ServicesUpdater/reader/DC/current_version.txt' contents: '15.007.20033.0'
+Oct 24, 2018 at 10:40:32 AM : URL 'https:/armmf.adobe.com/arm-manifests/mac/ServicesUpdater/reader/DC/current_version.txt' contents: '15.007.20033.0'
+Oct 24, 2018 at 10:40:32 AM : Installed app '/Applications/Adobe Acrobat Reader DC.app' version: '19.008.20074' versionExt: '19.008.20074.0' 
+Oct 24, 2018 at 10:40:32 AM : No update available. Application Adobe Acrobat Reader DC is up-to-date. 
+Oct 24, 2018 at 10:40:32 AM : ** Self-updates are enabled, checking self update...
+Oct 24, 2018 at 10:40:32 AM : ** Processing registration information for product com.adobe.ARMDCHelper
+Oct 24, 2018 at 10:40:32 AM :    PlistReader : Optional Plist key {ProductName} is not present.
+Oct 24, 2018 at 10:40:32 AM :    PlistReader : Optional plist key {VersionExt} is not present.
+Oct 24, 2018 at 10:40:32 AM :    PlistReader : Optional plist key {FeatureLockDown} is not present.
+Oct 24, 2018 at 10:40:32 AM :    PlistReader : Product registration plist parsing done.
+Oct 24, 2018 at 10:40:32 AM :    Checking updates for product Acrobat Update Helper .
+Oct 24, 2018 at 10:40:32 AM :    Fetching payload content from https:/armmf.adobe.com/arm-manifests/mac/ARMDC/current_version.txt
+Oct 24, 2018 at 10:40:32 AM : URL 'https:/armmf.adobe.com/arm-manifests/mac/ARMDC/current_version.txt' contents: '1.0.15'
+Oct 24, 2018 at 10:40:32 AM : URL 'https:/armmf.adobe.com/arm-manifests/mac/ARMDC/current_version.txt' contents: '1.0.15'
+Oct 24, 2018 at 10:40:32 AM : Installed app '/Library/Application Support/Adobe/ARMDC/Application/Acrobat Update Helper.app' version: '1.0.15'
+Oct 24, 2018 at 10:40:32 AM : No update available. Application Acrobat Update Helper is up-to-date. 
+Oct 24, 2018 at 10:40:32 AM : *****  Starting update to com.adobe.reader.dc  *****
+Oct 24, 2018 at 10:40:32 AM : OS Version : (
+    10,
+    13,
+    6
+)
+Oct 24, 2018 at 10:40:32 AM :    PlistReader : Optional Plist key {ProductName} is not present.
+Oct 24, 2018 at 10:40:32 AM :    PlistReader : Optional plist key {VersionExt} is not present.
+Oct 24, 2018 at 10:40:32 AM :    PlistReader : Product registration plist parsing done.
+Oct 24, 2018 at 10:40:32 AM : Setting update mode to [3].
+Oct 24, 2018 at 10:40:32 AM : Current update mode [3], registered mode [0].
+Oct 24, 2018 at 10:40:32 AM : For Adobe Acrobat Reader DC, installed bundle version is 19.008.20074
+Oct 24, 2018 at 10:40:32 AM : WARNING: Old xml type manifest references [https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.xml] .
+Oct 24, 2018 at 10:40:32 AM : Manifest location obtained : https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.arm
+Oct 24, 2018 at 10:40:32 AM : Downloading manifest from : https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.arm
+Oct 24, 2018 at 10:40:32 AM :    Fetching payload content from https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.arm
+Oct 24, 2018 at 10:40:32 AM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/ReaderManifest.arm' contents size 18533
+Oct 24, 2018 at 10:40:32 AM : Signing information of the updater : 
+
+Oct 24, 2018 at 10:40:32 AM : Package "com.adobe.reader.dc.arm":
+   Status: signed by a certificate trusted by Mac OS X
+   Certificate Chain:
+    1. Developer ID Installer: Adobe Systems, Inc. (JQ525L2MZD)
+       SHA1 fingerprint: F8 32 AC 81 E4 A3 FE A7 19 8E 1C 00 34 A2 F5 B4 F1 A2 BB 55
+       -----------------------------------------------------------------------------
+    2. Developer ID Certification Authority
+       SHA1 fingerprint: 3B 16 6C 3B 7D C4 B7 51 C9 FE 2A FA B9 13 56 41 E3 88 E1 86
+       -----------------------------------------------------------------------------
+    3. Apple Root CA
+       SHA1 fingerprint: 61 1E 5B 66 2C 59 3A 08 FF 58 D1 4A E2 24 52 D1 98 DF 6C 60
+
+
+Oct 24, 2018 at 10:40:32 AM : Signing verification Successful.
+Oct 24, 2018 at 10:40:32 AM : Asset to be extracted: ReaderManifest.xml .
+Oct 24, 2018 at 10:40:32 AM : ARMManifestSchemaParser starts parsing...
+Oct 24, 2018 at 10:40:32 AM : ARMManifestSchemaParser ends parsing...
+Oct 24, 2018 at 10:40:32 AM : Product manifest [file:///Users/mac/Library/Application%20Support/Adobe/com.adobe.ARMDCHelper/download/manifests/ReaderManifest.xml] parsing done.
+Oct 24, 2018 at 10:40:32 AM : continue: Specified customInfo Value not present for ID :  FAILED 
+Oct 24, 2018 at 10:40:32 AM : Download Action Items :  {
+    "dld_Patch_Incr" = "<ARMNextManifestDownloadActionItem: 0x60c000096cb0>";
+} 
+Oct 24, 2018 at 10:40:32 AM : Execute Action Items :  {
+    "exe_cmd_Patch_Incr" = "<ARMNextManifestExecuteActionItem: 0x60c000050320>";
+} 
+Oct 24, 2018 at 10:40:32 AM :    Fetching payload content from https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt
+Oct 24, 2018 at 10:40:32 AM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt' contents: '19.008.20080'
+Oct 24, 2018 at 10:40:32 AM : URL 'https:/armmf.adobe.com/arm-manifests/mac/AcrobatDC/reader/current_version.txt' contents: '19.008.20080'
+Oct 24, 2018 at 10:40:32 AM : For /Applications/Adobe Acrobat Reader DC.app, 1 updates to be applied
+Oct 24, 2018 at 10:40:32 AM : Downloading update installers...
+Oct 24, 2018 at 10:40:32 AM : Downloading updates from = http:/ardownload.adobe.com/pub/adobe/reader/mac/AcrobatDC/1900820080/AcroRdrDCUpd1900820080_MUI_incr.pkg
+Oct 24, 2018 at 10:40:38 AM : Download from http:/ardownload.adobe.com/pub/adobe/reader/mac/AcrobatDC/1900820080/AcroRdrDCUpd1900820080_MUI_incr.pkg: finished
+Oct 24, 2018 at 10:40:39 AM : Hash information of the updater : f561044d0e81e7f46add41ef4876e982f4f0b0648111a6b149070540d6a9f063 */Users/mac/Library/Application Support/Adobe/com.adobe.ARMDCHelper/download/updaters/AcroRdrDCUpd1900820080_MUI_incr.pkg
+
+Oct 24, 2018 at 10:40:39 AM : Signing information of the updater : 
+
+Oct 24, 2018 at 10:40:39 AM : Package "AcroRdrDCUpd1900820080_MUI_incr.pkg":
+   Status: signed by a certificate trusted by Mac OS X
+   Certificate Chain:
+    1. Developer ID Installer: Adobe Systems, Inc. (JQ525L2MZD)
+       SHA1 fingerprint: F8 32 AC 81 E4 A3 FE A7 19 8E 1C 00 34 A2 F5 B4 F1 A2 BB 55
+       -----------------------------------------------------------------------------
+    2. Developer ID Certification Authority
+       SHA1 fingerprint: 3B 16 6C 3B 7D C4 B7 51 C9 FE 2A FA B9 13 56 41 E3 88 E1 86
+       -----------------------------------------------------------------------------
+    3. Apple Root CA
+       SHA1 fingerprint: 61 1E 5B 66 2C 59 3A 08 FF 58 D1 4A E2 24 52 D1 98 DF 6C 60
+
+
+Oct 24, 2018 at 10:40:39 AM : Signing verification Successful.
+Oct 24, 2018 at 10:40:41 AM : Hash information of the updater : 6c74505b82524998971ce235a0267e79d930d6e04d172fcbe551fd9ac56faa06 */Users/mac/Library/Application Support/Adobe/com.adobe.ARMDCHelper/download/ARMDCHammer
+
+Oct 24, 2018 at 10:40:41 AM : checking whether to install priviledged helper tool for com.adobe.ARMDC.SMJobBlessHelper
+Oct 24, 2018 at 10:40:41 AM : Installed priviledged helper tool: /Library/PrivilegedHelperTools/com.adobe.ARMDC.SMJobBlessHelper
+Oct 24, 2018 at 10:40:41 AM : CurrentVersion (string): 1.0.15
+Oct 24, 2018 at 10:40:41 AM : InstalledVersion (string): 1.0.15
+Oct 24, 2018 at 10:40:41 AM : Min compatible tool version (string): 1.0.5
+Oct 24, 2018 at 10:40:41 AM : code-signing passed, no need to install the helper tool!
+Oct 24, 2018 at 10:40:41 AM : OS Version:-- 10.10 or higher.
+Oct 24, 2018 at 10:40:41 AM : checking whether to install priviledged helper tool for com.adobe.ARMDC.Communicator
+Oct 24, 2018 at 10:40:41 AM : Installed priviledged helper tool: /Library/PrivilegedHelperTools/com.adobe.ARMDC.Communicator
+Oct 24, 2018 at 10:40:41 AM : CurrentVersion (string): 1.0.15
+Oct 24, 2018 at 10:40:41 AM : InstalledVersion (string): 1.0.15
+Oct 24, 2018 at 10:40:41 AM : Min compatible tool version (string): 1.0.5
+Oct 24, 2018 at 10:40:41 AM : code-signing passed, no need to install the helper tool!
+Oct 24, 2018 at 10:40:41 AM : OS Version:-- 10.10 or higher.
+Oct 24, 2018 at 10:40:41 AM : Launched Communicator...
+Oct 24, 2018 at 10:40:41 AM : Launched SMJobBlessHelper, now the app is waiting for done notification
+Oct 24, 2018 at 10:40:42 AM : Received Validation notification from ARMHammer: Completed 0.00
+Oct 24, 2018 at 10:40:42 AM :  waiting for notification, time elapsed : [0] 
+Oct 24, 2018 at 10:40:45 AM : Received Validation notification from ARMHammer: Completed 100.00
+Oct 24, 2018 at 10:40:47 AM : sent install notification to ARMHammer
+Oct 24, 2018 at 10:41:12 AM : Successfully updated, showing the done dialog!
+Oct 24, 2018 at 10:41:12 AM : ***** Ending update to /Applications/Adobe Acrobat Reader DC.app
+Oct 24, 2018 at 10:41:12 AM : ARM Application Done.
+Oct 24, 2018 at 10:41:12 AM : *********************

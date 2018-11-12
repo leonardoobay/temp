@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" xmlns:epub="http://www.idpf.org/2007/ops" version="3.0" unique-identifier="isbn-id" xml:lang="en">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:title id="t1">Front-end Development with ASP.NET Core, Angular, and Bootstrap</dc:title>
+    <meta refines="#t1" property="title-type">main</meta>
+    <meta refines="#t1" property="display-seq">1</meta>
+    <dc:creator id="creator1">Simone Chiaretta</dc:creator>
+    <meta refines="#creator1" property="role" scheme="marc:relators" id="role1">aut</meta>
+    <meta refines="#creator1" property="file-as">Chiaretta, Simone</meta>
+    <meta refines="#creator1" property="display-seq">1</meta>
+    <dc:language>en-US</dc:language>
+    <meta property="dcterms:publisher">John Wiley &amp; Sons, Inc.</meta>
+    <dc:identifier id="isbn-id">urn:isbn:9781119181408</dc:identifier>
+    <meta refines="#isbn-id" property="identifier-type" scheme="onix:codelist5">15</meta>
+    <dc:source id="src-id">urn:isbn:9781119181316</dc:source>
+    <meta refines="#src-id" property="identifier-type" scheme="onix:codelist5">15</meta>
+    <meta name="cover" content="cover-image" />
+    <meta property="dcterms:modified">2018-02-12T09:05:00Z</meta>
+    <dc:date>2018-03-07T00:00:00Z</dc:date>
+    <meta xmlns="" name="BNContentKind" content="" />
+  </metadata>
+  <manifest>
+    <item id="cover-image" href="images/9781119181316.jpg" media-type="image/jpeg" properties="cover-image" />
+    <item id="Aarrow" href="images/arrow.jpg" media-type="image/jpeg" />
+    <item id="Ac01f001" href="images/c01f001.jpg" media-type="image/jpeg" />
+    <item id="Ac01f002" href="images/c01f002.jpg" media-type="image/jpeg" />
+    <item id="Ac01f003" href="images/c01f003.jpg" media-type="image/jpeg" />
+    <item id="Ac01f004" href="images/c01f004.jpg" media-type="image/jpeg" />
+    <item id="Ac01f005" href="images/c01f005.jpg" media-type="image/jpeg" />
+    <item id="Ac01f006" href="images/c01f006.jpg" media-type="image/jpeg" />
+    <item id="Ac01f007" href="images/c01f007.jpg" media-type="image/jpeg" />
+    <item id="Ac01f008" href="images/c01f008.jpg" media-type="image/jpeg" />
+    <item id="Ac01f009" href="images/c01f009.jpg" media-type="image/jpeg" />
+    <item id="Ac01f010" href="images/c01f010.jpg" media-type="image/jpeg" />
+    <item id="Ac01f011" href="images/c01f011.jpg" media-type="image/jpeg" />
+    <item id="Ac01f012" href="images/c01f012.jpg" media-type="image/jpeg" />
+    <item id="Ac01f013" href="images/c01f013.jpg" media-type="image/jpeg" />
+    <item id="Ac02f001" href="images/c02f001.jpg" media-type="image/jpeg" />
+    <item id="Ac02f002" href="images/c02f002.jpg" media-type="image/jpeg" />
+    <item id="Ac02f003" href="images/c02f003.jpg" media-type="image/jpeg" />
+    <item id="Ac02f004" href="images/c02f004.jpg" media-type="image/jpeg" />
+    <item id="Ac02f005" href="images/c02f005.jpg" media-type="image/jpeg" />
+    <item id="Ac02f006" href="images/c02f006.jpg" media-type="image/jpeg" />
+    <item id="Ac02f007" href="images/c02f007.jpg" media-type="image/jpeg" />
+    <item id="Ac02f008" href="images/c02f008.jpg" media-type="image/jpeg" />
+    <item id="Ac02f009" href="images/c02f009.jpg" media-type="image/jpeg" />
+    <item id="Ac02f010" href="images/c02f010.jpg" media-type="image/jpeg" />
+    <item id="Ac03f001" href="images/c03f001.jpg" media-type="image/jpeg" />
+    <item id="Ac03f002" href="images/c03f002.jpg" media-type="image/jpeg" />
+    <item id="Ac03f003" href="images/c03f003.jpg" media-type="image/jpeg" />
+    <item id="Ac03f004" href="images/c03f004.jpg" media-type="image/jpeg" />
+    <item id="Ac03f005" href="images/c03f005.jpg" media-type="image/jpeg" />
+    <item id="Ac03f006" href="images/c03f006.jpg" media-type="image/jpeg" />
+    <item id="Ac03f007" href="images/c03f007.jpg" media-type="image/jpeg" />
+    <item id="Ac03f008" href="images/c03f008.jpg" media-type="image/jpeg" />
+    <item id="Ac03f009" href="images/c03f009.jpg" media-type="image/jpeg" />
+    <item id="Ac03f010" href="images/c03f010.jpg" media-type="image/jpeg" />
+    <item id="Ac03f011" href="images/c03f011.jpg" media-type="image/jpeg" />
+    <item id="Ac03f012" href="images/c03f012.jpg" media-type="image/jpeg" />
+    <item id="Ac04f001" href="images/c04f001.jpg" media-type="image/jpeg" />
+    <item id="Ac04f002" href="images/c04f002.jpg" media-type="image/jpeg" />
+    <item id="Ac04f003" href="images/c04f003.jpg" media-type="image/jpeg" />
+    <item id="Ac04f004" href="images/c04f004.jpg" media-type="image/jpeg" />
+    <item id="Ac04f005" href="images/c04f005.jpg" media-type="image/jpeg" />
+    <item id="Ac04f006" href="images/c04f006.jpg" media-type="image/jpeg" />
+    <item id="Ac04f007" href="images/c04f007.jpg" media-type="image/jpeg" />
+    <item id="Ac04f008" href="images/c04f008.jpg" media-type="image/jpeg" />
+    <item id="Ac04f009" href="images/c04f009.jpg" media-type="image/jpeg" />
+    <item id="Ac04f010" href="images/c04f010.jpg" media-type="image/jpeg" />
+    <item id="Ac04f011" href="images/c04f011.jpg" media-type="image/jpeg" />
+    <item id="Ac04f012" href="images/c04f012.jpg" media-type="image/jpeg" />
+    <item id="Ac04f013" href="images/c04f013.jpg" media-type="image/jpeg" />
+    <item id="Ac04f014" href="images/c04f014.jpg" media-type="image/jpeg" />
+    <item id="Ac04f015" href="images/c04f015.jpg" media-type="image/jpeg" />
+    <item id="Ac04f016" href="images/c04f016.jpg" media-type="image/jpeg" />
+    <item id="Ac04f017" href="images/c04f017.jpg" media-type="image/jpeg" />
+    <item id="Ac04f018" href="images/c04f018.jpg" media-type="image/jpeg" />
+    <item id="Ac04f019" href="images/c04f019.jpg" media-type="image/jpeg" />
+    <item id="Ac04f020" href="images/c04f020.jpg" media-type="image/jpeg" />
+    <item id="Ac04f021" href="images/c04f021.jpg" media-type="image/jpeg" />
+    <item id="Ac04f022" href="images/c04f022.jpg" media-type="image/jpeg" />
+    <item id="Ac05f001" href="images/c05f001.jpg" media-type="image/jpeg" />
+    <item id="Ac05f002" href="images/c05f002.jpg" media-type="image/jpeg" />
+    <item id="Ac05f003" href="images/c05f003.jpg" media-type="image/jpeg" />
+    <item id="Ac05f004" href="images/c05f004.jpg" media-type="image/jpeg" />
+    <item id="Ac05f005" href="images/c05f005.jpg" media-type="image/jpeg" />
+    <item id="Ac05f006" href="images/c05f006.jpg" media-type="image/jpeg" />
+    <item id="Ac05f007" href="images/c05f007.jpg" media-type="image/jpeg" />
+    <item id="Ac05f008" href="images/c05f008.jpg" media-type="image/jpeg" />
+    <item id="Ac05f009" href="images/c05f009.jpg" media-type="image/jpeg" />
+    <item id="Ac05f010" href="images/c05f010.jpg" media-type="image/jpeg" />
+    <item id="Ac06f001" href="images/c06f001.jpg" media-type="image/jpeg" />
+    <item id="Ac06f002" href="images/c06f002.jpg" media-type="image/jpeg" />
+    <item id="Ac06f003" href="images/c06f003.jpg" media-type="image/jpeg" />
+    <item id="Ac06f004" href="images/c06f004.jpg" media-type="image/jpeg" />
+    <item id="Ac06f005" href="images/c06f005.jpg" media-type="image/jpeg" />
+    <item id="Ac06f006" href="images/c06f006.jpg" media-type="image/jpeg" />
+    <item id="Ac06f007" href="images/c06f007.jpg" media-type="image/jpeg" />
+    <item id="Ac06f008" href="images/c06f008.jpg" media-type="image/jpeg" />
+    <item id="Ac07f001" href="images/c07f001.jpg" media-type="image/jpeg" />
+    <item id="Ac07f002" href="images/c07f002.jpg" media-type="image/jpeg" />
+    <item id="Ac07f003" href="images/c07f003.jpg" media-type="image/jpeg" />
+    <item id="Ac07f004" href="images/c07f004.jpg" media-type="image/jpeg" />
+    <item id="Ac07f005" href="images/c07f005.jpg" media-type="image/jpeg" />
+    <item id="Ac07f006" href="images/c07f006.jpg" media-type="image/jpeg" />
+    <item id="Ac07f007" href="images/c07f007.jpg" media-type="image/jpeg" />
+    <item id="Ac07f008" href="images/c07f008.jpg" media-type="image/jpeg" />
+    <item id="Ac07f009" href="images/c07f009.jpg" media-type="image/jpeg" />
+    <item id="Ac07f010" href="images/c07f010.jpg" media-type="image/jpeg" />
+    <item id="Ac07f011" href="images/c07f011.jpg" media-type="image/jpeg" />
+    <item id="Ac07f012" href="images/c07f012.jpg" media-type="image/jpeg" />
+    <item id="Ac07f013" href="images/c07f013.jpg" media-type="image/jpeg" />
+    <item id="Ac07f014" href="images/c07f014.jpg" media-type="image/jpeg" />
+    <item id="Ac07f015" href="images/c07f015.jpg" media-type="image/jpeg" />
+    <item id="Ac07f016" href="images/c07f016.jpg" media-type="image/jpeg" />
+    <item id="Ac07f017" href="images/c07f017.jpg" media-type="image/jpeg" />
+    <item id="Ac07f018" href="images/c07f018.jpg" media-type="image/jpeg" />
+    <item id="Ac07f019" href="images/c07f019.jpg" media-type="image/jpeg" />
+    <item id="Ac07f020" href="images/c07f020.jpg" media-type="image/jpeg" />
+    <item id="Ac07f021" href="images/c07f021.jpg" media-type="image/jpeg" />
+    <item id="Ac07f022" href="images/c07f022.jpg" media-type="image/jpeg" />
+    <item id="Ac07f023" href="images/c07f023.jpg" media-type="image/jpeg" />
+    <item id="Ac07f024" href="images/c07f024.jpg" media-type="image/jpeg" />
+    <item id="Ac07f025" href="images/c07f025.jpg" media-type="image/jpeg" />
+    <item id="Ac08001" href="images/c08001.jpg" media-type="image/jpeg" />
+    <item id="Ac08002" href="images/c08002.jpg" media-type="image/jpeg" />
+    <item id="Ac08003" href="images/c08003.jpg" media-type="image/jpeg" />
+    <item id="Ac08004" href="images/c08004.jpg" media-type="image/jpeg" />
+    <item id="Ac08005" href="images/c08005.jpg" media-type="image/jpeg" />
+    <item id="Ac08006" href="images/c08006.jpg" media-type="image/jpeg" />
+    <item id="Ac08007" href="images/c08007.jpg" media-type="image/jpeg" />
+    <item id="Ac08008" href="images/c08008.jpg" media-type="image/jpeg" />
+    <item id="Ac08009" href="images/c08009.jpg" media-type="image/jpeg" />
+    <item id="Ac08010" href="images/c08010.jpg" media-type="image/jpeg" />
+    <item id="Ac08011" href="images/c08011.jpg" media-type="image/jpeg" />
+    <item id="Ac08012" href="images/c08012.jpg" media-type="image/jpeg" />
+    <item id="Ac08013" href="images/c08013.jpg" media-type="image/jpeg" />
+    <item id="Ac08014" href="images/c08014.jpg" media-type="image/jpeg" />
+    <item id="Ac08015" href="images/c08015.jpg" media-type="image/jpeg" />
+    <item id="Ac09f001" href="images/c09f001.jpg" media-type="image/jpeg" />
+    <item id="Ac09f002" href="images/c09f002.jpg" media-type="image/jpeg" />
+    <item id="Ac09f003" href="images/c09f003.jpg" media-type="image/jpeg" />
+    <item id="Ac09f004" href="images/c09f004.jpg" media-type="image/jpeg" />
+    <item id="Ac09f005" href="images/c09f005.jpg" media-type="image/jpeg" />
+    <item id="Ac09f006" href="images/c09f006.jpg" media-type="image/jpeg" />
+    <item id="Ac09f007" href="images/c09f007.jpg" media-type="image/jpeg" />
+    <item id="Ac09f008" href="images/c09f008.jpg" media-type="image/jpeg" />
+    <item id="Ac09f009" href="images/c09f009.jpg" media-type="image/jpeg" />
+    <item id="Ac09f010" href="images/c09f010.jpg" media-type="image/jpeg" />
+    <item id="Ac09f011" href="images/c09f011.jpg" media-type="image/jpeg" />
+    <item id="Ac09f012" href="images/c09f012.jpg" media-type="image/jpeg" />
+    <item id="Ac09f013" href="images/c09f013.jpg" media-type="image/jpeg" />
+    <item id="Ac09f014" href="images/c09f014.jpg" media-type="image/jpeg" />
+    <item id="Ac09f015" href="images/c09f015.jpg" media-type="image/jpeg" />
+    <item id="Ac09f016" href="images/c09f016.jpg" media-type="image/jpeg" />
+    <item id="Acheck" href="images/check.jpg" media-type="image/jpeg" />
+    <item id="Acheck1" href="images/check1.jpg" media-type="image/jpeg" />
+    <item id="Alogo" href="images/logo.jpg" media-type="image/jpeg" />
+    <item id="Awileytemplate_v5.3.css" href="WileyTemplate_v5.3.css" media-type="text/css" />
+    <item id="Aindex.css" href="index.css" media-type="text/css" />
+    <item id="Acover" href="cover.xhtml" media-type="application/xhtml+xml" />
+    <item id="Anavigation" href="navigation.xhtml" properties="nav" media-type="application/xhtml+xml" />
+    <item id="Atitle" href="title.xhtml" media-type="application/xhtml+xml" />
+    <item id="Acopy" href="copy.xhtml" media-type="application/xhtml+xml" />
+    <item id="Aded" href="ded.xhtml" media-type="application/xhtml+xml" />
+    <item id="Af01" href="f01.xhtml" media-type="application/xhtml+xml" />
+    <item id="Af02" href="f02.xhtml" media-type="application/xhtml+xml" />
+    <item id="Af03" href="f03.xhtml" media-type="application/xhtml+xml" />
+    <item id="Af04" href="f04.xhtml" media-type="application/xhtml+xml" />
+    <item id="Af05" href="f05.xhtml" media-type="application/xhtml+xml" />
+    <item id="Af06" href="f06.xhtml" media-type="application/xhtml+xml" />
+    <item id="Ac01" href="c01.xhtml" media-type="application/xhtml+xml" />
+    <item id="Ac02" href="c02.xhtml" media-type="application/xhtml+xml" />
+    <item id="Ac03" href="c03.xhtml" media-type="application/xhtml+xml" />
+    <item id="Ac04" href="c04.xhtml" media-type="application/xhtml+xml" />
+    <item id="Ac05" href="c05.xhtml" media-type="application/xhtml+xml" />
+    <item id="Ac06" href="c06.xhtml" media-type="application/xhtml+xml" />
+    <item id="Ac07" href="c07.xhtml" media-type="application/xhtml+xml" />
+    <item id="Ac08" href="c08.xhtml" media-type="application/xhtml+xml" />
+    <item id="Ac09" href="c09.xhtml" media-type="application/xhtml+xml" />
+    <item id="Aeula" href="eula.xhtml" media-type="application/xhtml+xml" />
+    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml" />
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="Acover" linear="no" />
+    <itemref idref="Anavigation" linear="no" />
+    <itemref idref="Atitle" linear="no" />
+    <itemref idref="Af05" linear="yes" />
+    <itemref idref="Af06" linear="yes" />
+    <itemref idref="Ac01" linear="yes" />
+    <itemref idref="Ac02" linear="yes" />
+    <itemref idref="Ac03" linear="yes" />
+    <itemref idref="Ac04" linear="yes" />
+    <itemref idref="Ac05" linear="yes" />
+    <itemref idref="Ac06" linear="yes" />
+    <itemref idref="Ac07" linear="yes" />
+    <itemref idref="Ac08" linear="yes" />
+    <itemref idref="Ac09" linear="yes" />
+    <itemref idref="Acopy" linear="no" />
+    <itemref idref="Aded" linear="no" />
+    <itemref idref="Af01" linear="no" />
+    <itemref idref="Af02" linear="no" />
+    <itemref idref="Af03" linear="no" />
+    <itemref idref="Af04" linear="no" />
+    <itemref idref="Aeula" linear="yes" />
+  </spine>
+  <guide>
+    <reference type="cover" title="Cover" href="cover.xhtml" />
+    <reference type="toc" title="Table of Contents" href="navigation.xhtml" />
+  </guide>
+</package>
+

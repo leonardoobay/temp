@@ -1,0 +1,1024 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+   
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      
+      <title>Managing Dependencies with NuGet and Bower</title>
+      
+      <link href="WileyTemplate_v5.3.css" rel="stylesheet" type="text/css" />
+      
+      <meta content="urn:uuid:68078093-7b10-42b9-8f32-0db0ecece3d2" name="Adept.expected.resource" />
+      
+   </head>
+   
+   <body epub:type="bodymatter">
+      
+      <section epub:type="chapter">
+         
+         <header>
+            
+            <h1><span epub:type="pagebreak" id="Page_129" title="129"></span><a id="c5"></a><span class="chapterNumber">5</span><br /><span class="chapterTitle">Managing Dependencies with NuGet and Bower</span></h1>
+         </header>
+         
+         <section>
+            <span id="c5-sec-0001"></span>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"> 
+                  
+                  <h3>WHAT’S IN THIS CHAPTER?</h3>
+                  
+                  <ul class="check1" id="c5-list-0001">
+                     
+                     <li id="c5-li-0001">Introduction to package managers</li>
+                     
+                     <li id="c5-li-0002">Usage instructions for NuGet, Bower, NPM</li>
+                     
+                     <li id="c5-li-0003">How to redistribute your components</li>
+                     
+                     <li id="c5-li-0004">Visual Studio 2017 support for package managers</li>
+                     
+                  </ul>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p>The previous chapters showed that modern software development, both front‐end and
+               server‐side, is based on small and very focused components that can be composed as
+               needed.
+            </p>
+            
+            <p>Unfortunately, while it is good to avoid the monolithic frameworks of the past, this
+               new approach introduces a problem: how do you manage all these components? Components
+               usually depend on other components, which depend on yet other components, which depend…
+               well, you got the idea. To make things more difficult, there might be a component,
+               let’s call it <b>A</b>, that depends on component <b>B</b>, but also another component, <b>C</b>, that also depends on <b>B</b>, but a different version of it. And on top of this, all components must be kept up‐to‐date.
+               Finally, in some cases, to correctly install a component, additional operations might
+               be needed, like compiling some native library or changing some configuration files.
+            </p>
+            
+            <p>Fortunately, all these tasks are automated by specific tools that are called <i>package managers</i>. In the context of front‐end development with ASP.NET Core MVC, there are three package
+               managers you need to know:
+            </p>
+            
+            <ul class="check" id="c5-list-0002">
+               
+               <li id="c5-li-0005">NuGet, for managing .NET libraries</li>
+               
+               <li id="c5-li-0006">Bower, for managing client‐side (JavaScript and CSS) libraries</li>
+               
+               <li id="c5-li-0007">NPM, for managing the installation of tools used during the development</li>
+               
+            </ul>
+            
+            <p><span epub:type="pagebreak" id="Page_130" title="130"></span>The rest of this chapter will show how to use these three package managers and also
+               how to publish components as packages. But before looking at the specifics of each
+               of them, you need to look at some concepts that apply to all package managers.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"> 
+                  
+                  <h3>WROX.COM CODE DOWNLOADS FOR THIS CHAPTER</h3>
+                  
+                  <p>The <a href="http://wrox.com">wrox.com</a> code downloads for this chapter are found at <a href="http://www.wrox.com"><code>www.wrox.com</code></a> Search for the book’s ISBN (978‐1‐119‐18131‐6), and you will find the code in the
+                     <a href="c05.xhtml">chapter 5</a> download and individually named according to the names throughout the chapter.
+                  </p>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+         </section>
+         
+         <section>
+            <span id="c5-sec-0002"></span>
+            
+            <h2 id="head-2-109">GENERAL CONCEPTS</h2>
+            
+            <p>All package managers, apart from the obvious differences given by the different technologies
+               or languages they target, are practically identical. Here are their common concepts:
+            </p>
+            
+            <ul class="check" id="c5-list-0003">
+               
+               <li id="c5-li-0008">They all rely on a public registry that contains all published packages. The registry
+                  might also store the actual package or just provide the URL where the package can
+                  be downloaded.
+               </li>
+               
+               <li id="c5-li-0009">Packages are downloaded and stored in a local folder (usually within the current user
+                  folder) that acts as a local cache. This way when a project needs a package that has
+                  been already downloaded, it’s directly copied from the cache instead of being downloaded
+                  again (providing that it is the latest version). This saves bandwidth and time (especially
+                  if packages are restored every time a project is built). It also allows some kind
+                  of offline development experience that would be otherwise impossible.
+               </li>
+               
+               <li id="c5-li-0010">Projects declare which third‐party libraries they depend on. This is usually done
+                  by specifying in a JSON file the names of the packages and their versions.
+               </li>
+               
+               <li id="c5-li-0011">Package managers take care of downloading not only the projects’ dependencies but
+                  also the libraries they depend on, descending the entire tree of packages.
+               </li>
+               
+            </ul>
+            
+            <p>With these basic general concepts in mind, it is time to look at the .NET package
+               manager, called NuGet.
+            </p>
+            
+         </section>
+         
+         <section>
+            <span id="c5-sec-0003"></span>
+            
+            <h2 id="head-2-110">NUGET</h2>
+            
+            <p>NuGet is the package manager for .NET libraries. It has been available inside Visual
+               Studio since 2010. With Visual Studio 2017 and ASP.NET Core, things changed a bit.
+               Whereas before it was used to manage everything, now with the introduction of Bower,
+               its scope has been limited to .NET libraries only.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature1">
+                  
+                  <h3>NOTE</h3>
+                  
+                  <p><i>Technically, you can still make client‐side packages, but the package explorer will
+                        understand and will send the user to look for the same package on Bower, as seen in
+                        <a href="#c5-fig-0001" id="R_c5-fig-0001">Figure 5‐1</a>.</i></p>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <figure> <img alt="Illustration of How the NuGet Package Manager shows client-side only packages." src="images/c05f001.jpg" />
+               
+               <figcaption>
+                  <p><span class="figureLabel"><a href="#R_c5-fig-0001" id="c5-fig-0001"><b>FIGURE 5-1</b></a><b>:</b></span> How the NuGet Package Manager shows client‐side only packages
+                  </p>
+               </figcaption>
+               
+            </figure>
+            
+            <p><span epub:type="pagebreak" id="Page_131" title="131"></span>It might have lost the support for client‐side packages, but it gained an important
+               new feature as with the introduction of .NET Core, NuGet became the delivery method
+               also for all system libraries.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature1">
+                  
+                  <h2>SHORT HISTORY OF NUGET</h2>
+                  
+                  <p>I clearly remember how NuGet was born, because I was there at the ALT.NET Seattle
+                     Conference in 2008. A panel lead by Scott Hanselman discussed how to encourage .NET
+                     developers to use open‐source by making it easier to discover, download, and install
+                     libraries.
+                  </p>
+                  
+                  <p>People were talking about reusing the ruby‐gem infrastructure to deliver libraries,
+                     but eventually it was agreed on to build something similar that was closer to the
+                     .NET toolset. A few open‐source projects started on that day. One of them, initially
+                     called NuPack, became what is known as NuGet.
+                  </p>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <section>
+               <span id="c5-sec-0004"></span>
+               
+               <h3 id="head-3-82">Getting Packages via NuGet</h3>
+               
+               <p>NuGet packages can be installed in many ways. The choice of which installation to
+                  use depends on the context in which the package manager will be used and on personal
+                  preferences.
+               </p>
+               
+               <section>
+                  <span id="c5-sec-0005"></span>
+                  
+                  <h4 id="head-4-30">Using the Package Manager GUI</h4>
+                  
+                  <p>The first option for getting packages is to use the Package Manager GUI. It is accessible
+                     within Visual Studio either from the main menu <img alt="image" src="images/arrow.jpg" /> Tools <img alt="image" src="images/arrow.jpg" /> NuGet Package Manager or by right‐clicking on the Dependencies node of the solution’s
+                     tree in the Solution Explorer window. Both options are shown in <a href="#c5-fig-0002" id="R_c5-fig-0002">Figure 5‐2</a>.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of How to open the NuGet Package Manager." src="images/c05f002.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c5-fig-0002" id="c5-fig-0002"><b>FIGURE 5-2</b></a><b>:</b></span> How to open the NuGet Package Manager
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <p>From the GUI (shown in <a href="#c5-fig-0003" id="R_c5-fig-0003">Figure 5‐3</a>), you can search for packages and install them into your current project, optionally
+                     choosing which version to install.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of NuGet Package Manager GUI." src="images/c05f003.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c5-fig-0003" id="c5-fig-0003"><b>FIGURE 5-3</b></a><b>:</b></span> NuGet Package Manager GUI
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+               </section>
+               
+               <section>
+                  <span id="c5-sec-0006"></span>
+                  
+                  <h4 id="head-4-31"><span epub:type="pagebreak" id="Page_132" title="132"></span>Using the Package Manager Console
+                  </h4>
+                  
+                  <p>If you are more into command‐line tools, the second option for getting packages, still
+                     within Visual Studio, is to use the Package Manager Console, usually already available
+                     among the bottom windows in Visual Studio. If the window is not there, it can be opened
+                     via the TOOLS ➪ NuGet Package Manager menu.
+                  </p>
+                  
+                  <p><span epub:type="pagebreak" id="Page_133" title="133"></span>There you can use some commands to look for and install packages into the project.
+                  </p>
+                  
+                  <ul class="check" id="c5-list-0004">
+                     
+                     <li id="c5-li-0012">Use <code>Find‐Package ‐Id Json</code> to look for packages. The output of this command is shown in <a href="#c5-fig-0004" id="R_c5-fig-0004">Figure 5‐4</a>.
+                     </li>
+                     
+                     <li id="c5-li-0013">Use <code>Install‐Package Newtonsoft.Json</code> to install a new package.
+                     </li>
+                     
+                     <li id="c5-li-0014">Use <code>Get‐Package</code> to list all installed packages.
+                     </li>
+                     
+                     <li id="c5-li-0015">Use <code>Uninstall‐Package Newtonsoft.Json</code> to uninstall an installed package.
+                     </li>
+                     
+                  </ul>
+                  
+                  <figure> <img alt="Illustration of NuGet Package Manager Console." src="images/c05f004.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c5-fig-0004" id="c5-fig-0004"><b>FIGURE 5-4</b></a><b>:</b></span> NuGet Package Manager Console
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+               </section>
+               
+               <section>
+                  <span id="c5-sec-0007"></span>
+                  
+                  <h4 id="head-4-32">Manually Editing the .csproj Project File</h4>
+                  
+                  <p>The last available option is to edit directly the <code>.csproj</code> project file.
+                  </p>
+                  
+                  <p>The new <code>.csproj</code> project file format that has been introduced for .NET Core projects contains many
+                     different sections, but the one you are currently interested in is the <code>&lt;</code><code>ItemGroup</code>&gt; section that contains <code>&lt;</code><code>PackageReference</code>&gt; elements, which is used to specify which packages and which versions the project
+                     depends on. <a href="#c5-fea-0001">Listing 5‐1</a> shows the <code>.csproj</code> project file of a sample ASP.NET Core project from version 2.0. As mentioned in <a href="c01.xhtml">Chapter 1</a>, it only contains the reference to the <code>Microsoft.AspNetCore.All</code> meta‐package.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c5-fea-0001"></span> 
+                        
+                        <h2 id="head-2-111">LISTING 5-1: Sample ASP.NET Core project configuration file</h2>
+                        
+                        <section>
+                           <span id="c5-sec-0008"></span>
+                           
+                           <blockquote>
+                              <pre id="c5-code-0001"><code>&lt;Project Sdk="Microsoft.NET.Sdk.Web"&gt;</code>
+<code></code>
+<code>  &lt;PropertyGroup&gt;</code>
+<code>    &lt;TargetFramework&gt; netcoreapp2.0&lt;/TargetFramework&gt;</code>
+<code>  &lt;/PropertyGroup&gt;</code>
+<code></code>
+<code>  &lt;ItemGroup&gt;</code>
+<code>    &lt;PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0"/&gt;</code>
+<code>  &lt;/ItemGroup&gt;</code>
+<code></code>
+<code><span epub:type="pagebreak" id="Page_134" title="134"></span>  &lt;ItemGroup&gt;</code>
+<code>    &lt;DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0"/&gt;</code>
+<code>  &lt;/ItemGroup&gt;</code>
+<code></code>
+<code>&lt;/Project&gt;</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p>If you don’t know the name of packages or their version, Visual Studio 2017 shows
+                     an autocomplete menu, providing a search feature also in this context. Autocomplete
+                     is available both for the package name and for the version number, as shown in <a href="#c5-fig-0005" id="R_c5-fig-0005">Figure 5‐5</a>.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Intellisense in action inside the .csproj project file." src="images/c05f005.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c5-fig-0005" id="c5-fig-0005"><b>FIGURE 5-5</b></a><b>:</b></span> IntelliSense in action inside the .csproj project file.
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <p>Also, if you don’t know exactly which version number or you want to be open to future
+                     patches, you can specify the version using the floating version range notation, for
+                     example <code>8.0.*</code>.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature1">
+                        
+                        <h2><span epub:type="pagebreak" id="Page_135" title="135"></span>PACKAGE REFERENCES’ AUTOCOMPLETE
+                        </h2>
+                        
+                        <p>The autocomplete of package references might not be in Visual Studio 2017 at the time
+                           of publishing, but this feature is available in the Visual Studio extension Project
+                           File Tools, which can be downloaded from <a href="https://marketplace.visualstudio.com/items?itemName=ms-madsk.ProjectFileTools"><code>https://marketplace.visualstudio.com/items?itemName=ms‐madsk.ProjectFileTools</code></a>.
+                        </p>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+               </section>
+               
+               <section>
+                  <span id="c5-sec-0009"></span>
+                  
+                  <h4 id="head-4-33">What Happens Once You Install a Package</h4>
+                  
+                  <p>A big difference from the previous version of NuGet is that the installation of a
+                     package only means adding a new entry in the <code>.csproj</code> project file. Also, when the Package Manager GUI or Console is used, nothing is downloaded.
+                     They also just write the package ID and version inside the file.
+                  </p>
+                  
+                  <p>As soon as the <code>.csproj</code> file changes, Visual Studio launches the .NET Core CLI specifying the <code>restore</code> command (<a href="#c5-fig-0006" id="R_c5-fig-0006">Figure 5‐6</a>). It is this cross‐platform tool that connects to the <a href="http://nuget.org">nuget.org</a> server, downloads the packages, and saves them inside the user folder (<code>C:\Users\user\.nuget\packages\</code>). Unlike previous versions, packages are not also saved inside a folder in the current
+                     project, but are directly referenced from the user folder.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Restore notification." src="images/c05f006.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c5-fig-0006" id="c5-fig-0006"><b>FIGURE 5-6</b></a><b>:</b></span> Restore notification
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+               </section>
+               
+            </section>
+            
+            <section>
+               <span id="c5-sec-0010"></span>
+               
+               <h3 id="head-3-83">Publishing Your Own Packages</h3>
+               
+               <p>Eventually you might find yourself needing to publish a NuGet package, either because
+                  you want to make something you developed available to the .NET community or because
+                  you want to share your library in a way that is easy for co‐workers in your organization
+                  to reuse.
+               </p>
+               
+               <p>In order to create a package, you need the dotnet command line tool, which is installed
+                  as part of the .NET Core SDK.
+               </p>
+               
+               <section>
+                  <span id="c5-sec-0011"></span>
+                  
+                  <h4 id="head-4-34">Adding Metadata for the Package</h4>
+                  
+                  <p>For building a NuGet package you need to specify some metadata: author details, package
+                     name and version, various URLs for the project, and a list of the dependencies needed
+                     by the package. The metadata is added directly in the <code>.csproj</code> file, as you can see in <a href="#c5-fea-0002">Listing 5‐2</a>.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c5-fea-0002"></span> 
+                        
+                        <h2 id="head-2-112">LISTING 5-2: webapplication.csproj metadata</h2>
+                        
+                        <section>
+                           <span id="c5-sec-0012"></span>
+                           
+                           <blockquote>
+                              <pre id="c5-code-0002"><code>&lt;Project Sdk="Microsoft.NET.Sdk"&gt;</code>
+<code></code>
+<code>  &lt;PropertyGroup&gt;</code>
+<code>    &lt;TargetFramework&gt; netcoreapp2.0&lt;/TargetFramework&gt;</code>
+<code>    &lt;PackageId&gt; Wrox.Book&lt;/PackageId&gt;</code>
+<code>    &lt;PackageVersion&gt; 1.0.0&lt;/PackageVersion&gt;</code>
+<code><span epub:type="pagebreak" id="Page_136" title="136"></span>    &lt;Authors&gt; Simone Chiaretta&lt;/Authors&gt;</code>
+<code>    &lt;Description&gt; Show the title of the book&lt;/Description&gt;</code>
+<code>    &lt;PackageReleaseNotes&gt; First release&lt;/PackageReleaseNotes&gt;</code>
+<code>    &lt;Copyright&gt; Copyright 2017 (c) Wrox&lt;/Copyright&gt;</code>
+<code>    &lt;PackageTags&gt; book title wrox&lt;/PackageTags&gt;</code>
+<code>    &lt;PackageProjectUrl&gt;http://example.com/Wrox.Book/&lt;/PackageProjectUrl&gt;</code>
+<code>    &lt;PackageIconUrl&gt;http://example.com/Wrox.Book/32x32icon.png&lt;/PackageIconUrl&gt;</code>
+<code>    &lt;PackageLicenseUrl&gt;http://example.com/Wrox.Book/mylicense.html&lt;/PackageLicenseUrl&gt;</code>
+<code>  &lt;/PropertyGroup&gt;</code>
+<code></code>
+<code>&lt;/Project&gt;</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+               </section>
+               
+               <section>
+                  <span id="c5-sec-0013"></span>
+                  
+                  <h4 id="head-4-35">Creating the Package</h4>
+                  
+                  <p>With all the metadata set, you just need to go to the root folder of your project
+                     (where the <code>.csproj</code> file is) and type <code>dotnet pack –c Release</code> This command will gather all the dependencies and the metadata from the <code>.csproj</code> file, copy them to the NuSpec file (the NuGet definition file), build the project
+                     for all supported frameworks, and package everything into a NuGet package file, saved
+                     in the <code>bin/Release</code> (or <code>bin/Debug</code>).
+                  </p>
+                  
+                  <p>If you then open the package just created using the NuGet Package Explorer, you can
+                     see all the properties and files that are included in the package (<a href="#c5-fig-0007" id="R_c5-fig-0007">Figure 5‐7</a>).
+                  </p>
+                  
+                  <figure> <img alt="Illustration of NuGet Package Explorer." src="images/c05f007.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c5-fig-0007" id="c5-fig-0007"><b>FIGURE 5-7</b></a><b>:</b></span> NuGet Package Explorer
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+               </section>
+               
+               <section>
+                  <span id="c5-sec-0014"></span>
+                  
+                  <h4 id="head-4-36"><span epub:type="pagebreak" id="Page_137" title="137"></span>Publishing to the Nuget.org Gallery
+                  </h4>
+                  
+                  <p>If you want to publish your package to an internal repository, you can just copy the
+                     file to the folder (or follow your own procedures), but if you want the package to
+                     be available for anyone in the .NET community, you have to publish on the official
+                     repository, the <a href="http://Nuget.org">NuGet.org</a> gallery. In order to do so, you need to do two things:
+                  </p>
+                  
+                  <ul class="check" id="c5-list-0005">
+                     
+                     <li id="c5-li-0016">Download the NuGet command line utility (which you can also download from the Package
+                        Manager Console with <code>Install‐Package NuGet.CommandLine</code>).
+                     </li>
+                     
+                     <li id="c5-li-0017">Create an account on the <a href="http://Nuget.org">NuGet.org</a> gallery (<code><a href="http://nuget.org">http://nuget.org/</a></code>).
+                     </li>
+                     
+                  </ul>
+                  
+                  <p>Once you have done both of these things, you need to register the API key that will
+                     be used to link your package with your account:
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c5-code-0003"><code>nuget setApiKey Your-API-Key</code> </pre>
+                     </blockquote>
+                  
+                  <p>and then publish the package:</p>
+                  
+                  <blockquote>
+                     <pre id="c5-code-0004"><code>nuget push YourPackage.nupkg</code> </pre>
+                     </blockquote>
+                  
+               </section>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c5-sec-0015"></span>
+            
+            <h2 id="head-2-113">NPM (NODE.JS PACKAGE MANAGER)</h2>
+            
+            <p>NPM is the Node.js Package Manager. In the context of front‐end development with ASP.NET
+               Core, NPM is used mainly to install development tools and utilities.
+            </p>
+            
+            <section>
+               <span id="c5-sec-0016"></span>
+               
+               <h3 id="head-3-84">Installing NPM</h3>
+               
+               <p>If you are using Visual Studio 2017, you might already have NPM installed on your
+                  machine. (There was an option to install Node.js tools in VS2017 setup.) To check
+                  whether it is installed, type <code>npm ‐v</code> at the command prompt. If it shows a version number (such as 4.1.1), you have NPM
+                  and you can skip to the next section. Otherwise, keep on reading.
+               </p>
+               
+               <p>The best approach is to install NPM via the Node.js installer. Node.js recently changed
+                  their version number and release policy, and now they provide two channels:
+               </p>
+               
+               <ul class="check" id="c5-list-0006">
+                  
+                  <li id="c5-li-0018">The LTS (<i>long‐term support</i>) version is supported in production environments, gets a major release every year,
+                     and has an additional year and half of maintenance.
+                  </li>
+                  
+                  <li id="c5-li-0019">The stable version is the latest stable version, without support for production, but
+                     it is released more frequently (a major release every six months).
+                  </li>
+                  
+               </ul>
+               
+               <p>For the purpose of this book, the latest LTS is sufficient.</p>
+               
+               <p>Once Node.js is installed, make sure you have the latest version of NPM by upgrading
+                  it with <code>npm install npm ‐g</code>.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c5-sec-0017"></span>
+               
+               <h3 id="head-3-85"><span epub:type="pagebreak" id="Page_138" title="138"></span>NPM Usage
+               </h3>
+               
+               <p>You can install NPM packages in two ways. Either you use the command‐line tool directly
+                  or, if within Visual Studio, you can edit the <code>package.json</code> file and the installation will happen automatically, just like it does for NuGet
+                  packages.
+               </p>
+               
+               <section>
+                  <span id="c5-sec-0018"></span>
+                  
+                  <h4 id="head-4-37">Using the NPM Command Line</h4>
+                  
+                  <p>The NPM command line is the main access to all the features of NPM. The most important
+                     commands are:
+                  </p>
+                  
+                  <ul class="check" id="c5-list-0007">
+                     
+                     <li id="c5-li-0020"><code>npm install</code> restores the packages specified in the <code>package.json</code> file.
+                     </li>
+                     
+                     <li id="c5-li-0021"><code>npm install</code> <code>&lt;</code><code>package‐name</code>&gt; installs the package specified in the command.
+                     </li>
+                     
+                     <li id="c5-li-0022"><code>npm init</code> helps you create an initial <code>package.json</code> file with some default values.
+                     </li>
+                     
+                     <li id="c5-li-0023"><code>npm update</code> updates your dependencies to the latest versions.
+                     </li>
+                     
+                  </ul>
+                  
+                  <p>The <code>install</code> command has a few switches that you should know. The first is <code>‐g</code>, which is used to install the package as <i>global</i> package. This is mostly for command‐line tools built with Node.js, like NPM itself
+                     or Bower.
+                  </p>
+                  
+                  <p>Two other switches, <code>‐‐save</code> (also <code>‐S</code>) and <code>‐‐save‐dev</code> (also <code>‐D</code>), will save the installed package in the <code>package.json</code> file so that you don’t have to update it manually. The first saves the package as
+                     an application dependency, while the latter saves it as a development dependency.
+                     In the context of ASP.NET Core projects, NPM is used only for tools, not for the actual
+                     application itself, so only the <code>‐‐save‐dev</code> switch will be used.
+                  </p>
+                  
+                  <p><a href="#c5-fea-0003">Listing 5.3</a> shows an example of <code>package.json</code> that comes with the default ASP.NET Core application when you add NPM (for example
+                     when enabling Gulp support). As you can see, only the <code>devDependencies</code> section contains packages. In this instance they are the task runner <code>gulp</code> and some of its tasks.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c5-fea-0003"></span> 
+                        
+                        <h2 id="head-2-114">LISTING 5-3: Package.json</h2>
+                        
+                        <section>
+                           <span id="c5-sec-0019"></span>
+                           
+                           <blockquote>
+                              <pre id="c5-code-0005"><code>{</code>
+<code>  "name": "app",</code>
+<code>  "version": "1.0.0",</code>
+<code>  "private": true,</code>
+<code>  "devDependencies": {</code>
+<code>    "del": "^2.2.2",</code>
+<code>    "gulp": "^3.9.1",</code>
+<code>    "gulp-concat": "^2.6.1",</code>
+<code>    "gulp-cssmin": "^0.1.7",</code>
+<code>    "gulp-htmlmin": "^3.0.0",</code>
+<code>    "gulp-uglify": "^2.0.0",</code>
+<code>    "merge-stream": "^1.0.1"</code>
+<code>  }</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+               </section>
+               
+               <section>
+                  <span id="c5-sec-0020"></span>
+                  
+                  <h4 id="head-4-38"><span epub:type="pagebreak" id="Page_139" title="139"></span>Using NPM within Visual Studio
+                  </h4>
+                  
+                  <p>There is no Package Manager GUI like there was for NuGet, but Visual Studio still
+                     has pretty good support for NPM.
+                  </p>
+                  
+                  <p>You can edit the <code>package.json</code> file directly within Visual Studio, and, as with NuGet, you have autocomplete for
+                     both package names and version numbers. As you can see in <a href="#c5-fig-0008" id="R_c5-fig-0008">Figure 5‐8</a>, there is also a more detailed tooltip that appears when you hover with the mouse
+                     on the package name. You can also perform some basic operations via the bulb menu.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Intellisense extensions for package.json." src="images/c05f008.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c5-fig-0008" id="c5-fig-0008"><b>FIGURE 5-8</b></a><b>:</b></span> IntelliSense extensions for package.json
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <p>As soon as the file is saved, Visual Studio launches the <code>npm install</code> command explained in the previous section, and packages are installed. Another nice
+                     touch is the dependencies tree in Solution Explorer, which shows the packages together
+                     with their dependencies (see <a href="#c5-fig-0009" id="R_c5-fig-0009">Figure 5‐9</a>).
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Packages tree." src="images/c05f009.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c5-fig-0009" id="c5-fig-0009"><b>FIGURE 5-9</b></a><b>:</b></span> Packages tree
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+               </section>
+               
+            </section>
+            
+            <section>
+               <span id="c5-sec-0021"></span>
+               
+               <h3 id="head-3-86">Where Packages Are Installed</h3>
+               
+               <p>Unlike NuGet, where packages are installed in the current user’s folder and referenced
+                  via their name in the <code>.csproj</code> project file, NPM packages are installed directly in a sub‐folder of the project,
+                  called <code>node_modules</code>. A copy of the files is also saved in a local cache under the user’s folder where
+                  global packages also are installed.
+               </p>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c5-sec-0022"></span>
+            
+            <h2 id="head-2-115">BOWER</h2>
+            
+            <p>With NuGet you can add server‐side dependencies, NPM is for tools, and Bower is for
+               adding client‐side libraries. But apart from this obvious difference, it works more
+               or less the same way as the other two package managers.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature1">
+                  
+                  <h2><span epub:type="pagebreak" id="Page_140" title="140"></span>THE FATE OF BOWER
+                  </h2>
+                  
+                  <p>Visual Studio templates come with client side references with Bower, so this chapter
+                     explains how to use it. But the maintainers of the project have posted a note on their
+                     GitHub repository that suggests to use Yarn (which is a third‐party npm client) and
+                     WebPack (which was mentioned in <a href="c03.xhtml">Chapter 3</a> and is covered more in detail in <a href="c06.xhtml">Chapter 6</a>) for new projects.
+                  </p>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <section>
+               <span id="c5-sec-0023"></span>
+               
+               <h3 id="head-3-87">Installing Bower</h3>
+               
+               <p>The first step is to install Bower (if you haven’t installed it already with Visual
+                  Studio or if you are using it within Visual Studio Code or any other IDE). This is
+                  done via NPM by using <code>npm install bower ‐g</code>.
+               </p>
+               
+               <p>In order to use Bower, git must be installed as well. This is one significant difference
+                  between Bower and the other systems. While still having a central repository at <a href="http://bower.io/search/"><code>http://bower.io/search/</code></a> for listing packages names, it is not used to store the packages, which are retrieved
+                  directly from GitHub or any other git endpoint. So, for that reason, it needs git
+                  to get the actual packages.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c5-sec-0024"></span>
+               
+               <h3 id="head-3-88">Getting Packages with Bower</h3>
+               
+               <p>Bower packages can be installed in a few different ways, similar to NuGet and NPM.
+                  You can get them with the command‐line tool, which is its native interface and has
+                  the most complete feature set. If you are using Bower within Visual Studio, you can
+                  install packages with the Package Manager or by directly editing the dependencies
+                  configuration file, which is called <code>bower.json</code>.
+               </p>
+               
+               <section>
+                  <span id="c5-sec-0025"></span>
+                  
+                  <h4 id="head-4-39">Using the Bower Command Line</h4>
+                  
+                  <p>The command‐line tool for Bower is the standard and most flexible way to interact
+                     with Bower. It allows you not only to install, update, and remove packages, but also
+                     to register packages on the central repository. You can also perform any kind of package
+                     management operation using just a local cache without going on the network, which
+                     is a feature that saved me a few times when on a plane.
+                  </p>
+                  
+                  <p>The commands are basically the same as with NPM:</p>
+                  
+                  <ul class="check" id="c5-list-0008">
+                     
+                     <li id="c5-li-0024"><code>bower install</code> installs all the packages defined in the <code>bower.json</code> file.
+                     </li>
+                     
+                     <li id="c5-li-0025"><code>bower install</code> <code>&lt;</code><code>package</code>&gt; installs the specified package. In this case a package can be a registered package,
+                        an URL, or a git (or svn) endpoint.
+                     </li>
+                     
+                     <li id="c5-li-0026"><code>bower update</code> updates the installed packages.
+                     </li>
+                     
+                     <li id="c5-li-0027"><code>bower uninstall</code> <code>&lt;</code><code>package</code>&gt; uninstalls the specified package.
+                     </li>
+                     
+                     <li id="c5-li-0028"><code>bower init</code> creates a new <code>bower.json</code> file.
+                     </li>
+                     
+                  </ul>
+                  
+                  <p>Also with Bower, as with NPM, you can save yourself some time and automatically add
+                     a package to the <code>bower.json</code> file by specifying the <code>‐‐save</code> flag.
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c5-sec-0026"></span>
+                  
+                  <h4 id="head-4-40"><span epub:type="pagebreak" id="Page_141" title="141"></span>Using the Bower Package Manager GUI in Visual Studio
+                  </h4>
+                  
+                  <p>If you are using Visual Studio, you can search for packages and install them directly
+                     by using the package manager. This is exactly the same as with NuGet, just listing
+                     Bower packages (see <a href="#c5-fig-0010" id="R_c5-fig-0010">Figure 5‐10</a>). This window can be opened by right‐clicking on the project root in the Solution
+                     Explorer and selecting the “Manage Bower packages” menu item.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Bower package manager." src="images/c05f010.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c5-fig-0010" id="c5-fig-0010"><b>FIGURE 5-10</b></a><b>:</b></span> Bower package manager
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+               </section>
+               
+               <section>
+                  <span id="c5-sec-0027"></span>
+                  
+                  <h4 id="head-4-41">Editing the bower.json File</h4>
+                  
+                  <p>As with the other package managers, manually editing and saving the definition file
+                     will trigger the automatic installation. In this case Visual Studio will launch the
+                     <code>bower install</code> command.
+                  </p>
+                  
+                  <p>Also with Bower, IntelliSense will help autocomplete package names and versions.</p>
+                  
+                  <p>The <code>bower.json</code> format is similar to NPM’s <code>package.json</code>, as you can see in the default ASP.NET Core project configuration file shown in <a href="#c5-fea-0004">Listing 5‐4</a>.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c5-fea-0004"></span> 
+                        
+                        <h2 id="head-2-116">LISTING 5-4: Bower.json</h2>
+                        
+                        <section>
+                           <span id="c5-sec-0028"></span>
+                           
+                           <blockquote>
+                              <pre id="c5-code-0006"><code>{</code>
+<code>  "name": "asp.net",</code>
+<code>  "private": true,</code>
+<code>  "dependencies": {</code>
+<code>    "bootstrap": "3.3.6",</code>
+<code><span epub:type="pagebreak" id="Page_142" title="142"></span>    "jquery": "2.2.0",</code>
+<code>    "jquery-validation": "1.14.0",</code>
+<code>    "jquery-validation-unobtrusive": "3.2.6"</code>
+<code>  }</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+               </section>
+               
+            </section>
+            
+            <section>
+               <span id="c5-sec-0029"></span>
+               
+               <h3 id="head-3-89">Where Packages Are Installed</h3>
+               
+               <p>Knowing exactly where NuGet and NPM packages were located was not that important because
+                  they were automatically found by tools. However, knowing where Bower packages are
+                  located is more important because they are usually JavaScript or CSS files that have
+                  to be manually included or linked in the web application.
+               </p>
+               
+               <p>Normally, packages are installed in a sub‐folder called <code>bower_components</code>, but given the way ASP.NET Core apps behave, the default location of Bower packages
+                  installed from within an ASP.NET Core project is <code>wwwroot/lib</code>. Since the root of an ASP.NET Core app is the <code>wwwroot</code> folder, all packages are available inside the <code>libs</code> folder. For example, the bootstrap package will be linked using the reference:
+               </p>
+               
+               <blockquote>
+                  <pre id="c5-code-0007"><code>&lt;link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" /&gt;.</code> </pre>
+                  </blockquote>
+               
+               <p>This might not be the best approach as Bower packages are downloaded with the git
+                  repository, including documentation, samples, and sometimes build files (like Less
+                  or Sass scripts). You might not want to put all these files in production when you
+                  deploy your site. In this case you might want to delete the <code>.bowerrc</code> file (where the download location of packages is defined) so that packages are again
+                  downloaded to <code>bower_components</code>. You can later move only the files you need to the <code>wwwroot/lib</code> folder, either manually or via a build process.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c5-sec-0030"></span>
+               
+               <h3 id="head-3-90">Creating Your Own Packages</h3>
+               
+               <p>When it comes to sharing your JavaScript or CSS libraries, there is not much that
+                  needs to be done. Actually nothing has to be done (as long as there is already a <code>bower.json</code> file) if you just want to share your library within your company or even with the
+                  world without registering in the repository.
+               </p>
+               
+               <p>If you want to register the package for the public repository, something more is needed:</p>
+               
+               <ul class="check" id="c5-list-0009">
+                  
+                  <li id="c5-li-0029">Some other metadata is recommended. You can use <code>description</code>, <code>moduleType</code> to specify how the library interacts with the application, <code>main</code> to list the entry points of the library (the ones that have to be included in the
+                     HTML file), and <code>ignore</code> to list the folders and files from the git repository that do not have to be copied
+                     when installing the package.
+                  </li>
+                  
+                  <li id="c5-li-0030">The package must be stored in a git repository and must be publicly accessible.</li>
+                  
+                  <li id="c5-li-0031">Versions have to be tagged with git tags, named complying to the semver (Semantic
+                     Versioning) schema (for example, <code>v1.0.0‐beta</code>).
+                  </li>
+                  
+               </ul>
+               
+               <p>Once these preconditions are met, the package can be registered on the official repository
+                  by calling the following command:
+               </p>
+               
+               <blockquote>
+                  <pre id="c5-code-0008"><code>bower register &lt;package-name&gt; &lt;git-endpoint&gt;</code> </pre>
+                  </blockquote>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c5-sec-0031"></span>
+            
+            <h2 id="head-2-117"><span epub:type="pagebreak" id="Page_143" title="143"></span>SUMMARY
+            </h2>
+            
+            <p>Going away from the monolithic framework approach to the small, focused libraries
+               approach required solving the problem of finding, installing, and managing dependencies.
+               Package managers solved this pretty effectively.
+            </p>
+            
+            <p>In this chapter you learned about three types of packages used in ASP.NET Core applications:
+               NuGet for .NET libraries, NPM for development tools, and Bower for client‐side dependencies.
+            </p>
+            
+            <p>Apart from NuGet, the other two are not “native” to the Microsoft ecosystem. They
+               are integrated into Visual Studio, which makes it easy for developers who are not
+               used to command‐line tools to use them as well.
+            </p>
+            
+            <p>Finally, you also learned how easy it is to share your libraries with either the developers’
+               community or just within your organization.
+            </p>
+            
+         </section>
+         
+      </section>
+      
+   </body>
+   
+</html>

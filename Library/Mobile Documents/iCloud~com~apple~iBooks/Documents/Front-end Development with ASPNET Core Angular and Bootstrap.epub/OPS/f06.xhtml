@@ -1,0 +1,400 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en"> 
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+      <title>INTRODUCTION</title> 
+      <link href="WileyTemplate_v5.3.css" rel="stylesheet" type="text/css" />
+      
+      <meta content="urn:uuid:68078093-7b10-42b9-8f32-0db0ecece3d2" name="Adept.expected.resource" /> 
+   </head>
+   
+   <body class="introduction" epub:type="introduction">
+      
+      <section>
+         <header>
+            <h1><span epub:type="pagebreak" id="Page_xxvii" title="xxvii"></span><a id="fm8"></a>INTRODUCTION
+            </h1>
+         </header>
+         
+         <p>There was a time when “backend” and “front‐end” developers were doing pretty different
+            work. Backend developers were writing code to render web pages, using some server‐side
+            language; front‐end developers were programming some interactivity using JavaScript
+            and making the web pages look beautiful with CSS.
+         </p>
+         
+         <p>A few years ago, with the arrival of SPAs (Single Page Applications), JavaScript was
+            not only used to add “some” interactivity, but was used to build the application itself.
+            The skill‐set of the so‐called backend developers had to expand to include all the
+            tools that were typical of front‐developers, such as specific JavaScript frameworks
+            and some basic understanding of CSS.
+         </p>
+         
+         <p>The goal of this book is to explain the tools in “front‐end” developers’ toolbox and
+            how to use them effectively in combination with ASP.NET Core MVC.
+         </p>
+         
+         <section><span id="f8-sec-0003"></span>
+            
+            <h2 id="head-3-1">WHY WEB DEVELOPMENT REQUIRES POLYGLOT DEVELOPERS</h2>
+            
+            <p>In everyday life, a polyglot is a person who knows and is able to use several languages.
+               They are not necessarily bilingual (or multi‐lingual), but they can use their second
+               or third or fourth language with a good level of proficiency.
+            </p>
+            
+            <p>With that definition in mind, what is a polyglot developer? It’s a developer who knows
+               more than one (programming) language or framework and uses them within the scope of
+               the same application.
+            </p>
+            
+            <p>From the beginning of IT industry, applications were mainly written in one language.
+               I personally started with C, then moved to Visual Basic, landed on Cold Fusion, used
+               JavaScript at its early stages (both on the client and the server), did a bit of Java,
+               and finally landed on the.NET platform, but only one at a time.
+            </p>
+            
+            <p>It was the time of the big enterprise frameworks, when vendors tried to squeeze into
+               their language or platforms all the possible features that an application might need.
+               You probably remember when Microsoft tried to shield web developers from the actual
+               languages of the web, HTML and JavaScript, introducing ASP.NET WebForms and the ASP.NET
+               Ajax Framework. And if you look back at your personal experience in the IT industry,
+               you’ll probably find many other similar examples.
+            </p>
+            
+            <p>But lately a new trend has appeared, which has gone in the opposite direction. The
+               IT industry understands that maybe some languages are more suitable than others for
+               specific tasks, and instead of trying to force everything on top of one single language,
+               applications are being written in multiple languages. We are entering the era of the
+               polyglot developer.
+            </p>
+            
+            <p>Now that we share the same definition of a polyglot developer, let’s see what the
+               benefits of being one are.
+            </p>
+            
+            <section><span id="f8-sec-0004"></span>
+               
+               <h3 id="head-4-1"><span epub:type="pagebreak" id="Page_xxviii" title="xxviii"></span>The Right Tool for the Job
+               </h3>
+               
+               <p>The first and probably most important benefit of being a polyglot is being able to
+                  choose the right tool for the job without having to compromise because your language
+                  or framework of choice doesn’t support a given feature.
+               </p>
+               
+               <p>For example, by using the Microsoft AJAX Framework, you are limited by the functionalities
+                  it provides, while by directly using JavaScript you have all the flexibility provided
+                  by the language.
+               </p>
+               
+               <p>And I’m confident you will agree with me that as a web developer you have to know
+                  HTML, but nevertheless using the design surface of Visual Studio, you can build web
+                  applications just by dragging elements from the toolbox. Obviously, you do not have
+                  the same level of control as when crafting your HTML code directly.
+               </p>
+               
+               <p>So, to a certain degree, every web developer is already a polyglot developer.</p>
+               
+               <p>The integration of SASS into Visual Studio 2015 is another example. A few years ago
+                  the Ruby community came up with the idea of a preprocessor for CSS styles. Instead
+                  of creating a.NET version of SASS, Microsoft decided to integrate the original version
+                  into its IDE, and SASS was the right tool for preprocessing CSS styles.
+               </p>
+               
+            </section>
+            
+            <section><span id="f8-sec-0005"></span>
+               
+               <h3 id="head-4-2">Cross Pollination</h3>
+               
+               <p>A second benefit of knowing multiple languages or frameworks is that you can take
+                  inspiration from what vendors and open‐source communities are doing in other languages,
+                  and when you cannot just use it, you can adapt it or make a version specific to your
+                  own.
+               </p>
+               
+               <p>A very good example of this is ASP.NET MVC. About 10 years ago, the popular language
+                  of the moment was Ruby, thanks to its simple web framework, Ruby on Rails, built on
+                  top of the Model View Controller pattern. The.NET developer community took inspiration
+                  from it and started building.NET web frameworks also based on the MVC pattern. This
+                  led to Microsoft building the ASP.NET MVC framework that is one of the main topics
+                  of this book.
+               </p>
+               
+            </section>
+            
+            <section><span id="f8-sec-0006"></span>
+               
+               <h3 id="head-4-3">Growing Your Comfort Zone</h3>
+               
+               <p>Using several languages and frameworks brings an additional, if not technical, benefit:
+                  It forces you to step out of your existing comfort zone, making you more adaptable
+                  and breaking the potential boredom of always following the same routine. Not surprisingly,
+                  many developers are hesitant to experiment with new things and prefer the comfort
+                  of using the tools, frameworks, and language they know best, even if doing so gives
+                  them less flexibility and control. But if you are reading this book, you are probably
+                  not one of them. So, through the rest of the book, prepare to learn new languages
+                  and frameworks that originated outside of the Microsoft.NET space. In the beginning,
+                  you’ll be stepping out of your comfort zone. By the time you are done, you’ll find
+                  that your comfort zone has become even larger and more rewarding.
+               </p>
+               
+            </section>
+            
+         </section>
+         
+         <section><span id="f8-sec-0007"></span>
+            
+            <h2 id="head-3-2"><span epub:type="pagebreak" id="Page_xxix" title="xxix"></span>WHO THIS BOOK IS FOR
+            </h2>
+            
+            <p>The audience of this book is web developers who have knowledge of ASP.NET MVC, either
+               with the latest version or with previous versions of the framework, and who want to
+               start using the tools and frameworks that are popular in the front‐end development
+               world. Additionally, this book can serve as a guide for developers who are already
+               adopting some of the front‐end tools and frameworks but want to make a more efficient
+               use of them via the integrations that have been introduced with Visual Studio 2017.
+            </p>
+            
+         </section>
+         
+         <section><span id="f8-sec-0008"></span>
+            
+            <h2 id="head-3-3">WHAT THIS BOOK COVERS</h2>
+            
+            <p>This book is about front‐end development with ASP.NET Core MVC. Together with giving
+               an overview of the latest framework from Microsoft, it also covers some of the most
+               popular frond‐end frameworks and tools, like Angular, Bootstrap, Nuget, Bower, webpack,
+               Gulp, and Azure.
+            </p>
+            
+            <p>In addition to the frameworks, the book shows the new front‐end development‐oriented
+               features of Visual Studio 2017 but also how to develop an ASP.NET Core MVC application
+               without it, using instead standard developers’ text‐editors like Visual Studio Code
+               on Mac OS X.
+            </p>
+            
+            <p>This is not a beginners’ book, so I assume that you know the basics of HTML, JavaScript,
+               and CSS, that you know C# or VB.NET (keep in mind that all samples will be in C#),
+               and that you have already worked with ASP.NET MVC and WebAPI.
+            </p>
+            
+         </section>
+         
+         <section><span id="f8-sec-0009"></span>
+            
+            <h2 id="head-3-4">HOW THIS BOOK IS STRUCTURED</h2>
+            
+            <p>If you still haven’t decided whether this it the right book for you, in this section
+               I’m briefly going to explain how the book is structured and the content of each chapter.
+            </p>
+            
+            <ul class="check" id="f8-list-0001">
+               
+               <li id="f8-li-0001"><b><a href="c01.xhtml">Chapter 1</a>, “What’s New in ASP.NET Core MVC”:</b> The first chapter covers all the new features and the new approach to development
+                  brought to the table with ASP.NET Core and ASP.NET Core MVC and in general with.NET
+                  2017. This chapter can be used as a refresher for those who already know the latest
+                  version of ASP.NET MVC or as a concise introduction for those who haven’t seen it
+                  yet.
+               </li>
+               
+               <li id="f8-li-0002"><b><a href="c02.xhtml">Chapter 2</a>, “The Front‐End Developer Toolset”:</b> This chapter starts to explore the world of front‐end developers, introducing the
+                  categories of tools they use and describing the top players in each category of tools
+                  and frameworks.
+               </li>
+               
+               <li id="f8-li-0003"><b><a href="c03.xhtml">Chapter 3</a>, “Angular in a Nutshell”:</b> The third chapter introduces Angular, the JavaScript framework from Google, explaining
+                  its main concepts and the new Angular tools that came with Visual Studio 2017.
+               </li>
+               
+               <li id="f8-li-0004"><span epub:type="pagebreak" id="Page_xxx" title="xxx"></span><b><a href="c04.xhtml">Chapter 4</a>, “Bootstrap in a Nutshell”:</b> The fourth chapter introduces the CSS framework from Twitter, Bootstrap, and shows
+                  how to use it to build responsive websites. The chapter also talks about Less, a CSS
+                  pre‐processing language, and its integration with Visual Studio 2017.
+               </li>
+               
+               <li id="f8-li-0005"><b><a href="c05.xhtml">Chapter 5</a>, “Managing Dependencies with NuGet and Bower”:</b> Managing all those components, both front‐end and server‐side, can be very painful,
+                  but luckily there are a few component managers that make it very easy. You can use
+                  NuGet to manage.NET server‐side dependencies and Bower to handle them on the client‐side.
+                  The fifth chapter explains how to use them, alone and in combination with Visual Studio
+                  2017, and also how to package your libraries for sharing within your company or with
+                  the rest of the world.
+               </li>
+               
+               <li id="f8-li-0006"><b><a href="c06.xhtml">Chapter 6</a>, “Building Your Application with Gulp and webpack”:</b> The sixth chapter is about Gulp and webpack, two build systems that can be programmed
+                  with JavaScript. Their integration with Visual Studio 2017 is also explained in this
+                  chapter, together with some common recipes used in ASP.NET development.
+               </li>
+               
+               <li id="f8-li-0007"><b><a href="c07.xhtml">Chapter 7</a>, “Deploying ASP.NET Core”:</b> Once the application is ready, it’s time for the deployment. This chapter uses Azure
+                  to show how to implement a continuous deployment flow that integrates testing, build,
+                  and deployment.
+               </li>
+               
+               <li id="f8-li-0008"><b><a href="c08.xhtml">Chapter 8</a>, “Developing Outside of Windows”:</b> One of the main features of the.NET Core stack is that it can also run on Linux and
+                  Mac. Microsoft built a cross‐platform IDE, but there are other options too. In this
+                  chapter you’ll see how to do all your ASP.NET development on a Mac.
+               </li>
+               
+               <li id="f8-li-0009"><b><a href="c09.xhtml">Chapter 9</a>, “Putting It All Together”:</b> The last chapter of the book puts together all the concepts and goes through all
+                  the steps required to build a modern, responsive website, with integration with third‐party
+                  services and authentication via oAuth.
+               </li>
+               
+            </ul>
+            
+         </section>
+         
+         <section><span id="f8-sec-0010"></span>
+            
+            <h2 id="head-3-5">WHAT YOU NEED TO USE THIS BOOK</h2>
+            
+            <p>The book has lot of samples, so the best way to experience it is to try them yourself
+               on your computer. In order to do so, you’ll need either Windows 7, 8, or 10 and you’ll
+               need Visual Studio 2017 Community edition.
+            </p>
+            
+            <p>ASP.NET Core MVC can also be developed on any text editor on Windows, Mac OS X, or
+               Linux. Microsoft also developed a cross‐platform text editor called Visual Studio
+               Code. You will also need it in order to follow along in <a href="c08.xhtml">Chapter 8</a> about developing outside of Windows. You can use any of the other compatible text
+               editors, but the commands used and screenshots will be different from the ones used
+               with Visual Studio Code.
+            </p>
+            
+            <p>The source code for the samples is available for download from the Wrox website at
+               <a href="http://www.wiley.com/go/frontenddevelopmentasp.netmvc6"><code>www.wiley.com/go/frontenddevelopmentasp.netmvc6</code></a>.
+            </p>
+            
+         </section>
+         
+         <section><span id="f8-sec-0011"></span>
+            
+            <h2 id="head-3-6"><span epub:type="pagebreak" id="Page_xxxi" title="xxxi"></span>CONVENTIONS
+            </h2>
+            
+            <p>To help you get the most from the text and keep track of what’s happening, we’ve used
+               a number of conventions throughout the book.
+            </p>
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature1">
+                  
+                  <h3>WARNING</h3>
+                  
+                  <p><i>Warnings hold important, not‐to‐be‐forgotten information that is directly relevant
+                        to the surrounding text.</i></p>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               <section class="feature1">
+                  
+                  <h3>NOTE</h3>
+                  
+                  <p><i>Notes indicates notes, tips, hints, tricks, or asides to the current discussion.</i></p>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p>As for styles in the text:</p>
+            <ul class="check" id="f8-list-0002">
+               
+               <li id="f8-li-0010">We <i>highlight</i> new terms and important words when we introduce them.
+               </li>
+               
+               <li id="f8-li-0011">We show keyboard strokes like this: Ctrl + A.</li>
+               
+               <li id="f8-li-0012">We show file names, URLs, and code within the text like so: <code>persistence.properties</code>.
+               </li>
+               
+            </ul>
+            
+            <p>We present code in two different ways:</p>
+            
+            <blockquote>
+               
+               <p><code>We use a monofont type with no highlighting for most code examples.</code></p>
+               
+               <p><code><b>We use bold to emphasize code that is particularly important in the present context
+                        or to show changes from a previous code snippet.</b></code></p>
+               
+            </blockquote>
+            
+         </section>
+         
+         <section><span id="f8-sec-0012"></span>
+            
+            <h2 id="head-3-7">SOURCE CODE</h2>
+            
+            <p>As you work through the examples in this book, you may choose either to type in all
+               the code manually, or to use the source code files that accompany the book. All the
+               source code used in this book is available for download at <a href="http://www.wrox.com"><code>www.wrox.com</code></a>. Specifically for this book, the code download is on the Download Code tab at:
+            </p>
+            
+            <p><a href="http://www.wiley.com/go/frontenddevelopmentasp.netmvc6"><code>www.wiley.com/go/frontenddevelopmentasp.netmvc6</code></a></p>
+            
+            <p>You can also search for the book at <a href="http://www.wrox.com"><code>www.wrox.com</code></a> by ISBN (the ISBN for this book is 978‐1‐119‐18131‐6) to find the code. And a complete
+               list of code downloads for all current Wrox books is available at <a href="http://www.wrox.com/dynamic/books/download.aspx"><code>www.wrox.com/dynamic/books/download.aspx</code></a>.
+            </p>
+            
+            <p>Most of the code on <a href="http://www.wrox.com"><code>www.wrox.com</code></a> is compressed in a.ZIP,.RAR archive, or similar archive format appropriate to the
+               platform. Once you download the code, just decompress it with an appropriate compression
+               tool.
+            </p>
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               <section class="feature1">
+                  
+                  <h3><span epub:type="pagebreak" id="Page_xxxii" title="xxxii"></span>NOTE
+                  </h3>
+                  
+                  <p><i>Because many books have similar titles, you may find it easiest to search by ISBN;
+                        this book’s ISBN is 978‐1‐119‐18131‐6.</i></p>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+         </section>
+         
+         <section><span id="f8-sec-0013"></span>
+            
+            <h2 id="head-3-8">ERRATA</h2>
+            
+            <p>We make every effort to ensure that there are no errors in the text or in the code.
+               However, no one is perfect, and mistakes do occur. If you find an error in one of
+               our books, like a spelling mistake or faulty piece of code, we would be very grateful
+               for your feedback. By sending in errata, you may save another reader hours of frustration,
+               and at the same time, you will be helping us provide even higher quality information.
+            </p>
+            
+            <p>To find the errata page for this book, go to <a href="http://www.wiley.com/go/frontenddevelopmentasp.netmvc6"><code>www.wiley.com/go/frontenddevelopmentasp.netmvc6</code></a> And click the Errata link. On this page you can view all errata that has been submitted
+               for this book and posted by Wrox editors.
+            </p>
+            
+            <p>If you don’t spot “your” error on the Book Errata page, go to <a href="http://www.wrox.com/contact/techsupport.shtml"><code>www.wrox.com/contact/techsupport.shtml</code></a> and complete the form there to send us the error you have found. We’ll check the
+               information and, if appropriate, post a message to the book’s errata page and fix
+               the problem in subsequent editions of the book.
+            </p>
+            
+         </section>
+         
+      </section>
+      
+   </body>
+   
+</html>

@@ -1,0 +1,2635 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+   
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      
+      <title>Angular in a Nutshell</title>
+      
+      <link href="WileyTemplate_v5.3.css" rel="stylesheet" type="text/css" />
+      
+      <meta content="urn:uuid:68078093-7b10-42b9-8f32-0db0ecece3d2" name="Adept.expected.resource" />
+      
+   </head>
+   
+   <body epub:type="bodymatter">
+      
+      <section epub:type="chapter">
+         
+         <header>
+            
+            <h1><span epub:type="pagebreak" id="Page_59" title="59"></span><a id="c03"></a><span class="chapterNumber">3</span><br /><span class="chapterTitle">Angular in a Nutshell</span></h1>
+         </header>
+         
+         <section>
+            <span id="c03-sec-0001"></span>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3">
+                  
+                  <h3>WHAT’S IN THIS CHAPTER?</h3>
+                  
+                  <ul class="check1" id="c03-list-0001">
+                     
+                     <li id="c03-li-0001">Understanding the basic concepts of Angular</li>
+                     
+                     <li id="c03-li-0002">Building an Angular application</li>
+                     
+                     <li id="c03-li-0003">Using AngularJS with ASP.NET MVC Core v1</li>
+                     
+                     <li id="c03-li-0004">Discovering Visual Studio 2017 support for Angular</li>
+                     
+                  </ul>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p>The previous chapter was an introduction to all the frameworks used in front‐end development,
+               including Angular.
+            </p>
+            
+            <p>This chapter goes more deeply into Angular, starting with basic concepts and later
+               approaching more advanced topics. The first part of the chapter relies only on pure
+               client‐side JavaScript and can be used with just a simple text editor. The second
+               part of the chapter shows the new integration available within Visual Studio 2017
+               and how to integrate Angular in ASP.NET Core applications.
+            </p>
+            
+            <p>Before going into the technical details, I want to stress the fact that Angular is
+               not a “silver bullet.” Angular shines when it comes to building CRUD applications,
+               but it is less optimal when heavy DOM manipulation or a very complex GUI are needed.
+               Angular was chosen as the framework for this book because the majority of web applications
+               built with ASP.NET MVC (or in general with any server‐side technology) are mostly
+               about data‐bound operations and less about complex GUIs.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3">
+                  
+                  <h3>WROX.COM CODE DOWNLOADS FOR THIS CHAPTER</h3>
+                  
+                  <p>The <a href="http://wrox.com">wrox.com</a> code downloads for this chapter are found at <code><a href="http://www.wrox.com">www.wrox.com</a></code> Search for the book’s ISBN (978‐1‐119‐18131‐6), and you will find the code in the
+                     <a href="c03.xhtml">chapter 3</a> download and individually named according to the names throughout the chapter.
+                  </p>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+         </section>
+         
+         <section>
+            <span id="c03-sec-0002"></span>
+            
+            <h2 id="head-2-41"><span epub:type="pagebreak" id="Page_60" title="60"></span>ANGULAR CONCEPTS
+            </h2>
+            
+            <p>Angular is a web application framework developed and maintained by Google and the
+               open‐source community. The framework has many features, like two‐way data‐binding,
+               templating, routing, components, dependency injection, and so on. Unfortunately, like
+               all frameworks of its breed, it has a pretty steep learning curve due to the many
+               concepts you have to grasp in order to be fluent in it. Here is a list of the most
+               important Angular concepts:
+            </p>
+            
+            <ul class="check" id="c03-list-0002">
+               
+               <li id="c03-li-0005"><b>Modules:</b> Containers that group together blocks of functionalities that belong together, like
+                  components, directives, services, and so on.
+               </li>
+               
+               <li id="c03-li-0006"><b>Components:</b> Define the behavior of a “portion” of the screen.
+               </li>
+               
+               <li id="c03-li-0007"><b>Templates:</b> HTML files that define how the view for a component is rendered.
+               </li>
+               
+               <li id="c03-li-0008"><b>Data binding:</b> The process that connects a component to its template and allows data and events
+                  to flow between them.
+               </li>
+               
+               <li id="c03-li-0009"><b>Directives:</b> Custom attributes that enhance HTML syntax and are used to attach behaviors to specific
+                  elements on the page.
+               </li>
+               
+               <li id="c03-li-0010"><b>Services:</b> Reusable functionalities that are independent from the views.
+               </li>
+               
+               <li id="c03-li-0011"><b>Dependency injection:</b> A way to supply dependencies (services most of the time) to classes (other services
+                  or components).
+               </li>
+               
+               <li id="c03-li-0012"><b>Metadata:</b> Instructs Angular on how to process a class, whether it’s a component, a module,
+                  a directive, which services have to be injected, and so on.
+               </li>
+               
+            </ul>
+            
+            <p>Those terms might sound abstract at the moment, but the upcoming pages will make everything
+               more clear, as all of these concepts are used to build a sample single‐page application.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature1">
+                  
+                  <h2>ANGULAR VS ANGULARJS</h2>
+                  
+                  <p>Chances are that you have worked with or at least heard of AngularJS 1.x. Despite
+                     the similar name, the Angular covered in this book is a completely new framework,
+                     written from scratch and with a different approach. The “old” AngularJS 1.x is a <i>Model View Controller (MVC)</i> framework, while Angular is a component‐oriented framework.
+                  </p>
+                  
+                  <p>If you are familiar with AngularJS, not everything is lost. Many of its concepts are
+                     still relevant, so learning Angular won’t be difficult for you.
+                  </p>
+                  
+                  <p>Version numbers are different. The new Angular adopts semantic versioning, so every
+                     important new feature or breaking change will have a new major version number, similar
+                     to how Node.js and Chrome are numbered. The first version, 2.0, was released in September
+                     2016. The latest LTS version, released at the end of March 2017, is 4.0. And the latest
+                     stable version is 5.0, released at the end of October 2017. On the other hand, AngularJS
+                     versioning went from 1.0 to 1.6 over the seven years since its first release.
+                  </p>
+                  
+                  <p>Also the reference website is different. Instead of <a href="http://angularjs.org"><code>angularjs.org</code></a>, the site for Angular is <code>angular.io</code>. See <a href="#c03-fig-0001" id="R_c03-fig-0001">Figure 3‐1</a>.
+                  </p>
+                  
+                  <figure> <img alt="Snapshot of Angular website." src="images/c03f001.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c03-fig-0001" id="c03-fig-0001"><b>FIGURE 3-1</b></a><b>:</b></span> Angular web site
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+         </section>
+         
+         <section>
+            <span id="c03-sec-0003"></span>
+            
+            <h2 id="head-2-42"><span epub:type="pagebreak" id="Page_61" title="61"></span>THE LANGUAGE OF ANGULAR
+            </h2>
+            
+            <p>The title of this section might seem strange: If Angular is a JavaScript framework,
+               isn’t it written in JavaScript? The answer is both yes and no.
+            </p>
+            
+            <p>The modular and component‐oriented approach used by Angular requires language features
+               that are available only in ES6. The same functionalites can also be implementend in
+               the “standard” JavaScript supported by most browsers (ECMAScript 5 or ES5) but at
+               the cost of a more complex and cumbersome code.
+            </p>
+            
+            <p>To avoid complexity and since transpiling to ES5 would have been needed anyway, the
+               Angular team decided to use TypeScript as the language of choice. It includes the
+               features of ES6 that are needed to support the modularity of the framework, but it
+               also adds strong typing (as seen in <a href="c02.xhtml">Chapter 2</a>).
+            </p>
+            
+            <p>As a developer you can use any of the three versions of JavaScript (ES5, which is
+               the most widely supported version of JavaScript, ES6, which is only supported by most
+               recent browser, or <span epub:type="pagebreak" id="Page_62" title="62"></span>TypeScript), each with its advantages and disadvantages. This book follows the recommendation
+               of the Angular team and uses TypeScript.
+            </p>
+            
+         </section>
+         
+         <section>
+            <span id="c03-sec-0004"></span>
+            
+            <h2 id="head-2-43">SETTING UP AN ANGULAR PROJECT</h2>
+            
+            <p>There are various ways of writing Angular applications, including using an online
+               editor, starting from the quickstart seed, and using the Angular‐CLI tool.
+            </p>
+            
+            <section>
+               <span id="c03-sec-0005"></span>
+               
+               <h3 id="head-3-45">Using an Online Editor</h3>
+               
+               <p>The easiest way to set up an Angular project is to use an online web editing tool
+                  like Plunker (<code><a href="https://plnkr.co">https://plnkr.co</a></code>). See <a href="#c03-fig-0002" id="R_c03-fig-0002">Figure 3‐2</a>. It allows you to write code directly in the browser without the additional overhead
+                  of setting up the transpiling from TypeScript to JavaScript and the various bundling
+                  of all the files.
+               </p>
+               
+               <figure> <img alt="Snapshot of Code shown in Plunker." src="images/c03f002.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c03-fig-0002" id="c03-fig-0002"><b>FIGURE 3-2</b></a><b>:</b></span> Code shown in Plunker
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>This is obviously good only when doing demos or experimenting and trying to understand
+                  how things work, as you cannot deploy an application from such sites. They also do
+                  the transpiling on the browser, which can become slow when the size of the “demo”
+                  is too large.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c03-sec-0006"></span>
+               
+               <h3 id="head-3-46"><span epub:type="pagebreak" id="Page_63" title="63"></span>Starting from the Quickstart Seed
+               </h3>
+               
+               <p>Another solution for setting up an Angular project is to clone onto your machine the
+                  quickstart seed project from the Angular team’s GitHub repository (<code><a href="https://github.com/angular/quickstart">https://github.com/angular/quickstart</a></code>). You simply follow the instructions that come in the README file. The download contains
+                  the <code>package.json</code> file with all the dependencies needed by Angular as well as all scripts needed to
+                  build and run the application. Once the application is started with the <code>npm start</code> command, you can add and edit files, and the browser will automatically refresh and
+                  show the updated result.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c03-sec-0007"></span>
+               
+               <h3 id="head-3-47">Using the Angular‐CLI Tool</h3>
+               
+               <p>The last option for setting up an Angular project, and the one that is used in this
+                  chapter, is Angular‐CLI, the command‐line interface tool. As with the dotnet‐cli tool
+                  discussed in <a href="c01.xhtml">Chapter 1</a>, this tool creates a skeleton of an application, similar to the one in the quickstart.
+               </p>
+               
+               <p>The tool is installed via NPM with the following command:</p>
+               
+               <blockquote>
+                  <pre id="c03-code-0001"><code>npm install -g @angular/cli</code> </pre>
+                  </blockquote>
+               
+               <p>Once the tool is installed, you can create your first Angular application by typing
+                  in a command: <code>ng new my‐app</code>.
+               </p>
+               
+               <p>This command creates a new folder called <code>my‐app</code>, adds some the minium needed files to start an Angular application, and automatically
+                  starts <code>npm install</code> to download all the dependencies.
+               </p>
+               
+               <p>Once this is complete, move into the <code>my‐app</code> folder (<code>cd my‐app</code>) and type the command <code>ng serve ‐‐open</code> to launch the application in your default browser (<a href="#c03-fig-0003" id="R_c03-fig-0003">Figure 3‐3</a>).
+               </p>
+               
+               <figure> <img alt="Snapshot of default app produced by the Angular-CLI." src="images/c03f003.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c03-fig-0003" id="c03-fig-0003"><b>FIGURE 3-3</b></a><b>:</b></span> The default app produced by the Angular‐CLI
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature1">
+                     
+                     <h2><span epub:type="pagebreak" id="Page_64" title="64"></span>MORE ABOUT THE ANGULAR‐CLI TOOL
+                     </h2>
+                     
+                     <p>The Angular command‐line interface tool has many other useful features that can streamline
+                        the development of Angular applications. Besides providing the skeleton of the client‐side
+                        application, it comes preconfigured with the skeleton for running unit tests with
+                        the Karma runner and for running end‐to‐end tests using Protractor. It also provides
+                        additional commands for running tests, running code analysis, building a deployable
+                        version of the application, and generating new components, services, and classes.
+                        All these additional features are beyond the scope of this book, but you can explore
+                        more on your own by reading the official documentation at: <code><a href="https://cli.angular.io">https://cli.angular.io</a></code>.
+                     </p>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c03-sec-0008"></span>
+            
+            <h2 id="head-2-44">THE STRUCTURE OF AN ANGULAR APP</h2>
+            
+            <p>With the skeleton of a simple application created via the command‐line tools, we can
+               now explore the basic components and structure of an Angular application (inside the
+               <code>/src</code> folder).
+            </p>
+            
+            <section>
+               <span id="c03-sec-0009"></span>
+               
+               <h3 id="head-3-48">Application Entry Point</h3>
+               
+               <p>The entry point of this and any other Angular application is the <code>main.ts</code> file (<a href="#c03-fea-0001">Listing 3‐1</a>). Its purpose is to compile the application and to bootstrap its root module (<code>AppModule</code>).
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c03-fea-0001"></span> 
+                     
+                     <h2 id="head-2-45">LISTING 3-1: The application’s entry point (main.ts)</h2>
+                     
+                     <section>
+                        <span id="c03-sec-0010"></span>
+                        
+                        <blockquote>
+                           <pre id="c03-code-0002"><code>import './polyfills.ts';</code>
+<code></code>
+<code>import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';</code>
+<code>import { enableProdMode } from '@angular/core';</code>
+<code>import { environment } from './environments/environment';</code>
+<code>import { AppModule } from './app/app.module';</code>
+<code></code>
+<code>if (environment.production) {</code>
+<code>  enableProdMode();</code>
+<code>}</code>
+<code></code>
+<code>platformBrowserDynamic().bootstrapModule(AppModule);</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+            <section>
+               <span id="c03-sec-0011"></span>
+               
+               <h3 id="head-3-49">Root Module</h3>
+               
+               <p>The next file is the inside the <code>app</code> folder and is the one that defines the application’s root module: <code>app.module.ts</code>.
+               </p>
+               
+               <p><span epub:type="pagebreak" id="Page_65" title="65"></span>What is shown in <a href="#c03-fea-0002">Listing 3‐2</a> is not just valid for the root module, but also represents the structure of any other
+                  Angular module.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c03-fea-0002"></span> 
+                     
+                     <h2 id="head-2-46">LISTING 3-2: Root module (app/app.module.ts)</h2>
+                     
+                     <section>
+                        <span id="c03-sec-0012"></span>
+                        
+                        <blockquote>
+                           <pre id="c03-code-0003"><code>import { BrowserModule } from '@angular/platform-browser';</code>
+<code>import { NgModule } from '@angular/core';</code>
+<code>import { FormsModule } from '@angular/forms';</code>
+<code>import { HttpModule } from '@angular/http';</code>
+<code></code>
+<code>import { AppComponent } from './app.component';</code>
+<code></code>
+<code>@NgModule({</code>
+<code>  declarations: [</code>
+<code>    AppComponent</code>
+<code>  ],</code>
+<code>  imports: [</code>
+<code>    BrowserModule,</code>
+<code>    FormsModule,</code>
+<code>    HttpModule</code>
+<code>  ],</code>
+<code>  providers: [],</code>
+<code>  bootstrap: [AppComponent]</code>
+<code>})</code>
+<code>export class AppModule { }</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>The file starts by importing (via the <code>import</code> statements) all the JavaScript classes that are referenced inside this class. In
+                  this example there are three Angular modules that are going to be used by almost any
+                  application (<code>BrowserModule</code>, <code>FormsModule</code>, and <code>HttpModule</code>), one decorator (<code>NgModule</code>) that is going to be used to define the application root module, and finally one
+                  component (<code>AppComponent</code>).
+               </p>
+               
+               <p>Then there is the actual module definition, the class <code>AppModule</code>, decorated by the <code>@NgModule</code> decorator, which contains four arrays:
+               </p>
+               
+               <ul class="check" id="c03-list-0003">
+                  
+                  <li id="c03-li-0013">The first is the <code>declarations</code> array, which contains all the components belong to this module. In there case there
+                     is only one, but as the application evolves, more components will be added.
+                  </li>
+                  
+                  <li id="c03-li-0014">Then the <code>imports</code> array contains all the Angular modules that are going to be used inside this module.
+                     This includes both structural modules and as the application evolves custom feature
+                     modules. In this example the modules to handle interaction with the browser, to handle
+                     HTML forms, and to execute HTTP requests are added.
+                  </li>
+                  
+                  <li id="c03-li-0015">Third is the empty array <code>providers</code>. It is empty because at the moment the application is not using any service, but
+                     once we start creating them, they will need to be defined inside this array.
+                  </li>
+                  
+                  <li id="c03-li-0016">Finally the last array, <code>bootstrap</code>, contains the components that have to be created during the application’s bootstrapping
+                     process. In our example this is the <code>AppComponent</code>.
+                  </li>
+                  
+               </ul>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature1">
+                     
+                     <h3><span epub:type="pagebreak" id="Page_66" title="66"></span>NOTE
+                     </h3>
+                     
+                     <p><i>Decorators are a feature of TypeScript that are used to add metadata to a class. In
+                           Angular there many decorators that are used to specify what kind of Angular element
+                           a class represents. Here we have the</i> <code>@NgModule</code> <i>to identify Angular modules, but there is also</i> <code>@Component</code> <i>to indentify components or</i> <code>@Injectable</code> <i>to identify services that can be injected via dependency injection and other modules
+                           as well.</i></p>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+            <section>
+               <span id="c03-sec-0013"></span>
+               
+               <h3 id="head-3-50">Root Component</h3>
+               
+               <p>The final piece of the puzzle is the root component, <code>AppComponent</code>, defined in the <code>app/app.component.ts</code> file (<a href="#c03-fea-0003">Listing 3‐3</a>).
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c03-fea-0003"></span> 
+                     
+                     <h2 id="head-2-47">LISTING 3-3: Root component (app/app.component.ts)</h2>
+                     
+                     <section>
+                        <span id="c03-sec-0014"></span>
+                        
+                        <blockquote>
+                           <pre id="c03-code-0004"><code>import { Component } from '@angular/core';</code>
+<code></code>
+<code>@Component({</code>
+<code>  selector: 'app-root',</code>
+<code>  templateUrl: './app.component.html',</code>
+<code>  styleUrls: ['./app.component.css']</code>
+<code>})</code>
+<code>export class AppComponent {</code>
+<code>  title = 'app works!';</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>Defining the root component (or any other component) is just like defining the root
+                  module. It’s done with decorator (this time the <code>@Component</code>) and specifying the <code>selector</code> that will be used in the HTML file to include the component, the URL of the view
+                  for the component (via the <code>templateUrl</code> property), and the styles specific for this view (with the <code>styleUrls</code> property).
+               </p>
+               
+               <p>And since a component, unlike a module, has behaviors, the class must do something,
+                  in this case just setting the value of the property <code>title</code>. In this example the view of the component is very simple and just displays the <code>title</code> property inside an <code>H1</code> tag (<a href="#c03-fea-0004">Listing 3‐4</a>).
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c03-fea-0004"></span> 
+                     
+                     <h2 id="head-2-48">LISTING 3-4: Root component’s template (app/app.component.html)</h2>
+                     
+                     <section>
+                        <span id="c03-sec-0015"></span>
+                        
+                        <blockquote>
+                           <pre id="c03-code-0005"><code>&lt;h1&gt;</code>
+<code>  {{title}}</code>
+<code>&lt;/h1&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p><span epub:type="pagebreak" id="Page_67" title="67"></span>When templates are so simple, to avoid creating HTML files with just one line of code,
+                  the <code>@Component</code> decorator provides an additional property called <code>template</code> where the full markup of the template can be specified instead of its URL. If both
+                  are specified, the inline markup is used:
+               </p>
+               
+               <blockquote>
+                  <pre id="c03-code-0006"><code>template: `&lt;h1&gt; {{title}} &lt;/h1&gt;`</code> </pre>
+                  </blockquote>
+               
+               <p>The inline markup can also be specified over multiple lines as a multi‐line string,
+                  enclosing it within backticks (<code>`</code>). Notice that a backtick (<code>`</code>), which is not a single quote (<code>'</code>), is a notation introduced in ECMAScript 2015 (ES6) to allow entering strings over
+                  multiple lines in order to keep the HTML more readable.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature1">
+                     
+                     <h3>TIP</h3>
+                     
+                     <p><i>Even if pretty uncommon for normal users, the backtick (</i><code>`</code><i>) should be somewhat familiar to developers as it is the character used in markdown
+                           to format a string as</i> <code>code</code> <i>when writing comments in various online coding forum like StackOverflow or posting
+                           issues on GitHub. On the US keyboard layout, it is at the top left corner of the keyboard.
+                           But in other keyboard layouts, like for example Italian, this character doesn’t exist
+                           and has to be typed using its ASCII code on the numeric keyboard:</i> <code>AltGr+96</code>.
+                     </p>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+            <section>
+               <span id="c03-sec-0016"></span>
+               
+               <h3 id="head-3-51">Main HTML Page</h3>
+               
+               <p>The real entry point of the application, which actually starts its boostrapping process,
+                  is the main <code>index.html</code> page (<a href="#c03-fea-0005">Listing 3‐5</a>).
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c03-fea-0005"></span> 
+                     
+                     <h2 id="head-2-49">LISTING 3-5: Index.html</h2>
+                     
+                     <section>
+                        <span id="c03-sec-0017"></span>
+                        
+                        <blockquote>
+                           <pre id="c03-code-0007"><code>&lt;!doctype html&gt;</code>
+<code>&lt;html&gt;</code>
+<code>&lt;head&gt;</code>
+<code>  &lt;meta charset="utf-8"&gt;</code>
+<code>  &lt;title&gt;MyApp&lt;/title&gt;</code>
+<code>  &lt;base href="/"&gt;</code>
+<code></code>
+<code>  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code>
+<code> &lt;link rel="icon" type="image/x-icon" href="favicon.ico"&gt;</code>
+<code>&lt;/head&gt;</code>
+<code>&lt;body&gt;</code>
+<code>  <b>&lt;app-root&gt;Loading…&lt;/app-root&gt;</b></code>
+<code>&lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>As you can see, the <code>&lt;app-root&gt;</code> tag is the same as specified in the <code>selector</code> property of the root component. Here is where the bootstrapping process will inject
+                  the view rendered by the root component. In this example it is simply <code>&lt;h1&gt;app works!&lt;/h1&gt;</code>, but, as shown in the rest of the chapter, it can be much more than that.
+               </p>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c03-sec-0018"></span>
+            
+            <h2 id="head-2-50"><span epub:type="pagebreak" id="Page_68" title="68"></span>DATA BINDING
+            </h2>
+            
+            <p>So far the chapter briefly covered four of the eight main concepts of Angular: models,
+               components, templates, and metadata. <a href="#c03-fea-0005">Listing 3‐5</a> also showed a very simple example of data binding to render a property of a component’s
+               model inside the template.
+            </p>
+            
+            <p>Data Binding is the process that passes data back and forth between components and
+               the view in rendered in the browser. There are four types of Data Binding in Angular:
+            </p>
+            
+            <ul class="check" id="c03-list-0004">
+               
+               <li id="c03-li-0017">The first is <i>interpolation</i>, which sends data from the component to the browser, rendering it as the content
+                  of a HTML tag.
+               </li>
+               
+               <li id="c03-li-0018">The second is <i>one-way binding</i>, which still sends data from the component to the browser, but it assigns the value
+                  to an attribute or property of an HTML element.
+               </li>
+               
+               <li id="c03-li-0019">We then have <i>event binding</i>, which sends data from the browser to the component.
+               </li>
+               
+               <li id="c03-li-0020">Finally, we have <i>two-way binding</i> to keep in sync a property of the component with what is rendered in an <code>input</code> element in the browser.
+               </li>
+               
+               <li id="c03-li-0021">Let’s look at each of them individually.</li>
+               
+            </ul>
+            
+            <section>
+               <span id="c03-sec-0019"></span>
+               
+               <h3 id="head-3-52">Interpolation</h3>
+               
+               <p>If all you need to do is render the value of property of the model of a component
+                  inside the browser as the content of an HTML element, the simplest way of binding
+                  is called interpolation. This is done by putting the expression you want to render
+                  inside double curly braces <code>{{ … }}</code>. The content can be just the name of a component’s property or a JavaScript expression,
+                  for example string concatenation. <a href="#c03-fea-0006">Listing 3‐6</a> shows both examples.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c03-fea-0006"></span> 
+                     
+                     <h2 id="head-2-51">LISTING 3-6: Example of interpolation (app/app.component.html)</h2>
+                     
+                     <section>
+                        <span id="c03-sec-0020"></span>
+                        
+                        <blockquote>
+                           <pre id="c03-code-0008"><code>&lt;h1&gt;{{title}}&lt;/h1&gt;</code>
+<code></code>
+<code>&lt;p&gt;{{"Hello" + " " + "reader"}}!&lt;/p&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p> </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature1">
+                     
+                     <h3>WARNING</h3>
+                     
+                     <p><i>Despite being technically possible, it is better to avoid using expressions inside
+                           templates and only use propery names. To keep a good separation of concerns, it is
+                           the component that has to do any concatenation or any other type of expression before
+                           passing the value to the template.</i></p>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+            <section>
+               <span id="c03-sec-0021"></span>
+               
+               <h3 id="head-3-53"><span epub:type="pagebreak" id="Page_69" title="69"></span>One-Way Binding
+               </h3>
+               
+               <p>If instead of displaying a propery as the content of an element you need to pass it
+                  to an HTML element’s attribute, you need to use a more explicit syntax for the one-way
+                  binding. This is done by wrapping the attribute name within square brackets <code>[ … ]</code> and assigning the value using the property name as if it was a static value.
+               </p>
+               
+               <p>For example, you can set the value of an input element:</p>
+               
+               <blockquote>
+                  <pre id="c03-code-0009"><code>&lt;input type="text" [value]="title"/&gt;</code> </pre>
+                  </blockquote>
+               
+               <p>But you are not limited to only elements’ attributes. Style properties can also be
+                  set:
+               </p>
+               
+               <blockquote>
+                  <pre id="c03-code-0010"><code>&lt;h1 [style.color]="color" &gt;This is red&lt;/h1&gt;</code> </pre>
+                  </blockquote>
+               
+               <p>With this code, if the property <code>color</code> of the component hold the value <code>"red"</code>, that heading will be displayed in red.
+               </p>
+               
+               <p>Actually, any property of any HTML element can be set via this one-way binding. For
+                  example, instead of using interpolation, we could have set the content of the heading
+                  by setting the value of its innerText property:
+               </p>
+               
+               <blockquote>
+                  <pre id="c03-code-0011"><code>&lt;h1 [innerText]="title"&gt;&lt;/h1&gt;</code> </pre>
+                  </blockquote>
+               
+            </section>
+            
+            <section>
+               <span id="c03-sec-0022"></span>
+               
+               <h3 id="head-3-54">Event binding</h3>
+               
+               <p>To send data (or raise events) from the template to the component, we adopt a similar
+                  approach. This time we wrap the name of any valid HTML event with parentheses <code>(…)</code> and assign it to a method of the component. <a href="#c03-fea-0007">Listing 3‐7</a> shows an example of an event that toggles the color of a header, shown in a component
+                  with an inline template.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c03-fea-0007"></span> 
+                     
+                     <h2 id="head-2-52">LISTING 3-7: Event binding (app/app.component.ts)</h2>
+                     
+                     <section>
+                        <span id="c03-sec-0023"></span>
+                        
+                        <blockquote>
+                           <pre id="c03-code-0012"><code>import { Component } from '@angular/core';</code>
+<code></code>
+<code>@Component({</code>
+<code>  selector: 'app-root',</code>
+<code>  template: `&lt;h1 [style.color]="color"&gt;{{title}}&lt;/h1&gt;</code>
+<code>  &lt;button (click)="setColor()"&gt;Change Color&lt;/button&gt;`</code>
+<code>})</code>
+<code>export class AppComponent {</code>
+<code>  title = 'app works!';</code>
+<code>  color = "";</code>
+<code></code>
+<code>  setColor(){</code>
+<code>    if(this.color==="")</code>
+<code>      this.color="red";</code>
+<code>    else</code>
+<code>      this.color="";</code>
+<code>  }</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p> </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature1">
+                     
+                     <h2><span epub:type="pagebreak" id="Page_70" title="70"></span>COMPARING ONE-WAY AND EVENT BINDING WITH ANGULARJS
+                     </h2>
+                     
+                     <p>If you have used AngularJS, you might have noticed that gone are all the <code>ng-*</code> directives like <code>ng-style</code>, <code>ng-src</code>, and so on. Now it’s enough to wrap the name in square brackets. The same is true
+                        for the events. There is no need to use the AngularJS <code>ng-click</code> event. You can just use any event inside parentheses. This means less code for the
+                        team to maintain, fewer possible bugs, and greater ease for developers.
+                     </p>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+            <section>
+               <span id="c03-sec-0024"></span>
+               
+               <h3 id="head-3-55">Two-Way Binding</h3>
+               
+               <p>Finally, the most powerful of all bindings, the one that keeps in sync templates and
+                  components’ models, is two-way binding. This is done using the new syntax <code>[(ngModel)]</code>. You just need to apply this directive on the input element you want to bind to,
+                  and any changes to the model will automatically reflect on the view, and any changes
+                  in the input field will update the property of the component. <a href="#c03-fea-0008">Listing 3‐8</a> shows an example of two-way data binding.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c03-fea-0008"></span> 
+                     
+                     <h2 id="head-2-53">LISTING 3-8: Two-way binding (app/app.component.ts)</h2>
+                     
+                     <section>
+                        <span id="c03-sec-0025"></span>
+                        
+                        <blockquote>
+                           <pre id="c03-code-0013"><code>import { Component } from '@angular/core';</code>
+<code></code>
+<code>@Component({</code>
+<code>  selector: 'app-root',</code>
+<code>  template: `</code>
+<code>  &lt;h1&gt;{{title}}&lt;/h1&gt;</code>
+<code>  &lt;input type="text" [(ngModel)]="title"/&gt;</code>
+<code>  `</code>
+<code>})</code>
+<code>export class AppComponent {</code>
+<code>  title = 'app works!';</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>This notation looks funny at first, but after a while it makes sense. It is basically
+                  an event binding inside a one-way binding because you get the model from the component,
+                  but you also send it back. This notation is referred to as “football in a box” or
+                  “banana in a box” (to help you remember that parentheses go inside the square brackets).
+               </p>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c03-sec-0026"></span>
+            
+            <h2 id="head-2-54">DIRECTIVES</h2>
+            
+            <p>In Angular there are two types of directives. <i>Structural directives</i> modify the layout of the page by adding or removing DOM elements. <i>Attribute directives</i> change the appearance of an existing elements.
+            </p>
+            
+            <p><span epub:type="pagebreak" id="Page_71" title="71"></span><code>NgIf</code>, <code>NgFor</code>, and <code>NgSwitch</code> are the built-in structural directives, while <code>NgModel</code>, <code>NgStyle</code>, and <code>NgClass</code> are the built-in attribute directives.
+            </p>
+            
+            <p>Let’s see how to use the <code>NgFor</code> directive to iterate an array of objects:
+            </p>
+            
+            <blockquote>
+               <pre id="c03-code-0014"><code>&lt;ul&gt;</code>
+<code>  &lt;li *<b>ngFor="let item of array"</b>&gt;{{item.property}}&lt;/li&gt;</code>
+<code>&lt;/ul&gt;</code> </pre>
+               </blockquote>
+            
+            <p>Angular replicates the HTML to which the *<code>ngFor</code> directive is applied (in the case of snippet above, the <code>&lt;li&gt;</code> element) for the items of the array. As soon as new objects are added to the array,
+               the directive automatically adds a copy of the HTML element to the DOM, and when an
+               object is removed, the corresponding element is removed from the DOM as well.
+            </p>
+            
+            <p><a href="#c03-fea-0009">Listing 3‐9</a> shows the *<code>ngFor</code> directive applied to show the top five men of the 2016 Ironman World Championship
+               in Kona, Hawaii. Inside the <code>&lt;li&gt;</code> element, the dot notation is used to access the properties of the item of the repeater.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"><span id="c03-fea-0009"></span> 
+                  
+                  <h2 id="head-2-55">LISTING 3-9: Using the NgFor directive to display an array of objects</h2>
+                  
+                  <section>
+                     <span id="c03-sec-0027"></span>
+                     
+                     <blockquote>
+                        <pre id="c03-code-0015"><code>import { Component } from '@angular/core';</code>
+<code></code>
+<code>@Component({</code>
+<code>  selector: 'app-root',</code>
+<code>  template: `</code>
+<code>  &lt;h1&gt;Kona Ironman Top 5 men&lt;/h1&gt;</code>
+<code>  &lt;ol&gt;</code>
+<code>    <b>&lt;li *ngFor="let athlete of athletes"&gt;{{athlete.name}} ({{athlete.country}}): {{athlete.time}}&lt;/li&gt;</b></code>
+<code>  &lt;/ol&gt;</code>
+<code>  `</code>
+<code>})</code>
+<code>export class AppComponent {</code>
+<code>athletes = [</code>
+<code>    {name:"Jan Frodeno", country: "DEU", time: "08:06:30"},</code>
+<code>    {name:"Sebastian Kienle", country: "DEU", time: "08:10:02"},</code>
+<code>    {name:"Patrick Lange", country: "DEU", time: "08:11:14"},</code>
+<code>    {name:"Ben Hoffman", country: "USA", time: "08:13:00"},</code>
+<code>    {name:"Andi Boecherer", country: "DEU", time: "08:13:25"}</code>
+<code>  ];</code>
+<code>}</code> </pre>
+                        </blockquote>
+                     
+                  </section>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+         </section>
+         
+         <section>
+            <span id="c03-sec-0028"></span>
+            
+            <h2 id="head-2-56">SERVICES AND DEPENDECY INJECTION</h2>
+            
+            <p>There are two more important Angular concepts, and they always go together: services
+               and dependency injection.
+            </p>
+            
+            <p>In <a href="#c03-fea-0009">Listing 3‐9</a> the list of athletes was hard-coded in the declaration of the component. It is, however,
+               not a realistic example (and not even a very good practice). Normally such a list
+               of items is retrieved <span epub:type="pagebreak" id="Page_72" title="72"></span>from an external source like a call to an HTTP service. Before introducing the dependency
+               to this external resource, let’s first set up an external service that will be responsible
+               for retrieving the list of athletes and use dependency injection to pass it to the
+               component.
+            </p>
+            
+            <p>First the service class must be created. There’s nothing special about it. It is just
+               a normal TypeScript class that contains methods that return the data we need. The
+               only peculiarity is that, since it has be injected via dependency injection, it must
+               be decorated with the <code>@Injectable()</code> decorator (<a href="#c03-fea-0010">Listing 3‐10</a>).
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"><span id="c03-fea-0010"></span> 
+                  
+                  <h2 id="head-2-57">LISTING 3-10: Athlete Service (app/athlete.service.ts)</h2>
+                  
+                  <section>
+                     <span id="c03-sec-0029"></span>
+                     
+                     <blockquote>
+                        <pre id="c03-code-0016"><code>import { Injectable } from '@angular/core';</code>
+<code></code>
+<code>@Injectable()</code>
+<code>export class AthleteService {</code>
+<code>  getAthletes(){</code>
+<code>    return [</code>
+<code>    {name:"Jan Frodeno", country: "DEU", time: "08:06:30"},</code>
+<code>    {name:"Sebastian Kienle", country: "DEU", time: "08:10:02"},</code>
+<code>    {name:"Patrick Lange", country: "DEU", time: "08:11:14"},</code>
+<code>    {name:"Ben Hoffman", country: "USA", time: "08:13:00"},</code>
+<code>    {name:"Andi Boecherer", country: "DEU", time: "08:13:25"}</code>
+<code>  ];</code>
+<code>  }</code>
+<code>}</code> </pre>
+                        </blockquote>
+                     
+                  </section>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p>The <code>component</code> can be refactored to call the <code>getAthletes</code> method in the service, which is injected as the constructor’s parameter (<a href="#c03-fea-0011">Listing 3‐11</a>).
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"><span id="c03-fea-0011"></span> 
+                  
+                  <h2 id="head-2-58">LISTING 3-11: Refactored app component (app/app.component.ts)</h2>
+                  
+                  <section>
+                     <span id="c03-sec-0030"></span>
+                     
+                     <blockquote>
+                        <pre id="c03-code-0017"><code>import { Component } from '@angular/core';</code>
+<code><b>import { AthleteService } from './athlete.service';</b></code>
+<code></code>
+<code>@Component({</code>
+<code>  selector: 'app-root',</code>
+<code>  templateUrl: 'app.component.html',</code>
+<code>  <b>providers: [AthleteService]</b></code>
+<code>})</code>
+<code>export class AppComponent {</code>
+<code>  athletes: Array&lt;any&gt;;</code>
+<code></code>
+<code>  constructor(<b>private athleteService: AthleteService</b>){</code>
+<code>    this.athletes=athleteService.getAthletes();</code>
+<code>  }</code>
+<code>}</code> </pre>
+                        </blockquote>
+                     
+                  </section>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p><span epub:type="pagebreak" id="Page_73" title="73"></span>Highlighted are the main changes to the component class in order to enable the injection:
+            </p>
+            
+            <ul class="check" id="c03-list-0005">
+               
+               <li id="c03-li-0022">The constructor declares a parameter of type <code>AthleteService</code>.
+               </li>
+               
+               <li id="c03-li-0023">The decorator has an additional parameter, <code>providers</code>, which contains the list of classes that can be injected.
+               </li>
+               
+               <li id="c03-li-0024">And obviously the class needs to be imported in order to be used.</li>
+               
+            </ul>
+            
+            <p>If a service needs to be used in more components, it’s recommended to register it
+               in the <code>providers</code> array of the <code>NgModule</code>.
+            </p>
+            
+            <p>We have now covered the main concepts of Angular. Before jumping into how to integrate
+               Angular in an ASP.NET Core application, the upcoming sections show some additional
+               features of Angular like the hierarchy of components, HTTP and array manipulation,
+               and form validation.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature1">
+                  
+                  <h3>NOTE</h3>
+                  
+                  <p><i>If you used AngularJS v1, you might have noticed that building a service in Angular
+                        is incredibly easier than doing it in AngularJS. All the factories, providers, services,
+                        constants, and so on are merged into on type of service, which is just a plain TypeScript
+                        class.</i></p>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+         </section>
+         
+         <section>
+            <span id="c03-sec-0031"></span>
+            
+            <h2 id="head-2-59">MULTIPLE COMPONENTS</h2>
+            
+            <p>So far we only have worked with the root component of the application, but this is
+               not how things are typically done in more complex applications. More complex applications
+               usually contain more nested components that can also contain other components. This
+               splitting of the application into multiple components results in the need to manage
+               communication between them. This section, building on top of the application introduced
+               in <a href="#c03-fea-0011">Listing 3‐11</a>, covers all these aspects.
+            </p>
+            
+            <p>So far there is just one component, the root <code>AppComponent</code>, which does everything. It renders the title, connects to the service, shows the
+               list, and shows the details of each item. To make it more modular, a better approach
+               is to use the following components:
+            </p>
+            
+            <ul class="check" id="c03-list-0006">
+               
+               <li id="c03-li-0025">The <code>AppComponent</code> just renders the application title and then included the <code>AthleteListComponent</code></li>
+               
+               <li id="c03-li-0026">The <code>AthleteListComponent</code> connects to the service and shows a list of <code>AthleteComponents</code>.
+               </li>
+               
+               <li id="c03-li-0027">The <code>AthleteComponent</code> displays the details of the athlete.
+               </li>
+               
+            </ul>
+            
+            <p>Adding files manually is boring and error-prone, so to make the task easier and less
+               repetitive, we can use the Angular CLI tool.
+            </p>
+            
+            <p>If you type <code>ng generate component AthleteList</code> in the command prompt inside the application folder, the tool will create a new folder,
+               and inside it will add the new component with the name <span epub:type="pagebreak" id="Page_74" title="74"></span><code>athlete-list.component.ts</code> (and all the other files needed for the component). It will also update the root
+               module, <code>AppModule</code>, including the newly created component in the list of <code>declarations</code> of components used by the module.
+            </p>
+            
+            <p>So now we can start moving the logic that retrieves and displays the list of athletes
+               from the root component to the <code>AthleteListComponent</code>.
+            </p>
+            
+            <p><a href="#c03-fea-0012">Listing 3‐12</a> and <a href="#c03-fea-0013">Listing 3‐13</a> show the new code for the two components that needed to be changed, the <code>AthleteListComponent</code> and the root component. For brevity, the markup is presented inline instead of being
+               in separate files.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"><span id="c03-fea-0012"></span> 
+                  
+                  <h2 id="head-2-60">LISTING 3-12: AthleteListComponent (app/athlete-list/athlete-list.component.ts)</h2>
+                  
+                  <section>
+                     <span id="c03-sec-0032"></span>
+                     
+                     <blockquote>
+                        <pre id="c03-code-0018"><code>import { Component } from '@angular/core';</code>
+<code>import { AthleteService } from '../athlete.service';</code>
+<code></code>
+<code>@Component({</code>
+<code>  <b>selector: 'app-athlete-list',</b></code>
+<code>  template: `</code>
+<code>  &lt;ol&gt;</code>
+<code>    &lt;li *ngFor="let athlete of athletes"&gt;{{athlete.name}} ({{athlete.country}}): {{athlete.time}}&lt;/li&gt;</code>
+<code>  &lt;/ol&gt;</code>
+<code>  `,</code>
+<code>})</code>
+<code>export class AthleteListComponent {</code>
+<code></code>
+<code>  athletes: Array&lt;any&gt;;</code>
+<code></code>
+<code>  constructor(private athleteService: AthleteService){</code>
+<code>    this.athletes=athleteService.getAthletes();</code>
+<code>  }</code>
+<code></code>
+<code>}</code> </pre>
+                        </blockquote>
+                     
+                  </section>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p><a href="#c03-fea-0012">Listing 3‐12</a> contains exactly the same code that was previously in the root component but with
+               a different selector, now <code>app-athlete-list</code>. This is the “tag” that is used by the root component to reference the <code>AthleteListComponent</code>.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"><span id="c03-fea-0013"></span> 
+                  
+                  <h2 id="head-2-61">LISTING 3-13: Root component (app/app.component.ts)</h2>
+                  
+                  <section>
+                     <span id="c03-sec-0033"></span>
+                     
+                     <blockquote>
+                        <pre id="c03-code-0019"><code>import { Component } from '@angular/core';</code>
+<code></code>
+<code>@Component({</code>
+<code>  selector: 'app-root',</code>
+<code>  template: `&lt;h1&gt;Kona Ironman Top 5 men&lt;/h1&gt;</code>
+<code>  <b>&lt;app-athlete-list&gt;Loading athlete list…&lt;/app-athlete-list&gt;`</b></code>
+<code>})</code>
+<code>export class AppComponent {</code>
+<code>}</code> </pre>
+                        </blockquote>
+                     
+                  </section>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p><span epub:type="pagebreak" id="Page_75" title="75"></span>The code is now simpler, and the root component has no actual code but just references
+               the newly created controller in its template. At this point the application behaves
+               the same, but each component serves its own task, achieving a better separation of
+               concerns. But we can bring it a level further and have the markup and logic display
+               the details of an athlete in their own component.
+            </p>
+            
+            <p>As before, create a new component, called <code>AthleteComponent</code>, with the Angular CLI tool.
+            </p>
+            
+            <p>Previously, the Angular CLI tool created the component in its own folder, with separate
+               files for styles, views, and tests. This is the best practice suggested by the official
+               style guide, but in smaller apps like this example, we can instead put all markup
+               and styles inline and leave the file in the root folder. To do so with Angular CLI
+               tool, you have to specify a few parameters when creating the component:
+            </p>
+            
+            <blockquote>
+               <pre id="c03-code-0020"><code>ng g component Athlete --flat=true --inline-template=true --inline-style=true --spec=false</code> </pre>
+               </blockquote>
+            
+            <p>Now, instead of rendering the name and country of the athletes in the list, the <code>AthleteListComponent</code> just references the new <code>AthleteComponent</code> using its selector <code>app-athlete</code>, as seen here:
+            </p>
+            
+            <blockquote>
+               <pre id="c03-code-0021"><code>&lt;li *ngFor="let athlete of athletes"&gt;&lt;app-athlete&gt;&lt;/app-athlete&gt;&lt;/li&gt;</code> </pre>
+               </blockquote>
+            
+            <p>But there is a problem here. How do you pass to the child component which athlete
+               to display?
+            </p>
+            
+         </section>
+         
+         <section>
+            <span id="c03-sec-0034"></span>
+            
+            <h2 id="head-2-62">INPUT AND OUTPUT PROPERTIES</h2>
+            
+            <p>To solve the problem of passing athletes to the child component, the component must
+               declare an input property. This is done using the directive <code>@Input</code> inside the component that exposes the property. It can be set in the view like any
+               other HTML property, using one-way binding:
+            </p>
+            
+            <blockquote>
+               <pre id="c03-code-0022"><code>&lt;app-athlete [athlete]="athlete"&gt;&lt;/app-athlete&gt;</code> </pre>
+               </blockquote>
+            
+            <p>As implemented in <a href="#c03-fea-0010">Listing 3‐10</a> and <a href="#c03-fea-0011">Listing 3‐11</a>, the list of athletes is a list of anonymous objects (like any standard JavaScript).
+               It works, but it’s not taking advantage of the strongly typed nature of TypeScript.
+            </p>
+            
+            <p>So, a “model” class can be created, either manually or again with the CLI tools, to
+               hold the data (<a href="#c03-fea-0014">Listing 3‐14</a>).
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"><span id="c03-fea-0014"></span> 
+                  
+                  <h2 id="head-2-63">LISTING 3-14: Athlete.ts (app/athlete.ts)</h2>
+                  
+                  <section>
+                     <span id="c03-sec-0035"></span>
+                     
+                     <blockquote>
+                        <pre id="c03-code-0023"><code>export class Athlete {</code>
+<code>  name: string;</code>
+<code>  country: string;</code>
+<code>  time: string;</code>
+<code>}</code> </pre>
+                        </blockquote>
+                     
+                  </section>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p>After this, the <code>AthleteComponent</code> looks like <a href="#c03-fea-0015">Listing 3‐15</a>.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"><span id="c03-fea-0015"></span> 
+                  
+                  <h2 id="head-2-64"><span epub:type="pagebreak" id="Page_76" title="76"></span>LISTING 3-15: AthleteComponent (app/athlete.component.ts)
+                  </h2>
+                  
+                  <section>
+                     <span id="c03-sec-0036"></span>
+                     
+                     <blockquote>
+                        <pre id="c03-code-0024"><code>import { Component, Input } from '@angular/core';</code>
+<code>import { Athlete } from './Athlete';</code>
+<code></code>
+<code>@Component({</code>
+<code>  selector: 'app-athlete',</code>
+<code>  template: `{{athlete.name}} ({{athlete.country}}): {{athlete.time}}`</code>
+<code>})</code>
+<code>export class AthleteComponent {</code>
+<code>  <b>@Input() athlete: Athlete;</b></code>
+<code>  constructor() { }</code>
+<code>}</code> </pre>
+                        </blockquote>
+                     
+                  </section>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p>Notice the usage of <code>@Input</code> to define the name and type of the property exposed outside of the component.
+            </p>
+            
+            <p>Also the <code>AthleteListComponent</code> has changed, as shown in <a href="#c03-fea-0016">Listing 3‐16</a>.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"><span id="c03-fea-0016"></span> 
+                  
+                  <h2 id="head-2-65">LISTING 3-16: AthleteListComponent (app/athlete-list.component.ts)</h2>
+                  
+                  <section>
+                     <span id="c03-sec-0037"></span>
+                     
+                     <blockquote>
+                        <pre id="c03-code-0025"><code>import { Component } from '@angular/core';</code>
+<code>import { AthleteService } from './athlete.service';</code>
+<code>import { Athlete } from "./athlete";</code>
+<code></code>
+<code>@Component({</code>
+<code>  selector: 'app-athlete-list',</code>
+<code>  template: `</code>
+<code>  &lt;ol&gt;</code>
+<code>    &lt;li *ngFor="let athlete of athletes"&gt;</code>
+<code>      &lt;app-athlete [athlete]="athlete"&gt;</code>
+<code>    &lt;/app-athlete&gt;&lt;/li&gt;</code>
+<code>  &lt;/ol&gt;</code>
+<code>  `,</code>
+<code>})</code>
+<code>export class AthleteListComponent {</code>
+<code>  athletes: Array&lt;Athlete&gt;;</code>
+<code>  constructor(private athleteService: AthleteService){</code>
+<code>    this.athletes=athleteService.getAthletes();</code>
+<code>  }</code>
+<code>}</code> </pre>
+                        </blockquote>
+                     
+                  </section>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p>If there is an <code>@Input</code> directive, there must be also an <code>@Output</code> one. It is used to expose events that can be raised from within the component.
+            </p>
+            
+            <p>Let’s use an <code>@Output</code> directive to show how to inform the root component that somone clicked on an athlete,
+               so that it can display a more detailed view on his race.
+            </p>
+            
+            <p><span epub:type="pagebreak" id="Page_77" title="77"></span>For this to happen, the <code>AthleteListComponent</code> must bind to the click event on the athlete, and it must raise the custom event inside
+               the handler for the click. <a href="#c03-fea-0017">Listing 3‐17</a> highlights the new lines of code added for this purpose.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"><span id="c03-fea-0017"></span> 
+                  
+                  <h2 id="head-2-66">LISTING 3-17: AthleteListComponent (app/athlete-list.component.ts)</h2>
+                  
+                  <section>
+                     <span id="c03-sec-0038"></span>
+                     
+                     <blockquote>
+                        <pre id="c03-code-0026"><code>import { Component, Output, EventEmitter } from '@angular/core';</code>
+<code>import { AthleteService } from './athlete.service';</code>
+<code>import { Athlete } from "./athlete";</code>
+<code></code>
+<code>@Component({</code>
+<code>  selector: 'app-athlete-list',</code>
+<code>  template: `</code>
+<code>  &lt;ol&gt;</code>
+<code>   &lt;li *ngFor="let athlete of athletes"&gt;</code>
+<code>      &lt;app-athlete <b>(click)="select(athlete)"</b> [athlete]="athlete"&gt;</code>
+<code>    &lt;/app-athlete&gt;&lt;/li&gt;</code>
+<code>  &lt;/ol&gt;</code>
+<code>  `,</code>
+<code>})</code>
+<code>export class AthleteListComponent {</code>
+<code>  athletes: Array&lt;Athlete&gt;;</code>
+<code>  <b>@Output() selected = new EventEmitter&lt;Athlete&gt;();</b></code>
+<code>  </code>
+<code>  constructor(private athleteService: AthleteService){</code>
+<code>    this.athletes=athleteService.getAthletes();</code>
+<code>  }</code>
+<code></code>
+<code>  <b>select(selectedAthlete: Athlete){</b></code>
+<code>    <b>this.selected.emit(selectedAthlete);</b></code>
+<code>  <b>}</b></code>
+<code>}</code> </pre>
+                        </blockquote>
+                     
+                  </section>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p>Now the parent component, the root <code>AppComponent</code>, listens to the selected event and handles it as any other event. <a href="#c03-fea-0018">Listing 3‐18</a> shows the changes.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"><span id="c03-fea-0018"></span> 
+                  
+                  <h2 id="head-2-67">LISTING 3-18: AppComponent (app/app.component.ts)</h2>
+                  
+                  <section>
+                     <span id="c03-sec-0039"></span>
+                     
+                     <blockquote>
+                        <pre id="c03-code-0027"><code>import { Component } from '@angular/core';</code>
+<code>import { Athlete } from "app/Athlete";</code>
+<code></code>
+<code>@Component({</code>
+<code>  selector: 'app-root',</code>
+<code>  template: `&lt;h1&gt;Kona Ironman Top 5 men&lt;/h1&gt;</code>
+<code>  &lt;app-athlete-list <b>(selected)=showDetails($event)</b>&gt;Loading athlete list…&lt;/app-athlete-list&gt;</code>
+<code>  <b>You selected: {{selectedAthlete}}</b>`</code>
+<code>})</code>
+<code><span epub:type="pagebreak" id="Page_78" title="78"></span>export class AppComponent {</code>
+<code>  <b>selectedAthlete: string;</b></code>
+<code></code>
+<code>  <b>constructor (){</b></code>
+<code>    <b>this.selectedAthlete="none";</b></code>
+<code>  <b>}</b></code>
+<code></code>
+<code>  <b>showDetails(selectedAthlete: Athlete) {</b></code>
+<code>    <b>this.selectedAthlete=selectedAthlete.name;</b></code>
+<code>  <b>}</b></code>
+<code>}</code> </pre>
+                        </blockquote>
+                     
+                  </section>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p>The parameter of the event, which contains the athlete being selected, is referenced
+               by the <code>$event</code> variable.
+            </p>
+            
+            <p>The name of the athlete is then displayed at the bottom of the screen (<a href="#c03-fig-0004" id="R_c03-fig-0004">Figure 3‐4</a>).
+            </p>
+            
+            <figure> <img alt="Snapshot of List of athletes and the selected athlete as parameter of the event." src="images/c03f004.jpg" />
+               
+               <figcaption>
+                  <p><span class="figureLabel"><a href="#R_c03-fig-0004" id="c03-fig-0004"><b>FIGURE 3-4</b></a><b>:</b></span> List of athletes and the selected athlete
+                  </p>
+               </figcaption>
+               
+            </figure>
+            
+         </section>
+         
+         <section>
+            <span id="c03-sec-0040"></span>
+            
+            <h2 id="head-2-68">TALKING TO THE BACK END</h2>
+            
+            <p>All the main concepts have been explained, and you have also seen how to better structure
+               the application using multiple components. But the data is still coming from hardcoded
+               values and not from a real REST API from a server. This last section before moving
+               to the integration with ASP.NET Core and Visual Studio 2017 shows how to connect to
+               a remote source of information using the <code>Http</code> module and the <i>Reactive Extensions</i> (RxJS).
+            </p>
+            
+            <p>By using nested components and services, the logic that is now getting the list of
+               athletes is all in the <code>AthleteService</code> class. That is the only class that needs to be changed in order to retrieve data
+               from a JSON end-point, which could be either a static .json file or a web service
+               that returns data in JSON format. In this section we are using the .json file (<a href="#c03-fea-0019">Listing 3‐19</a>), but later in the chapter we’ll use a web API done with ASP.NET Core MVC.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"><span id="c03-fea-0019"></span> 
+                  
+                  <h2 id="head-2-69"><span epub:type="pagebreak" id="Page_79" title="79"></span>LISTING 3-19: Athletes.json file
+                  </h2>
+                  
+                  <section>
+                     <span id="c03-sec-0041"></span>
+                     
+                     <blockquote>
+                        <pre id="c03-code-0028"><code>{</code>
+<code>  "data": [</code>
+<code>    {"name":"Jan Frodeno", "country": "DEU", "time": "08:06:30"},</code>
+<code>    {"name":"Sebastian Kienle", "country": "DEU", "time": "08:10:02"},</code>
+<code>    {"name":"Patrick Lange", "country": "DEU", "time": "08:11:14"},</code>
+<code>    {"name":"Ben Hoffman", "country": "USA", "time": "08:13:00"},</code>
+<code>    {"name":"Andi Boecherer", "country": "DEU", "time": "08:13:25"}</code>
+<code>  ]</code>
+<code>}</code> </pre>
+                        </blockquote>
+                     
+                  </section>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p>In order to use the <code>Http</code> module, our app has to be instructed on where to find it. This is done by importing
+               the <code>HttpModule</code> in the <code>imports</code> property inside the <code>@NgModule</code> annotation on the root <code>AppModule</code>. The one generated by the Angular CLI tools (<a href="#c03-fea-0002">Listing 3‐2</a>) is already configured, but if you created your app manually, you have to include
+               it.
+            </p>
+            
+            <section>
+               <span id="c03-sec-0042"></span>
+               
+               <h3 id="head-3-56">Using the Http Module</h3>
+               
+               <p>Inside the service class now we can use the <code>Http</code> module to retrieve the data available in the JSON file. <a href="#c03-fea-0020">Listing 3‐20</a> shows the complete code for the athlete service.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c03-fea-0020"></span> 
+                     
+                     <h2 id="head-2-70">LISTING 3-20: AthleteService using http (app/athlete.service.ts)</h2>
+                     
+                     <section>
+                        <span id="c03-sec-0043"></span>
+                        
+                        <blockquote>
+                           <pre id="c03-code-0029"><code>import { Injectable } from '@angular/core';</code>
+<code>import { Athlete } from './Athlete';</code>
+<code><b>import { Http, Response } from "@angular/http";</b></code>
+<code><b>import 'rxjs/add/operator/map';</b></code>
+<code></code>
+<code>@Injectable()</code>
+<code>export class AthleteService {</code>
+<code>  <b>constructor(private http: Http){}</b></code>
+<code></code>
+<code>  <b>getAthletes(){</b></code>
+<code>    <b>return this.http.get('api/athletes.json')</b></code>
+<code>      <b>.map((r: Response)=&gt;&lt;Athlete[]&gt;r.json().data);</b></code>
+<code>  <b>}</b></code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>The core of the functionality is the <code>http.get</code> method, which connects over HTTP to the specified URL and returns an RxJS <code>Observable</code> object. It then uses the <code>map</code> function of the <code>Observable</code> to modify the data before sending it back to the component. In this case it returns
+                  the <code>data</code> property of the JSON file and casts it to an array of <code>Athlete</code>.
+               </p>
+               
+               <p>For this to work first the <code>Http</code> module needs to be injected using the constructor, as it is done for any other modules
+                  or services. For the application to compile correctly, the objects <code>Http</code> and <span epub:type="pagebreak" id="Page_80" title="80"></span><code>Response</code> as well as the <code>map</code> method must be imported. This last act of importing is necessary because the Reactive
+                  Extensions for JavaScript is a big library, so it is better to import only the parts
+                  of it that are actually used.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c03-sec-0044"></span>
+               
+               <h3 id="head-3-57">Consuming the RxJS Observable</h3>
+               
+               <p>Before running the sample, another change is needed. With the hardcoded values, the
+                  method in the service was directly returning the array of items. With the <code>Http</code> module, the method returns an RxJS <code>Observable</code> that cannot be directly used with <code>*ngFor</code>.
+               </p>
+               
+               <p>There are few options for consuming the observable, which are subscribing to the <code>Observable</code>, using the <code>async</code> pipe, or using promises.
+               </p>
+               
+               <section>
+                  <span id="c03-sec-0045"></span>
+                  
+                  <h4 id="head-4-17">Subscribing to the Observable</h4>
+                  
+                  <p>The first option for consuming the <code>Observable</code> is subscribing to it.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c03-code-0030"><code>export class AthleteListComponent {</code>
+<code>  athletes: Array&lt;Athlete&gt;;</code>
+<code>  constructor(private athleteService: AthleteService){  }</code>
+<code></code>
+<code>  getAthletes() {</code>
+<code>    <b>this.athleteService.getAthletes()</b></code>
+<code>      <b>.subscribe(</b></code>
+<code>        <b>athletes =&gt; this.athletes = athletes</b></code>
+<code>      <b>);</b></code>
+<code>  } </code>
+<code></code>
+<code>  ngOnInit(){this.getAthletes();}</code>
+<code>}</code> </pre>
+                     </blockquote>
+                  
+                  <p>Instead of just setting the property <code>athletes</code> with the return value of the service’s method, now the code is using the <code>subscribe</code> method and is registering a function that assigns to the component’s property the
+                     array coming from the service. Also notice that the call to this method doesn’t happen
+                     in the constructor any more, but inside a method called <code>ngOnInit</code>, which is called when the component gets initialized.
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c03-sec-0046"></span>
+                  
+                  <h4 id="head-4-18">Using the async Pipe</h4>
+                  
+                  <p>Another option for consuming the <code>Observable</code> is using the <code>async</code> pipe. It is a short-hand version of the subscribe process done in the previous section.
+                     With this notation we can assign the <code>Observable</code> that comes from the service directly to the property of the component. Inside the
+                     <code>*ngFor</code> we use the <code>async</code> pipe to instruct Angular that that property it is iterating over is coming asynchronously.
+                     <a href="#c03-fea-0021">Listing 3‐21</a> shows the code for the component modified to use the <code>async</code> pipe.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c03-fea-0021"></span> 
+                        
+                        <h2 id="head-2-71">LISTING 3-21: Updated AthleteListComponent using async pipe</h2>
+                        
+                        <section>
+                           <span id="c03-sec-0047"></span>
+                           
+                           <blockquote>
+                              <pre id="c03-code-0031"><code>import { Component, Output, EventEmitter, OnInit } from '@angular/core';</code>
+<code>import { AthleteService } from './athlete.service';</code>
+<code>import { Athlete } from "./athlete";</code>
+<code><b>import { Observable } from "rxjs/Observable";</b></code>
+<code></code>
+<code></code>
+<code><span epub:type="pagebreak" id="Page_81" title="81"></span>@Component({</code>
+<code>  selector: 'app-athlete-list',</code>
+<code>  template: `</code>
+<code>  &lt;ol&gt;</code>
+<code>    <b>&lt;li *ngFor="let athlete of athletes | async"&gt;</b></code>
+<code>      &lt;app-athlete (click)="select(athlete)" [athlete]="athlete"&gt;</code>
+<code>    &lt;/app-athlete&gt;&lt;/li&gt;</code>
+<code>  &lt;/ol&gt;</code>
+<code>  `,</code>
+<code>})</code>
+<code>export class AthleteListComponent implements OnInit {</code>
+<code>  <b>athletes: Observable&lt;Athlete[]&gt;;</b></code>
+<code>  @Output() selected = new EventEmitter&lt;Athlete&gt;();</code>
+<code>  constructor(private athleteService: AthleteService){  }</code>
+<code></code>
+<code>  getAthletes() {</code>
+<code>    <b>this.athletes = this.athleteService.getAthletes();</b></code>
+<code>  } </code>
+<code></code>
+<code>  ngOnInit(){this.getAthletes();}</code>
+<code></code>
+<code>  select(selectedAthlete: Athlete){</code>
+<code>    this.selected.emit(selectedAthlete);</code>
+<code>  }</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p>Notice that from being an array of <code>Athlete</code> now the <code>athletes</code> property is an <code>Observable</code> of an array of athletes.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature1">
+                        
+                        <h3>NOTE</h3>
+                        
+                        <p><i>The term “pipe” is used because it is indentified with the | character, and also because
+                              it is a function that processes the bound property before displaying it on the screen.
+                              If you know AngularJS 1, a pipe is just another name for filters.</i> <code>async</code> <i>is one of the pipes available, but there are others like</i> <code>date</code> <i>to render a</i> <code>Date</code> <i>object as a string, or</i> <code>uppercase</code><i>/</i><code>lowercase</code> <i>to convert a string all uppercase or lowercase, and other examples exist as well.
+                              You can also easily build custom pipes if you need them.</i></p>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+               </section>
+               
+               <section>
+                  <span id="c03-sec-0048"></span>
+                  
+                  <h4 id="head-4-19">Using Promises</h4>
+                  
+                  <p>If you are used to promises, as was done in AngularJS 1, you still can do so. But
+                     since Angular uses <code>Observable</code> by default, you have to convert it to a promise using the <code>toPromise</code> method of <code>Observable</code> and return it to the component.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c03-code-0032"><code>  getAthletes(){</code>
+<code>    return this.http.get('api/athletes.json')</code>
+<code>      .map((r: Response)=&gt;&lt;Athlete[]&gt;r.json().data)</code>
+<code>      .toPromise();</code>
+<code>  }</code> </pre>
+                     </blockquote>
+                  
+                  <p><span epub:type="pagebreak" id="Page_82" title="82"></span>Then the promise can be handled using the <code>then()</code> function as was done with AngularJS 1. <a href="#c03-fea-0022">Listing 3‐22</a> shows this approach.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c03-fea-0022"></span> 
+                        
+                        <h2 id="head-2-72">LISTING 3-22: Component handling promise</h2>
+                        
+                        <section>
+                           <span id="c03-sec-0049"></span>
+                           
+                           <blockquote>
+                              <pre id="c03-code-0033"><code>import { Component, Output, EventEmitter, OnInit } from '@angular/core';</code>
+<code>import { AthleteService } from './athlete.service';</code>
+<code>import { Athlete } from "./athlete";</code>
+<code>import { Observable } from "rxjs/Observable";</code>
+<code></code>
+<code></code>
+<code>@Component({</code>
+<code>  selector: 'app-athlete-list',</code>
+<code>  template: `</code>
+<code>  &lt;ol&gt;</code>
+<code>    <b>&lt;li *ngFor="let athlete of athletes"&gt;</b></code>
+<code>      &lt;app-athlete (click)="select(athlete)" [athlete]="athlete"&gt;</code>
+<code>    &lt;/app-athlete&gt;&lt;/li&gt;</code>
+<code>  &lt;/ol&gt;</code>
+<code>  `,</code>
+<code>})</code>
+<code>export class AthleteListComponent implements OnInit {</code>
+<code>  <b>athletes: Athlete[];</b></code>
+<code>  @Output() selected = new EventEmitter&lt;Athlete&gt;();</code>
+<code>  constructor(private athleteService: AthleteService){  }</code>
+<code></code>
+<code>  <b>getAthletes() {</b></code>
+<code>    <b>this.athleteService.getAthletes()</b></code>
+<code>    <b>.then(list =&gt; this.athletes=list);</b></code>
+<code>  <b>}</b> </code>
+<code></code>
+<code>  ngOnInit(){this.getAthletes();}</code>
+<code></code>
+<code>  select(selectedAthlete: Athlete){</code>
+<code>    this.selected.emit(selectedAthlete);</code>
+<code>  }</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p>Since the <code>async</code> pipe works with both <code>Observable</code> and promises, you could also use it instead of handling the promise in code.
+                  </p>
+                  
+                  <p>At the end of the day, you have four options for consuming the <code>Observable</code>:
+                  </p>
+                  
+                  <ul class="check" id="c03-list-0007">
+                     
+                     <li id="c03-li-0028">Using <code>Observable</code> and subscribing to changes with code
+                     </li>
+                     
+                     <li id="c03-li-0029">Using <code>Observable</code> and using the <code>async</code> pipe
+                     </li>
+                     
+                     <li id="c03-li-0030">Using promises and handling it in code</li>
+                     
+                     <li id="c03-li-0031">Using promises with the <code>async</code> pipe
+                     </li>
+                     
+                  </ul>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature1">
+                        
+                        <h2><span epub:type="pagebreak" id="Page_83" title="83"></span>REACTIVE EXTENSIONS FOR JAVASCRIPT (RXJS)
+                        </h2>
+                        
+                        <p>The Reactive Extensions is a set of libraries for asynchronous and event-based programming
+                           based on the <code>Observable</code> pattern. This project is developed by Microsoft and is available not only for JavaScript
+                           but also for many other languages like .NET, Java, Node, Swift, and many more.
+                        </p>
+                        
+                        <p>Typically, asynchronous programming is implemented using callbacks, functions, or
+                           promises. Those are good for simple scenarios, but when the complexity increases,
+                           as with cancellation or synchronization and even error handling, working with them
+                           becomes error-prone. Using the <code>Observable</code> object together with all its methods makes all these scenarios easier to deal with.
+                        </p>
+                        
+                        <p>RxJS is not developed by the Angular team, but it is used extensively throughout the
+                           framework.
+                        </p>
+                        
+                        <p>You can learn more about RxJS at the website <code><a href="http://reactivex.io/">http://reactivex.io/</a></code>.
+                        </p>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p>There is much more to Angular than what this chapter covers. There are pipes to format
+                     the value of a property directly in the views, there are routes to allow easier navigation
+                     between the views and components of the application, and there is a module for simplifying
+                     the writing of forms and validating. There is so much that a book twice this size
+                     would not be enough to cover them all.
+                  </p>
+                  
+               </section>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c03-sec-0050"></span>
+            
+            <h2 id="head-2-73">USING ANGULAR WITH ASP.NET MVC</h2>
+            
+            <p>Using Angular with ASP.NET Core and ASP.NET MVC Core is not any more complicated than
+               what was necessary to connect to the static JSON file. Changing the URL to an ASP.NET
+               MVC Core Web API is all that is needed on the client side. Building the server-side
+               part of the service is also easy. You just create a controller that returns the list
+               of items you need to show in the Angular component.
+            </p>
+            
+            <p><a href="#c03-fea-0023">Listing 3‐23</a> shows a very simple API that responds to the URL <code>/api/athletes</code> and returns a list of objects with names and times. In a real-world scenario, that
+               data would probably come from a database or some other storage. <a href="c09.xhtml">Chapter 9</a> shows a complete sample that uses the database.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"><span id="c03-fea-0023"></span> 
+                  
+                  <h2 id="head-2-74">LISTING 3-23: Athlete controller</h2>
+                  
+                  <section>
+                     <span id="c03-sec-0051"></span>
+                     
+                     <blockquote>
+                        <pre id="c03-code-0034"><code>using System.Collections.Generic;</code>
+<code>using Microsoft.AspNetCore.Mvc;</code>
+<code>using API.Models;</code>
+<code>using Newtonsoft.Json;</code>
+<code></code>
+<code>namespace API.Controllers</code>
+<code>{</code>
+<code><span epub:type="pagebreak" id="Page_84" title="84"></span>    [Route("api/[controller]")]</code>
+<code>    public class AthletesController : Controller</code>
+<code>    {</code>
+<code>        // GET: api/values</code>
+<code>        [HttpGet]</code>
+<code>        public AthletesViewModel Get()</code>
+<code>        {</code>
+<code>            return new AthletesViewModel(new[] {</code>
+<code>                new Athlete("Jan Frodeno", "DEU", "08:06:30"),</code>
+<code>                new Athlete("Sebastian Kienle", "DEU", "08:10:02"),</code>
+<code>                new Athlete("Patrick Lange", "DEU", "08:11:14"),</code>
+<code>                new Athlete("Ben Hoffman", "USA", "08:13:00"),</code>
+<code>                new Athlete("Andi Boecherer", "DEU", "08:13:25")</code>
+<code>            });</code>
+<code>        }</code>
+<code>    }</code>
+<code></code>
+<code>    public class AthletesViewModel</code>
+<code>    {</code>
+<code>        public AthletesViewModel(IEnumerable&lt;Athlete&gt; items)</code>
+<code>        {</code>
+<code>            Items = items;</code>
+<code>        }</code>
+<code>        <b>[JsonProperty(PropertyName = "data")]</b></code>
+<code>        public IEnumerable&lt;Athlete&gt; Items { get; set; }</code>
+<code>    }</code>
+<code></code>
+<code>    public class Athlete</code>
+<code>    {</code>
+<code>        public Athlete(string name, string country, string time)</code>
+<code>        {</code>
+<code>            Name = name;</code>
+<code>            Country = country;</code>
+<code>            Time = time;</code>
+<code>        }</code>
+<code>        public string Name { get; set; }</code>
+<code>        public string Country { get; set; }</code>
+<code>        public string Time { get; set; }</code>
+<code>    }</code>
+<code></code>
+<code>}</code> </pre>
+                        </blockquote>
+                     
+                  </section>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p>Names of .NET properties are converted to JavaScript properties using camelCase by
+               default (so <code>Name</code> will become the JavaScript property <code>name</code>), but if needed this name can be changed using the <code>JsonProperty</code> attribute specifying the <code>PropertyName</code>.
+            </p>
+            
+            <section>
+               <span id="c03-sec-0052"></span>
+               
+               <h3 id="head-3-58">Combining Angular and ASP.NET Core Projects</h3>
+               
+               <p>The complicated part is integrating Angular and ASP.NET Core together during the development
+                  process.
+               </p>
+               
+               <p><span epub:type="pagebreak" id="Page_85" title="85"></span>There are three possible approaches:
+               </p>
+               
+               <ul class="check" id="c03-list-0008">
+                  
+                  <li id="c03-li-0032">Do not integrate them. Have the Angular project built with the Angular CLI tool in
+                     its own folder, and keep an ASP.NET Core project with just the API services. The glue
+                     between the two is just the URLs.
+                  </li>
+                  
+                  <li id="c03-li-0033">Put them both inside one project, maintaining the Angular part using the Angular CLI
+                     and building the artifacts inside the <code>wwwroot</code> of the ASP.NET Core project.
+                  </li>
+                  
+                  <li id="c03-li-0034">Use a new feature of ASP.NET Core called JavaScriptServices, which makes it possible
+                     to build the entire project without using the Angular CLI.
+                  </li>
+                  
+               </ul>
+               
+               <p>Let’s briefly explore the three options in more detail.</p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature1">
+                     
+                     <h2>HOW AN ANGULAR APPLICATION IS BUILT FOR THE BROWSER USING WEBPACK</h2>
+                     
+                     <p>To understand why it is not possible to just drop a JavaScript library in an ASP.NET
+                        Core project and have everything working, you have to understand how an Angular project
+                        is built.
+                     </p>
+                     
+                     <p>As you might have noticed, Angular is a very modular framework. Each different piece
+                        of the application, both your own and from the framework, is in a separate file or
+                        module and imported as needed. Styles are spread among numerous files, potentially
+                        one per component. All these files have to be bundled together to avoid sending hundreds
+                        of files to the browser. In addition to this, Angular applications are built using
+                        TypeScript, which needs to be converted into standard ES5 JavaScript to be consumed
+                        by browsers.
+                     </p>
+                     
+                     <p>Discovering the dependencies and relationships between the various pieces, transpiling
+                        JavaScript to TypeScript, bundling JavaScript and CSS, and finally including the correct
+                        references in HTML files are all steps that are needed before anyone can run an Angular
+                        application. As you can imagine, it’s a pretty daunting task.
+                     </p>
+                     
+                     <p>It could have been done with a generic front-end build tool like Gulp, but the Angular
+                        team decided to use a build tool focused only on module bundling, called WebPack,
+                        which takes care of everything. And the Angular CLI tools use it to run the Angular
+                        project during development and to build the artifacts needed when publishing the application.
+                     </p>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <section>
+                  <span id="c03-sec-0053"></span>
+                  
+                  <h4 id="head-4-20">Keeping Angular and ASP.NET Core as Two Separate projects</h4>
+                  
+                  <p>The first and easiest of the integration solutions is to not integrate. On one side
+                     we have a simple ASP.NET Core Web API application that returns the list of athletes
+                     (as in <a href="#c03-fea-0023">Listing 3‐23</a>) and on the other side we have the same Angular application used throughout the chapter.
+                     Just launch both at <span epub:type="pagebreak" id="Page_86" title="86"></span>the same time, the first from Visual Studio and the second using the <code>ng serve</code> command of the Angular CLI tools.
+                  </p>
+                  
+                  <p>The only difference is in the service class for <a href="#c03-fea-0020">Listing 3‐20</a>, where the URL used in the <code>http.get</code> method needs to be changed to <code>http.get('http://localhost:57663/api/athletes')</code> (with whichever port number Visual Studio starts the project with).
+                  </p>
+                  
+                  <p>There is a problem, though. Here, one application running on a domain (the Angular
+                     app running on <code>localhost:4200</code>) is trying to access the API from another domain (<code>localhost:57663</code>). This violates the <i>same-origin policy</i> implemented by browsers to block scripts that access resources hosted on different
+                     origins (URLs with different domains, sub-domains, ports, or schemas).
+                  </p>
+                  
+                  <p>The first solution is to configure a proxy in the Angular development server configuration
+                     (<a href="#c03-fea-0024">Listing 3‐24</a>). This way the scripts talk to the same origin, which then proxies the request to
+                     the real API.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c03-fea-0024"></span> 
+                        
+                        <h2 id="head-2-75">LISTING 3-24: Proxy configuration (proxy.config.json)</h2>
+                        
+                        <section>
+                           <span id="c03-sec-0054"></span>
+                           
+                           <blockquote>
+                              <pre id="c03-code-0035"><code>{</code>
+<code>   "/api/*": {</code>
+<code>      "target": "http://localhost:57663",</code>
+<code>      "secure": false</code>
+<code>   }</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p>Now, the URL used by the service must be on the same domain, so change it to <code>http.get('/api/athletes')</code>.
+                  </p>
+                  
+                  <p>Finally, restart the angular development server specifying the configuration:</p>
+                  
+                  <blockquote>
+                     <pre id="c03-code-0036"><code>ng serve --proxy-config proxy.config.json</code> </pre>
+                     </blockquote>
+                  
+                  <p>This is fine for development, but it is not enough as a permanent solution, which
+                     needs to configure the ASP.NET Core application to allow cross-origin resource sharing
+                     (CORS) requests. First, reference the <code>Microsoft.AspNetCore.Cors</code> package to your project. Then the policies need to be configured in the <code>Configure</code> method of the <code>Startup</code> class.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c03-code-0037"><code>app.UseCors(builder =&gt; {</code>
+<code>    builder.WithOrigins("http://localhost:4200");</code>
+<code>});</code> </pre>
+                     </blockquote>
+                  
+                  <p>To try it out, restart the Angular development server without the proxy configuration.</p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c03-sec-0055"></span>
+                  
+                  <h4 id="head-4-21">Combining Angular and ASP.NET Core into One Project Using the Angular CLI</h4>
+                  
+                  <p>The previous solution is the one that requires less setup and completely separates
+                     the two projects. It is probably the best solution if the front end is pure Angular
+                     and is decoupled from the back end. However, if the application is a mix of server-side
+                     rendering and Angular code, the two parts need to be in the same project.
+                  </p>
+                  
+                  <p>The general concept behind this approach is to create both projects inside the same
+                     folder, one with Visual Studio and the other with the Anguar CLI tools. Then you configure
+                     the CLI tools to put the build artifacts in the <code>wwwroot</code> folder of the ASP.NET Core project.
+                  </p>
+                  
+                  <p><span epub:type="pagebreak" id="Page_87" title="87"></span>First create a standard ASP.NET Core MVC application and add a Web API service (the
+                     one from <a href="#c03-fea-0023">Listing 3‐23</a>).
+                  </p>
+                  
+                  <p>Then create an Angular project using the CLI tools and copy it over inside the same
+                     folder so that the <code>package.json</code> of the Angular project is on the same folder as the project’s <code>.csproj</code> file. <a href="#c03-fig-0005" id="R_c03-fig-0005">Figure 3‐5</a> shows what the project tree should look like after copying the project.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Angular and ASP.NET Core in one project." src="images/c03f005.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c03-fig-0005" id="c03-fig-0005"><b>FIGURE 3-5</b></a><b>:</b></span> Angular and ASP.NET Core in one project
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <p>The next step is to modify the <code>angular-cli.json</code> file so that the build output goes into the <code>wwwroot</code> folder instead of the the default <code>dist</code> folder. Because the build process empties the content of the output folder, you also
+                     need to make sure the output goes in a subfolder to avoid deleting all the files that
+                     already exist within the folder.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c03-code-0038"><code>…</code>
+<code>  "apps": [</code>
+<code>    {</code>
+<code>      "root": "src",</code>
+<code>      <b>"outDir": "wwwroot/js",</b></code>
+<code><span epub:type="pagebreak" id="Page_88" title="88"></span>      "assets": [</code>
+<code>        "assets",</code>
+<code>        "favicon.ico"</code>
+<code>      ],</code>
+<code>…</code> </pre>
+                     </blockquote>
+                  
+                  <p>Then run the <code>ng build</code> command, and the Angular CLI will create a publishable version of the scripts inside
+                     the <code>wwwroot/js</code> folder.
+                  </p>
+                  
+                  <p>The final step is to insert the <code>&lt;app-root&gt;</code> tag where the Angular application needs to appear (for example in the <code>Home/Index.cshtml</code> view) and to reference the files generated in the <code>_Layout.cshtml</code> file as shown below:
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c03-code-0039"><code>&lt;script type="text/javascript" src="~/js/inline.bundle.js"&gt;&lt;/script&gt;</code>
+<code>&lt;script type="text/javascript" src="~/js/styles.bundle.js"&gt;&lt;/script&gt;</code>
+<code>&lt;script type="text/javascript" src="~/js/vendor.bundle.js"&gt;&lt;/script&gt;</code>
+<code>&lt;script type="text/javascript" src="~/js/main.bundle.js"&gt;&lt;/script&gt;</code> </pre>
+                     </blockquote>
+                  
+                  <p><a href="#c03-fig-0006" id="R_c03-fig-0006">Figure 3‐6</a> shows the homepage of the default ASP.NET Core template with the addition of the
+                     Angular application that displays the list coming from the Web API.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Mixed server-side and Angular rendering." src="images/c03f006.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c03-fig-0006" id="c03-fig-0006"><b>FIGURE 3-6</b></a><b>:</b></span> Mixed server-side and Angular rendering
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <p>To make development easier, the Angular CLI can be configured to run the build whenever
+                     a file changes, bringing back the fast feedback process you might be accustomed to
+                     from using the Angular development server: <code>ng build --watch</code>. The browser won’t refresh automatically, but at least the scripts are recreated
+                     every time a file changes.
+                  </p>
+                  
+                  <p><span epub:type="pagebreak" id="Page_89" title="89"></span>The setup of this solution for combining Angular and ASP.NET Core is a bit cumbersome,
+                     but it needs to be done only at the beginning of a project. If you want a faster and
+                     less manual start and an even deeper integration, there is a third option: using JavaScriptServices.
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c03-sec-0056"></span>
+                  
+                  <h4 id="head-4-22">Using JavaScriptServices</h4>
+                  
+                  <p>This last option makes use of JavaScriptServices, a library released by Microsoft
+                     in ASP.NET Core v2. This library aims at simplifying the development of single-page
+                     applications with ASP.NET Core. Besides providing an easier setup of the project,
+                     it adds features like server-side rendering of Angular applications and integrates
+                     the WebPack build process, decoupling from the Angular CLI. All this is possible thanks
+                     to a lower-level library that allows execution of any Node.js application inside ASP.NET
+                     Core. It also provides support not only for Angular but also for React.
+                  </p>
+                  
+                  <p>A project using JavaScriptServices can be created directly within Visual Studio 2017
+                     by selecting the Angular project template (<a href="#c03-fig-0007" id="R_c03-fig-0007">Figure 3‐7</a>) or by using the <code>dotnet new</code> command using the <code>angular</code> template.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Angular project template in Visual Studio 2017." src="images/c03f007.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c03-fig-0007" id="c03-fig-0007"><b>FIGURE 3-7</b></a><b>:</b></span> Angular project template in Visual Studio 2017
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <p>The resulting project is more of a sample than a template, but it provides a good
+                     starting point for single-page applications with ASP.NET Core.
+                  </p>
+                  
+                  <p>Adding the sample app we used so far requires a bit of tweaking.</p>
+                  
+                  <p>Let’s start by copying all the components, including the root app component, into
+                     the <code>ClientApp/app/components/athletes</code> folder. You need to change the name of the root app component to <span epub:type="pagebreak" id="Page_90" title="90"></span><code>athletes-app.component.ts</code> since this app already has a root app component. <a href="#c03-fig-0008" id="R_c03-fig-0008">Figure 3‐8</a> shows what is inside the ClientApp folder.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Content of the ClientApp folder." src="images/c03f008.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c03-fig-0008" id="c03-fig-0008"><b>FIGURE 3-8</b></a><b>:</b></span> Content of the ClientApp folder
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <p>For the application to use them, they must be referenced from the application root
+                     module located at <code>ClientApp/app/app.module.shared.ts</code> (<a href="#c03-fea-0025">Listing 3‐25</a>).
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c03-fea-0025"></span> 
+                        
+                        <h2 id="head-2-76">LISTING 3-25: App root module</h2>
+                        
+                        <section>
+                           <span id="c03-sec-0057"></span>
+                           
+                           <blockquote>
+                              <pre id="c03-code-0040"><code>import { NgModule } from '@angular/core';</code>
+<code>import { CommonModule } from '@angular/common';</code>
+<code>import { FormsModule } from '@angular/forms';</code>
+<code>import { HttpModule } from '@angular/http';</code>
+<code>import { RouterModule } from '@angular/router';</code>
+<code></code>
+<code>import { AppComponent } from './components/app/app.component';</code>
+<code>import { NavMenuComponent } from './components/navmenu/navmenu.component';</code>
+<code>import { HomeComponent } from './components/home/home.component';</code>
+<code>import { FetchDataComponent } from './components/fetchdata/fetchdata.component';</code>
+<code>import { CounterComponent } from './components/counter/counter.component';</code>
+<code></code>
+<code><b>import { AthletesAppComponent } from './components/athletes/athletes-app.component';</b></code>
+<code><b>import { AthleteService } from './components/athletes/athlete.service';</b></code>
+<code><b>import { AthleteListComponent } from './components/athletes/athlete-list.component';</b></code>
+<code><b>import { AthleteComponent } from './components/athletes/athlete.component';</b></code>
+<code></code>
+<code></code>
+<code><span epub:type="pagebreak" id="Page_91" title="91"></span>@NgModule({</code>
+<code>    declarations: [</code>
+<code>        AppComponent,</code>
+<code>        NavMenuComponent,</code>
+<code>        CounterComponent,</code>
+<code>        FetchDataComponent,</code>
+<code>        <b>AthletesAppComponent,</b></code>
+<code>        <b>AthleteListComponent,</b></code>
+<code>        <b>AthleteComponent,</b></code>
+<code>        HomeComponent</code>
+<code>    ],</code>
+<code>    providers: [AthleteService],</code>
+<code>    imports: [</code>
+<code>        CommonModule,</code>
+<code>        HttpModule,</code>
+<code>        FormsModule,</code>
+<code>        RouterModule.forRoot([</code>
+<code>            { path: '', redirectTo: 'home', pathMatch: 'full' },</code>
+<code>            { path: 'home', component: HomeComponent },</code>
+<code>            { path: 'counter', component: CounterComponent },</code>
+<code>            { path: 'fetch-data', component: FetchDataComponent },</code>
+<code>            <b>{ path: 'athletes', component: AthletesAppComponent },</b></code>
+<code>            { path: '**', redirectTo: 'home' }</code>
+<code>        ])</code>
+<code>    ]</code>
+<code>})</code>
+<code>export class AppModuleShared {</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p>Apart from the import statements, the <code>declarations</code>, and <code>providers</code> arrays configured with the new components and services, there is something new: the
+                     configuration of the route. Routes are used in Angular to map URLs to specific components
+                     and to make navigating between components easier. Thanks to these routes, users can
+                     also bookmark or navigate directly to a part of the application as if it were a server-side
+                     rendered page.
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c03-sec-0058"></span>
+                  
+                  <h4 id="head-4-23">Deciding Which Integration Method to Use</h4>
+                  
+                  <p>We’ve seen three possible ways of integrating an Angular project inside a ASP.NET
+                     Core application. Keeping Angular and ASP.NET Core as two separate projects is the
+                     best approach if you have a clear separation between the front end and the API, and
+                     it is also the one that allows you to develop clearly with the Angular tools. Combining
+                     Angular and ASP.NET Core into one project using the Angular CLI is a good solution
+                     for managing the whole application from inside one Visual Studio project and still
+                     uses the Angular tools for development, but this approach require a bit more manual
+                     work. Using JavaScriptServices is probably the best way if you need to combine traditional
+                     ASP.NET development together with SPA. It also provides most of the features needed
+                     by complex applications like server-side pre-rendering and hot swap of components
+                     for easier development. But this is a very dynamic and opinionated world and new solutions
+                     come out every day.
+                  </p>
+                  
+               </section>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c03-sec-0059"></span>
+            
+            <h2 id="head-2-77"><span epub:type="pagebreak" id="Page_92" title="92"></span>VISUAL STUDIO 2017 SUPPORT FOR ANGULAR
+            </h2>
+            
+            <p>Until now you have written a lot of code. What if I told you that you can save a good
+               number of keystrokes by using the native integration of Angular in Visual Studio?
+               Visual Studio 2017 has three features that help with writing Angular applications:
+            </p>
+            
+            <ul class="check" id="c03-list-0009">
+               
+               <li id="c03-li-0035">Code snippets to help writing Angular elements</li>
+               
+               <li id="c03-li-0036">IntelliSense in TypeScript files</li>
+               
+               <li id="c03-li-0037">IntelliSense in HTML files</li>
+               
+            </ul>
+            
+            <p>Next you will have a look at each of these in more detail.</p>
+            
+            <section>
+               <span id="c03-sec-0060"></span>
+               
+               <h3 id="head-3-59">Code Snippets</h3>
+               
+               <p>Visual Studio comes with native support for TypeScript, so to create any new TypeScript
+                  file, including any Angular-related file, you can use Add New Item and select the
+                  TypeScript file, as shown in <a href="#c03-fig-0009" id="R_c03-fig-0009">Figure 3‐9</a>.
+               </p>
+               
+               <figure> <img alt="Illustration of Add New Item dialog." src="images/c03f009.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c03-fig-0009" id="c03-fig-0009"><b>FIGURE 3-9</b></a><b>:</b></span> Add New Item dialog
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p><span epub:type="pagebreak" id="Page_93" title="93"></span>Once you have created an empty TypeScript file, you can use the Angular snippets to
+                  create the skeleton for components, modules, services, and other Angular elements.
+               </p>
+               
+               <p>For example, the <code>ng2component</code> snippet expands to the following code:
+               </p>
+               
+               <blockquote>
+                  <pre id="c03-code-0041"><code>import { Component } from 'angular/core';</code>
+<code></code>
+<code>@Component({</code>
+<code>    selector: 'my-component',</code>
+<code>    template: 'Hello my name is {{name}}.'</code>
+<code>})</code>
+<code>export class ExampleComponent {</code>
+<code>    constructor() {</code>
+<code>        this.name = 'Sam';</code>
+<code>    }</code>
+<code>}</code> </pre>
+                  </blockquote>
+               
+               <p>Snippets also expand to other recurring blocks of code, such as connecting to HTTP
+                  (<code>ng2httpget)</code></p>
+               
+               <blockquote>
+                  <pre id="c03-code-0042"><code>return this.http.get('url')</code>
+<code>    .map((response: Response) =&gt; response.json());</code> </pre>
+                  </blockquote>
+               <p>
+                  or subscribing to <code>Observable</code> (<code>ng2subscribe</code>).
+               </p>
+               
+               <blockquote>
+                  <pre id="c03-code-0043"><code>this.service.function</code>
+<code>    .subscribe(arg =&gt; this.property = arg);</code> </pre>
+                  </blockquote>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature1">
+                     
+                     <h3>WARNING</h3>
+                     
+                     <p><i>Angular2 snippet packs are not part of the default Visual Studio installation, but
+                           need to be download separately from the Visual Studio Extension Gallery:</i> <code><a href="https://marketplace.visualstudio.com/items?itemName=MadsKristensen.Angular2SnippetPack">https://marketplace.visualstudio.com/items?itemName=MadsKristensen.Angular2SnippetPack</a></code></p>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+            <section>
+               <span id="c03-sec-0061"></span>
+               
+               <h3 id="head-3-60">IntelliSense in TypeScript Files</h3>
+               
+               <p>Visual Studio 2017 also provides complete (and relevant) IntelliSense for Angular
+                  by retrieving the documentation directly from TypeScript’s typings (the documentation
+                  for TypeScript files) for Angular.
+               </p>
+               
+               <p><a href="#c03-fig-0010" id="R_c03-fig-0010">Figure 3‐10</a> shows the autocompletion list that appears when typing inside the <code>@Component</code> annotation. Notice that the list only contains the methods that are exposed by the
+                  <code>module</code> class and that a full explanation of the function is provided.
+               </p>
+               
+               <figure> <img alt="Illustration of Intellisense autocompletion screen." src="images/c03f010.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c03-fig-0010" id="c03-fig-0010"><b>FIGURE 3-10</b></a><b>:</b></span> IntelliSense autocompletion
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p><span epub:type="pagebreak" id="Page_94" title="94"></span>When you are about to enter the parameters, the usual Parameter Info tooltip appears,
+                  as shown in <a href="#c03-fig-0011" id="R_c03-fig-0011">Figure 3‐11</a>.
+               </p>
+               
+               <figure> <img alt="Illustration of Parameter info screen." src="images/c03f011.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c03-fig-0011" id="c03-fig-0011"><b>FIGURE 3-11</b></a><b>:</b></span> Parameter info
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+            </section>
+            
+            <section>
+               <span id="c03-sec-0062"></span>
+               
+               <h3 id="head-3-61">IntelliSense in HTML Files</h3>
+               
+               <p>The power of Angular lies in its declarative approach, achieved with directives applied
+                  to HTML elements. Visual Studio 2017 with the snippet pack installed also helps in
+                  this context. Together with the standard HTML attributes, Visual Studio’s IntelliSense
+                  also provides autocompletion for all the Angular structural directives. First it shows
+                  the <code>ng2-</code> indicator, then it expands to the list of Angular directives, as shown in <a href="#c03-fig-0012" id="R_c03-fig-0012">Figure 3‐12</a>, and then it expands to the full format of the directive.
+               </p>
+               
+               <figure> <img alt="Illustration of Angular autocompletion in HTML." src="images/c03f012.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c03-fig-0012" id="c03-fig-0012"><b>FIGURE 3-12</b></a><b>:</b></span> Angular autocompletion in HTML
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c03-sec-0063"></span>
+            
+            <h2 id="head-2-78"><span epub:type="pagebreak" id="Page_95" title="95"></span>SUMMARY
+            </h2>
+            
+            <p>Angular can be used independently from any specific server-side technology, but the
+               features introduced with the latest versions of Visual Studio and ASP.NET Core make
+               it a perfect match for doing front-end development on the Microsoft.NET platform.
+               Angular is a very powerful JavaScript framework with a lot of concepts. This chapter
+               was just an introduction, but I hope you got the main points so you can start your
+               journey into more advanced topics and experimenting on your own.
+            </p>
+            
+         </section>
+         
+      </section>
+   </body>
+   
+</html>

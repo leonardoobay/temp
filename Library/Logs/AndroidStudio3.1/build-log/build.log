@@ -1,0 +1,21 @@
+2018-08-29 21:42:43,442 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2018-08-29 21:42:43,442 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Applications/Android Studio.app/Contents/lib/jps-launcher.jar:/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/lib/tools.jar:/Applications/Android Studio.app/Contents/lib/optimizedFileManager.jar
+2018-08-29 21:42:43,785 [    343]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 311 ms
+2018-08-29 21:42:43,943 [    501]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/mac/Desktop/AR_Basic/AR_Basic, global options path = /Users/mac/Library/Preferences/AndroidStudio3.1/options
+2018-08-29 21:42:44,237 [    795]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 294 ms
+2018-08-29 21:42:44,237 [    795]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2018-08-29 21:42:44,346 [    904]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2018-08-29 21:42:44,521 [   1079]   INFO - .incremental.IncProjectBuilder - Building project; isRebuild:true; isMake:false parallel compilation:false
+2018-08-29 21:42:44,524 [   1082]   INFO - kotlin.jps.build.KotlinBuilder - is Kotlin incremental compilation enabled: true
+2018-08-29 21:42:44,530 [   1088]   INFO - kotlin.jps.build.KotlinBuilder - is Kotlin compiler daemon enabled: true
+2018-08-29 21:42:44,531 [   1089]   INFO - kotlin.jps.build.KotlinBuilder - Label in local history: build started 572463f9
+2018-08-29 21:42:44,537 [   1095]   INFO - .incremental.IncProjectBuilder - Cleaned output directories in 1 ms
+2018-08-29 21:42:45,005 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2018-08-29 21:42:45,006 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Applications/Android Studio.app/Contents/lib/jps-launcher.jar:/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/lib/tools.jar:/Applications/Android Studio.app/Contents/lib/optimizedFileManager.jar
+2018-08-29 21:42:45,236 [    231]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 203 ms
+2018-08-29 21:42:45,311 [    306]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/mac/Desktop/AR_Basic/AR_Basic, global options path = /Users/mac/Library/Preferences/AndroidStudio3.1/options
+2018-08-29 21:42:45,489 [    484]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 178 ms
+2018-08-29 21:42:45,489 [    484]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 0 libraries
+2018-08-29 21:42:45,540 [    535]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2018-08-29 21:42:45,635 [    630]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 631 ms
+2018-08-29 21:43:22,191 [  37186]   INFO - etbrains.jps.cmdline.BuildMain - Build canceled, but no build session is running. Exiting.

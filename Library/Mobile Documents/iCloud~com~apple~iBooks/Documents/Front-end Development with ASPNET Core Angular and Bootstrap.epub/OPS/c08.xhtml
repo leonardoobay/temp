@@ -1,0 +1,877 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+   
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      
+      <title>Developing Outside of Windows</title>
+      
+      <link href="WileyTemplate_v5.3.css" rel="stylesheet" type="text/css" />
+      
+      <meta content="urn:uuid:68078093-7b10-42b9-8f32-0db0ecece3d2" name="Adept.expected.resource" />
+      
+   </head>
+   
+   <body epub:type="bodymatter">
+      
+      <section epub:type="chapter">
+         
+         <header>
+            
+            <h1><span epub:type="pagebreak" id="Page_189" title="189"></span><a id="c8"></a><span class="chapterNumber">8</span><br /><span class="chapterTitle">Developing Outside of Windows</span></h1>
+         </header>
+         
+         <section>
+            <span id="c8-sec-0001"></span>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3">
+                  
+                  <h3>WHAT’S IN THIS CHAPTER?</h3>
+                  
+                  <ul class="check1" id="c8-list-0001">
+                     
+                     <li id="c8-li-0001">How to set up ASP.NET Core on a Mac</li>
+                     
+                     <li id="c8-li-0002">Visual Studio Core</li>
+                     
+                     <li id="c8-li-0003">Hosting ASP.NET Core on Mac</li>
+                     
+                     <li id="c8-li-0004">Using command‐line tools</li>
+                     
+                  </ul>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p>The first seven chapters of the book covered all the aspects of front‐end development
+               with ASP.NET Core, from the basic setup of a project within Visual Studio to the deployment
+               of the final solution on Azure. But one of the main features for .NET Core, cross‐platform
+               support, has not been shown yet.
+            </p>
+            
+            <p>This chapter is all about cross‐platform functionality. In fact, the procedures and
+               all the samples used are described using a Mac, but everything can also be applied
+               on a Linux machine or even a Windows machine that doesn’t have Visual Studio installed.
+            </p>
+            
+            <p>You’ll start your journey by installing ASP.NET Core on a Mac.</p>
+            
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3">
+                  
+                  <h3>WROX.COM CODE DOWNLOADS FOR THIS CHAPTER</h3>
+                  
+                  <p>The <a href="http://wrox.com">wrox.com</a> code downloads for this chapter are found at <a href="http://www.wrox.com"><code>www.wrox.com</code></a> Search for the book’s ISBN (978‐1‐119‐18131‐6), and you will find the code in the
+                     <a href="c08.xhtml">chapter 8</a> download and individually named according to the names throughout the chapter.
+                  </p>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+         </section>
+         
+         <section>
+            <span id="c8-sec-0002"></span>
+            
+            <h2 id="head-2-140"><span epub:type="pagebreak" id="Page_190" title="190"></span>INSTALLING .NET CORE ON MACOS
+            </h2> 
+            <p>Installing .NET Core on Windows was easy, because it comes with Visual Studio. But
+               on a Mac, a Linux machine, or even on a Windows machine that doesn’t have Visual Studio,
+               the .NET Core framework and SDK have to be installed manually.
+            </p>
+            
+            <p>You can install the official SDK for macOS, downloading it from the dotnet core web
+               site: <a href="https://www.microsoft.com/net/core"><code>https://www.microsoft.com/net/core</code></a>.
+            </p>
+            
+            <p>Now to make sure everything is installed properly, you can follow the same procedure
+               shown in <a href="c01.xhtml">Chapter 1</a>. Basically, from the terminal, move inside a newly created folder and type <code>dotnet new console</code>. This creates a very basic console application (the same shown in <a href="c01.xhtml#c01-fea-0001">Listing 1‐1</a>). Then type <code>dotnet restore</code> to download all the packages needed (including the main CoreCLR), and finally run
+               the console application by typing <code>dotnet run</code>.
+            </p>
+            
+            <p>The result should be similar to the one shown in <a href="#c8-fig-0001" id="R_c8-fig-0001">Figure 8‐1</a>.
+            </p>
+            
+            <figure> <img alt="Illustration of Creating the first console app on the macOS." src="images/c08001.jpg" />
+               
+               <figcaption>
+                  <p><span class="figureLabel"><a href="#R_c8-fig-0001" id="c8-fig-0001"><b>FIGURE 8-1</b></a><b>:</b></span> Creating the first console app on macOS
+                  </p>
+               </figcaption>
+               
+            </figure>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature1">
+                  
+                  <h3>NOTE</h3>
+                  
+                  <p><i>On Linux, the installation procedure depends on which distribution you are running,
+                        but it’s pretty similar to the one for macOS. Download the prerequisites by using
+                        the package management tool that comes with the distribution, download the binaries,
+                        and unpack them. Detailed instructions on how to install for each distribution can
+                        be found on the Microsoft .NET Core site:</i> <a href="https://www.microsoft.com/net/core">https://www.microsoft.com/net/core</a><i>. The supported distributions are Red Hat Enterprise 7, Ubuntu 14 and 16, Mint 17
+                        and 18, Debian 8, Fedora 23 and 24, CentOS 7.1, Oracle Linux 7.1, and OpenSUSE 13.2
+                        and 42.1, and new ones are added constantly.</i></p>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+         </section>
+         
+         <section>
+            <span id="c8-sec-0003"></span>
+            
+            <h2 id="head-2-141"><span epub:type="pagebreak" id="Page_191" title="191"></span>BUILDING THE FIRST ASP.NET CORE APP ON MACOS
+            </h2>
+            
+            <p>Applications can be created either by using the dotnet command‐line interface as you’ve
+               done so far already or by using a more advanced tool like Yeoman.
+            </p>
+            
+            <section>
+               <span id="c8-sec-0004"></span>
+               
+               <h3 id="head-3-110">Using dotnet Command‐Line Interface</h3>
+               
+               <p>The easiest way of building an ASP.NET Core app is to use the <code>dotnet new</code> command, by specifying a new application type with the argument <code>mvc</code>. This creates a website similar to the one created by the default ASP.NET Core project
+                  in Visual Studio.
+               </p>
+               
+               <p>The <code>restore</code> command is run automatically, so just use the <code>run</code> command, and you’ll have a default website up and running.
+               </p>
+               
+               <p><a href="#c8-fig-0002" id="R_c8-fig-0002">Figure 8‐2</a> shows what you see in the command line, and <a href="#c8-fig-0003" id="R_c8-fig-0003">Figure 8‐3</a> shows the resulting website, with MVC.
+               </p>
+               
+               <figure> <img alt="Illustration of Creating a sample web app on macOS." src="images/c08002.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c8-fig-0002" id="c8-fig-0002"><b>FIGURE 8-2</b></a><b>:</b></span> Creating a sample web app on macOS
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <figure> <img alt="Illustration of website running on macOS." src="images/c08003.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c8-fig-0003" id="c8-fig-0003"><b>FIGURE 8-3</b></a><b>:</b></span> Sample website running on macOS
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>There are project templates available also for other types of projects, like class
+                  libraries (<code>classlib</code>), tests (<code>mstest</code> or <code>xunit</code>), and other types of web projects (<code>web</code> for an empty web project and <code>webapi</code>). New projects can be added over time. This can be done with updates to the tools
+                  or by downloading templates from the community. To see the list of templates available
+                  on your system, you can type the command <code>dotnet new ‐‐show‐all</code> (<a href="#c8-fig-0004" id="R_c8-fig-0004">Figure 8‐4</a>).
+               </p>
+               
+               <figure> <img alt="Illustration of List of project templates." src="images/c08004.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c8-fig-0004" id="c8-fig-0004"><b>FIGURE 8-4</b></a><b>:</b></span> List of project templates
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p><span epub:type="pagebreak" id="Page_192" title="192"></span>The creation of a project can be also controlled using template options. For example,
+                  for class libraries, the version of the framework can be specified with the <code>‐f</code> or <code>‐‐framework</code> option (<code>netcoreapp2.0</code> or <code>netstandard2.0</code>). The template for the MVC project can be created either with or without membership
+                  (and a ton of other options) and using either the cross‐platform SQLite (the default)
+                  or the Windows‐only LocalDB. To see the template‐specific option, you can type the
+                  command <code>dotnet new &lt;template name&gt; ‐‐help</code>. <a href="#c8-fig-0005" id="R_c8-fig-0005">Figure 8‐5</a> shows the options of the MVC template.
+               </p>
+               
+               <figure> <img alt="Illustration of Options for the MVC project template." src="images/c08005.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c8-fig-0005" id="c8-fig-0005"><b>FIGURE 8-5</b></a><b>:</b></span> Options for the MVC project template
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>So you can now create an MVC project with membership by typing the command:</p>
+               
+               <blockquote>
+                  <pre id="c8-code-0001"><code>dotnet new mvc -au Individual</code> </pre>
+                  </blockquote>
+               
+               <p>The project created with the last command is also an example of a full‐stack cross‐platform
+                  project as it also includes the membership provider, which persists user data to a
+                  database using Entity Framework Core. Unlike the same kind of project created by Visual
+                  Studio, this one uses SQLite instead of SQL Server, so it can run on both Windows
+                  and Mac machines.
+               </p>
+               
+               <p><span epub:type="pagebreak" id="Page_193" title="193"></span>Before you can successfully run this project, including the part that saves a new
+                  login to the database, Entity Framework migrations must be run. This can be done by
+                  using the Entity Framework tools for the dotnet command‐line interface.
+               </p>
+               
+               <blockquote>
+                  <pre id="c8-code-0002"><code>dotnet ef database update</code> </pre>
+                  </blockquote>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature1">
+                     
+                     <h2>ENTITY FRAMEWORK MIGRATIONS</h2>
+                     
+                     <p>When a project is created, it contains no database. In order to create it together
+                        with the all the tables needed, a specific setup procedure must be run. This is done
+                        by running the database migration. This part is explained in more detail in <a href="c09.xhtml">Chapter 9</a>.
+                     </p>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p><span epub:type="pagebreak" id="Page_194" title="194"></span>With the dotnet command‐line interface, you can also add references to both NuGet
+                  packages (for example <code>dotnet add package Newtonsoft.Json</code>) and references to other projects (<code>dotnet add reference ../lib/lib.csproj</code>). And of course you can also <code>remove</code> them with the remove command.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c8-sec-0005"></span>
+               
+               <h3 id="head-3-111"><span epub:type="pagebreak" id="Page_195" title="195"></span>Using Yeoman
+               </h3>
+               
+               <p>Being part of the SDK, the dotnet command‐line interface is a very convenient way
+                  of creating ASP.NET Core applications, but it doesn’t give much flexibility. To solve
+                  this problem, the .NET community developed some generators for Yeoman. Yeoman is a
+                  general‐purpose scaffolding and code generator tool that is widely used in the front‐end
+                  development community for creating projects for various frameworks (like Angular)
+                  using the best‐practice folder setup and tool configuration.
+               </p>
+               
+               <p>First you have to install the Yeoman scaffolding tool. As with all the tools mentioned
+                  throughout this book, this one is installed with <code>npm</code>.
+               </p>
+               
+               <blockquote>
+                  <pre id="c8-code-0003"><code>npm install -g yo</code> </pre>
+                  </blockquote>
+               
+               <p>You then need to install the official ASP.NET Core generator, still via <code>npm</code>.
+               </p>
+               
+               <blockquote>
+                  <pre id="c8-code-0004"><code>npm install -g generator-aspnet</code> </pre>
+                  </blockquote>
+               
+               <p><code>yo</code> is the command‐line tool used to run the generators. To start the tool just type
+                  <code>yo</code> in a terminal window.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature1">
+                     
+                     <h3>NOTE</h3>
+                     
+                     <p><i>Although Yeoman doesn’t strictly depend on them, most generated projects make use
+                           of both Bower and Gulp, so if you just jumped to this chapter skipping the </i> <a href="c05.xhtml"><i>Chapters 5</i> </a> <i>and</i> <a href="c06.xhtml"><i>6</i></a><i>, you might want to install them as well.</i></p>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>Now you can select which generator to run (if this is your first usage of the tool,
+                  you’ll only have the just installed <code>aspnet</code>). <a href="#c8-fig-0006" id="R_c8-fig-0006">Figure 8‐6</a> shows the generators selection screen of Yeoman.
+               </p>
+               
+               <figure> <img alt="Illustration of Yeoman generators selection screen." src="images/c08006.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c8-fig-0006" id="c8-fig-0006"><b>FIGURE 8-6</b></a><b>:</b></span> Yeoman generators selection screen
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p><span epub:type="pagebreak" id="Page_196" title="196"></span>Once you select <code>aspnet</code>, you get prompted with another menu, which lists (<a href="#c8-fig-0007" id="R_c8-fig-0007">Figure 8‐7</a>) all the types of ASP.NET Core projects it can generate. (You can launch Yeoman directly
+                  to this menu by directly typing <code>yo aspnet</code> in the terminal.)
+               </p>
+               
+               <figure> <img alt="Illustration of Yeoman ASP.NET Core generators." src="images/c08007.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c8-fig-0007" id="c8-fig-0007"><b>FIGURE 8-7</b></a><b>:</b></span> Yeoman ASP.NET Core generators
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>Among the available options, you can see Web Application Basic, which refers to the
+                  template for an ASP.NET Core application without membership and authorization. If
+                  you select this one, you will be asked which UI framework to use. (You have the choice
+                  between Bootstrap and Semantic UI.)
+               </p>
+               
+               <p>Finally, choose which name to give to the application and hit Enter.</p>
+               
+               <p>On the screen, you can follow the progress of the installation. First, folders and
+                  files are created, and then Bower dependencies are retrieved from their repositories.
+                  At the end of the process, you can read on the screen how to build and launch the
+                  application.
+               </p>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c8-sec-0006"></span>
+            
+            <h2 id="head-2-142">VISUAL STUDIO CODE</h2>
+            
+            <p>Now that that the project is generated, you need a text editor to write some useful
+               code, possibly with IntelliSense and with a way to debug it. For this, Microsoft developed
+               Visual Studio Code, an open‐source, text‐based, general‐purpose IDE.
+            </p>
+            
+            <section>
+               <span id="c8-sec-0007"></span>
+               
+               <h3 id="head-3-112"><span epub:type="pagebreak" id="Page_197" title="197"></span>Setting It Up
+               </h3>
+               
+               <p>Visual Studio Code can be downloaded from <a href="https://code.visualstudio.com/"><code>https://code.visualstudio.com/</code></a>. Like many other text editors, it can be extended with extensions. One of them is
+                  the extension that adds support for C# IntelliSense and debugging of ASP.NET Core
+                  applications. In order to install it, open the Extensions pane and type <code>@recommended</code>. A list of the recommended extensions will be shown, from which you’ll find the one
+                  that brings C# support.
+               </p>
+               
+               <p>When this extension is installed and enabled, open the folder that contains a web
+                  application created either via the dotnet command‐line interface or by using Yeoman.
+                  The C# extension now inspects the file, and it will ask you to add two configuration
+                  files that are needed for it to work properly: <code>launch.json</code> and <code>tasks.json</code>. Then you need to restore the dependencies if you haven’t done so already. See <a href="#c8-fig-0008" id="R_c8-fig-0008">Figure 8‐8</a>.
+               </p>
+               
+               <figure> <img alt="Illustration of Warning in Visual Studio Code." src="images/c08008.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c8-fig-0008" id="c8-fig-0008"><b>FIGURE 8-8</b></a><b>:</b></span> Warning in Visual Studio Code
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>Those two files are then saved in the <code>.vscode</code> folder, and they contain the configuration for launching and building the application.
+                  The right settings are added automatically, so don’t worry too much about what’s inside
+                  for the moment.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature1">
+                     
+                     <h2>INSTALLING C# SUPPORT FOR VISUAL STUDIO CODE</h2>
+                     
+                     <p>The first time you open a .NET Core project after installing the extension, all native
+                        debuggers and runtimes will be installed, so it will be a few minutes before you can
+                        start using it. The extension also checks for updates of the debuggers and runtimes
+                        every time it starts, so this download will also happen when there is a new update.
+                        But don’t worry, everything happens behind the scenes.
+                     </p>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+            <section>
+               <span id="c8-sec-0008"></span>
+               
+               <h3 id="head-3-113">Development Features in Visual Studio Code</h3>
+               
+               <p>With the proper configuration in place, Visual Studio Code is now a fully‐fledged
+                  code‐based IDE for building .NET Core applications. Now you will have a look at the
+                  main features.
+               </p>
+               
+               <section>
+                  <span id="c8-sec-0009"></span>
+                  
+                  <h4 id="head-4-57">IntelliSense</h4>
+                  
+                  <p>Thanks to the C# extension, Visual Studio Code can provide IntelliSense, code completion,
+                     syntax highlighting, and contextual help like the standard Visual Studio does. See
+                     <a href="#c8-fig-0009" id="R_c8-fig-0009">Figure 8‐9</a>.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Intellisense in Visual Studio Code." src="images/c08009.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c8-fig-0009" id="c8-fig-0009"><b>FIGURE 8-9</b></a><b>:</b></span> IntelliSense in Visual Studio Code
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <p><span epub:type="pagebreak" id="Page_198" title="198"></span>This is not limited to .NET code, but also applies to JavaScript and Typescript, which
+                     are both natively supported by Visual Studio Code, and to many other languages like
+                     CSS, HTML, and Sass via their own specific extensions.
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c8-sec-0010"></span>
+                  
+                  <h4 id="head-4-58">Refactoring</h4>
+                  
+                  <p>Some of the refactoring and code navigation features that you are used to in Visual
+                     Studio are also available in Visual Studio Code. You can use features such as Go to
+                     Definition, Find All References, Rename Symbol, Peek Definition (shown in <a href="#c8-fig-0010" id="R_c8-fig-0010">Figure 8‐10</a>), and so on.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Peek Definition screen." src="images/c08010.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c8-fig-0010" id="c8-fig-0010"><b>FIGURE 8-10</b></a><b>:</b></span> Peek Definition
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+               </section>
+               
+               <section>
+                  <span id="c8-sec-0011"></span>
+                  
+                  <h4 id="head-4-59">Errors and Suggestions</h4>
+                  
+                  <p>Just like its big brother Visual Studio, Visual Studio Code can also put a red underline
+                     under lines of code that have problems. And in some cases, it can also prompt suggestions
+                     on how to fix the error by displaying the light bulb icon. See <a href="#c8-fig-0011" id="R_c8-fig-0011">Figure 8‐11</a>.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Error highlighting." src="images/c08011.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c8-fig-0011" id="c8-fig-0011"><b>FIGURE 8-11</b></a><b>:</b></span> Error highlighting
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <p>Visual Studio Code also shows all the problems and errors in the Problem panel, which
+                     is activated by clicking on the status bar with the count of errors. See <a href="#c8-fig-0012" id="R_c8-fig-0012">Figure 8‐12</a>.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Status Bar with problems count." src="images/c08012.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c8-fig-0012" id="c8-fig-0012"><b>FIGURE 8-12</b></a><b>:</b></span> Status Bar with problems count
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+               </section>
+               
+               <section>
+                  <span id="c8-sec-0012"></span>
+                  
+                  <h4 id="head-4-60"><span epub:type="pagebreak" id="Page_199" title="199"></span>Debugging
+                  </h4>
+                  
+                  <p>Probably the most important feature is the capability to debug the code you wrote.
+                     Visual Studio Code really shines in this capacity.
+                  </p>
+                  
+                  <p>Once the two previously mentioned configuration files, <code>tasks.json</code> and <code>launch.json</code>, are in your folder, debugging.NET applications is as easy as pressing the Run icon
+                     in the toolbar and setting a breakpoint in the code. See <a href="#c8-fig-0013" id="R_c8-fig-0013">Figure 8‐13</a>.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Debugging ASP.NET Core application." src="images/c08013.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c8-fig-0013" id="c8-fig-0013"><b>FIGURE 8-13</b></a><b>:</b></span> Debugging ASP.NET Core application
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <p><span epub:type="pagebreak" id="Page_200" title="200"></span>As with the other features, debugging is also possible for other languages for which
+                     extensions have been installed, such as JavaScript, Typescript, or Node.js.
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c8-sec-0013"></span>
+                  
+                  <h4 id="head-4-61">Version Control</h4>
+                  
+                  <p>Another interesting feature is the integrated support for version control systems.
+                     Visual Studio Code ships with git client with a simple UI for the most common features
+                     such as commit, sync, pull, and push. It also has a more text‐based interface (via
+                     the command palette) when more control <span epub:type="pagebreak" id="Page_201" title="201"></span>is needed. But other version control systems are available for download (as extensions)
+                     like Visual Studio Team Services, Perforce, and Mercurial. See <a href="#c8-fig-0014" id="R_c8-fig-0014">Figure 8‐14</a>.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Additional Source Control providers." src="images/c08014.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c8-fig-0014" id="c8-fig-0014"><b>FIGURE 8-14</b></a><b>:</b></span> Additional Source Control providers
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <p><span epub:type="pagebreak" id="Page_202" title="202"></span>The editor also shows some clues directly inside the text, marking new lines and updated
+                     lines with different colors.
+                  </p>
+                  
+                  <p>It also has an integrated file comparison tool that can be used both to show the differences
+                     between versions and to compare arbitrary files. See <a href="#c8-fig-0015" id="R_c8-fig-0015">Figure 8‐15</a>.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Diff window." src="images/c08015.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c8-fig-0015" id="c8-fig-0015"><b>FIGURE 8-15</b></a><b>:</b></span> Diff window
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+               </section>
+               
+               <section>
+                  <span id="c8-sec-0014"></span>
+                  
+                  <h4 id="head-4-62">Tasks</h4>
+                  
+                  <p>Visual Studio Code has support for task runners, so you can run your Gulp and Grunt
+                     tasks directly from the command palette. You can also run any other kind of command
+                     by specifying it in the <code>tasks.json</code> file, the same that was previously mentioned for setup of the C# extension.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c8-fea-0001"></span> 
+                        
+                        <h2 id="head-2-143">LISTING 8-1: Tasks.json file</h2>
+                        
+                        <section>
+                           <span id="c8-sec-0015"></span>
+                           
+                           <blockquote>
+                              <pre id="c8-code-0005"><code>{</code>
+<code>    "version": "0.1.0",</code>
+<code>    "command": "dotnet",</code>
+<code>    "isShellCommand": true,</code>
+<code>    "args": [],</code>
+<code>    "tasks": [</code>
+<code><span epub:type="pagebreak" id="Page_203" title="203"></span>        {</code>
+<code>            "taskName": "build",</code>
+<code>            "args": [</code>
+<code>                "${workspaceRoot}/web.csproj"</code>
+<code>            ],</code>
+<code>            "isBuildCommand": true,</code>
+<code>            "problemMatcher": "$msCompile"</code>
+<code>        }</code>
+<code>    ]</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p>In <a href="#c8-fea-0001">Listing 8‐1</a> you see the basic structure of the <code>tasks.json</code> file. The command to run is specified in the <code>command</code> property, and then you can indicate the tasks that are going to use the specified
+                     command. In this case there is only one specified task, that’s <code>taskName</code> is <code>build</code> and that takes the current <code>.csproj</code> file as argument. This specific example also instructs Visual Studio Code to use
+                     the task as the default build command for the project (<code>isBuildCommand</code>) and specifies that the output of the task will be scanned by a “problem matcher,”
+                     <code>$mscompile</code>, to report errors and problems inside the editor and the problems panel.
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c8-sec-0016"></span>
+                  
+                  <h4 id="head-4-63">Other Features</h4>
+                  
+                  <p>Visual Studio Code contains so many interesting features that describing all of them
+                     probably would take over half of the book. Apart from the ones just mentioned, it
+                     includes all the features typical to modern text editors. It has an integrated snippets
+                     library with auto‐expansion so that you can enter code faster. It also has the already
+                     mentioned command palette from which you can easily access all the commands provided
+                     by the editor and its extensions, even the ones that do not have an explicit menu
+                     item. You can also interact with the terminal window directly within Visual Studio
+                     Code without opening an external application.
+                  </p>
+                  
+                  <p>And, more importantly, it’s extensible so the support for new languages or features
+                     can be easily added if needed. For example, I wrote this book entirely using Visual
+                     Studio Code and its support for the Markdown language.
+                  </p>
+                  
+                  <p>To explore in more detail what you can do with Visual Studio Code, I encourage you
+                     to visit the official web site at <a href="http://code.visualstudio.com"><code>code.visualstudio.com</code></a>.
+                  </p>
+                  
+               </section>
+               
+            </section>
+            
+            <section>
+               <span id="c8-sec-0017"></span>
+               
+               <h3 id="head-3-114">OmniSharp</h3>
+               
+               <p>All these features, as far as their support for .NET Core is concerned, are possible
+                  thanks to OmniSharp. OmniSharp is a set of OSS projects that work together for bringing
+                  .NET development to any text editor.
+               </p>
+               
+               <p>The base layer is a server that runs Roslyn and analyzes the files of the project
+                  that is open inside the editor.
+               </p>
+               
+               <p>On top of this there is an API (REST‐based over HTTP or over pipes) that allows clients
+                  (text editors via their extensions) to query the code model to get IntelliSense, parameter
+                  information, the references to a variable, or the definition of a method.
+               </p>
+               
+               <p><span epub:type="pagebreak" id="Page_204" title="204"></span>At the top layer are all the editor‐specific extensions that display the information
+                  retrieved from the OmniSharp server in a user‐friendly way. The top layer also includes
+                  other features that are purely client‐side such as code formatting or snippet expansion.
+                  It is also the extensions that interact with the debugger to provide all the features
+                  needed for debugging your code.
+               </p>
+               
+               <p>OmniSharp extensions have been developed for the most popular text editors on the
+                  market. Apart from Visual Studio Code, there are extensions for Atom, Vim, Sublime,
+                  and even Emacs. This means that you can continue using your favorite text editor and
+                  still be able to get all the benefit of a rich code‐editing experience powered by
+                  OmniSharp.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c8-sec-0018"></span>
+               
+               <h3 id="head-3-115">Other IDEs</h3>
+               
+               <p>As mentioned previously, OmniSharp enables developing .NET Core applications also
+                  with other text editors, like Atom, Sublime, Vim, and Emacs. But all of these lack
+                  the support of the many code refactoring VS plugins that most developers use, like
+                  ReSharper and similar tools.
+               </p>
+               
+               <p>To close this gap, JetBrains, the company behind ReSharper, has decided to expand
+                  its line of IDEs. It is working on Project Rider, a fully‐fledged IDE based on its
+                  IntelliJ platform and that includes all the refactoring features of ReSharper.
+               </p>
+               
+               <p>It is still a work in progress, but given the popularity of ReSharper among .NET developers
+                  and the popularity of their other tools (especially WebStorm for JavaScript development),
+                  Rider has a chance of becoming a big player in the market of text‐based C# IDEs.
+               </p>
+               
+               <p>Microsoft has also released a “full” version of Visual Studio that runs on the Mac.
+                  If you are interested you can download it at the URL <a href="https://www.visualstudio.com/vs/visual-studio-mac/"><code>https://www.visualstudio.com/vs/visual‐studio‐mac/</code></a>.
+               </p>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c8-sec-0019"></span>
+            
+            <h2 id="head-2-144">USING COMMAND‐LINE TOOLS</h2>
+            
+            <p>When reading the previous chapters, you might have quickly passed over the parts that
+               were explaining how to use the various front‐end tools using the command line. Visual
+               Studio has integrated support for them so you do not have to learn their command‐line
+               interface.
+            </p>
+            
+            <p>When using Visual Studio Core (or your favorite text editor) some of these helping
+               hands might not be available, so you need to start using the command line more than
+               you are used to.
+            </p>
+            
+            <p>I recommend that you go back to previous chapters of the book and review the part
+               about the command‐line usage of the various tools. <a href="#c8-tbl-0001" id="R_c8-tbl-0001">Table 8‐1</a> provides a short “cheat sheet” with the most common commands you might need.
+            </p>
+            
+            <figure>
+               
+               <figcaption>
+                  <p><span class="figureLabel"><a href="#R_c8-tbl-0001" id="c8-tbl-0001"><b>TABLE 8-1</b></a><b>:</b></span> Useful command‐line tools
+                  </p>
+               </figcaption>
+               
+               <table border="1">
+                  
+                  <thead>
+                     
+                     <tr>
+                        
+                        <td style="background-color:#d1d3d4"><span epub:type="pagebreak" id="Page_205" title="205"></span><b>COMMAND</b></td>
+                        
+                        <td style="background-color:#d1d3d4"><b>DESCRIPTION</b></td>
+                        
+                     </tr>
+                     
+                  </thead>
+                  
+                  <tbody>
+                     
+                     <tr>
+                        
+                        <td style="background-color:#f1f1f2"><code>npm install &lt;package&gt; ‐‐save</code></td>
+                        
+                        <td style="background-color:#f1f1f2">Installs dependencies and saves in local project</td>
+                        
+                     </tr>
+                     
+                     <tr>
+                        
+                        <td style="background-color:#f1f1f2"><code>npm update</code></td>
+                        
+                        <td style="background-color:#f1f1f2">Restores all dependencies defined</td>
+                        
+                     </tr>
+                     
+                     <tr>
+                        
+                        <td style="background-color:#f1f1f2"><code>bower install &lt;package&gt; ‐‐save</code></td>
+                        
+                        <td style="background-color:#f1f1f2">Installs dependencies and saves in local project</td>
+                        
+                     </tr>
+                     
+                     <tr>
+                        
+                        <td style="background-color:#f1f1f2"><code>bower install</code></td>
+                        
+                        <td style="background-color:#f1f1f2">Restores all packages</td>
+                        
+                     </tr>
+                     
+                     <tr>
+                        
+                        <td style="background-color:#f1f1f2"><code>gulp &lt;taskname&gt;</code></td>
+                        
+                        <td style="background-color:#f1f1f2">Runs the Gulp task</td>
+                        
+                     </tr>
+                     
+                     <tr>
+                        
+                        <td style="background-color:#f1f1f2"><code>dotnet restore</code></td>
+                        
+                        <td style="background-color:#f1f1f2">Restores .NET Core dependencies</td>
+                        
+                     </tr>
+                     
+                     <tr>
+                        
+                        <td style="background-color:#f1f1f2"><code>dotnet publish</code></td>
+                        
+                        <td style="background-color:#f1f1f2">Publishes a .NET Core project</td>
+                        
+                     </tr>
+                     
+                  </tbody> 
+               </table>
+               
+            </figure>
+            
+         </section>
+         
+         <section>
+            <span id="c8-sec-0020"></span>
+            
+            <h2 id="head-2-145">SUMMARY</h2>
+            
+            <p>It was possible to run ASP.NET on non‐Windows machines even before the creation of
+               the CoreCLR, by using Mono, but it was considered more of a toy than something businesses
+               would use for their production environments. And even then, the IDE was not stable
+               enough to allow developers to build the applications directly on their Mac. So the
+               fact of being cross‐platform was more about the possibility of running the final software
+               on a Linux box.
+            </p>
+            
+            <p>With .NET Core and Visual Studio Code, aspects of being cross‐platform have also become
+               about developing without using Visual Studio and Windows.
+            </p>
+            
+            <p>Visual Studio Code is not just for Mac and Linux users. Visual Studio Code also runs
+               on Windows, and many developers are now starting to use it as a replacement of the
+               more resource‐hungry Visual Studio. In fact, this chapter could have possibly been
+               named “Developing without Visual Studio.”
+            </p>
+            
+            <p>All the aspects of front‐end development have been individually explored, from the
+               server‐side part of ASP.NET Core to the client‐side with JavaScript and CSS, and from
+               the management of third‐party packages and the deployment on the Cloud. It is now
+               time to put everything together and see how to build a simple, yet complete, modern
+               ASP.NET Core web application.
+            </p>
+            
+         </section>
+         
+      </section>
+   </body>
+   
+</html>

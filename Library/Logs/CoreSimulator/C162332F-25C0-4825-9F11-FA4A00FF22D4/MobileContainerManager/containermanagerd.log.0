@@ -1,0 +1,27 @@
+Thu Oct 25 13:30:18 2018 [1287] <notice> (0x10bc385c0) main: containermanagerd performing first boot initialization
+Thu Oct 25 13:30:18 2018 [1287] <notice> (0x10bc385c0) -[MCMMigrationStatus _migrateFromManyMarkerFilesToOne]: Migrating from many marker files down to one
+Thu Oct 25 13:30:18 2018 [1287] <notice> (0x10bc385c0) -[MCMMigrationStatus isBuildUpgrade]: Did not find last build info; we must be upgrading from pre-9.3.1 or this is an erase install.
+Thu Oct 25 13:30:18 2018 [1287] <notice> (0x10bc385c0) -[MCMClientConnection _regenerateAllSystemContainerPaths]: Rolling system container directory UUIDs on disk
+Thu Oct 25 13:30:18 2018 [1287] <notice> (0x10bc385c0) -[MCMMigrationStatus writeCurrentBuildInfoToDisk]: Saved last build version of 16A366
+Thu Oct 25 13:30:18 2018 [1287] <notice> (0x10bc385c0) main: containermanagerd first boot cleanup complete
+Thu Oct 25 13:30:19 2018 [1287] <notice> (0x70000ddc7000) -[MCMContainerMigrator performDataMigratorMigrationWithError:]: Performing Data Migration on 16A366
+Thu Oct 25 13:30:19 2018 [1287] <notice> (0x70000ddc7000) -[MCMFileManager standardizeAllSystemContainerACLsAtURL:error:]: Potential containers requiring ACL migration: (
+    "E7B00510-6AE1-47B4-B761-1844C144A15F/ -- file:///Users/mac/Library/Developer/CoreSimulator/Devices/C162332F-25C0-4825-9F11-FA4A00FF22D4/data/Containers/Data/System/",
+    "634BC5D6-192C-43D8-8830-E6D7A2DF2C01/ -- file:///Users/mac/Library/Developer/CoreSimulator/Devices/C162332F-25C0-4825-9F11-FA4A00FF22D4/data/Containers/Data/System/"
+)
+Thu Oct 25 13:30:19 2018 [1287] <notice> (0x70000ddc7000) -[MCMFileManager standardizeAllSystemContainerACLsAtURL:error:]: Potential containers requiring ACL migration: (
+    "systemgroup.com.apple.configurationprofiles/ -- file:///Users/mac/Library/Developer/CoreSimulator/Devices/C162332F-25C0-4825-9F11-FA4A00FF22D4/data/Containers/Shared/SystemGroup/",
+    "systemgroup.com.apple.lsd.iconscache/ -- file:///Users/mac/Library/Developer/CoreSimulator/Devices/C162332F-25C0-4825-9F11-FA4A00FF22D4/data/Containers/Shared/SystemGroup/"
+)
+Thu Oct 25 13:30:19 2018 [1287] <notice> (0x70000ddc7000) -[MCMMigrationStatus setMigrationCompleteForType:]: Migration completed on 16A366 for ACLMigration
+Thu Oct 25 13:30:19 2018 [1287] <notice> (0x70000ddc7000) -[MCMCodeSigningMapping _onQueue_migrateAppGroupIdsFromDataContainersToFile]: Performing group ID migration
+Thu Oct 25 13:30:19 2018 [1287] <notice> (0x70000ddc7000) -[MCMMigrationStatus setMigrationCompleteForType:]: Migration completed on 16A366 for GroupIdMigration
+Thu Oct 25 13:30:19 2018 [1287] <notice> (0x70000ddc7000) -[MCMCodeSigningMapping _onQueue_migrateCachedCodeSigningInfoFromBundleContainersToMapping]: Performing code signing migration
+Thu Oct 25 13:30:19 2018 [1287] <notice> (0x70000ddc7000) -[MCMMigrationStatus setMigrationCompleteForType:]: Migration completed on 16A366 for CodeSigningMigration
+Thu Oct 25 13:30:20 2018 [1287] <notice> (0x70000ddc7000) -[MCMContainerMigrator performPerUserDataMigrationForClientConnection:withError:]: Container data migration requested by com.apple.migrationpluginwrapper for current mobile user: 501
+Thu Oct 25 13:30:20 2018 [1287] <notice> (0x70000ddc7000) -[MCMContainerMigrator performPerUserDataMigrationForClientConnection:withError:]: Performing Per User Subdirectory Migration for 501 on 16A366
+Thu Oct 25 13:30:20 2018 [1287] <notice> (0x70000ddc7000) -[MCMMigrationStatus setMigrationCompleteForType:]: Migration completed on 16A366 for SubdirectoryMigration
+Thu Oct 25 13:30:20 2018 [1287] <notice> (0x70000ddc7000) -[MCMContainerMigrator performPerUserDataMigrationForClientConnection:withError:]: Completed Per User Subdirectory Migration for 501 on 16A366 : Success: Y
+Wed Nov  7 12:16:33 2018 [894] <notice> (0x10fc705c0) main: containermanagerd performing first boot initialization
+Wed Nov  7 12:16:33 2018 [894] <notice> (0x10fc705c0) -[MCMMigrationStatus isBuildUpgrade]: Current build version (16A366 / (null)) equal to last version recorded (16A366 / (null)); skipping upgrade
+Wed Nov  7 12:16:33 2018 [894] <notice> (0x10fc705c0) main: containermanagerd first boot cleanup complete

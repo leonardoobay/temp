@@ -1,0 +1,6 @@
+Tue Jul  3 23:10:50 2018 [511] <notice> (0x110655380) main: containermanagerd performing first boot initialization
+Tue Jul  3 23:10:50 2018 [511] <notice> (0x110655380) -[MCMMigrationStatus _migrateFromManyMarkerFilesToOne]: Migrating from many marker files down to one
+Tue Jul  3 23:10:50 2018 [511] <notice> (0x110655380) -[MCMMigrationStatus isBuildUpgrade]: Did not find last build info; we must be upgrading from pre-9.3.1 or this is an erase install.
+Tue Jul  3 23:10:50 2018 [511] <notice> (0x110655380) -[MCMClientConnection _regenerateAllSystemContainerPaths]: Rolling system container directory UUIDs on disk
+Tue Jul  3 23:10:50 2018 [511] <notice> (0x110655380) -[MCMMigrationStatus writeCurrentBuildInfoToDisk]: Saved last build version of 15F79
+Tue Jul  3 23:10:50 2018 [511] <notice> (0x110655380) main: containermanagerd first boot cleanup complete

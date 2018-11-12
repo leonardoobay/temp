@@ -1,0 +1,2216 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+   
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      
+      <title>Bootstrap in a Nutshell</title>
+      
+      <link href="WileyTemplate_v5.3.css" rel="stylesheet" type="text/css" />
+      
+      <meta content="urn:uuid:68078093-7b10-42b9-8f32-0db0ecece3d2" name="Adept.expected.resource" />
+      
+   </head>
+   
+   <body epub:type="bodymatter">
+      
+      <section epub:type="chapter">
+         
+         <header>
+            
+            <h1><span epub:type="pagebreak" id="Page_97" title="97"></span><a id="c04"></a><span class="chapterNumber">4</span><br /><span class="chapterTitle">Bootstrap in a Nutshell</span></h1>
+         </header>
+         
+         <section>
+            <span id="c04-sec-0001"></span>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3">
+                  
+                  <h3>WHAT’S IN THIS CHAPTER?</h3>
+                  
+                  <ul class="check1" id="c04-list-0001">
+                     
+                     <li id="c04-li-0001">Introduction to Bootstrap</li>
+                     
+                     <li id="c04-li-0002">Building responsive sites with Bootstrap</li>
+                     
+                     <li id="c04-li-0003">Customizing Bootstrap with Less</li>
+                     
+                     <li id="c04-li-0004">Features of Visual Studio 2017 that make developing with Bootstrap easier</li>
+                     
+                  </ul>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p>Now that you have seen how to add client‐side behavior to a web application, this
+               chapter shows you how to make it look beautiful, by introducing Bootstrap.
+            </p>
+            
+            <p>Until a few years ago, putting the style on a website was a necessary evil for developers.
+               CSS is not exactly a programming language, and it was not designed with maintainability
+               in mind. Styling a website was a nightmare for web designers, who were using it every
+               day and had to repeat their work with every new project. This led to the creation
+               of hundreds of micro‐libraries with the purpose of reducing repetition (or copy‐paste
+               operations) in the basic and standard CSS definitions.
+            </p>
+            
+            <p>Luckily, one company, Twitter, decided to publish their internal “blueprint” as an
+               open‐source project known as Bootstrap. This quickly became the most popular CSS “library”
+               available, because of its default styles and components, its modularity, and the ease
+               with which it can be customized via the CSS pre‐processing language Less (and recently
+               also with Sass). Bootstrap is responsive by default, which means that sites and web
+               apps built with it adapt automatically to the screen size of the device, be it a TV
+               screen, desktop, laptop, tablet, or smartphone. This framework has good support in
+               Visual Studio 2017, which makes working with it faster and more enjoyable.
+            </p>
+            
+            <p>This chapter starts by introducing Bootstrap, discusses some of its features, and
+               later expands on how to use it with ASP.NET Core and Visual Studio 2017.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3">
+                  
+                  <h3><span epub:type="pagebreak" id="Page_98" title="98"></span>WROX.COM CODE DOWNLOADS FOR THIS CHAPTER
+                  </h3>
+                  
+                  <p>The <a href="http://wrox.com">wrox.com</a> code downloads for this chapter are found at <code><a href="http://www.wrox.com">www.wrox.com</a></code> Search for the book’s ISBN (978‐1‐119‐18131‐6), and you will find the code in the
+                     <a href="c04.xhtml">chapter 4</a> download and individually named according to the names throughout the chapter.
+                  </p>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+         </section>
+         
+         <section>
+            <span id="c04-sec-0002"></span>
+            
+            <h2 id="head-2-79">INTRODUCTION TO BOOTSTRAP</h2>
+            
+            <p>Bootstrap is a very simple framework to work with. You just install it (via Bower,
+               by downloading it, or by simply referencing it from the CDN), add the styles to your
+               page, and everything “magically” gets a more professional and over‐all polished style.
+            </p>
+            
+            <section>
+               <span id="c04-sec-0003"></span>
+               
+               <h3 id="head-3-62">Installing Bootstrap</h3>
+               
+               <p>Three files (with a fourth optional file) have to be referenced for all the features
+                  of Bootstrap to work:
+               </p>
+               
+               <ul class="check" id="c04-list-0002">
+                  
+                  <li id="c04-li-0005">The Bootstrap CSS file is <code>&lt;link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;</code>.
+                  </li>
+                  
+                  <li id="c04-li-0006">The optional Bootstrap theme <code>&lt;link href="bootstrap/css/bootstrap‐theme.min.css" rel="stylesheet"&gt;</code> adds some nice colors to the page.
+                  </li>
+                  
+                  <li id="c04-li-0007">The Bootstrap JavaScript library is <code>&lt;script src="bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;</code>.
+                  </li>
+                  
+               </ul>
+               
+               <p>JQuery is also necessary since Bootstrap is based on it.</p>
+               
+               <p>If you need to support older versions of IE (before IE9), the shim libraries html5shiv
+                  and Respond.js must be added. <a href="#c04-fea-0001">Listing 4‐1</a> shows the basic template as suggested in the official documentation.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c04-fea-0001"></span> 
+                     
+                     <h2 id="head-2-80">LISTING 4-1: Basic Template</h2>
+                     
+                     <section>
+                        <span id="c04-sec-0004"></span>
+                        
+                        <blockquote>
+                           <pre id="c04-code-0001"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>  &lt;head&gt;</code>
+<code>    &lt;meta charset="utf-8"&gt;</code>
+<code>    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;</code>
+<code>    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code>
+<code>    &lt;!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags --&gt;</code>
+<code>    &lt;title&gt;Basic template&lt;/title&gt;</code>
+<code></code>
+<code>    &lt;!-- Bootstrap --&gt;</code>
+<code>    <b>&lt;link href="css/bootstrap.min.css" rel="stylesheet"&gt;</b></code>
+<code>    <b>&lt;link href="css/bootstrap‐theme.min.css" rel="stylesheet"&gt;</b></code>
+<code></code>
+<code><span epub:type="pagebreak" id="Page_99" title="99"></span>    &lt;!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --&gt;</code>
+<code>    &lt;!-- WARNING: Respond.js doesn't work if you view the page via file:// --&gt;</code>
+<code>    &lt;!--[if lt IE 9]&gt;</code>
+<code>      &lt;script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"&gt;&lt;/script&gt;</code>
+<code>      &lt;script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"&gt;&lt;/script&gt;</code>
+<code>    &lt;![endif]--&gt;</code>
+<code>  &lt;/head&gt;</code>
+<code>  &lt;body&gt;</code>
+<code></code>
+<code>    &lt;h1&gt;Hello, world!&lt;/h1&gt;</code>
+<code></code>
+<code>    &lt;!-- jQuery (necessary for Bootstrap's JavaScript plugins) --&gt;</code>
+<code>    <b>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;</b></code>
+<code>    &lt;!-- Include all compiled plugins (below), or include individual files as needed --&gt;</code>
+<code>    <b>&lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;</b></code>
+<code>  &lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p><a href="#c04-fig-0001" id="R_c04-fig-0001">Figure 4‐1</a> shows how the only text there, a simple “Hello, World!” statement, looks compared
+                  to an un-styled page. Notice the different font and margins.
+               </p>
+               
+               <figure> <img alt="Illustration of Styled and un-styled version of the same page." src="images/c04f001.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c04-fig-0001" id="c04-fig-0001"><b>FIGURE 4-1</b></a><b>:</b></span> Styled and un-styled version of the same page
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p><a href="#c04-fig-0001">Figure 4‐1</a> shows an example of the core CSS styles of Bootstrap for typography, which is covered
+                  more in detail in the next pages.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature1">
+                     
+                     <h3>NOTE</h3>
+                     
+                     <p><i>This chapter uses Bootstrap version 3.3. Bootstrap version 4 has long been in development
+                           and at the time of this writing is still in its beta version. When it is released,
+                           it is expected that the biggest changes will be a switch from Less to Sass, the rewriting
+                           of all JavaScript plugins, and the removal of nonresponsive layouts.</i></p>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+            <section>
+               <span id="c04-sec-0005"></span>
+               
+               <h3 id="head-3-63"><span epub:type="pagebreak" id="Page_100" title="100"></span>The Main Features
+               </h3>
+               
+               <p>Bootstrap is basically made of three different types of features:</p>
+               
+               <ul class="check" id="c04-list-0003">
+                  
+                  <li id="c04-li-0008"><b>Core CSS classes:</b> These style classes enhance the style of elements, either automatically or by applying
+                     a simple CSS class.
+                  </li>
+                  
+                  <li id="c04-li-0009"><b>Components:</b> These implement more complex UI elements, such as navigation bars, dropdown menus,
+                     input groups, progress bars, and so on.
+                  </li>
+                  
+                  <li id="c04-li-0010"><b>JavaScript plugins:</b> These bring the various components to life.
+                  </li>
+                  
+               </ul>
+               
+               <p>The following sections will examine these features in more detail.</p>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c04-sec-0006"></span>
+            
+            <h2 id="head-2-81">BOOTSTRAP STYLES</h2>
+            
+            <p>The first core feature that Bootstrap offers is a set of CSS classes that enhance
+               the look of the site and make it responsive.
+            </p>
+            
+            <p>These styles can be broadly grouped into these categories:</p>
+            
+            <ul class="check" id="c04-list-0004">
+               
+               <li id="c04-li-0011">Grid System</li>
+               
+               <li id="c04-li-0012">Typography</li>
+               
+               <li id="c04-li-0013">Tables</li>
+               
+               <li id="c04-li-0014">Forms</li>
+               
+               <li id="c04-li-0015">Buttons</li>
+               
+            </ul>
+            
+            <section>
+               <span id="c04-sec-0007"></span>
+               
+               <h3 id="head-3-64">Grid System</h3>
+               
+               <p>A basic feature of any CSS framework, the grid system allows you to create a page
+                  layout based on a series of rows and columns. On top of the basic behavior, Bootstrap
+                  provides a 12-column fluid grid layout that adapts to the size of the screen.
+               </p>
+               
+               <p>A few instructions need to be kept in mind when making a layout with the Bootstrap
+                  grid system:
+               </p>
+               
+               <ul class="check" id="c04-list-0005">
+                  
+                  <li id="c04-li-0016">The whole grid must be inside an HTML element marked with <code>.container</code>.
+                  </li>
+                  
+                  <li id="c04-li-0017">This container includes rows, defined as <code>&lt;div class="row"&gt;…&lt;/div&gt;</code>.
+                  </li>
+                  
+                  <li id="c04-li-0018">Rows include columns. The width of each column is defined by specifying the number
+                     of grid cells it spans using the class <code>.col-sm-*</code>, replacing <i>*</i> with the actual number. For example, 4 <code>.col-sm-3</code> (4 × 3 is 12) would be used to make four equally sized columns.
+                  </li>
+                  
+               </ul>
+               
+               <p><a href="#c04-fea-0002">Listing 4‐2</a> shows these basic rules in action. There are four rows, with different columns per
+                  row (12 × 1, 8 + 4, 4 × 3, and 6 × 2). The class applied is <code>.col-sm-*</code>, which defines the behavior from “small devices” (a screen size bigger than 768px)
+                  and up. <a href="#c04-fig-0002" id="R_c04-fig-0002">Figure 4‐2</a> shows how the grid appears on <span epub:type="pagebreak" id="Page_101" title="101"></span>a normal width, and when the window of the browser goes below 768px, you can see that
+                  all columns are stacked one below the other.
+               </p>
+               
+               <figure> <img alt="Illustration of Grid shown in desktop and smartphone mode." src="images/c04f002.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c04-fig-0002" id="c04-fig-0002"><b>FIGURE 4-2</b></a><b>:</b></span> Grid shown in desktop and smartphone mode
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c04-fea-0002"></span> 
+                     
+                     <h2 id="head-2-82">LISTING 4-2: Basic Grid</h2>
+                     
+                     <section>
+                        <span id="c04-sec-0008"></span>
+                        
+                        <blockquote>
+                           <pre id="c04-code-0002"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>…</code>
+<code>&lt;body&gt;</code>
+<code>  &lt;div class="container"&gt;</code>
+<code>    &lt;div class="row"&gt;</code>
+<code>      &lt;div class="col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>      &lt;div class="col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>      &lt;div class="col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>      &lt;div class="col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>      &lt;div class="col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>      &lt;div class="col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>      &lt;div class="col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>      &lt;div class="col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>      &lt;div class="col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>      &lt;div class="col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>      &lt;div class="col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>      &lt;div class="col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>    &lt;/div&gt;</code>
+<code>    &lt;div class="row"&gt;</code>
+<code>     &lt;div class="col-sm-8"&gt;.col-sm-8&lt;/div&gt;</code>
+<code>      &lt;div class="col-sm-4"&gt;.col-sm-4&lt;/div&gt;</code>
+<code>    &lt;/div&gt;</code>
+<code>    &lt;div class="row"&gt;</code>
+<code>      &lt;div class="col-sm-4"&gt;.col-sm-4&lt;/div&gt;</code>
+<code>      &lt;div class="col-sm-4"&gt;.col-sm-4&lt;/div&gt;</code>
+<code>      &lt;div class="col-sm-4"&gt;.col-sm-4&lt;/div&gt;</code>
+<code><span epub:type="pagebreak" id="Page_102" title="102"></span>    &lt;/div&gt;</code>
+<code>    &lt;div class="row"&gt;</code>
+<code>      &lt;div class="col-sm-6"&gt;.col-sm-6&lt;/div&gt;</code>
+<code>      &lt;div class="col-sm-6"&gt;.col-sm-6&lt;/div&gt;</code>
+<code>    &lt;/div&gt;</code>
+<code>  &lt;/div&gt;</code>
+<code>  …</code>
+<code>  &lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>To understand this better, you will next explore how the responsive grid works.</p>
+               
+               <p>Bootstrap defines four classes of devices, and for each of them there is a different
+                  CSS class prefix:
+               </p>
+               
+               <ul class="check" id="c04-list-0006">
+                  
+                  <li id="c04-li-0019"><b>Extra small devices</b>, like smartphones, with a screen size smaller than 768px (<code>.col-xs-</code>)
+                  </li>
+                  
+                  <li id="c04-li-0020"><b>Small devices</b>, like tablets, with a screen size bigger than 768px but smaller than 992px (<code>.col-sm-</code>)
+                  </li>
+                  
+                  <li id="c04-li-0021"><b>Medium devices</b>, like normal laptops, with a screen size bigger than 992px but smaller than 1200px
+                     (<code>.col-md-</code>)
+                  </li>
+                  
+                  <li id="c04-li-0022"><b>Large devices</b>, like desktops, with a screen size bigger than 1200px (<code>.col-lg-</code>)
+                  </li>
+                  
+               </ul>
+               
+               <p>In <a href="#c04-fea-0002">Listing 4‐2</a> the size of columns was specified with class <code>.col-sm-*</code>, which means that everything smaller than 768px would get the default vertical stacked
+                  layout, as shown in <a href="#c04-fig-0002">Figure 4‐2</a>. To get the cells stacked for both smartphones and tablets but to be horizontal on
+                  desktops, the class <code>.col-md-*</code> should be used.
+               </p>
+               
+               <p>But more complicated layouts can be achieved by combining different classes. For example,
+                  if you do not want the smartphone version to stack horizontally but you want two columns
+                  per row, you can define this behavior by using <code>col-xs-6 col-sm-1</code>.
+               </p>
+               
+               <p>On the other hand, if you want the same layout in all device sizes, you just need
+                  to apply the class for the smallest size, and all bigger sizes will inherit it. For
+                  example, if you always want two columns per row, no matter the size, just apply <code>col-xs-6</code>. <a href="#c04-fea-0003">Listing 4‐3</a> shows an example of these approaches.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c04-fea-0003"></span> 
+                     
+                     <h2 id="head-2-83">LISTING 4-3: A More Complex Layout</h2>
+                     
+                     <section>
+                        <span id="c04-sec-0009"></span>
+                        
+                        <blockquote>
+                           <pre id="c04-code-0003"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>…</code>
+<code>&lt;body&gt;</code>
+<code>  &lt;div class="row"&gt;</code>
+<code><span epub:type="pagebreak" id="Page_103" title="103"></span>    &lt;div class="col-xs-6 col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>    &lt;div class="col-xs-6 col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>    &lt;div class="col-xs-6 col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>    &lt;div class="col-xs-6 col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>    &lt;div class="col-xs-6 col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>    &lt;div class="col-xs-6 col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>    &lt;div class="col-xs-6 col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>    &lt;div class="col-xs-6 col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>    &lt;div class="col-xs-6 col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>    &lt;div class="col-xs-6 col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>    &lt;div class="col-xs-6 col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>    &lt;div class="col-xs-6 col-sm-1"&gt;.col-sm-1&lt;/div&gt;</code>
+<code>  &lt;/div&gt;</code>
+<code>  &lt;div class="row"&gt;</code>
+<code>    &lt;div class="col-xs-6 col-sm-8"&gt;.col-sm-8&lt;/div&gt;</code>
+<code>    &lt;div class="col-xs-6 col-sm-4"&gt;.col-sm-4&lt;/div&gt;</code>
+<code>  &lt;/div&gt;</code>
+<code>  &lt;div class="row"&gt;</code>
+<code>    &lt;div class="col-xs-6 col-sm-4"&gt;.col-sm-4&lt;/div&gt;</code>
+<code>    &lt;div class="col-xs-6 col-sm-4"&gt;.col-sm-4&lt;/div&gt;</code>
+<code>    &lt;div class="col-xs-6 col-sm-4"&gt;.col-sm-4&lt;/div&gt;</code>
+<code>  &lt;/div&gt;</code>
+<code>  &lt;div class="row"&gt;</code>
+<code>    &lt;div class="col-xs-6"&gt;.col-sm-6&lt;/div&gt;</code>
+<code>    &lt;div class="col-xs-6"&gt;.col-sm-6&lt;/div&gt;</code>
+<code>  &lt;/div&gt;</code>
+<code>  …</code>
+<code>  &lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>The grid system supports other interesting features. For example, you can specify
+                  an offset if there is the need to add a margin to a row, you can nest columns inside
+                  rows, and you can change the order in which columns are displayed.
+               </p>
+               
+               <p>This last feature is very important if the order in which columns appear in the horizontal
+                  layout is different from the order in the vertically stacked layout. The right sidebar
+                  is an example of this. Columns are stacked in the same order in which they appear
+                  in code, so normally a right sidebar would go below the content on the bottom of the
+                  page, which is not what you want. Bootstrap provides the classes <code>.col-*-push-*</code> and <code>.col-*-pull-*</code> to change this behavior. When applied to a column, they respectively push it to the
+                  right or pull it to the left.
+               </p>
+               
+               <p><a href="#c04-fea-0004">Listing 4‐4</a> shows the scenario of a right sidebar that goes on top of the content in the smartphone
+                  view. Notice that the columns are arranged in the desired order for the vertically
+                  stacked view, and the classes change their behavior for tablets and larger device
+                  sizes.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c04-fea-0004"></span> 
+                     
+                     <h2 id="head-2-84">LISTING 4-4: Column Reordering</h2>
+                     
+                     <section>
+                        <span id="c04-sec-0010"></span>
+                        
+                        <blockquote>
+                           <pre id="c04-code-0004"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>…</code>
+<code>&lt;body&gt;</code>
+<code>  &lt;div class="row"&gt;</code>
+<code>    &lt;div class="col-sm-4 col-sm-push-8"&gt;Sidebar&lt;/div&gt;</code>
+<code>    &lt;div class="col-sm-8 col-sm-pull-4"&gt;Content&lt;/div&gt;</code>
+<code>  &lt;/div&gt;</code>
+<code>  …</code>
+<code>  &lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p><span epub:type="pagebreak" id="Page_104" title="104"></span>Other useful classes, still related to responsive design even if not specifically
+                  to the grid system, are the ones that hide elements based on screen size. They are:
+               </p>
+               
+               <ul class="check" id="c04-list-0007">
+                  
+                  <li id="c04-li-0023"><code>.visible-xs-*</code> shows an element only in a specific device size (a smartphone in this case). In this
+                     case <code>*</code> is not the number of columns but how the visibility has to be applied (<code>block</code>, <code>inline</code>, <code>inline-block</code>).
+                  </li>
+                  
+                  <li id="c04-li-0024"><code>.hidden-xs</code> hides an element for the specific device size.
+                  </li>
+                  
+               </ul>
+               
+               <p>Another possibility is to hide an element when a page is printed:</p>
+               
+               <ul class="check" id="c04-list-0008">
+                  
+                  <li id="c04-li-0025"><code>.visible-print-*</code> shows the element only when printing.
+                  </li>
+                  
+                  <li id="c04-li-0026"><code>.hidden-print</code> hides the element during printing.
+                  </li>
+                  
+               </ul>
+               
+            </section>
+            
+            <section>
+               <span id="c04-sec-0011"></span>
+               
+               <h3 id="head-3-65">Typography</h3>
+               
+               <p>As shown at the beginning of the chapter in <a href="#c04-fig-0001">Figure 4‐1</a>, just by adding the Bootstrap library, the <code>H1</code> started looking more modern. This enhancement works not just for headers but also
+                  for all the other standard HTML elements. There is no need to use any special syntax,
+                  just the standard HTML tags.
+               </p>
+               
+               <p>For example, the <code>blockquote</code> element is rendered as in <a href="#c04-fig-0003" id="R_c04-fig-0003">Figure 4‐3</a>. The code used to achieve it is shown in <a href="#c04-fea-0005">Listing 4‐5</a>.
+               </p>
+               
+               <figure> <img alt="Illustration of a Blockquote." src="images/c04f003.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c04-fig-0003" id="c04-fig-0003"><b>FIGURE 4-3</b></a><b>:</b></span> Blockquote
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c04-fea-0005"></span> 
+                     
+                     <h2 id="head-2-85">LISTING 4-5: Blockquote</h2>
+                     
+                     <section>
+                        <span id="c04-sec-0012"></span>
+                        
+                        <blockquote>
+                           <pre id="c04-code-0005"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>…</code>
+<code>&lt;body&gt;</code>
+<code></code>
+<code>  &lt;blockquote&gt;</code>
+<code>    &lt;p&gt;So, to a certain degree, every web developer is already a polyglot developer.&lt;/p&gt;</code>
+<code><span epub:type="pagebreak" id="Page_105" title="105"></span>    &lt;footer&gt;Simone Chiaretta in &lt;cite title="Front-end development with ASP.NET Core, Angular, and Bootstrap"&gt;Front-end development with ASP.NET Core, Angular, and Bootstrap&lt;/cite&gt;&lt;/footer&gt;</code>
+<code>  &lt;/blockquote&gt;</code>
+<code>  …</code>
+<code>  &lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>Code listings also get a style boost with the Bootstrap library. <a href="#c04-fig-0004" id="R_c04-fig-0004">Figure 4‐4</a> shows what happens when the <code>&lt;code&gt;</code> and <code>&lt;pre&gt;</code> elements are used.
+               </p>
+               
+               <figure> <img alt="Illustration of Code Formatting." src="images/c04f004.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c04-fig-0004" id="c04-fig-0004"><b>FIGURE 4-4</b></a><b>:</b></span> Code formatting
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+            </section>
+            
+            <section>
+               <span id="c04-sec-0013"></span>
+               
+               <h3 id="head-3-66">Tables</h3>
+               
+               <p>Unlike the other HTML elements, which get the Bootstrap styles without any class required,
+                  tables need a class to be specified. This is because applying styles to all tables
+                  will cause problems when they are used in many UI components such as calendars or
+                  date pickers.
+               </p>
+               
+               <p>All that is needed to apply the Bootstrap styles is adding the <code>.table</code> class to the <code>&lt;table&gt;</code> element. This will render a standard table with horizontal dividers between rows.
+                  There are also a few additional classes for different styles of tables:
+               </p>
+               
+               <ul class="check" id="c04-list-0009">
+                  
+                  <li id="c04-li-0027"><code>.table-striped</code> adds a gray background to alternate rows.
+                  </li>
+                  
+                  <li id="c04-li-0028"><code>.table-bordered</code> adds a border to the table itself and all cells.
+                  </li>
+                  
+                  <li id="c04-li-0029"><code>.table-hover</code> adds a roll-over to rows.
+                  </li>
+                  
+                  <li id="c04-li-0030"><code>.table-condensed</code> reduces the padding between rows, making the visualization a bit more compact.
+                  </li>
+                  
+               </ul>
+               
+               <p>In addition to these table-related classes, there are also row- and cell-specific
+                  classes to indicate whether the row represents information <code>(.info</code>), a warning <code>(.warning</code>), a danger <code>(.danger</code>), or the success of an operation (<code>.success</code>).
+               </p>
+               
+               <p>Finally, by wrapping a table in <code>&lt;div class="table-responsive"&gt;</code>, a horizontal scrollbar will appear with screen sizes smaller than 768px.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c04-sec-0014"></span>
+               
+               <h3 id="head-3-67"><span epub:type="pagebreak" id="Page_106" title="106"></span>Forms
+               </h3>
+               
+               <p>Another area where Bootstrap brings a lot of enhancement is forms and form fields.
+                  Similar to tables, forms require a class to be specified. Every field of the form
+                  must have a <code>.form-control</code> class and must be enclosed, together with its label and optional help, into an element
+                  with the class <code>.form-group</code>. These classes put fields at 100% width, apply optimal spacing, and show labels and
+                  help text in an appropriate style, as is shown in <a href="#c04-fig-0005" id="R_c04-fig-0005">Figure 4‐5</a>. (<a href="#c04-fea-0006">Listing 4‐6</a> is the code used to render that login form.)
+               </p>
+               
+               <figure> <img alt="Illustration of Login Form." src="images/c04f005.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c04-fig-0005" id="c04-fig-0005"><b>FIGURE 4-5</b></a><b>:</b></span> Login form
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c04-fea-0006"></span> 
+                     
+                     <h2 id="head-2-86">LISTING 4-6: Code for Login Form</h2>
+                     
+                     <section>
+                        <span id="c04-sec-0015"></span>
+                        
+                        <blockquote>
+                           <pre id="c04-code-0006"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>…</code>
+<code>&lt;body&gt;</code>
+<code>  &lt;form&gt;</code>
+<code>    &lt;div class="form-group"&gt;</code>
+<code>      &lt;label for="email"&gt;Email address&lt;/label&gt; </code>
+<code>      &lt;input type="email" class="form-control" id="email" placeholder="Email"&gt;</code>
+<code>      &lt;p class="help-block"&gt;The username is your email address&lt;/p&gt;</code>
+<code>    &lt;/div&gt;</code>
+<code>    &lt;div class="form-group"&gt;</code>
+<code>      &lt;label for="password"&gt;Password&lt;/label&gt; </code>
+<code>      &lt;input type="password" class="form-control" id="password"</code>
+<code>             placeholder="Password"&gt;</code>
+<code>    &lt;/div&gt;</code>
+<code>    &lt;button type="submit" class="btn btn-default"&gt;Submit&lt;/button&gt;</code>
+<code>  &lt;/form&gt;</code>
+<code>  …</code>
+<code>  &lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p><span epub:type="pagebreak" id="Page_107" title="107"></span>Two classes exist to change the layout of forms: <code>.form-inline</code> puts all fields on the same line, and <code>.form-horizontal</code> puts the label and field on the same line and each form group on a different row.
+                  When you use a second class, the form layout uses the grid layout described at the
+                  beginning of the chapter, so the number of columns used by the label and input box
+                  can be specified using the same class names.
+               </p>
+               
+               <p>Fields can also be styled according to their state or validation result. When you
+                  apply the <code>disabled</code> boolean attribute to disable an input element, this element will be also grayed out.
+                  To achieve the same visual effect without actually disabling the input element, apply
+                  the <code>readonly</code> attribute.
+               </p>
+               
+               <p>To show the validation result for a field, apply the validation-related classes to
+                  the form-group element. These classes are <code>.has-success</code> to indicate the validation is okay, <code>.has-error</code> to indicate a validation error, and <code>.has-warning</code> for something in between.
+               </p>
+               
+               <blockquote>
+                  <pre id="c04-code-0007"><code>&lt;div class="form-group <b>has-success</b>"&gt;</code>
+<code>  &lt;label for="email"&gt;Email address&lt;/label&gt; </code>
+<code>  &lt;input type="email" class="form-control" id="email" placeholder="Email"&gt;</code>
+<code>  &lt;p class="help-block"&gt;The username is your email address&lt;/p&gt;</code>
+<code>&lt;/div&gt;</code> </pre>
+                  </blockquote>
+               
+            </section>
+            
+            <section>
+               <span id="c04-sec-0016"></span>
+               
+               <h3 id="head-3-68">Buttons</h3>
+               
+               <p>Bootstrap also provides classes to style buttons, just by applying <code>.btn</code> to the <code>&lt;button&gt;</code> element.
+               </p>
+               
+               <p>You can use classes in combination with <code>.btn</code> to change the semantics of buttons. You can use <code>.btn-primary</code> to identify the main button on the form, <code>.btn-success</code> to identify a positive action, or <code>.btn-danger</code> for actions leading to dangerous outcomes (such as unrecoverable delete operations).
+               </p>
+               
+               <p>There also exist modifiers for making buttons bigger or smaller.You can use <code>.btn-lg</code>, <code>.btn-sm</code>, <code>.btn-xs</code>, or <code>.btn-block</code> to make the button take over all the width of the parent element.
+               </p>
+               
+               <p>To see all the classes available in Bootstrap, see the official documentation on the
+                  Bootstrap website.
+               </p>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c04-sec-0017"></span>
+            
+            <h2 id="head-2-87">COMPONENTS</h2>
+            
+            <p>The second level of features provided by Bootstrap is Components. They are made of
+               HTML snippets that are enhanced by Bootstrap’s own JavaScript plugins. There are 21
+               components available in Bootstrap, from small features like glyphs, badges, and alerts
+               to bigger UI controls like navigation bars, dropdowns, pagination, and input fields.
+               It’s impossible to cover them all in this short introductory chapter, so the next
+               pages just cover a few of them. I suggest you to read the official documentation to
+               see how they work.
+            </p>
+            
+            <section>
+               <span id="c04-sec-0018"></span>
+               
+               <h3 id="head-3-69">Glyphicons</h3>
+               
+               <p>Bootstrap includes more than 250 Halfling Glyphicons for free. Glyphs are lightweight
+                  icons implemented via web fonts and CSS classes. To use them in your page, you have
+                  to add a <code>&lt;span&gt;</code> element with the relevant glyph class. The only important rule to remember is that
+                  CSS classes for glyphs have to be used on their own element without any other class
+                  applied and without nested elements. <span epub:type="pagebreak" id="Page_108" title="108"></span><a href="#c04-fea-0007">Listing 4‐7</a> shows the code needed to create the confirm button of <a href="#c04-fig-0006" id="R_c04-fig-0006">Figure 4‐6</a>, which basically is a glyph inside a button together with a caption.
+               </p>
+               
+               <figure> <img alt="Illustration of Confi rm Button." src="images/c04f006.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c04-fig-0006" id="c04-fig-0006"><b>FIGURE 4-6</b></a><b>:</b></span> Confirm Button
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c04-fea-0007"></span> 
+                     
+                     <h2 id="head-2-88">LISTING 4-7: Confirm Button</h2>
+                     
+                     <section>
+                        <span id="c04-sec-0019"></span>
+                        
+                        <blockquote>
+                           <pre id="c04-code-0008"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>…</code>
+<code>&lt;body&gt;</code>
+<code></code>
+<code>  &lt;button type="button" class="btn btn-success btn-lg"&gt;</code>
+<code>     &lt;span class="glyphicon glyphicon-ok-circle" &gt;&lt;/span&gt; Confirm</code>
+<code>  &lt;/button&gt;</code>
+<code>  …</code>
+<code>  &lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+            <section>
+               <span id="c04-sec-0020"></span>
+               
+               <h3 id="head-3-70">Dropdown</h3>
+               
+               <p>One of the most important UI components is the drop-down menu. In Bootstrap a dropdown
+                  has a slightly different connotation, though. It is not meant to be used to select
+                  a value, like in the HTML <code>select</code> element, but more like a menu with items.
+               </p>
+               
+               <p>A dropdown is made of two parts. The first is the trigger, which, when clicked, will
+                  open the menu. The second is the <code>&lt;ul&gt;</code> with the items of the menu. These two elements have to be put inside an element with
+                  the <code>.dropdown</code> class. <a href="#c04-fea-0008">Listing 4‐8</a> shows an example of a dropdown menu.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c04-fea-0008"></span> 
+                     
+                     <h2 id="head-2-89">LISTING 4-8: Dropdown Menu</h2>
+                     
+                     <section>
+                        <span id="c04-sec-0021"></span>
+                        
+                        <blockquote>
+                           <pre id="c04-code-0009"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>…</code>
+<code>&lt;body&gt;</code>
+<code><span epub:type="pagebreak" id="Page_109" title="109"></span>  &lt;div class="dropdown"&gt;</code>
+<code>    &lt;button class="btn btn-default dropdown-toggle" type="button"</code>
+<code>            data-toggle="dropdown"&gt;</code>
+<code>      User Profile</code>
+<code>      &lt;span class="caret"&gt;&lt;/span&gt;</code>
+<code>    &lt;/button&gt;</code>
+<code>    &lt;ul class="dropdown-menu" aria-labelledby="dropdownMenu1"&gt;</code>
+<code>      &lt;li class="dropdown-header"&gt;Settings&lt;/li&gt;</code>
+<code>      &lt;li&gt;&lt;a href="#"&gt;Update password&lt;/a&gt;&lt;/li&gt;</code>
+<code>      &lt;li&gt;&lt;a href="#"&gt;Update profile&lt;/a&gt;&lt;/li&gt;</code>
+<code>      &lt;li class="disabled"&gt;&lt;a href="#"&gt;Payment information&lt;/a&gt;&lt;/li&gt;</code>
+<code>      &lt;li role="separator" class="divider"&gt;&lt;/li&gt;</code>
+<code>      &lt;li&gt;&lt;a href="#"&gt;Logout&lt;/a&gt;&lt;/li&gt;</code>
+<code>    &lt;/ul&gt;</code>
+<code>  &lt;/div&gt;</code>
+<code>  …</code>
+<code>  &lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p><a href="#c04-fea-0008">Listing 4‐8</a> also shows other optional elements for the dropdown:
+               </p>
+               
+               <ul class="check" id="c04-list-0010">
+                  
+                  <li id="c04-li-0031">A header, specified with the <code>.dropdown-header</code> class
+                  </li>
+                  
+                  <li id="c04-li-0032">A disabled link, applying the class <code>.disabled</code></li>
+                  
+                  <li id="c04-li-0033">A divider to separate links, using the <code>.divider</code> class
+                  </li>
+                  
+               </ul>
+               
+               <p><a href="#c04-fig-0007" id="R_c04-fig-0007">Figure 4‐7</a> shows the menu with all the optional elements.
+               </p>
+               
+               <figure> <img alt="Illustration of User Profi le dropdown menu." src="images/c04f007.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c04-fig-0007" id="c04-fig-0007"><b>FIGURE 4-7</b></a><b>:</b></span> User Profile dropdown menu
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+            </section>
+            
+            <section>
+               <span id="c04-sec-0022"></span>
+               
+               <h3 id="head-3-71">Input Groups</h3>
+               
+               <p>The most important concern of every developer should be to make it easier for the
+                  users of web apps to enter data. The input group is a component that helps with that
+                  by extending the standard input field and adding text, symbols, or buttons before
+                  and after the field itself.
+               </p>
+               
+               <p><span epub:type="pagebreak" id="Page_110" title="110"></span>An input group is defined by a container element marked with the class <code>.input-group</code>. This class includes a <code>&lt;span&gt;</code> element with the class <code>.input-group-addon</code> if the add-on is text or <code>.input-group-btn</code> if it’s a button, and the actual input field, with the class <code>.form-control</code>.
+               </p>
+               
+               <p>Only one add-on per side is allowed.</p>
+               
+               <p><a href="#c04-fea-0009">Listing 4‐9</a> shows all the various options. Notice that the button can also be used as a trigger
+                  for a dropdown menu (shown in <a href="#c04-fig-0008" id="R_c04-fig-0008">Figure 4‐8</a>).
+               </p>
+               
+               <figure> <img alt="Illustration of Various samples of input groups." src="images/c04f008.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c04-fig-0008" id="c04-fig-0008"><b>FIGURE 4-8</b></a><b>:</b></span> Various samples of input groups
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c04-fea-0009"></span> 
+                     
+                     <h2 id="head-2-90">LISTING 4-9: Various Samples of Input Groups</h2>
+                     
+                     <section>
+                        <span id="c04-sec-0023"></span>
+                        
+                        <blockquote>
+                           <pre id="c04-code-0010"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>…</code>
+<code>&lt;body&gt;</code>
+<code>  &lt;div class="input-group"&gt;</code>
+<code>    &lt;span class="input-group-addon"&gt;http://twitter.com/&lt;/span&gt;</code>
+<code>    &lt;input type="text" class="form-control" placeholder="Twitter Handle"&gt;</code>
+<code>  &lt;/div&gt;</code>
+<code></code>
+<code>  &lt;div class="input-group"&gt;</code>
+<code>    &lt;input type="text" class="form-control" placeholder="Email"&gt;</code>
+<code>    &lt;span class="input-group-addon"&gt;@example.com&lt;/span&gt;</code>
+<code>  &lt;/div&gt;</code>
+<code></code>
+<code>  &lt;div class="input-group"&gt;</code>
+<code>    &lt;input type="text" class="form‐control" placeholder="Search for…"&gt;</code>
+<code>    &lt;span class="input-group-btn"&gt;</code>
+<code>      &lt;button type="button" class="btn btn-default dropdown-toggle"</code>
+<code>              data-toggle="dropdown"&gt;Search &lt;span class="caret"&gt;&lt;/span&gt;</code>
+<code>      &lt;/button&gt;</code>
+<code>      &lt;ul class="dropdown-menu dropdown-menu-right"&gt;</code>
+<code>        &lt;li&gt;&lt;a href="#"&gt;Races&lt;/a&gt;&lt;/li&gt;</code>
+<code>        &lt;li&gt;&lt;a href="#"&gt;Athletes&lt;/a&gt;&lt;/li&gt;</code>
+<code>        &lt;li&gt;&lt;a href="#"&gt;News&lt;/a&gt;&lt;/li&gt;</code>
+<code>      &lt;/ul&gt;</code>
+<code>    &lt;/span&gt;</code>
+<code>  &lt;/div&gt;</code>
+<code>  …</code>
+<code>  &lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+            <section>
+               <span id="c04-sec-0024"></span>
+               
+               <h3 id="head-3-72">Navigation</h3>
+               
+               <p>Well-designed navigation can mark the difference between a successful UI and an unusable
+                  site. Bootstrap provides components for various type of navigation UIs. They all share
+                  the same approach as they are all wrapped inside a <code>&lt;nav&gt;</code> element, and the elements of the navigation are all items of an HTML list.
+               </p>
+               
+               <section>
+                  <span id="c04-sec-0025"></span>
+                  
+                  <h4 id="head-4-24"><span epub:type="pagebreak" id="Page_111" title="111"></span>Navigation Bar
+                  </h4>
+                  
+                  <p>Probably the most well known Bootstrap component, easily recognizable from Twitter’s
+                     UI a few years ago, is the navigation bar. This component acts as a responsive container
+                     for all the other elements and components that can be used in an application’s main
+                     navigation bar.
+                  </p>
+                  
+                  <p>The container for navbar is marked with the <code>.navbar</code> class. It includes the bar header, which is a <code>&lt;div&gt;</code> element with the class <code>.navbar-header</code> that can be either an image or simply the name of the app. All elements of the bar
+                     are simply <code>&lt;li&gt;</code> items inside a <code>&lt;ul class="nav navbar-nav"&gt;</code> list element, and each of them can contain a normal link or a nested list if a submenu
+                     (achieved with a dropdown menu) is needed. <a href="#c04-fig-0009" id="R_c04-fig-0009">Figure 4‐9</a> shows a complete bar that also includes a form element.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of a navbar." src="images/c04f009.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c04-fig-0009" id="c04-fig-0009"><b>FIGURE 4-9</b></a><b>:</b></span> Example of navbar
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <p><span epub:type="pagebreak" id="Page_112" title="112"></span>One interesting feature is the fact that the navbar can be configured to collapse
+                     into a vertical mobile menu when the screen is smaller than 768px. (See <a href="#c04-fig-0010" id="R_c04-fig-0010">Figure 4‐10</a>.) To enable this feature, a button for opening and closing the bar must be put into
+                     the header area of the bar, and the list that contains the items must be put inside
+                     a collapsible element.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Responsive navbar, both open and collapsed." src="images/c04f010.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c04-fig-0010" id="c04-fig-0010"><b>FIGURE 4-10</b></a><b>:</b></span> Responsive navbar, both open and collapsed
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <p><a href="#c04-fea-0010">Listing 4‐10</a> shows all the basic features of the navbar, including how to mark an element as active.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c04-fea-0010"></span> 
+                        
+                        <h2 id="head-2-91">LISTING 4-10: Responsive navbar</h2>
+                        
+                        <section>
+                           <span id="c04-sec-0026"></span>
+                           
+                           <blockquote>
+                              <pre id="c04-code-0011"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>…</code>
+<code>&lt;body&gt;</code>
+<code>  &lt;nav class="navbar navbar-default"&gt;</code>
+<code>    &lt;div class="container-fluid"&gt;</code>
+<code>      &lt;div class="navbar-header"&gt;</code>
+<code>        &lt;button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-navbar-collapse-1" aria-expanded="false"&gt;</code>
+<code>         &lt;span class="icon-bar"&gt;&lt;/span&gt;</code>
+<code>         &lt;span class="icon-bar"&gt;&lt;/span&gt;</code>
+<code>         &lt;span class="icon-bar"&gt;&lt;/span&gt;</code>
+<code>        &lt;/button&gt;</code>
+<code>        &lt;a class="navbar-brand" href="#"&gt;MyApp&lt;/a&gt;</code>
+<code>      &lt;/div&gt;</code>
+<code></code>
+<code>      &lt;div class="collapse navbar-collapse" id="example-navbar-collapse-1"&gt;</code>
+<code>        &lt;ul class="nav navbar-nav"&gt;</code>
+<code>          &lt;li class="active"&gt;&lt;a href="#"&gt;Messages&lt;/a&gt;&lt;/li&gt;</code>
+<code>          &lt;li&gt;&lt;a href="#"&gt;Feed&lt;/a&gt;&lt;/li&gt;</code>
+<code>        &lt;/ul&gt;</code>
+<code><span epub:type="pagebreak" id="Page_113" title="113"></span>        &lt;form class="navbar-form navbar-left" role="search"&gt;</code>
+<code>          &lt;div class="form-group"&gt;</code>
+<code>            &lt;input type="text" class="form-control" placeholder="Search"&gt;</code>
+<code>          &lt;/div&gt;</code>
+<code>          &lt;button type="submit" class="btn btn-default"&gt;Submit&lt;/button&gt;</code>
+<code>        &lt;/form&gt;</code>
+<code>        &lt;ul class="nav navbar-nav navbar-right"&gt;</code>
+<code>          &lt;li class="dropdown"&gt;</code>
+<code>            &lt;a class="dropdown-toggle" type="button" data-toggle="dropdown"&gt;</code>
+<code>              User Profile</code>
+<code>              &lt;span class="caret"&gt;&lt;/span&gt;</code>
+<code>            &lt;/a&gt;</code>
+<code>            &lt;ul class="dropdown-menu" aria-labelledby="dropdownMenu1"&gt;</code>
+<code>              &lt;li class="dropdown-header"&gt;Settings&lt;/li&gt;</code>
+<code>              &lt;li&gt;&lt;a href="#"&gt;Update password&lt;/a&gt;&lt;/li&gt;</code>
+<code>              &lt;li&gt;&lt;a href="#"&gt;Update profile&lt;/a&gt;&lt;/li&gt;</code>
+<code>              &lt;li class="disabled"&gt;&lt;a href="#"&gt;Payment information&lt;/a&gt;&lt;/li&gt;</code>
+<code>              &lt;li role="separator" class="divider"&gt;&lt;/li&gt;</code>
+<code>              &lt;li&gt;&lt;a href="#"&gt;Logout&lt;/a&gt;&lt;/li&gt;</code>
+<code>            &lt;/ul&gt;</code>
+<code>          &lt;/li&gt;</code>
+<code>        &lt;/ul&gt;</code>
+<code>      &lt;/div&gt;</code>
+<code>    &lt;/div&gt;</code>
+<code>  &lt;/nav&gt;</code>
+<code>  …</code>
+<code>  &lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p>The navbar has many other options, which can be found by reading the official Bootstrap
+                     documentation on their website.
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c04-sec-0027"></span>
+                  
+                  <h4 id="head-4-25">Pagination</h4>
+                  
+                  <p>The pagination component is used to move through the pages of a listing. In this case
+                     the list element needs to have the <code>.pagination</code> class. All the pages of the control are normal list items that can be disabled by
+                     applying the <code>.disabled</code> class or marked as active with the <code>.active</code> class.
+                  </p>
+                  
+                  <p><a href="#c04-fea-0011">Listing 4‐11</a> shows the code for the pagination control, and <a href="#c04-fig-0011" id="R_c04-fig-0011">Figure 4‐11</a> shows how it appears.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Pagination control." src="images/c04f011.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c04-fig-0011" id="c04-fig-0011"><b>FIGURE 4-11</b></a><b>:</b></span> Pagination control
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c04-fea-0011"></span> 
+                        
+                        <h2 id="head-2-92">LISTING 4-11: Pagination Control</h2>
+                        
+                        <section>
+                           <span id="c04-sec-0028"></span>
+                           
+                           <blockquote>
+                              <pre id="c04-code-0012"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>…</code>
+<code>&lt;body&gt;</code>
+<code>  &lt;nav&gt;</code>
+<code>    &lt;ul class="pagination"&gt;</code>
+<code>      &lt;li class="disabled"&gt;&lt;a href="#"&gt;&lt;span&gt;&amp;laquo;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</code>
+<code>      &lt;li class="active"&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;</code>
+<code>      &lt;li&gt;&lt;a href="#"&gt;2&lt;/a&gt;&lt;/li&gt;</code>
+<code>      &lt;li&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;/li&gt;</code>
+<code><span epub:type="pagebreak" id="Page_114" title="114"></span>      &lt;li&gt;&lt;a href="#"&gt;4&lt;/a&gt;&lt;/li&gt;</code>
+<code>      &lt;li&gt;&lt;a href="#"&gt;5&lt;/a&gt;&lt;/li&gt;</code>
+<code>      &lt;li&gt;&lt;a href="#"&gt;&lt;span&gt;&amp;raquo;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</code>
+<code>    &lt;/ul&gt;</code>
+<code>  &lt;/nav&gt;</code>
+<code>  …</code>
+<code>  &lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+               </section>
+               
+               <section>
+                  <span id="c04-sec-0029"></span>
+                  
+                  <h4 id="head-4-26">Breadcrumbs</h4>
+                  
+                  <p>Breadcrumbs help users to find their way in hierarchical content structures as shown
+                     in <a href="#c04-fig-0012" id="R_c04-fig-0012">Figure 4‐12</a>. Compared to the navbar this element is pretty easy, as it doesn’t require anything
+                     more than an ordered list with the class <code>.breadcrumb</code>, as shown in <a href="#c04-fea-0012">Listing 4‐12</a>.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Breadcrumb." src="images/c04f012.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c04-fig-0012" id="c04-fig-0012"><b>FIGURE 4-12</b></a><b>:</b></span> Breadcrumb
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c04-fea-0012"></span> 
+                        
+                        <h2 id="head-2-93">LISTING 4-12: Breadcrumb</h2>
+                        
+                        <section>
+                           <span id="c04-sec-0030"></span>
+                           
+                           <blockquote>
+                              <pre id="c04-code-0013"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>…</code>
+<code><span epub:type="pagebreak" id="Page_115" title="115"></span>&lt;body&gt;</code>
+<code>&lt;ol class="breadcrumb"&gt;</code>
+<code>  &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;</code>
+<code>  &lt;li&gt;&lt;a href="#"&gt;Profile&lt;/a&gt;&lt;/li&gt;</code>
+<code>  &lt;li class="active"&gt;Connections&lt;/li&gt;</code>
+<code>&lt;/ol&gt;</code>
+<code>  …</code>
+<code>  &lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+               </section>
+               
+               <section>
+                  <span id="c04-sec-0031"></span>
+                  
+                  <h4 id="head-4-27">Tabs and Pills</h4>
+                  
+                  <p>Another type of navigation is in-page navigation. In-page navigation is usually implemented
+                     with tabs or pills. <a href="#c04-fea-0013">Listing 4‐13</a> shows how tabs are implemented.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c04-fea-0013"></span> 
+                        
+                        <h2 id="head-2-94">LISTING 4-13: Tabbed Navigation</h2>
+                        
+                        <section>
+                           <span id="c04-sec-0032"></span>
+                           
+                           <blockquote>
+                              <pre id="c04-code-0014"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>…</code>
+<code>&lt;body&gt;</code>
+<code>  &lt;ul class="nav nav-tabs"&gt;</code>
+<code>   &lt;li role="presentation" class="active"&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;</code>
+<code>   &lt;li role="presentation"&gt;&lt;a href="#profile"&gt;Profile&lt;/a&gt;&lt;/li&gt;</code>
+<code>   &lt;li role="presentation"&gt;&lt;a href="#messages"&gt;Messages&lt;/a&gt;&lt;/li&gt;</code>
+<code>  &lt;/ul&gt;</code>
+<code>  …</code>
+<code>  &lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p>To create pills navigation, just replace the class with <code>.nav-pills</code>. <a href="#c04-fig-0013" id="R_c04-fig-0013">Figure 4‐13</a> shows the two different in-page navigation options.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Tabs and Pills navigation." src="images/c04f013.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c04-fig-0013" id="c04-fig-0013"><b>FIGURE 4-13</b></a><b>:</b></span> Tabs and Pills navigation
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <p>As shown later in this chapter, these two types of navigation can be enhanced using
+                     the Bootstrap JavaScript library to automatically switch panes when clicking on the
+                     items.
+                  </p>
+                  
+               </section>
+               
+            </section>
+            
+            <section>
+               <span id="c04-sec-0033"></span>
+               
+               <h3 id="head-3-73"><span epub:type="pagebreak" id="Page_116" title="116"></span>Other Components
+               </h3>
+               
+               <p>You can also use Bootstrap to create other components, including labels, badges, and
+                  alerts. <a href="#c04-fea-0014">Listing 4‐14</a> shows some code that you can use to render these other basic Bootstrap components,
+                  which are shown in <a href="#c04-fig-0014" id="R_c04-fig-0014">Figure 4‐14</a>.
+               </p>
+               
+               <figure> <img alt="Illustration of Labels, Badges, and Alerts screen." src="images/c04f014.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c04-fig-0014" id="c04-fig-0014"><b>FIGURE 4-14</b></a><b>:</b></span> Labels, Badges, and Alerts
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c04-fea-0014"></span> 
+                     
+                     <h2 id="head-2-95">LISTING 4-14: Labels, Badges, and Alerts</h2>
+                     
+                     <section>
+                        <span id="c04-sec-0034"></span>
+                        
+                        <blockquote>
+                           <pre id="c04-code-0015"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>…</code>
+<code>&lt;body&gt;</code>
+<code></code>
+<code>    &lt;!-- Label --&gt;</code>
+<code>    &lt;p&gt;Your password is about to expire &lt;span class="label label-warning"&gt;Warning&lt;/span&gt;&lt;/p&gt;</code>
+<code>    &lt;!-- Badage --&gt;</code>
+<code>    &lt;p&gt;Messages &lt;span class="badge"&gt;4&lt;/span&gt;&lt;/p&gt;</code>
+<code>    &lt;!-- Alert --&gt;</code>
+<code>    &lt;div class="alert alert-danger" role="alert"&gt;Your order couldn't be processed due to an error in our system.&lt;/div&gt;</code>
+<code></code>
+<code>  …</code>
+<code>  &lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c04-sec-0035"></span>
+            
+            <h2 id="head-2-96">JAVASCRIPT</h2>
+            
+            <p>The final level of enhancement brought by Bootstrap is its JavaScript plugins library.
+               Some of the plugins are automatically used to bring some of the components, like the
+               dropdown menu or tabbed navigation, to life. Others are pure JavaScript APIs that
+               can be used autonomously.
+            </p>
+            
+            <p><span epub:type="pagebreak" id="Page_117" title="117"></span>This chapter does not cover the JavaScript plugins library in detail and mainly focuses
+               on some simple usages of the API, because the usage of JavaScript plugins library
+               in Bootstrap is quite advanced and is beyond the scope of this book.
+            </p>
+            
+            <section>
+               <span id="c04-sec-0036"></span>
+               
+               <h3 id="head-3-74">Tabbed Content</h3>
+               
+               <p>Tabbed navigation was explained earlier in this chapter. With the help of the Toggable
+                  Tabs plugin, the navigation can open and close the various panes. This can be achieved
+                  in two different ways: via JavaScript or just by the usage of markup and data attributes.
+               </p>
+               
+               <section>
+                  <span id="c04-sec-0037"></span>
+                  
+                  <h4 id="head-4-28">Activating Tab Navigation with JavaScript</h4>
+                  
+                  <p>After setting up the tab navigation as in <a href="#c04-fea-0013">Listing 4‐13</a>, the panes must be created. They are just simple <code>&lt;div&gt;</code> elements that specify <code>role="tabpanel"</code>.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c04-code-0016"><code>&lt;div class="tab-content"&gt;</code>
+<code>  &lt;div role="tabpanel" class="tab-pane active" id="home"&gt;Home&lt;/div&gt;</code>
+<code>  &lt;div role="tabpanel" class="tab-pane" id="profile"&gt;Profile&lt;/div&gt;</code>
+<code>  &lt;div role="tabpanel" class="tab-pane" id="messages"&gt;Messages&lt;/div&gt;</code>
+<code>&lt;/div&gt;</code> </pre>
+                     </blockquote>
+                  
+                  <p>Notice that the IDs of the panes match the anchors in the links used in the navigation.
+                     This is very important because the JavaScript function that is used to open a pane,
+                     <code>.tab('show')</code>, relies on the <code>href</code> in the links and the <code>id</code> in the panes to be the same. This method has to be called as the click event of the
+                     link, like <code>$('#myTabs a[href="#profile"]').tab('show')</code>, to enable the tab feature on the profile link.
+                  </p>
+                  
+                  <p>A better approach would be to enable the tab feature on all links using a simple JQuery
+                     selector. <a href="#c04-fea-0015">Listing 4‐15</a> shows the complete code for tabs activated via jQuery.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c04-fea-0015"></span> 
+                        
+                        <h2 id="head-2-97">LISTING 4-15: Tabbed Navigation with JavaScript</h2>
+                        
+                        <section>
+                           <span id="c04-sec-0038"></span>
+                           
+                           <blockquote>
+                              <pre id="c04-code-0017"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>…</code>
+<code>  &lt;body&gt;</code>
+<code></code>
+<code>    &lt;ul id="myTabs" class="nav nav-tabs"&gt;</code>
+<code>      &lt;li role="presentation" class="active"&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;</code>
+<code>      &lt;li role="presentation"&gt;&lt;a href="#profile"&gt;Profile&lt;/a&gt;&lt;/li&gt;</code>
+<code>      &lt;li role="presentation"&gt;&lt;a href="#messages"&gt;Messages&lt;/a&gt;&lt;/li&gt;</code>
+<code>    &lt;/ul&gt;</code>
+<code></code>
+<code>    <b>&lt;div class="tab‐content"&gt;</b></code>
+<code>       <b>&lt;div role="tabpanel" class="tab‐pane active" id="home"&gt;Homediv&gt;</b></code>
+<code>       <b>&lt;div role="tabpanel" class="tab‐pane" id="profile"&gt;Profilediv&gt;</b></code>
+<code>       <b>&lt;div role="tabpanel" class="tab‐pane" id="messages"&gt;Messages&lt;/div&gt;</b></code>
+<code>     <b>&lt;/div&gt;</b></code>
+<code></code>
+<code><span epub:type="pagebreak" id="Page_118" title="118"></span>    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;</code>
+<code>    &lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;</code>
+<code></code>
+<code>    <b>&lt;script type="text/javascript"&gt;</b></code>
+<code>    <b>$('#myTabs a').click(function (e) {</b></code>
+<code>      <b>e.preventDefault()</b></code>
+<code>      <b>$(this).tab('show')</b></code>
+<code>    <b>});</b></code>
+<code>    <b>&lt;/script&gt;</b></code>
+<code></code>
+<code>  &lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+               </section>
+               
+               <section>
+                  <span id="c04-sec-0039"></span>
+                  
+                  <h4 id="head-4-29">Activating Tab Navigation with Data Attributes</h4>
+                  
+                  <p>Activating via data attributes in the markup is even easier. All that is needed is
+                     to add <code>data-toggle="tab"</code> in the navigation as shown in <a href="#c04-fea-0016">Listing 4‐16</a>.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c04-fea-0016"></span> 
+                        
+                        <h2 id="head-2-98">LISTING 4-16: Using Data Attributes for Tab Navigation</h2>
+                        
+                        <section>
+                           <span id="c04-sec-0040"></span>
+                           
+                           <blockquote>
+                              <pre id="c04-code-0018"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>…</code>
+<code>&lt;body&gt;</code>
+<code>  &lt;ul id="myTabs" class="nav nav-tabs"&gt;</code>
+<code>    &lt;li role="presentation" class="active"&gt;&lt;a href="#home"</code>
+<code>        <b>data‐toggle="tab"</b>&gt;Home&lt;/a&gt;&lt;/li&gt;</code>
+<code>    &lt;li role="presentation"&gt;&lt;a href="#profile"</code>
+<code>        data-toggle="tab"&gt;Profile&lt;/a&gt;&lt;/li&gt;</code>
+<code>    &lt;li role="presentation"&gt;&lt;a href="#messages"</code>
+<code>        data-toggle="tab"&gt;Messages&lt;/a&gt;&lt;/li&gt;</code>
+<code>  &lt;/ul&gt;</code>
+<code></code>
+<code>  &lt;div class="tab-content"&gt;</code>
+<code>     &lt;div role="tabpanel" class="tab-pane active" id="home"&gt;Home&lt;/div&gt;</code>
+<code>     &lt;div role="tabpanel" class="tab-pane" id="profile"&gt;Profile&lt;/div&gt;</code>
+<code>     &lt;div role="tabpanel" class="tab-pane" id="messages"&gt;Messages&lt;/div&gt;</code>
+<code>  &lt;/div&gt;</code>
+<code>  …</code>
+<code>&lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+               </section>
+               
+            </section>
+            
+            <section>
+               <span id="c04-sec-0041"></span>
+               
+               <h3 id="head-3-75">Modal Dialog</h3>
+               
+               <p>Another commonly used UI control is the modal dialog. The functionality of the Bootstrap
+                  plugin is pretty basic: It displays and closes the modal dialog. On the other hand,
+                  the HTML code needed for the modal dialog itself is a bit verbose, but once you understand
+                  it, it is pretty logical.
+               </p>
+               
+               <p><span epub:type="pagebreak" id="Page_119" title="119"></span>It starts with an external <code>&lt;div&gt;</code> element with the class <code>.modal</code>, which represents the overlay that goes over the whole page. Inside there is another
+                  <code>&lt;div&gt;</code> element marked with the class <code>.modal-dialog</code>. This is the actual modal dialog, which contains three separate areas:
+               </p>
+               
+               <ul class="check" id="c04-list-0011">
+                  
+                  <li id="c04-li-0034">The modal header, defined by <code>&lt;div class="modal-header"&gt;</code>, contains the title of the dialog and the close button.
+                  </li>
+                  
+                  <li id="c04-li-0035">The actual content of the dialog is contained inside <code>&lt;div class=modal-body"&gt;</code>.
+                  </li>
+                  
+                  <li id="c04-li-0036">The footer, inside <code>&lt;div class=modal-footer"&gt;</code>, is where the action buttons of the dialog are supposed to be.
+                  </li>
+                  
+               </ul>
+               
+               <p><a href="#c04-fea-0017">Listing 4‐17</a> shows the complete code that is used to render the dialog of <a href="#c04-fig-0015" id="R_c04-fig-0015">Figure 4‐15</a>.
+               </p>
+               
+               <figure> <img alt="Illustration of Modal dialog." src="images/c04f015.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c04-fig-0015" id="c04-fig-0015"><b>FIGURE 4-15</b></a><b>:</b></span> Modal dialog
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c04-fea-0017"></span> 
+                     
+                     <h2 id="head-2-99">LISTING 4-17: Modal Dialog</h2>
+                     
+                     <section>
+                        <span id="c04-sec-0042"></span>
+                        
+                        <blockquote>
+                           <pre id="c04-code-0019"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>…</code>
+<code>&lt;body&gt;</code>
+<code>  &lt;!-- Button trigger modal --&gt;</code>
+<code>  &lt;button type="button" class="btn btn-primary btn-lg"</code>
+<code>          <b>data‐toggle="modal"</b> data-target="#myModal"&gt;</code>
+<code>    Launch logout modal</code>
+<code>  &lt;/button&gt;</code>
+<code></code>
+<code>  &lt;!-- Modal --&gt;</code>
+<code>  &lt;div class="modal fade" id="myModal" tabindex="-1" role="dialog"&gt;</code>
+<code>    &lt;div class="modal-dialog" role="document"&gt;</code>
+<code>      &lt;div class="modal-content"&gt;</code>
+<code>        &lt;div class="modal-header"&gt;</code>
+<code>          &lt;button type="button" class="close"</code>
+<code>                  <b>data‐dismiss="modal"</b>&gt;&amp;times;&lt;/button&gt;</code>
+<code>          &lt;h4 class="modal-title" id="myModalLabel"&gt;Logout&lt;/h4&gt;</code>
+<code>        &lt;/div&gt;</code>
+<code>        &lt;div class="modal-body"&gt;</code>
+<code>          You are about to log out from the system. Do you want to proceed?</code>
+<code>        &lt;/div&gt;</code>
+<code>        &lt;div class="modal-footer"&gt;</code>
+<code>          &lt;button type="button" class="btn btn-default"</code>
+<code>                  <b>data‐dismiss="modal"</b>&gt;Cancel&lt;/button&gt;</code>
+<code>          &lt;button type="button" class="btn btn-primary"&gt;Logout&lt;/button&gt;</code>
+<code>        &lt;/div&gt;</code>
+<code>      &lt;/div&gt;</code>
+<code>    &lt;/div&gt;</code>
+<code>  &lt;/div&gt;</code>
+<code>  …</code>
+<code>&lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p><span epub:type="pagebreak" id="Page_120" title="120"></span>Opening the module is very easy. As with most of the other Bootstrap plugins, it can
+                  be done with markup or with code. In order to do it with markup, as shown in <a href="#c04-fea-0017">Listing 4‐17</a>, just set <code>data-toggle="modal"</code> on the element that should open the dialog and <code>data-target="#myModal"</code> to indicate which modal to open.
+               </p>
+               
+               <blockquote>
+                  <pre id="c04-code-0020"><code>&lt;button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"&gt;Launch logout modal&lt;/button&gt;</code> </pre>
+                  </blockquote>
+               
+               <p>The method <code>$('myModal').modal('show')</code> can be used to open the modal in JavaScript.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c04-sec-0043"></span>
+               
+               <h3 id="head-3-76">Tooltips and Popovers</h3>
+               
+               <p>Other core plugins that do not require much work to implement are tooltips and popovers.
+                  (See <a href="#c04-fig-0016" id="R_c04-fig-0016">Figure 4‐16</a>.) They basically are the same thing, bubbles of text appearing next to an element,
+                  with a couple of small but significant differences. Tooltips appear when you hover
+                  over the element, while popovers appear when click on it. Popovers also have a title,
+                  which tooltips lack.
+               </p>
+               
+               <figure> <img alt="Illustration of Tooltip and popover." src="images/c04f016.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c04-fig-0016" id="c04-fig-0016"><b>FIGURE 4-16</b></a><b>:</b></span> Tooltip and popover
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p><span epub:type="pagebreak" id="Page_121" title="121"></span>Both tooltips and popovers can be configured either with JavaScript or via markup
+                  similarly to the other plugins.
+               </p>
+               
+               <p>To create them via markup, just set <code>data-toggle="tooltip"</code> or <code>data-toggle="popover"</code> on the element. You can also optionally set the position of the tooltip with <code>data-placement="left"</code>. The text of the tooltip and title of the popover are then specified with the <code>title</code> attribute, and the content of the popover is specified via the <code>data-content</code> attribute. For performance reasons, unlike the other plugins that were automatically
+                  enabled, tooltips and popovers have to be manually opted-in via the JavaScript methods
+                  <code>$().tooltip()</code> and <code>$().popover()</code>. Code for both components is shown in <a href="#c04-fea-0018">Listings 4‐18</a> and <a href="#c04-fea-0019">4‐19</a>.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c04-fea-0018"></span> 
+                     
+                     <h2 id="head-2-100">LISTING 4-18: Tooltip</h2>
+                     
+                     <section>
+                        <span id="c04-sec-0044"></span>
+                        
+                        <blockquote>
+                           <pre id="c04-code-0021"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>…</code>
+<code>&lt;body&gt;</code>
+<code>  &lt;button id="saveBtn" type="button" class="btn btn-default"</code>
+<code>          data-toggle="tooltip"</code>
+<code>          data-placement="right"</code>
+<code>          title="Click to save"&gt;Save&lt;/button&gt;</code>
+<code>  …</code>
+<code>  &lt;script type="text/javascript"&gt;</code>
+<code>    $('#saveBtn').tooltip();</code>
+<code>  &lt;/script&gt;</code>
+<code>  …</code>
+<code>&lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p> </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c04-fea-0019"></span> 
+                     
+                     <h2 id="head-2-101">LISTING 4-19: Popover</h2>
+                     
+                     <section>
+                        <span id="c04-sec-0045"></span>
+                        
+                        <blockquote>
+                           <pre id="c04-code-0022"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>…</code>
+<code>&lt;body&gt;</code>
+<code>  &lt;button id="payBtn" type="button" class="btn btn-default"</code>
+<code>          data-toggle="popover"</code>
+<code>          data-placement="right"</code>
+<code>          title="Pay your order"</code>
+<code>          data-content="The payment operation can take between 30 and 60 seconds. Be patient!"&gt;Pay!&lt;/button&gt;</code>
+<code>  …</code>
+<code>  &lt;script type="text/javascript"&gt;</code>
+<code>    $('#payBtn').popover();</code>
+<code>  &lt;/script&gt;</code>
+<code>  …</code>
+<code>&lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c04-sec-0046"></span>
+            
+            <h2 id="head-2-102"><span epub:type="pagebreak" id="Page_122" title="122"></span>CUSTOMIZING BOOTSTRAP WITH LESS
+            </h2>
+            
+            <p>Bootstrap is built with Less, one of the CSS pre-processing languages. A benefit is
+               that it can be easily customized for a better fit of the look and feel of your application
+               without the need to override everything in all your CSS files. This can be done in
+               two different ways: via the Bootstrap website or by downloading the source code and
+               manually updating the Less or Sass files.
+            </p>
+            
+            <section>
+               <span id="c04-sec-0047"></span>
+               
+               <h3 id="head-3-77">Customizing via the Website</h3>
+               
+               <p>The Bootstrap official website provides a customization page that allows developers
+                  to change the default styles of the framework. (See <a href="#c04-fig-0017" id="R_c04-fig-0017">Figure 4‐17</a>.) In addition to this, it also offers the possibility to select which styles, components,
+                  and plugins to include in the compiled file. Use this last option if you want to reduce
+                  the size of the files that will be downloaded from your website.
+               </p>
+               
+               <figure> <img alt="Illustration of Bootstrap customizer." src="images/c04f017.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c04-fig-0017" id="c04-fig-0017"><b>FIGURE 4-17</b></a><b>:</b></span> Bootstrap customizer
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>The customization page is accessible at the URL <code><a href="http://getbootstrap.com/customize/">http://getbootstrap.com/customize/</a></code>.
+               </p>
+               
+               <p><span epub:type="pagebreak" id="Page_123" title="123"></span>From there you can scroll down to find the variables you need or you can select the
+                  area of the framework you want to customize from the menu on the right. If, for example,
+                  you want the green of the “success” style for buttons, bars, and labels to be a different
+                  tone of green, you can change the <code>@brand-success</code> variable.
+               </p>
+               
+               <p>When all the customization is done, scroll down to the bottom of the page and click
+                  on the Compile and Download button. This will generate a zip file with your specific
+                  version of Bootstrap. It will also save your specific configuration as gist on GitHub
+                  and inside a <code>config.json</code> file inside the zip file just downloaded. You can see a snippet of this file in <a href="#c04-fea-0020">Listing 4‐20</a>. Notice that at the end it includes the URL to open the customization tool directly
+                  with this specific configuration.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c04-fea-0020"></span> 
+                     
+                     <h2 id="head-2-103">LISTING 4-20: Config.json File</h2>
+                     
+                     <section>
+                        <span id="c04-sec-0048"></span>
+                        
+                        <blockquote>
+                           <pre id="c04-code-0023"><code>{</code>
+<code>  "vars": {</code>
+<code>    "@gray-base": "#000",</code>
+<code>    …</code>
+<code>    "@brand-primary": "darken(#428bca, 6.5%)",</code>
+<code>    <b>"@brand-success": "#00FF00",</b></code>
+<code>    "@brand-info": "#5bc0de",</code>
+<code>    "@brand-warning": "#f0ad4e",</code>
+<code>    "@brand-danger": "#d9534f",</code>
+<code>    …</code>
+<code>  },</code>
+<code>  "css": [</code>
+<code>    "print.less",</code>
+<code>    "type.less",</code>
+<code>    "code.less",</code>
+<code>    …</code>
+<code>  ],</code>
+<code>  "js": [</code>
+<code>    "alert.js",</code>
+<code>    "button.js",</code>
+<code>    …</code>
+<code>  ],</code>
+<code>  "customizerUrl": "http://getbootstrap.com/customize/?id=b21b62d56781c2e2ea87"</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>This tool is very useful if you need to do a quick adjustment to the styles and you
+                  do not use Less (or Sass) already in your development workflow. But if a more iterative
+                  approach is needed and you are using already Less, it’s probably better to modify
+                  the variables directly.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c04-sec-0049"></span>
+               
+               <h3 id="head-3-78">Customizing with LESS</h3>
+               
+               <p>In order to directly edit the Less variables, you need to download the source code
+                  of Bootstrap. The folder with the actual code of the CSS styles is called <code>less</code>. It contains one Less file per CSS area and component, and also one file called <code>variables.less</code>. This is the file that needs to be modified to change the styles of any component
+                  in Bootstrap. <a href="#c04-fea-0021">Listing 4‐21</a> shows the beginning of the file, with the variable <code>@brand-success</code> that was changed with the online customization tool.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c04-fea-0021"></span> 
+                     
+                     <h2 id="head-2-104"><span epub:type="pagebreak" id="Page_124" title="124"></span>LISTING 4-21: Beginning of variables.less File
+                     </h2>
+                     
+                     <section>
+                        <span id="c04-sec-0050"></span>
+                        
+                        <blockquote>
+                           <pre id="c04-code-0024"><code>/</code>
+<code>// Variables</code>
+<code>// --------------------------------------------------</code>
+<code></code>
+<code></code>
+<code>//== Colors</code>
+<code>//</code>
+<code>//## Gray and brand colors for use across Bootstrap.</code>
+<code></code>
+<code>@gray-base:              #000;</code>
+<code>@gray-darker:            lighten(@gray-base, 13.5%); // #222</code>
+<code>@gray-dark:              lighten(@gray-base, 20%);   // #333</code>
+<code>@gray:                   lighten(@gray-base, 33.5%); // #555</code>
+<code>@gray-light:             lighten(@gray-base, 46.7%); // #777</code>
+<code>@gray-lighter:           lighten(@gray-base, 93.5%); // #eee</code>
+<code></code>
+<code>@brand-primary:         darken(#428bca, 6.5%); // #337ab7</code>
+<code><b>@brand-success:</b>         <b>#5cb85c;</b></code>
+<code>@brand-info:            #5bc0de;</code>
+<code>@brand-warning:         #f0ad4e;</code>
+<code>@brand-danger:          #d9534f;</code>
+<code>…</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>Once all the changes have been made, Grunt will take care of compiling the Less code
+                  into the final CSS files. <a href="c06.xhtml">Chapter 6</a> explains more in detail how to use Grunt to run these build tasks, but if it is already
+                  set up, just type <code>grunt dist</code> and the updated CSS files will be generated.
+               </p>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c04-sec-0051"></span>
+            
+            <h2 id="head-2-105">BOOTSTRAP SUPPORT IN VISUAL STUDIO 2017 AND ASP.NET CORE</h2>
+            
+            <p>As you might have noticed, Bootstrap uses a lot of CSS classes and snippets of HTML
+               code for all its styles and components. Without good autocomplete functionality and
+               a good snippet library, developers would have to rely on memory and documentation.
+            </p>
+            
+            <p>Visual Studio helps by providing a CSS autocomplete feature that shows all the classes
+               available in Bootstrap and identifies them with a <b>B</b> icon, as shown in <a href="#c04-fig-0018" id="R_c04-fig-0018">Figure 4‐18</a>.
+            </p>
+            
+            <figure> <img alt="Illustration of Bootstrap autocomplete." src="images/c04f018.jpg" />
+               
+               <figcaption>
+                  <p><span class="figureLabel"><a href="#R_c04-fig-0018" id="c04-fig-0018"><b>FIGURE 4-18</b></a><b>:</b></span> Bootstrap autocomplete
+                  </p>
+               </figcaption>
+               
+            </figure>
+            
+            <p>Visual Studio 2017 also includes a good snippet library in which developers can save
+               their most used snippets. Snippets in Visual Studio are very powerful because they
+               clearly mark which parts are fixed and which parts (typically just names or IDs) can
+               be changed.
+            </p>
+            
+            <p>Visual Studio doesn’t come with a list of Bootstrap snippets, but it can understand
+               if a project is using Bootstrap and provides possible third-party extensions that
+               can help with it, as shown in <a href="#c04-fig-0019" id="R_c04-fig-0019">Figure 4‐19</a>. Visual Studio suggests installing the following two extensions:
+            </p>
+            
+            <ul class="check" id="c04-list-0012">
+               
+               <li id="c04-li-0037">Bootstrap Snippet Pack</li>
+               
+               <li id="c04-li-0038">Glyphfriend</li>
+               
+            </ul>
+            
+            <figure> <img alt="Illustration of Suggested third-party extensions." src="images/c04f019.jpg" />
+               
+               <figcaption>
+                  <p><span class="figureLabel"><a href="#R_c04-fig-0019" id="c04-fig-0019"><b>FIGURE 4-19</b></a><b>:</b></span> Suggested third-party extensions
+                  </p>
+               </figcaption>
+               
+            </figure>
+            
+            <section>
+               <span id="c04-sec-0052"></span>
+               
+               <h3 id="head-3-79"><span epub:type="pagebreak" id="Page_125" title="125"></span><span epub:type="pagebreak" id="Page_126" title="126"></span>Bootstrap Snippet Pack
+               </h3>
+               
+               <p>As the name implies, this is a collection of 30+ snippets that can be added to an
+                  HTML page by simply dragging them from the Visual Studio toolbox (see <a href="#c04-fig-0020" id="R_c04-fig-0020">Figure 4‐20</a>).
+               </p>
+               
+               <figure> <img alt="Illustration of Bootstrap Snippet Pack Toolbox." src="images/c04f020.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c04-fig-0020" id="c04-fig-0020"><b>FIGURE 4-20</b></a><b>:</b></span> Bootstrap Snippet Pack Toolbox
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>Most Bootstrap components are made of long pieces of HTML, most of which has to be
+                  copied as it is, and only few strings need to be updated. Development becomes very
+                  easy as the strings that can be modified are clearly marked and you can cycle through
+                  them with the Tab key.
+               </p>
+               
+               <p>For example, in the snippet for the modal dialog (<a href="#c04-fea-0017">Listing 4‐17</a>), the only strings needing customization are the ID, the title, the content, and
+                  the text of the two buttons. As you can see in <a href="#c04-fig-0021" id="R_c04-fig-0021">Figure 4‐21</a>, these strings are highlighted for easy identification.
+               </p>
+               
+               <figure> <img alt="Illustration of Modal dialog snippet." src="images/c04f021.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c04-fig-0021" id="c04-fig-0021"><b>FIGURE 4-21</b></a><b>:</b></span> Modal dialog snippet
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+            </section>
+            
+            <section>
+               <span id="c04-sec-0053"></span>
+               
+               <h3 id="head-3-80">Glyphfriend</h3>
+               
+               <p>This extension helps with choosing from the glyphicons available in Bootstrap by showing
+                  their preview in the autocomplete dropdown (see <a href="#c04-fig-0022" id="R_c04-fig-0022">Figure 4‐22</a>).
+               </p>
+               
+               <figure> <img alt="Illustration of Glyphicons in the autocomplete dropdown." src="images/c04f022.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c04-fig-0022" id="c04-fig-0022"><b>FIGURE 4-22</b></a><b>:</b></span> Glyphicons in the autocomplete dropdown
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>This extension is not limited to Bootstrap. It supports all the other Font Awesome
+                  icons, as well as Ionic, Foundation, IcoMoon, and GitHub’s Octicons. It even supports
+                  Emoji when using Visual Studio as a markdown editor.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c04-sec-0054"></span>
+               
+               <h3 id="head-3-81"><span epub:type="pagebreak" id="Page_127" title="127"></span>Tag Helpers for ASP.NET Core
+               </h3>
+               
+               <p>Another possible approach to make it easier to write Bootstrap components is ASP.NET
+                  Core tag helpers. Tag helpers are custom tags that can render arbitrary HTML markup
+                  at runtime.
+               </p>
+               
+               <p>Unfortunately, there is no library that provides tag helpers for all the Bootstrap
+                  components, but there is a community-driven tag helper project that includes helpers
+                  for Alert, ProgressBar, and Modal Dialog components. This library can be downloaded
+                  from NuGet under the name TagHelperSamples.Bootstrap. Regarding the Modal Dialog,
+                  using the tag helper provided by this library, the verbose HTML snippet becomes the
+                  few lines shown in <a href="#c04-fea-0022">Listing 4‐22</a>.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c04-fea-0022"></span> 
+                     
+                     <h2 id="head-2-106">LISTING 4-22: Modal Dialog with the Tag Helper (Views\Home\Index.cshtml)</h2>
+                     
+                     <section>
+                        <span id="c04-sec-0055"></span>
+                        
+                        <blockquote>
+                           <pre id="c04-code-0025"><code>&lt;button type="button" class="btn btn-primary" bs-toggle-modal="simpleModal"&gt;</code>
+<code>    Launch modal</code>
+<code>&lt;/button&gt;</code>
+<code>&lt;modal id="simpleModal" title="Modal Title"&gt;</code>
+<code>    &lt;modal-body&gt;</code>
+<code>        &lt;h4&gt;Something happened&lt;/h4&gt;</code>
+<code>        &lt;p&gt;Something happened&lt;/p&gt;</code>
+<code>    &lt;/modal-body&gt;</code>
+<code>&lt;/modal&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p><span epub:type="pagebreak" id="Page_128" title="128"></span>A <code>bs-toggle-modal</code> attribute is added to the dialog trigger, specifying the name of the modal to open.
+                  And then, obviously, the modal dialog has to be defined, using the <code>&lt;modal&gt;</code> tag. As shown in <a href="#c04-fea-0022">Listing 4‐22</a>, the actual content of the dialog goes inside the <code>&lt;modal-dialog&gt;</code> tag. Optionally, a <code>&lt;modal-footer&gt;</code> can be used to specify additional buttons for the dialog.
+               </p>
+               
+               <p>If you need helpers for other Bootstrap components, you can always write them yourself.
+                  As seen in <a href="c01.xhtml">Chapter 1</a>, writing a tag helper is not particularly difficult, especially if you are doing
+                  it only for your specific needs and not with the intent of covering all the possible
+                  scenarios needed when releasing the code for the community.
+               </p>
+               
+               <p>As an example of how easy it is to build a simple tag helper for Bootstrap, <a href="#c04-fea-0023">Listing 4‐23</a> shows a simplified version of the Alert tag helper that is part of the aforementioned
+                  Bootstrap tag helper library.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c04-fea-0023"></span> 
+                     
+                     <h2 id="head-2-107">LISTING 4-23: Simplified Alert Tag Helper (TagHelpers\AlertSimpleTagHelper.cs)</h2>
+                     
+                     <section>
+                        <span id="c04-sec-0056"></span>
+                        
+                        <blockquote>
+                           <pre id="c04-code-0026"><code>using System.Threading.Tasks;</code>
+<code>using Microsoft.AspNet.Razor.TagHelpers;</code>
+<code></code>
+<code>namespace AlertTagHelper.TagHelpers</code>
+<code>{</code>
+<code>    [HtmlTargetElement("alert")]</code>
+<code>    public class AlertSimpleTagHelper : TagHelper</code>
+<code>    {</code>
+<code>        [HtmlAttributeName("type")]</code>
+<code>        public string AlertType { get; set; }</code>
+<code>        public override void Process(TagHelperContext context, TagHelperOutput output)</code>
+<code>        {</code>
+<code>            output.TagName = "div";</code>
+<code>            var cssClass = "alert alert-"+AlertType;</code>
+<code>            output.Attributes.Add("class", cssClass);</code>
+<code>            output.Attributes.Add("role", "alert");</code>
+<code>        }</code>
+<code>    }</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>This helper is used with the tag <code>&lt;alert type="danger"&gt;Something Went Wrong!&lt;/alert&gt;</code>, which is much more concise than writing the snippet needed for the Bootstrap component
+                  of <a href="#c04-fea-0014">Listing 4‐14</a>.
+               </p>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c04-sec-0057"></span>
+            
+            <h2 id="head-2-108">SUMMARY</h2>
+            
+            <p>Bootstrap CSS makes it extremely easy, even for non-designers, to build a compelling
+               UI by making use of all the best practices both in UX and in responsive design. To
+               make Bootstrap fit visually better with your application, several themes are available
+               via the community, and for very specific cases, all the aspects of Bootstrap can be
+               easily customized with Less. And even though sometimes it is a little verbose, Visual
+               Studio provides some facilities to make working with it easier, and if you prefer
+               abstracting the client-side snippets behind some server-side code, the tag helpers
+               of ASP.NET Core allows you to define your own server-side tags.
+            </p>
+            
+         </section>
+         
+      </section>
+   </body>
+   
+</html>

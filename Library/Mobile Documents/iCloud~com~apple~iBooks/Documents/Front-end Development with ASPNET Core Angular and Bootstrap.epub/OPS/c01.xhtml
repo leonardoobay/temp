@@ -1,0 +1,2524 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+   
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      
+      <title>What’s New in ASP.NET Core MVC</title>
+      
+      <link href="WileyTemplate_v5.3.css" rel="stylesheet" type="text/css" />
+      
+      <meta content="urn:uuid:68078093-7b10-42b9-8f32-0db0ecece3d2" name="Adept.expected.resource" />
+      
+   </head>
+   
+   <body epub:type="bodymatter">
+      
+      <section epub:type="chapter">
+         
+         <header>
+            
+            <h1><span epub:type="pagebreak" id="Page_1" title="1"></span><a id="c01"></a><span class="chapterNumber">1</span><br /><span class="chapterTitle">What’s New in ASP.NET Core MVC</span></h1>
+         </header>
+         
+         <section>
+            <span id="c01-sec-0001"></span>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3">
+                  
+                  <h3>WHAT’S IN THIS CHAPTER?</h3>
+                  
+                  <ul class="check1" id="c01-list-0001">
+                     
+                     <li id="c01-li-0001">History of the .NET web stack</li>
+                     
+                     <li id="c01-li-0002">Explanation of all the pieces of this new .NET Core puzzle</li>
+                     
+                     <li id="c01-li-0003">Introduction to the ASP.NET Core and the new concepts it brings</li>
+                     
+                     <li id="c01-li-0004">Some of the new notable features of ASP.NET Core MVC</li>
+                     
+                  </ul>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p id="c01-para-0003">The year 2016 is a historical milestone for Microsoft’s .NET web stack, as it is the
+               year in which Microsoft released .NET Core, a complete open‐source and cross‐platform
+               framework for building applications and services. It includes ASP.NET Core and a reworked
+               MVC framework.
+            </p>
+            
+            <p id="c01-para-0004">This first chapter is a brief introduction to ASP.NET Core. It can be used either
+               as a refresher if you already have experience with this new framework or as a teaser
+               and summary if you haven’t seen anything yet.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3">
+                  
+                  <h3>WROX.COM CODE DOWNLOADS FOR THIS CHAPTER</h3>
+                  
+                  <p id="c01-para-0006">The <a href="http://wrox.com">wrox.com</a> code downloads for this chapter are found at <code><a href="http://www.wrox.com">www.wrox.com</a></code> Search for the book’s ISBN (978‐1‐119‐18131‐6), and you will find the code in the
+                     <a href="c01.xhtml">chapter 1</a> download and individually named according to the names throughout the chapter.
+                  </p>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+         </section>
+         
+         <section>
+            <span id="c01-sec-0002"></span>
+            
+            <h2 id="head-2-1">GETTING THE NAMES RIGHT</h2>
+            
+            <p id="c01-para-0007">Before delving into the new framework, it is important to get all the names and version
+               numbers right, as for the untrained eye it can otherwise seem just a big mess.
+            </p>
+            
+            <section>
+               <span id="c01-sec-0003"></span>
+               
+               <h3 id="head-3-1"><span epub:type="pagebreak" id="Page_2" title="2"></span>ASP.NET Core
+               </h3>
+               
+               <p id="c01-para-0008">ASP.NET Core was released in 2016. It is a full rewrite of ASP.NET, completely open‐source,
+                  cross‐platform, and developed without the burden of backward compatibility. Notable
+                  features are a new execution environment, a new project and dependency management
+                  system, and a new web framework called ASP.NET Core MVC that unifies the programming
+                  model of both ASP.NET MVC and WebAPI. The rest of this chapter is mainly focused on
+                  all the features of ASP.NET Core.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0004"></span>
+               
+               <h3 id="head-3-2">.NET Core</h3>
+               
+               <p id="c01-para-0009">ASP.NET Core can run on the standard .NET framework (from version 4.5 onward), but
+                  in order to be cross‐platform it needed the CLR to be cross‐platform as well. That’s
+                  why .NET Core was released. .NET Core is a small, cloud‐optimized, and modular implementation
+                  of .NET, consisting of the CoreCLR runtime and .NET Core libraries. The peculiarity
+                  is that this runtime is made of many components that can be installed separately depending
+                  on the necessary features, can be updated individually, and are bin‐deployable so
+                  that different applications can run on different versions without affecting each other.
+                  And, of course, it can run on OSX and Linux.
+               </p>
+               
+               <p id="c01-para-0010">.NET Core also provides a command‐line interface (referred to as .NET CLI) that is
+                  used by both tools and end users to interact with the .NET Core SDK.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0005"></span>
+               
+               <h3 id="head-3-3">Visual Studio Code</h3>
+               
+               <p id="c01-para-0011">Visual Studio Code is the cross‐platform text editor developed by Microsoft for building
+                  ASP.NET Core applications (and many other frameworks and languages) without the full‐fledged
+                  Visual Studio. It can also be used on OSX and Linux.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0006"></span>
+               
+               <h3 id="head-3-4">Visual Studio 2017</h3>
+               
+               <p id="c01-para-0012">Visual Studio 2017 introduces a completely renewed installation procedure based on
+                  “workloads” to better tailor it to users’ needs. One of these workloads, the ASP.NET
+                  one, includes integration with the most popular front‐end tools and frameworks. This
+                  book covers them further in the upcoming chapters.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0007"></span>
+               
+               <h3 id="head-3-5">Versions Covered in this Book</h3>
+               
+               <p id="c01-para-0013">I hope that now the version and naming madness is a bit clearer. This book covers
+                  Visual Studio 2017, ASP.NET Core (and ASP.NET Core MVC), and .NET Core, but it will
+                  not cover anything that is related to the full framework. At the end of the book,
+                  Visual Studio Code is also covered.
+               </p>
+               
+               <p id="c01-para-0014"><a href="#c01-fig-0001" id="R_c01-fig-0001">Figure 1‐1</a> shows how all these components relate to each other.
+               </p>
+               
+               <figure> <img alt="Illustration of the new .NET stack." src="images/c01f001.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c01-fig-0001" id="c01-fig-0001"><b>FIGURE 1-1</b></a><b>:</b></span> Diagram of the new .NET stack
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c01-sec-0008"></span>
+            
+            <h2 id="head-2-2"><span epub:type="pagebreak" id="Page_3" title="3"></span>A BRIEF HISTORY OF THE MICROSOFT .NET WEB STACK
+            </h2>
+            
+            <p id="c01-para-0015">Before diving into the new features of ASP.NET Core and ASP.NET Core MVC, I think
+               it is important to look back at the evolution of the .NET web stack and the reasons
+               why we arrived at ASP.NET Core and .NET Core.
+            </p>
+            
+            <section>
+               <span id="c01-sec-0009"></span>
+               
+               <h3 id="head-3-6">ASP.NET Web Forms</h3>
+               
+               <p>In 2001, Microsoft released the .NET framework and its first web framework: ASP.NET
+                  Web Forms. It was developed for two types of users:
+               </p>
+               
+               <ul class="check" id="c01-list-0002">
+                  
+                  <li id="c01-li-0005">Developers who had experience with classic ASP and were already building dynamic web
+                     sites mixing HTML and server‐side code in Jscript. They were also used to interacting
+                     with the underlying HTTP connection and web server via abstractions provided by the
+                     core objects.
+                  </li>
+                  
+                  <li id="c01-li-0006">Developers who were coming from the traditional WinForm application development. They
+                     didn’t know anything about HTML or the web and were used to building applications
+                     by dragging UI components on a design surface.
+                  </li>
+                  
+               </ul>
+               
+               <p id="c01-para-0017"><span epub:type="pagebreak" id="Page_4" title="4"></span>Web Forms were designed to cater to both types of developers. Web Forms provided the
+                  abstractions to deal with HTTP and web server objects and introduced the concept of
+                  server‐side events to hide the stateless nature of the web, using the ViewState. The
+                  result was a very successful, feature‐rich web framework with a very approachable
+                  programming model.
+               </p>
+               
+               <p>It had its limitations though:</p>
+               
+               <ul class="check" id="c01-list-0003">
+                  
+                  <li id="c01-li-0007">All the core web abstractions were delivered within the System.Web library, and all
+                     the other web features depended on it.
+                  </li>
+                  
+                  <li id="c01-li-0008">Because it was based on a design‐time programming model, ASP.NET, the .NET framework
+                     and also Visual Studio were intimately tied. For this reason, ASP.NET had to follow
+                     the release cycle of the other products, meaning that years passed between major releases.
+                  </li>
+                  
+                  <li id="c01-li-0009">ASP.NET only worked with Microsoft’s web server, Internet Information Services (IIS).</li>
+                  
+                  <li id="c01-li-0010">Unit testing was almost impossible and only achievable using libraries that changed
+                     the way Web Forms worked.
+                  </li>
+                  
+               </ul>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0010"></span>
+               
+               <h3 id="head-3-7">ASP.NET MVC</h3>
+               
+               <p id="c01-para-0019">For a few years these limitations didn’t cause any problems, but with other frameworks
+                  and languages pushing the evolution of web development, Microsoft started to struggle
+                  to follow their faster pace. They were all very small and focused components assembled
+                  and updated as needed, while ASP.NET was a huge monolithic framework that was difficult
+                  to update.
+               </p>
+               
+               <p id="c01-para-0020">The problem was not only a matter of release cycles. The development style also was
+                  changing. Hiding and abstracting away the complexities of HTTP and HTML markup helped
+                  a lot of WinForm developers to become web developers, but after more than five years
+                  of experience, developers wanted more control, especially over the markup rendered
+                  on pages.
+               </p>
+               
+               <p id="c01-para-0021">In order to solve these two problems, in 2008 the ASP.NET team developed the ASP.NET
+                  MVC framework, based on the Model‐View‐Controller design pattern, which was also used
+                  by many of the popular frameworks at the time. This pattern allowed a cleaner and
+                  better separation of business and presentation logic, and, by removing the server‐side
+                  UI components, it gave complete control of the HTML markup to developers. Furthermore,
+                  instead of being included inside the .NET framework, it was released out of band,
+                  making faster and more frequent releases possible.
+               </p>
+               
+               <p id="c01-para-0022">Although the ASP.NET MVC framework solved most of the problems of Web Forms, it still
+                  depended on IIS and the web abstracting library System.Web. This means that it was
+                  still not possible to have a web framework that was totally independent from the larger
+                  .NET framework.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0011"></span>
+               
+               <h3 id="head-3-8">ASP.NET Web API</h3>
+               
+               <p id="c01-para-0023">Fast‐forward a few years, and new paradigm for building web applications started to
+                  become widespread. These were the so‐called single page applications (SPAs). Basically,
+                  instead of interconnected, server‐generated, data‐driven pages, applications were
+                  becoming mostly static pages where data was displayed interacting with the server
+                  via Ajax calls to web services or Web APIs. Also, many services started releasing
+                  APIs for mobile apps or third‐party apps to interact with their data.
+               </p>
+               
+               <p id="c01-para-0024">Another web framework was released to adapt better to these new scenarios: ASP.NET
+                  Web API. The ASP.NET team also took this opportunity to build an even more modular
+                  component model, <span epub:type="pagebreak" id="Page_5" title="5"></span>finally ditching System.Web and creating a web framework that could live its own life
+                  independently from the rest of ASP.NET and the larger .NET framework. A big role was
+                  also played by the introduction of NuGet, Microsoft’s package distribution system,
+                  making it possible to deliver all these components to developers in a managed and
+                  sustainable way. One additional advantage of the break‐up from System.Web was the
+                  capability to not depend on IIS anymore and to run inside custom hosts and possibly
+                  other web servers.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0012"></span>
+               
+               <h3 id="head-3-9">OWIN and Katana</h3>
+               
+               <p id="c01-para-0025">ASP.NET MVC and ASP.NET Web API solved all the shortcomings of the original ASP.NET,
+                  but, as often happens, they created new ones. With the availability of lightweight
+                  hosts and the proliferation of modular frameworks, there was the real risk that application
+                  developers would need separate processes to handle all the aspects of modern applications.
+               </p>
+               
+               <p id="c01-para-0026">In order to respond to this risk even before it became a real problem, a group of
+                  developers, taking inspiration from Rack for Ruby and partially from Node.js, came
+                  out with a specification to standardize the way frameworks and other additional components
+                  can be managed from a central hosting process. This specification is called OWIN,
+                  which stands for Open Web Interface for .NET. OWIN defines the interface that components,
+                  be they full‐fledged frameworks or just small filters, have to implement in order
+                  to be instantiated and called by the hosting process.
+               </p>
+               
+               <p id="c01-para-0027">Based on this specification, in 2014 Microsoft released Katana, an OWIN‐compliant
+                  host and server, and implemented lots of connectors to allow developers to use most
+                  of its web frameworks inside Katana.
+               </p>
+               
+               <p id="c01-para-0028">But some problems persisted. First of all, ASP.NET MVC was still tied to System.Web,
+                  so it could not run inside Katana. Also, because all the frameworks were developed
+                  at different points in time, they had different programming models. For example, both
+                  ASP.NET MVC and Web API supported dependency injection, but differently from each
+                  other. This meant that developers using both frameworks in the same application had
+                  to configure dependency injection twice, in two different ways.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0013"></span>
+               
+               <h3 id="head-3-10">The Emergence of ASP.NET Core and .NET Core</h3>
+               
+               <p id="c01-para-0029">The ASP.NET team realized that there was only one way to solve all the remaining problems
+                  and at the same time make web development on .NET possible outside of Visual Studio
+                  and on other platforms. They re‐wrote ASP.NET from the ground up and created a new
+                  cross‐platform .NET runtime that later came to be .NET Core.
+               </p>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c01-sec-0014"></span>
+            
+            <h2 id="head-2-3">.NET CORE</h2>
+            
+            <p>Now that it is probably more clear why ASP.NET Core came to be, it is time to take
+               a better look at .NET Core, the new entry point of this whole new stack. .NET Core
+               is a cross‐platform and open‐source implementation of the .NET Standard Library, and
+               it is made of a few components:
+            </p>
+            
+            <ul class="check" id="c01-list-0004">
+               
+               <li id="c01-li-0011">The .NET Runtime, also known as CoreCLR, which implements the basic functionalities
+                  such as JIT Compilation, the base .NET types, garbage collection, and low‐level classes
+               </li>
+               
+               <li id="c01-li-0012">CoreFX, which contains all the APIs defined in the .NET Standard Library, such as
+                  Collections, IO, Xml, async, and so on
+               </li>
+               
+               <li id="c01-li-0013"><span epub:type="pagebreak" id="Page_6" title="6"></span>Tools and language compilers that allow developers to build apps
+               </li>
+               
+               <li id="c01-li-0014">The dotnet application host, which is used to launch .NET Core applications and the
+                  development tools
+               </li>
+               
+            </ul>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature1">
+                  
+                  <h3>DEFINITION</h3>
+                  
+                  <p id="c01-para-0031"><i>The .NET Standard Library is a formal specification of all the .NET APIs that can
+                        be used in all .NET runtimes. It basically enhances the CLR specifications (ECMA 335)
+                        by also defining all the APIs from the Base Class Library (BCL) that must be implemented
+                        by all .NET runtimes. The goal of such a standard is to allow the same application
+                        or library to run on different runtimes (from the standard framework to Xamarin and
+                        Universal Windows Platform).</i></p>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <section>
+               <span id="c01-sec-0015"></span>
+               
+               <h3 id="head-3-11">Getting Started with .NET Core</h3>
+               
+               <p id="c01-para-0032">Installing .NET Core on Windows is pretty trivial, as it gets installed by selecting
+                  the .NET Core workload when installing Visual Studio 2017. And creating a .NET Core
+                  application is just like creating any other application with Visual Studio. <a href="c08.xhtml">Chapter 8</a> shows how to install .NET Core and develop applications without Visual Studio, also
+                  on a Mac, but it is important to understand how .NET Core applications are built because
+                  it will it make easier later to do the same without Visual Studio or even on another
+                  operating system.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0016"></span>
+               
+               <h3 id="head-3-12">The dotnet Command Line</h3>
+               
+               <p id="c01-para-0033">The most important tool that comes with .NET Core is the <code>dotnet</code> host, which is used to launch .NET Core console applications, including the development
+                  tools, via the new .NET command‐line interface (CLI). This CLI centralizes all the
+                  interactions with the framework and acts as the base layer that all other IDEs, like
+                  Visual Studio, use to build applications.
+               </p>
+               
+               <p id="c01-para-0034">In order to try it out, just open the command prompt, create a new folder, move into
+                  this folder, and type <code>dotnet new console</code>. This command creates the skeleton of a new .NET Core console application (<a href="#c01-fea-0001">Listing 1‐1</a>), made of a <code>Program.cs</code> code file and the <code>.csproj</code> project definition file, named as the folder in which the command was launched.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c01-fea-0001"></span> 
+                     
+                     <h2 id="head-2-4">LISTING 1-1: Sample Program.cs file</h2>
+                     
+                     <section>
+                        <span id="c01-sec-0017"></span>
+                        
+                        <blockquote>
+                           <pre id="c01-code-0001"><code>using System;</code>
+<code></code>
+<code>namespace ConsoleApplication</code>
+<code>{</code>
+<code>    public class Program</code>
+<code>    {</code>
+<code>        public static void Main(string[] args)</code>
+<code>        <span epub:type="pagebreak" id="Page_7" title="7"></span>{</code>
+<code>            Console.WriteLine("Hello World!");</code>
+<code>        }</code>
+<code>    }</code>
+<code>}</code>
+</pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p id="c01-para-0036">The <code>new</code> command can be executed using other arguments to specify the type of project to build:
+                  <code>console</code> (the one we used before), <code>web</code>, <code>mvc</code>, <code>webapi</code>, <code>classlib</code>, <code>xunit</code> (for unit testing), and some others that are discussed further in <a href="c08.xhtml">Chapter 8</a>. This is also the structure of all commands of the .NET CLI: <code>dotnet</code> followed by the command name, followed by its arguments.
+               </p>
+               
+               <p id="c01-para-0037">.NET Core is a modular system, and, unlike the standard .NET framework, these modules
+                  have to be included on a one to one basis. These dependencies are defined in the <code>.csproj</code> project file and must be downloaded using another command of the .NET Core CLI: <code>restore</code>. Executing <code>dotnet restore</code> from the command prompt downloads all the dependencies needed by the application.
+                  This is needed if you add or remove dependencies while developing, but it’s not strictly
+                  needed immediately after creating a new application because the <code>new</code> command runs it automatically for you.
+               </p>
+               
+               <p id="c01-para-0038">Now that all the pieces are ready, the application can be executed by simply typing
+                  the command <code>dotnet run</code>. This first builds the application and then invokes it via the <code>dotnet</code> application host.
+               </p>
+               
+               <p id="c01-para-0039">In fact, this could be done manually as well, first by explicitly using the <code>build</code> command and then by launching the result of the build (which is a DLL with the same
+                  name of the folder where the application has been created) using the application host:
+                  <code>dotnet bin\Debug\netcoreapp2.0\consoleapplication.dll</code> (<code>consoleapplication</code> is the name of the folder).
+               </p>
+               
+               <p id="c01-para-0040">In addition to building and running apps, the <code>dotnet</code> command can also deploy them and create packages for sharing libraries. It can do
+                  even more thanks to its extensibility model. These topics are discussed further in
+                  <a href="c08.xhtml">Chapter 8</a>.
+               </p>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c01-sec-0018"></span>
+            
+            <h2 id="head-2-5">INTRODUCING ASP.NET CORE</h2>
+            
+            <p id="c01-para-0041">Now that you are armed with a bit of knowledge of .NET Core tooling, you can safely
+               transition to Visual Studio and explore ASP.NET Core.
+            </p>
+            
+            <section>
+               <span id="c01-sec-0019"></span>
+               
+               <h3 id="head-3-13">Overview of the New ASP.NET Core Web Application Project</h3>
+               
+               <p id="c01-para-0042">As with previous version of the framework, you create a new ASP.NET Core application
+                  using the command menu <code>File</code> <img alt="image" src="images/arrow.jpg" /> <code>New</code> <img alt="image" src="images/arrow.jpg" /> <code>Project</code> and then choosing ASP.NET Core Web Application from the .NET Core group of projects.
+               </p>
+               
+               <p>Here you have several additional options, as shown in <a href="#c01-fig-0002" id="R_c01-fig-0002">Figure 1‐2</a>:
+               </p>
+               
+               <figure> <img alt="Illustration of the New Project Window." src="images/c01f002.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c01-fig-0002" id="c01-fig-0002"><b>FIGURE 1-2</b></a><b>:</b></span> New Project Window
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <ul class="check" id="c01-list-0005">
+                  
+                  <li id="c01-li-0015"><b>Console App:</b> This creates a console application like the one in <a href="#c01-fea-0001">Listing 1‐1</a>.
+                  </li>
+                  
+                  <li id="c01-li-0016"><b>Class Library:</b> This is a .NET Core library that can be reused in other projects.
+                  </li>
+                  
+                  <li id="c01-li-0017"><b>Unit Test Project:</b> This is a test project running on the Microsoft MSTest framework.
+                  </li>
+                  
+                  <li id="c01-li-0018"><b>xUnit Test Project:</b> This is another test project, but built using the xUnit OSS test framework.
+                  </li>
+                  
+               </ul>
+               
+               <p><span epub:type="pagebreak" id="Page_8" title="8"></span>At this point you get the familiar template selection window (<a href="#c01-fig-0003" id="R_c01-fig-0003">Figure 1‐3</a>), which by default gives you three options:
+               </p>
+               
+               <figure> <img alt="Illustration of Web Application templates." src="images/c01f003.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c01-fig-0003" id="c01-fig-0003"><b>FIGURE 1-3</b></a><b>:</b></span> Web Application templates
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <ul class="check" id="c01-list-0006">
+                  
+                  <li id="c01-li-0019">Empty creates an ASP.NET Core project with the bare minimum to get you started.</li>
+                  
+                  <li id="c01-li-0020">Web API creates an ASP.NET Core project that contains the dependencies and the skeleton
+                     on which to build a REST web application.
+                  </li>
+                  
+                  <li id="c01-li-0021">Web Application creates a web application built with Razor pages, which is a simpler
+                     development paradigm that isn’t covered in this book.
+                  </li>
+                  
+                  <li id="c01-li-0022">Web Application (Model‐View‐Controller) creates the full‐blown project with everything
+                     you might need in a web application.
+                  </li>
+                  
+                  <li id="c01-li-0023">Angular, React.js, and React.js and Redux are project templates used to create single‐page
+                     applications using these frameworks.
+                  </li>
+                  
+               </ul>
+               
+               <p id="c01-para-0045">In addition to the authentication type, you can also choose with which version of
+                  ASP.NET Core to build the application (ASP.NET Core 1.0, 1.1, or 2.0) and whether
+                  to enable support for Docker (this last option is covered in <a href="c07.xhtml">Chapter 7</a>).
+               </p>
+               
+               <p id="c01-para-0046">For this initial overview, you will select the Web Application (Model‐View‐Controller)
+                  template and proceed through all the pieces of the puzzle.
+               </p>
+               
+               <p id="c01-para-0047"><span epub:type="pagebreak" id="Page_9" title="9"></span><a href="#c01-fig-0004" id="R_c01-fig-0004">Figure 1‐4</a> shows the all the files and folders added to the project, and you can see that there
+                  are already a lot of changes compared to the traditional ASP.NET project. Apart from
+                  the <code>Controllers</code> and <code>Views</code> folders, all the rest is different.
+               </p>
+               
+               <figure> <img alt="Illustration of the elements of the new ASP.NET Core Web Application." src="images/c01f004.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c01-fig-0004" id="c01-fig-0004"><b>FIGURE 1-4</b></a><b>:</b></span> The elements of the new ASP.NET Core Web Application
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p id="c01-para-0048">Starting from the top, the first new element is the Connected Services node, which
+                  contains the list of extensions that connect to a third party remote service.
+               </p>
+               
+               <p id="c01-para-0049">The next element is a node called Dependencies. This contains all the dependencies
+                  the application has, which can be .NET packages (via NuGet), Bower, as shown in <a href="#c01-fig-0004">Figure 1‐4</a>, or NPM if you application needs it.
+               </p>
+               
+               <p id="c01-para-0050">A reference to Bower appears also later in the tree with the file <code>bower.json</code>, which contains the actual configuration of all the dependencies. These dependencies,
+                  once downloaded, will be stored in the <code>lib</code> folder inside the new <code>wwwroot</code> folder.
+               </p>
+               
+               <p id="c01-para-0051">The next element is the <code>wwwroot</code> folder, which is even represented with a different “globe” icon. This is where all
+                  the static files of the application, CSS styles, images and JavaScript files, will
+                  be.
+               </p>
+               
+               <p>These files in the root of the project are also new additions:</p>
+               
+               <ul class="check" id="c01-list-0007">
+                  
+                  <li id="c01-li-0024"><code>appsettings.json</code> is the new location for storing application settings instead of storing them in the
+                     <code>appsetting</code> element in the <code>web.config</code>.
+                  </li>
+                  
+                  <li id="c01-li-0025"><code>bower.json</code> is the configuration file for Bower dependencies.
+                  </li>
+                  
+                  <li id="c01-li-0026"><code>bundleconfig.json</code> defines the configuration for bundling and minifying JavaScript and CSS files.
+                  </li>
+                  
+                  <li id="c01-li-0027"><span epub:type="pagebreak" id="Page_10" title="10"></span><code>Program.cs</code> is where the web application starts. As mentioned earlier, the .NET Core app host
+                     can only start console applications, so web projects also need an instance of <code>Program.cs</code>.
+                  </li>
+                  
+                  <li id="c01-li-0028"><code>Startup.cs</code> is the main entry point for ASP.NET Core web applications. It is used to configure
+                     how the application behaves. Thus the <code>Global.asax</code> file, which was used for this purpose before, has disappeared.
+                  </li>
+                  
+                  <li id="c01-li-0029"><code>web.config</code> disappeared as it’s not needed any more.
+                  </li>
+                  
+               </ul>
+               
+               <p id="c01-para-0053">Of the many changes introduced in the new project template, some are on the .NET side,
+                  like the <code>Startup.cs</code>, and others are in the broader web development sphere, like the introduction of Bower,
+                  the capability to include dependencies to NPM, minification, bundling, and the new
+                  approach to publishing applications.
+               </p>
+               
+               <p id="c01-para-0054"><a href="c05.xhtml">Chapter 5</a> covers Bower and NPM in more detail, while <a href="c06.xhtml">Chapter 6</a> describes automated builds and publishing. The rest of this chapter is about all
+                  the changes introduced to the .NET side of things, starting with the <code>Startup.cs</code> file.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0020"></span>
+               
+               <h3 id="head-3-14">OWIN</h3>
+               
+               <p id="c01-para-0055">In order to understand the new ASP.NET Core execution model and why there is this
+                  new <code>Startup.cs</code> file, you have to look at OWIN (Open Web Interface for .NET), the application model
+                  by which <span epub:type="pagebreak" id="Page_11" title="11"></span>ASP.NET Core is inspired. OWIN defines a standard way for application components to
+                  interact with each other. The specification is very simple as it basically defines
+                  only two elements: the layers of which an application is composed and how these elements
+                  communicate.
+               </p>
+               
+               <section>
+                  <span id="c01-sec-0021"></span>
+                  
+                  <h4 id="head-4-1">OWIN Layers</h4>
+                  
+                  <p>The layers are shown in <a href="#c01-fig-0005" id="R_c01-fig-0005">Figure 1‐5</a>. They consist of the following:
+                  </p>
+                  
+                  <figure> <img alt="Illustration of OWIN Layers." src="images/c01f005.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c01-fig-0005" id="c01-fig-0005"><b>FIGURE 1-5</b></a><b>:</b></span> OWIN Layers
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <ul class="check" id="c01-list-0008">
+                     
+                     <li id="c01-li-0030"><b>Host:</b> The host is responsible for starting up the server and managing the process. In ASP.NET
+                        Core this role is implemented by the <code>dotnet</code> host application or by IIS directly.
+                     </li>
+                     
+                     <li id="c01-li-0031"><b>Server:</b> This is the actual web server, the one that receives HTTP requests and sends back
+                        the responses. In ASP.NET Core there are a few implementations available. These include
+                        IIS, IIS Express, and Kestrel or WebListener when the application is run within the
+                        dotnet host in self‐hosting scenarios.
+                     </li>
+                     
+                     <li id="c01-li-0032"><b>Middleware:</b> Middleware is composed of pass‐through components that handle all requests before
+                        delivering them to the final application. These components make up the execution pipeline
+                        of an ASP.NET Core application and can implement anything from simple logging to authentication
+                        to a full‐blown web framework like ASP.NET MVC.
+                     </li>
+                     
+                     <li id="c01-li-0033"><b>Application:</b> This layer is the code specific to the final application, typically built on top
+                        of one of the middleware components, like a web framework.
+                     </li>
+                     
+                  </ul>
+                  
+               </section>
+               
+               <section>
+                  <span id="c01-sec-0022"></span>
+                  
+                  <h4 id="head-4-2">OWIN Communication Interface</h4>
+                  
+                  <p>In OWIN, all the components that are part of the pipeline communicate with each other
+                     by passing a dictionary that contains all information about the request and server
+                     state. If you want to make sure all middleware components are compatible, they must
+                     implement a delegate function called <code>AppFunc</code> (or application delegate):
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c01-code-0002"><code>using AppFunc = Func&lt;</code>
+<code>  IDictionary&lt;string, object&gt;, // Environment</code>
+<code>  Task&gt;; // Done</code> </pre>
+                     </blockquote>
+                  
+                  <p><span epub:type="pagebreak" id="Page_12" title="12"></span>This code basically says that a middleware component must have a method that receives
+                     the <code>Environment</code> dictionary and returns a <code>Task</code> with the async operation to be executed.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature1">
+                        
+                        <h3>NOTE</h3>
+                        
+                        <p id="c01-para-0059"><i>The signature of</i> <code>AppFunc</code> <i>is the one defined by the OWIN specifications. While working inside ASP.NET Core,
+                              it’s rarely used as the .NET Core API provides an easier way to create and register
+                              middleware components in the pipeline.</i></p>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+               </section>
+               
+               <section>
+                  <span id="c01-sec-0023"></span>
+                  
+                  <h4 id="head-4-3">A Better Look at Middleware</h4>
+                  
+                  <p id="c01-para-0060">Even if not strictly standardized in the specification yet, OWIN also recommends a
+                     way to set up the application and register middleware components in the pipeline by
+                     using a builder function. Once registered, middleware components are executed one
+                     after the other until the last produces the result of the operation. At this point,
+                     middleware is executed in the opposite order until the response is sent back to the
+                     user.
+                  </p>
+                  
+                  <p id="c01-para-0061">An example of a typical application built with middleware might be the one shown in
+                     <a href="#c01-fig-0006" id="R_c01-fig-0006">Figure 1‐6</a>. The request arrives, is handled by a logging component, is decompressed, passes
+                     through authentication, and finally reaches the web framework (for example ASP.NET
+                     MVC), which executes the application code. At this point the execution steps back,
+                     re‐executing any post‐processing steps in middleware (for example, recompressing the
+                     output or logging the time taken to execute the request) before being sent out to
+                     the user.
+                  </p>
+                  
+                  <figure> <img alt="Scheme for Execution of middleware." src="images/c01f006.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c01-fig-0006" id="c01-fig-0006"><b>FIGURE 1-6</b></a><b>:</b></span> Execution of middleware
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+               </section>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0024"></span>
+               
+               <h3 id="head-3-15">Anatomy of an ASP.NET Core Application</h3>
+               
+               <p id="c01-para-0062">In order to better understand ASP.NET Core and its new approach to web development
+                  with .NET, it is worthwhile to create a new ASP.NET Core project. This time you will
+                  use the Empty project template to focus just on the minimum sets of files needed to
+                  start an ASP.NET Core application.
+               </p>
+               
+               <p id="c01-para-0063"><span epub:type="pagebreak" id="Page_13" title="13"></span>As shown in <a href="#c01-fig-0007" id="R_c01-fig-0007">Figure 1‐7</a>, the project tree in the Solution Explorer is almost empty in comparison to the Web
+                  Application project template of <a href="#c01-fig-0004">Figure 1‐4</a>. The only elements needed are the <code>Program.cs</code> and <code>Startup.cs</code> code files.
+               </p>
+               
+               <figure> <img alt="Illustration of Empty project template." src="images/c01f007.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c01-fig-0007" id="c01-fig-0007"><b>FIGURE 1-7</b></a><b>:</b></span> Empty project template
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <section>
+                  <span id="c01-sec-0025"></span>
+                  
+                  <h4 id="head-4-4">Host Builder Console Application</h4>
+                  
+                  <p id="c01-para-0064">An ASP.NET Core application is basically a console application (<a href="#c01-fea-0002">Listing 1‐2</a>) that creates a web server in its <code>Main</code> method.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c01-fea-0002"></span> 
+                        
+                        <h2 id="head-2-6">LISTING 1-2: Program.cs</h2>
+                        
+                        <section>
+                           <span id="c01-sec-0026"></span>
+                           
+                           <blockquote>
+                              <pre id="c01-code-0003"><code>public class Program</code>
+<code>{</code>
+<code>    public static void Main(string[] args)</code>
+<code>    {</code>
+<code>        BuildWebHost(args).Run();</code>
+<code>    }</code>
+<code></code>
+<code>    public static IWebHost BuildWebHost(string[] args) =&gt;</code>
+<code>        WebHost.CreateDefaultBuilder(args)</code>
+<code>            .UseStartup&lt;Startup&gt;()</code>
+<code>            .Build();</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p id="c01-para-0066">The <code>BuildWebHost</code> method is used to create the web application host using the default configuration
+                     and by specifying which class to use for the startup (<code>UseStartup&lt;Startup&gt;</code>).
+                  </p>
+                  
+                  <p id="c01-para-0067"><span epub:type="pagebreak" id="Page_14" title="14"></span>The web host created uses Kestrel as the server, sets it up to integrate with IIS
+                     when needed, and specifies all the default configurations for logging and configuration
+                     sources.
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c01-sec-0027"></span>
+                  
+                  <h4 id="head-4-5">ASP.NET Core Startup Class</h4>
+                  
+                  <p id="c01-para-0068">The configuration of the execution pipeline of an ASP.NET Core application is done
+                     via the <code>Configure</code> method of the <code>Startup</code> class. At its simplest this method needs a parameter of type <code>IApplicationBuilder</code> to receive an instance of the application builder, which is used to assemble together
+                     all middleware components.
+                  </p>
+                  
+                  <p id="c01-para-0069"><a href="#c01-fea-0003">Listing 1‐3</a> shows the code of the <code>Startup</code> class created by the empty project template. It has two methods, <code>ConfigureServices</code> and the aforementioned <code>Configure</code>. <code>ConfigureServices</code> is covered later in this chapter, when talking about dependency injection, so you’ll
+                     focus on the <code>Configure</code> method for the moment.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c01-fea-0003"></span> 
+                        
+                        <h2 id="head-2-7">LISTING 1-3: Startup.cs</h2>
+                        
+                        <section>
+                           <span id="c01-sec-0028"></span>
+                           
+                           <blockquote>
+                              <pre id="c01-code-0004"><code>public class Startup</code>
+<code>{</code>
+<code>    public void ConfigureServices(IServiceCollection services)</code>
+<code>    {</code>
+<code>    }</code>
+<code></code>
+<code>    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.</code>
+<code>    public void Configure(IApplicationBuilder app, IHostingEnvironment env)</code>
+<code>    {</code>
+<code>        </code>
+<code>        if (env.IsDevelopment())</code>
+<code>        {</code>
+<code>            app.UseDeveloperExceptionPage();</code>
+<code>        }</code>
+<code></code>
+<code>        <b>app.Run(async (context) =&gt;</b></code>
+<code>        <b>{</b></code>
+<code>            <b>await context.Response.WriteAsync("Hello World!");</b></code>
+<code>        <b>});</b></code>
+<code>    }</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p id="c01-para-0071">The important part of <a href="#c01-fea-0003">Listing 1‐3</a> is the call to the <code>app.Run</code> method. It tells the application to run the delegate function specified in the lambda
+                     expression. In this case, this web application will always return the text string
+                     “Hello World!”.
+                  </p>
+                  
+                  <p id="c01-para-0072">The <code>Run</code> method is used to configure <i>terminal</i> middleware, which doesn’t pass the execution to the next component in the pipeline.
+                     In <a href="#c01-fea-0003">Listing 1‐3</a>, a specific middleware component is also added, using <code>app.UseDeveloperExceptionPage()</code>. As general rule, third‐party middleware usually provides a <code>UseSomething</code> method for facilitating the registration into the pipeline. Another way of adding
+                     <span epub:type="pagebreak" id="Page_15" title="15"></span>custom middleware is by calling the <code>app.Use</code> method, specifying the application delegate function that should treat the request.
+                  </p>
+                  
+                  <p id="c01-para-0073">As you might have noticed, in <a href="#c01-fea-0003">Listing 1‐3</a> the <code>Configure</code> method has an additional parameter: <code>IHostingEnvironment</code>, which provides information on the hosting environment (including the current <code>EnvironmentName</code>). You’ll see more about them in a while.
+                  </p>
+                  
+               </section>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c01-sec-0029"></span>
+            
+            <h2 id="head-2-8">NEW FUNDAMENTAL FEATURES OF ASP.NET CORE</h2>
+            
+            <p>Together with a whole new startup model, ASP.NET Core also gained some features that
+               previously needed third‐party components or some custom development:
+            </p>
+            
+            <ul class="check" id="c01-list-0009">
+               
+               <li id="c01-li-0034">Easier handling of multiple environments</li>
+               
+               <li id="c01-li-0035">Built‐in dependency injection</li>
+               
+               <li id="c01-li-0036">A built‐in logging framework</li>
+               
+               <li id="c01-li-0037">A better configuration infrastructure that is both more powerful and easier to set
+                  up and use
+               </li>
+               
+            </ul>
+            
+            <section>
+               <span id="c01-sec-0030"></span>
+               
+               <h3 id="head-3-16">Environments</h3>
+               
+               <p id="c01-para-0075">One of the basic features available in ASP.NET Core is the structured approach for
+                  accessing information about the environment in which the application is running. This
+                  deals with understanding whether the environment is development, staging, or production.
+               </p>
+               
+               <p id="c01-para-0076">This information is available inside the <code>IHostingEnvironment</code> parameter passed to the <code>Configure</code> method. The current environment can be identified by simply checking its <code>EnvironmentName</code> property. For the most common environment names, there are some extension methods
+                  that make the process even easier: <code>IsDevelopment()</code>, <code>IsStaging()</code>, and <code>IsProduction()</code>, and you can use <code>IsEnvironment(envName)</code> for other more exotic names.
+               </p>
+               
+               <p id="c01-para-0077">Once you have identified the environment, you can add features to handle different
+                  conditions based on the environment. For example, you can enable detailed errors to
+                  only be displayed in development and user‐friendly messages to only be displayed in
+                  production.
+               </p>
+               
+               <p id="c01-para-0078">If differences between the environments are even more pronounced, ASP.NET Core allows
+                  different startup classes or configuration methods per environment. For example, if
+                  a class named <code>StartupDevelopment</code> exists, this class will be used instead of the standard <code>Startup</code> class when the environment is <code>Development.</code> Likewise, the <code>ConfigureDevelopment()</code> method will be used instead of <code>Configure()</code>.
+               </p>
+               
+               <p id="c01-para-0079">The environment is specified via the environment variable <code>ASPNETCORE_ENVIRONMENT</code>, which can be set in many different ways. For example, it can be set via the Windows
+                  Control Panel, via batch scripts (especially in servers), or directly from within
+                  Visual Studio in the project properties debug section (<a href="#c01-fig-0008" id="R_c01-fig-0008">Figure 1‐8</a>).
+               </p>
+               
+               <figure> <img alt="Illustration of Project settings." src="images/c01f008.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c01-fig-0008" id="c01-fig-0008"><b>FIGURE 1-8</b></a><b>:</b></span> Project settings
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p id="c01-para-0080"><span epub:type="pagebreak" id="Page_16" title="16"></span>Once set via the GUI, this information is stored in the <code>launchSettings.json</code> file, as shown in <a href="#c01-fea-0004">Listing 1‐4</a>.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c01-fea-0004"></span> 
+                     
+                     <h2 id="head-2-9">LISTING 1-4: LaunchSettings.json</h2>
+                     
+                     <section>
+                        <span id="c01-sec-0031"></span>
+                        
+                        <blockquote>
+                           <pre id="c01-code-0005"><code>{</code>
+<code>  "iisSettings": {</code>
+<code>    "windowsAuthentication": false,</code>
+<code>    "anonymousAuthentication": true,</code>
+<code>    "iisExpress": {</code>
+<code>      "applicationUrl": "http://localhost:34933/",</code>
+<code>      "sslPort": 0</code>
+<code>    }</code>
+<code>  },</code>
+<code>  "profiles": {</code>
+<code>    "IIS Express": {</code>
+<code>      "commandName": "IISExpress",</code>
+<code>      "launchBrowser": true,</code>
+<code>      "environmentVariables": {</code>
+<code>        "ASPNETCORE_ENVIRONMENT": "Development"</code>
+<code>      }</code>
+<code>    },</code>
+<code>    "EmptyApp": {</code>
+<code><span epub:type="pagebreak" id="Page_17" title="17"></span>      "commandName": "Project",</code>
+<code>      "launchBrowser": true,</code>
+<code>      "environmentVariables": {</code>
+<code>        "ASPNETCORE_ENVIRONMENT": "Development"</code>
+<code>      },</code>
+<code>      "applicationUrl": "http://localhost:34934"</code>
+<code>    }</code>
+<code>  }</code>
+<code>} </code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0032"></span>
+               
+               <h3 id="head-3-17">Dependency Injection</h3>
+               
+               <p id="c01-para-0082">In the previous ASP.NET framework, the usage of external dependency injection libraries
+                  was left to the goodwill of developers. ASP.NET Core not only has built‐in support
+                  for it, but actually requires its usage in order for applications to work.
+               </p>
+               
+               <section>
+                  <span id="c01-sec-0033"></span>
+                  
+                  <h4 id="head-4-6">What Is Dependency Injection?</h4>
+                  
+                  <p id="c01-para-0083">Dependency injection (DI) is a pattern used to build loosely coupled systems. Instead
+                     of directly instantiating dependencies or accessing static instances, classes get
+                     the objects they need somehow from the outside. Typically these classes declare which
+                     objects they need by specifying them as parameters of their constructor.
+                  </p>
+                  
+                  <p>Classes designed following this approach adhere to the Dependency Inversion Principle.
+                     It states that:
+                  </p>
+                  
+                  <blockquote class="extract">
+                     
+                     <p id="c01-para-0085"><i>A. High‐level modules should not depend on low‐level modules. Both should depend on
+                           abstractions.</i></p>
+                     
+                     <p id="c01-para-0086"><i>B. Abstractions should not depend on details. Details should depend on abstractions.</i></p>
+                     
+                     <p class="right">ROBERT C. “UNCLE BOB” MARTIN</p>
+                     
+                  </blockquote>
+                  
+                  <p id="c01-para-0087">This also means that these classes should not require concrete objects but just their
+                     abstractions, in the form of interfaces.
+                  </p>
+                  
+                  <p id="c01-para-0088">The problem with systems built in this way is that, at a certain point, the number
+                     of objects to create and to “inject” into classes can become unmanageable. To handle
+                     this, you have a factory method that can take care of creating all these classes and
+                     their associated dependencies. Such a class is called a <i>container</i>. Typically containers work by keeping a list of which concrete class they have to
+                     instantiate for a given interface. Later when they are asked to create the instance
+                     of a class, they <span epub:type="pagebreak" id="Page_18" title="18"></span>look at all its dependencies and create them based on that list. In this way very
+                     complex graphs can also be created with just one line of code.
+                  </p>
+                  
+                  <p>In addition to instantiating classes, these containers, called <i>Inversion of Control</i> or <i>Dependency Injection Containers</i> (IoC/DI containers), can also manage the lifetime of dependencies, which means that
+                     they also know whether they can reuse the same object or they must create another
+                     instance every time.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature1">
+                        
+                        <h3>NOTE</h3>
+                        
+                        <p id="c01-para-0090"><i>This was a very brief introduction to a very wide and complicated topic. There are
+                              numerous books on the topic, as well as lots of articles available on the Internet.
+                              In particular I suggest the articles from Robert C. “Uncle Bob” Martin or from Martin
+                              Fowler.</i></p>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+               </section>
+               
+               <section>
+                  <span id="c01-sec-0034"></span>
+                  
+                  <h4 id="head-4-7">Using Dependency Injection in ASP.NET Core</h4>
+                  
+                  <p id="c01-para-0091">Despite the relative complexity of the concept, using dependency injection in ASP.NET
+                     Core is very easy. The configuration of the container is done inside the <code>ConfigureServices</code> method of the <code>Startup</code> class. The actual container is the <code>IServiceCollection</code> variable that is passed to the method as a parameter named <code>services</code>. It is to this collection that all dependencies must be added.
+                  </p>
+                  
+                  <p id="c01-para-0092">There are two types of dependencies: the ones needed for the framework to work and
+                     those needed by the application to work. The first type of dependencies is usually
+                     configured via extension methods like <code>AddService</code>. For example, you can add the services needed to run ASP.NET MVC by calling <code>services.AddMvc()</code>, or you can add the database context needed by the Entity Framework using <code>services.AddDbContext&lt;MyDbContext&gt;(…)</code>. The second type of dependencies is added by specifying an interface and one concrete
+                     type. The concrete type will be instantiated every time the container receives a request
+                     for the interface.
+                  </p>
+                  
+                  <p>The syntax for adding the services depends on the kind of lifetime the service needs:</p>
+                  
+                  <ul class="check" id="c01-list-0010">
+                     
+                     <li id="c01-li-0038"><b>Transient</b> services are created every time they are requested and are typically used for stateless
+                        lightweight services. Such services are added using <code>services.AddTransient&lt;IEmailSender,EmailSender&gt;()</code>.
+                     </li>
+                     
+                     <li id="c01-li-0039"><b>Scoped</b> services are created once per web request and are usually used to hold references
+                        to repositories, data access classes, or any service that keeps some state that is
+                        used for the whole duration of the request. They are registered using <code>services.AddScoped&lt;IBlogRepository, BlogRepository&gt;()</code>.
+                     </li>
+                     
+                     <li id="c01-li-0040"><b>Singleton</b> services are created once, the first time they are requested, and later the same
+                        instance is reused for all following requests. Singletons are usually used to keep
+                        the status of an application throughout all its life. Singletons are registered using
+                        <code>services.AddSingleton&lt;IApplicationCache, ApplicationCache&gt;()</code>.
+                     </li>
+                     
+                  </ul>
+                  
+                  <p>A typical <code>ConfigureServices</code> method for an ASP.NET Core application can look like the following snippet taken
+                     from the default project template when choosing individual user accounts:
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c01-code-0006"><span epub:type="pagebreak" id="Page_19" title="19"></span><code>public void ConfigureServices(IServiceCollection services)</code>
+<code>{</code>
+<code>    // Add framework services.</code>
+<code>    services.AddDbContext&lt;ApplicationDbContext&gt;(options =&gt;</code>
+<code>        options.UseSqlServer(Configuration.GetConnectionString</code>
+<code>        ("DefaultConnection")));</code>
+<code></code>
+<code>    services.AddIdentity&lt;ApplicationUser, IdentityRole&gt;()</code>
+<code>        .AddEntityFrameworkStores&lt;ApplicationDbContext&gt;()</code>
+<code>        .AddDefaultTokenProviders();</code>
+<code></code>
+<code>    services.AddMvc();</code>
+<code></code>
+<code>    // Add application services.</code>
+<code>    services.AddTransient&lt;IEmailSender, AuthMessageSender&gt;();</code>
+<code>    services.AddTransient&lt;ISmsSender, AuthMessageSender&gt;();</code>
+<code>}</code> </pre>
+                     </blockquote>
+                  
+                  <p id="c01-para-0095">Additionally, a specific instance can be given (and in this case this is what will
+                     always be created by the container). For more complex scenarios a factory method can
+                     be configured to help the container create instances of specific services.
+                  </p>
+                  
+                  <p id="c01-para-0096">The usage of the dependencies is even easier. In the constructor of the class, controller,
+                     or service, just add a parameter with the type of the dependencies required. A better
+                     example is shown later in this chapter when covering the MVC framework.
+                  </p>
+                  
+               </section>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0035"></span>
+               
+               <h3 id="head-3-18">Logging</h3>
+               
+               <p id="c01-para-0097">ASP.NET Core comes with an integrated logging library with basic providers that write
+                  to console and to the debug output already configured as part of the setup of the
+                  default web host via the <code>WebHost.CreateDefaultBuilder</code> as seen in <a href="#c01-fea-0002">Listing 1‐2</a>.
+               </p>
+               
+               <section>
+                  <span id="c01-sec-0036"></span>
+                  
+                  <h4 id="head-4-8">Logger Instantiation</h4>
+                  
+                  <p id="c01-para-0098">The logger is injected directly using dependency injection by specifying a parameter
+                     of type <code>ILogger&lt;T&gt;</code> in the constructor of the controllers or services. The dependency injection framework
+                     will provide you with a logger whose category is the full type name (for example <code>Wrox.FrontendDev.MvcSample.HomeController</code>).
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c01-sec-0037"></span>
+                  
+                  <h4 id="head-4-9">Writing Log Messages</h4>
+                  
+                  <p>Writing messages is easily done with the extension methods provided by the built‐in
+                     logging library.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c01-code-0007"><code>_logger.LogInformation("Reached bottom of pipeline for request {path}", context.Request.Path)</code>
+<code>_logger.LogWarning("File not found")</code>
+<code>_logger.LogError("Cannot connect to database")</code> </pre>
+                     </blockquote>
+                  
+               </section>
+               
+               <section>
+                  <span id="c01-sec-0038"></span>
+                  
+                  <h4 id="head-4-10">Additional Logging Configuration</h4>
+                  
+                  <p id="c01-para-0100">The logger is already configured by default with the console and debug providers,
+                     but additional providers and configuration can be specified.
+                  </p>
+                  
+                  <p><span epub:type="pagebreak" id="Page_20" title="20"></span>All additional configuration must be specified in the <code>Program.cs</code> file, when setting up the web host, using the <code>ConfigureLogging</code> method.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c01-code-0008"><code>WebHost.CreateDefaultBuilder(args)</code>
+<code>    .UseStartup&lt;Startup&gt;()</code>
+<code>    <b>.ConfigureLogging((hostingContext, logging)=&gt;</b></code>
+<code>    <b>{</b></code>
+<code>       <b>//Here goes all configuration</b></code>
+<code>    <b>})</b></code>
+<code>    .Build();</code> </pre>
+                     </blockquote>
+                  
+                  <p id="c01-para-0102">ASP.NET Core comes with built‐in providers to write to the console, the debug window,
+                     Trace, Azure App logging, and the Event Log (only on the standard framework), but
+                     if needed third‐party logging providers like NLog or Serilog can be added as well.
+                  </p>
+                  
+                  <p id="c01-para-0103">For example, to add another provider like the one that writes to the Windows Event
+                     Log, <code>logging.AddEventLog()</code> must be called inside the <code>ConfigureLogging</code> method.
+                  </p>
+                  
+                  <p id="c01-para-0104">Another important configuration that must be specified is the log level that you want
+                     to write to the log files. This can be done for the whole application using the method
+                     <code>logging.SetMinimumLevel(LogLevel.Warning)</code>. In this example, only warnings, errors, or critical errors will be logged.
+                  </p>
+                  
+                  <p id="c01-para-0105">Configuration of the logging level can be more granular, taking into account the logger
+                     provider and the category (most of the time the name of the class from which the message
+                     originates).
+                  </p>
+                  
+                  <p id="c01-para-0106">Say for example that you want to send all log messages to the debug provider and in
+                     the console logger you are interested in all the messages from your own code but only
+                     in warnings or above originating from the ASP.NET Core libraries.
+                  </p>
+                  
+                  <p>This is configured using <i>filters</i>. They can be specified via configuration files, with code, or even with custom functions.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c01-code-0009"><code>The easiest approach is using JSON inside the standard appsettings.json configuration file:{</code>
+<code>  "Logging": {</code>
+<code>    "IncludeScopes": false,</code>
+<code>    "Debug": {</code>
+<code>      "LogLevel": {</code>
+<code>        "Default": "Information"</code>
+<code>      }</code>
+<code>    },</code>
+<code>    "Console": {</code>
+<code>      "LogLevel": {</code>
+<code>        "Microsoft.AspNet.Core": "Warning",</code>
+<code>        "MyCode": "Information"</code>
+<code>      }</code>
+<code>    },</code>
+<code>    "LogLevel": {</code>
+<code>      "Default": "Warning",</code>
+<code>    }</code>
+<code>  }</code>
+<code>}</code> </pre>
+                     </blockquote>
+                  
+                  <p><span epub:type="pagebreak" id="Page_21" title="21"></span>Something similar can be done by calling the <code>AddFilter</code> method in the <code>ConfigureLogging</code> method when building the web host:
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c01-code-0010"><code>logging.AddFilter&lt;ConsoleLoggerProvider&gt;("Microsoft.AspNet",LogLevel.Warning);</code>
+<code>logging.AddFilter&lt;DebugLoggerProvider&gt;("Default",LogLevel.Information);</code> </pre>
+                     </blockquote>
+                  
+                  <p>Both methods can be used together, and multiple filters can potentially apply to one
+                     single log message. The logging framework applies the following rules to decide which
+                     filter to apply:
+                  </p>
+                  
+                  <ol class="decimal" id="c01-list-0011">
+                     
+                     <li id="c01-li-0041">First it selects all the filters that apply to the provider and all the ones that
+                        are specified without the provider.
+                     </li>
+                     
+                     <li id="c01-li-0042">Then the categories are evaluated and the most specific is applied. For example <code>Microsoft.AspNet.Core.Mvc</code> is more specific than <code>Microsoft.AspNet.Core</code>.
+                     </li>
+                     
+                     <li id="c01-li-0043">Finally, if multiple filters are still left, the one specified as last is taken.</li>
+                     
+                  </ol>
+                  
+               </section>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0039"></span>
+               
+               <h3 id="head-3-19">Configuration</h3>
+               
+               <p id="c01-para-0110">If you worked with Configuration Settings in the standard ASP.NET framework, you know
+                  that it could be very complicated to set up, apart from the simple scenarios.
+               </p>
+               
+               <p id="c01-para-0111">The new configuration framework supports different sources of settings (XML, JSON,
+                  INI, environment variables, command‐line arguments, and in‐memory collections). It
+                  also automatically manages different environments and makes it very easy to create
+                  strongly‐typed configuration options.
+               </p>
+               
+               <p id="c01-para-0112">The recommended approach for using the new configuration system is to set it up when
+                  building the web host and then read it within your application, either directly or
+                  via the new strongly‐typed option.
+               </p>
+               
+               <section>
+                  <span id="c01-sec-0040"></span>
+                  
+                  <h4 id="head-4-11">Setting Up the Configuration Sources</h4>
+                  
+                  <p>Because the <code>Configuration</code> class, in its simplest form, is just a key/value collection, the setup process consists
+                     of adding the sources from which all these key/value pairs must be read from. The
+                     default web host builder already sets it up for you, so you just need to know where
+                     the configuration is read from:
+                  </p>
+                  
+                  <ul class="check" id="c01-list-0012">
+                     
+                     <li id="c01-li-0044">The first source of the configuration is the <code>appsettings.json</code> file in the root of the project.
+                     </li>
+                     
+                     <li id="c01-li-0045">Then the configuration is read from a file named <code>appsettings.{env.EnvironmentName}.json</code>.
+                     </li>
+                     
+                     <li id="c01-li-0046">The configuration can be read from environment variables.</li>
+                     
+                     <li id="c01-li-0047">Finally, there are also the arguments used when launching the application using the
+                        <code>dotnet run</code> command.
+                     </li>
+                     
+                  </ul>
+                  
+                  <p id="c01-para-0114">This setup allows the default settings defined in the first <code>appsettings.json</code> file to be overwritten in another JSON file whose name depends on the current environment
+                     and finally by a possible environment variable set on the server or argument passed
+                     to the command‐line tool that runs the <span epub:type="pagebreak" id="Page_22" title="22"></span>application. For example, paths to folders or database connection strings can be different
+                     in different environments.
+                  </p>
+                  
+                  <p id="c01-para-0115">Other configuration sources are the in‐memory collection source, typically used as
+                     the first source, to provide default values for settings, and the Users Secrets source,
+                     used to store sensitive information that you don’t want committed to a source code
+                     repository, like password or authorization tokens.
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c01-sec-0041"></span>
+                  
+                  <h4 id="head-4-12">Reading Values from Configuration</h4>
+                  
+                  <p id="c01-para-0116">Reading the collection is also easy. Settings are read just by using their key, for
+                     example <code>Configuration["username"]</code>. If the values are from a source that allows trees of settings, like JSON files,
+                     the key is to use a concatenation of all the property names, separated by <code>:</code>, starting from the root of the hierarchy.
+                  </p>
+                  
+                  <p id="c01-para-0117">For example, to read the connection string defined in the setting file of <a href="#c01-fea-0005">Listing 1‐5</a>, the following key should be used: <code>ConnectionStrings:DefaultConnection</code>. Sections of the settings can be accessed in a similar way, but instead of using
+                     the simple dictionary key approach, the <code>GetSection</code> method must be used. For example, <code>Configuration.GetSection("Logging")</code> gets the whole subsection related to logging (which can then be passed to the logger
+                     providers instead of configuring them by code).
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c01-fea-0005"></span> 
+                        
+                        <h2 id="head-2-10">LISTING 1-5: Appsettings.json file of the default project template</h2>
+                        
+                        <section>
+                           <span id="c01-sec-0042"></span>
+                           
+                           <blockquote>
+                              <pre id="c01-code-0011"><code>{</code>
+<code>  "ConnectionStrings": {</code>
+<code>    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=aspnet-ConfigSample-c18648e9-6f7a-40e6-b3f2-12a82e4e92eb;Trusted_Connection=True;MultipleActiveResultSets=true"</code>
+<code>  },</code>
+<code>  "Logging": {</code>
+<code>    "IncludeScopes": false,</code>
+<code>    "LogLevel": {</code>
+<code>      "Default": "Warning"</code>
+<code>    }</code>
+<code>  }</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p id="c01-para-0119">Unfortunately this naive approach works only if you have access directly to the instance
+                     of the configuration class (for example, as with the <code>Startup</code> class). There are two options to share the configuration with other components. The
+                     first is to create a custom service that centralizes the access to configuration,
+                     as was done with the standard ASP.NET framework. And second, which is the new and
+                     recommended approach, is easier to configure and requires no custom coding. This approach
+                     uses <code>Options</code>.
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c01-sec-0043"></span>
+                  
+                  <h4 id="head-4-13">Using Strongly‐Typed Configuration</h4>
+                  
+                  <p id="c01-para-0120">Creating strongly‐typed configuration options doesn’t require much more than creating
+                     the actual classes to hold the settings.
+                  </p>
+                  
+                  <p><span epub:type="pagebreak" id="Page_23" title="23"></span>For example, say you want to access the following configuration settings.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c01-code-0012"><code>"MySimpleConfiguration": "option from json file",</code>
+<code>"MyComplexConfiguration": {</code>
+<code>    "Username": "simonech",</code>
+<code>    "Age": 42,</code>
+<code>    "IsMvp": true</code>
+<code>}</code> </pre>
+                     </blockquote>
+                  
+                  <p id="c01-para-0122">All you need to do is to create two classes that map the properties in the JSON file
+                     one to one, as shown in <a href="#c01-fea-0006">Listing 1‐6</a>.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c01-fea-0006"></span> 
+                        
+                        <h2 id="head-2-11">LISTING 1-6: Options’ classes (Configuration\MyOptions.cs)</h2>
+                        
+                        <section>
+                           <span id="c01-sec-0044"></span>
+                           
+                           <blockquote>
+                              <pre id="c01-code-0013"><code>public class MyOptions</code>
+<code>{</code>
+<code>    public string MySimpleConfiguration { get; set; }</code>
+<code>    public MySubOptions MyComplexConfiguration  { get; set;}</code>
+<code>}</code>
+<code></code>
+<code>public class MySubOptions</code>
+<code>{</code>
+<code>    public string Username { get; set; }</code>
+<code>    public int Age { get; set; }</code>
+<code>    public bool IsMvp { get; set; }</code>
+<code></code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p>All that is left now is to create the binding between the configuration and the classes.
+                     This is done via the <code>ConfigureService</code> method as shown in following snippet.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c01-code-0014"><code>public void ConfigureServices(IServiceCollection services)</code>
+<code>{</code>
+<code>  services.AddOptions();</code>
+<code>  services.Configure&lt;MyOptions&gt;(Configuration);</code>
+<code>}</code> </pre>
+                     </blockquote>
+                  
+                  <p id="c01-para-0125">The <code>AddOptions</code> method just adds support for injecting options into a controller or service, while
+                     the <code>Configure&lt;TOption&gt;</code> extension method scans the <code>Configuration</code> collection and maps its keys to the properties of the Options classes. If the collection
+                     contains keys that do not map, they are simply ignored.
+                  </p>
+                  
+                  <p>If an option class is just interested in the values of a sub‐section, for example
+                     <code>MyComplexConfiguration</code>, the <code>Configure&lt;TOption&gt;</code> extension method can be called by specifying the section to use as the configuration
+                     root, similar to what is done when configuring Logging:
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c01-code-0015"><code>services.Configure&lt;MySubOptions&gt;(Configuration.GetSection("MyComplexConfiguration"))</code> </pre>
+                     </blockquote>
+                  
+                  <p id="c01-para-0127">Now options are ready to be injected into any controller or service that requests
+                     them, via its constructor.
+                  </p>
+                  
+                  <p id="c01-para-0128"><span epub:type="pagebreak" id="Page_24" title="24"></span><a href="#c01-fea-0007">Listing 1‐7</a> shows a controller that accesses the option class <code>MySubOptions</code> by simply adding a parameter of type <code>IOptions&lt;MySubOptions&gt;</code> to the constructor. Notice that it is not the actual option class to be injected
+                     but an accessor for it, so when using it the <code>Value</code> property needs to be used.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c01-fea-0007"></span> 
+                        
+                        <h2 id="head-2-12">LISTING 1-7: HomeController using options</h2>
+                        
+                        <section>
+                           <span id="c01-sec-0045"></span>
+                           
+                           <blockquote>
+                              <pre id="c01-code-0016"><code>public class HomeController : Controller</code>
+<code>{</code>
+<code>    private readonly MySubOptions _options;</code>
+<code></code>
+<code>    public HomeController(IOptions&lt;MySubOptions&gt; optionsAccessor)</code>
+<code>    {</code>
+<code>        _optionsAccessor = optionsAccessor.Value;</code>
+<code>    }</code>
+<code></code>
+<code>    public IActionResult Index()</code>
+<code>    {</code>
+<code>        var model = _options;</code>
+<code>        return View(model);</code>
+<code>    }</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p> </p>
+                  
+                  <aside>
+                     
+                     <section class="feature1">
+                        
+                        <section>
+                           <span id="c01-sec-0046"></span>
+                           
+                           <h2><b>ALTERNATIVES TO</b> <code>IOPTIONS</code></h2>
+                           
+                           <p id="c01-para-0130">Using <code>IOptions</code> is the approach recommended by the ASP.NET Core team because it opens the door to
+                              other scenarios such as automatic reload of the configuration on change, but some
+                              people find this approach a bit too complicated.
+                           </p>
+                           
+                           <p id="c01-para-0131">Luckily, there are a few other alternatives, one of which is simply passing the configuration
+                              to the controllers by registering it directly in the IoC container. Most of the code
+                              is similar to what you use with <code>IOptions</code> with the exception of the <code>ConfigureServices</code> method and the <code>Controller</code>.
+                           </p>
+                           
+                           <p id="c01-para-0132">Instead of enabling the Options framework by calling the <code>AddOptions</code> method, you can directly bind the <code>Configuration</code> object to the strongly‐typed class and then register it inside the IoC container.
+                           </p>
+                           
+                           <blockquote>
+                              <pre id="c01-code-0017"><code>var config = new MySubOptions();</code>
+<code>Configuration.GetSection("MyComplexConfiguration").Bind(config);</code>
+<code>services.AddSingleton(config);</code> </pre>
+                              </blockquote>
+                           <p id="c01-para-0133">
+                              This way the configuration can be used directly by the controller without going through
+                              the <code>IOptions</code> interface.
+                           </p>
+                           
+                        </section>
+                        
+                     </section>
+                  </aside>
+                  
+               </section>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c01-sec-0047"></span>
+            
+            <h2 id="head-2-13"><span epub:type="pagebreak" id="Page_25" title="25"></span>AN OVERVIEW OF SOME ASP.NET CORE MIDDLEWARE
+            </h2>
+            
+            <p id="c01-para-0134">So far the application you built doesn’t do a lot of work. It just always renders
+               a text string. But you can add more functionality simply by adding some of the middleware
+               that has been released as part of ASP.NET Core.
+            </p>
+            
+            <section>
+               <span id="c01-sec-0048"></span>
+               
+               <h3 id="head-3-20">Diagnostics</h3>
+               
+               <p id="c01-para-0135">The first additional component you might want to add is available in the package <code>Microsoft.AspNetCore.Diagnostics</code>. There is no need to manually add the package because in ASP.NET Core 2.0 all the
+                  packages are already included as part of the <code>Microsoft.AspNetCore.All</code> metapackage.
+               </p>
+               
+               <p id="c01-para-0136">It contains a few different components that help with handling errors. The first is
+                  the developer exception page, added to the pipeline using <code>UseDeveloperExceptionPage</code>, which is a more powerful replacement of the Yellow Page of Death, as it also shows
+                  some information on the status of the request, cookies, and headers (<a href="#c01-fig-0009" id="R_c01-fig-0009">Figure 1‐9</a>).
+               </p>
+               
+               <figure> <img alt="Illustration of the Developer Exception Page." src="images/c01f009.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c01-fig-0009" id="c01-fig-0009"><b>FIGURE 1-9</b></a><b>:</b></span> Developer Exception Page
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p><span epub:type="pagebreak" id="Page_26" title="26"></span>This page is useful while in development, but such detailed information should never
+                  be exposed to the public. The Exception Handler middleware can be used to send users
+                  to a different page when an error happens by specifying the path to which the application
+                  has to redirect:
+               </p>
+               
+               <blockquote>
+                  <pre id="c01-code-0018"><code>app.UseExceptionHandler("/Error")</code> </pre>
+                  </blockquote>
+               
+               <p id="c01-para-0138">If a page doesn’t exist, normally the application should return an HTTP 404 status
+                  code and a page not found warning, but ASP.NET Core won’t do so unless instructed.
+                  Luckily, it can be easily done as you just need to add it to the pipeline using <code>app.UseStatusCodePages()</code>.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0049"></span>
+               
+               <h3 id="head-3-21">Serving Static Files</h3>
+               
+               <p id="c01-para-0139">HTML, CSS, JavaScript, and images can be served by an ASP.NET Core application by
+                  using functionalities of the <code>Microsoft.AspNetCore.StaticFiles</code> package and by registering the middleware using <code>app.UseStaticFiles()</code>.
+               </p>
+               
+               <p>This middleware component serves all files under the <code>wwwroot</code> folder as if they were in the root path of the application. So the <code>/wwwroot/index.html</code> file will be returned when a request for <code>http://example.com/index.html</code> arrives. Optionally, other paths can be defined for serving folders outside of <code>wwwroot</code>. The following snippet shows how to create another instance of the StaticFile middleware
+                  that serves all files under <code>MyArchive</code> when requests for the path <code>http://example.com/archive</code> arrive.
+               </p>
+               
+               <blockquote>
+                  <pre id="c01-code-0019"><code>app.UseStaticFiles(new StaticFileOptions()</code>
+<code>{</code>
+<code>    FileProvider = new PhysicalFileProvider(</code>
+<code>        Path.Combine(Directory.GetCurrentDirectory(), @"MyArchive")),</code>
+<code>    RequestPath = new PathString("/Archive")</code>
+<code>});</code> </pre>
+                  </blockquote>
+               
+               <p id="c01-para-0141">If you want to have <code>index.html</code> files served automatically without specifying their name, another middleware component,
+                  <code>UseDefaultFiles</code>, must be added before any <code>UseStaticFiles</code>.
+               </p>
+               
+               <p>Other components from this package are <code>UseDirectoryBrowser</code>, which allows browsing of files and folders, and <code>UseFileServer</code>, which adds all the functionality of the three other components (but for security
+                  reasons directory browsing is disabled by default).
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature1">
+                     
+                     <h3>WARNING</h3>
+                     
+                     <p id="c01-para-0143"><i>There are some security considerations. The</i> <code>UseStaticFiles</code> <i>middleware doesn’t perform any check on authorization rules, so all files stored under</i> <code>wwwroot</code> <i>are publicly accessible. Also, enabling directory browsing is a security risk and
+                           should not be done in a production site. If either protection of static assets or
+                           directory browsing are needed, it is better to store the files in a folder not accessible
+                           from the web and return the results via a controller action using ASP.NET Core MVC.</i></p>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0050"></span>
+               
+               <h3 id="head-3-22"><span epub:type="pagebreak" id="Page_27" title="27"></span>Application Frameworks
+               </h3>
+               
+               <p>The most important middleware components are the ones that completely take over the
+                  execution and host the code of the application. With ASP.NET Core there are two application
+                  frameworks available:
+               </p>
+               
+               <ul class="check" id="c01-list-0013">
+                  
+                  <li id="c01-li-0048"><b>MVC</b> is used for building web applications that render HTML and handle user interactions.
+                  </li>
+                  
+                  <li id="c01-li-0049"><b>Web API</b> is used for building RESTful web services that can be consumed by either single‐page
+                     applications or by native applications on mobile or IoT devices.
+                  </li>
+                  
+               </ul>
+               
+               <p id="c01-para-0145">These two frameworks share many concepts, and, unlike with the previous versions,
+                  the programming model has been unified so that there is almost no difference between
+                  the two.
+               </p>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c01-sec-0051"></span>
+            
+            <h2 id="head-2-14">ASP.NET CORE MVC</h2>
+            
+            <p id="c01-para-0146">It might seem strange that a chapter titled “What’s New in ASP.NET Core MVC” of a
+               book that’s about frontend development with ASP.NET Core MVC doesn’t mention MVC almost
+               till the end of the chapter. The reason is that almost all the new features in the
+               updated MVC framework are related to the move from the standard ASP.NET framework
+               to ASP.NET Core. The new startup process, the new OWIN‐based execution pipeline, the
+               new hosting model, the built‐in configuration, logging, and dependency injection libraries
+               already have been covered.
+            </p>
+            
+            <p id="c01-para-0147">This last section of the chapter covers the new features that are specific to the
+               MVC framework, starting from the new way of setting it up inside an ASP.NET Core application
+               and how to define the routing table. Later it covers how to use dependency injection
+               in controllers and ends with interesting new features related to views: view components
+               and tag helpers.
+            </p>
+            
+            <section>
+               <span id="c01-sec-0052"></span>
+               
+               <h3 id="head-3-23">Using the MVC Framework inside ASP.NET Core</h3>
+               
+               <p id="c01-para-0148">The easiest way to start an MVC project on ASP.NET Core is to create a new project
+                  using the Web Application template. This will set up everything so that you can start
+                  right away with writing the code of the application. Most of the wiring up is done
+                  inside the <code>Startup</code> class (<a href="#c01-fea-0009">Listing 1‐8</a>).
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c01-fea-0009"></span> 
+                     
+                     <h2 id="head-2-15">LISTING 1-8: Startup class for the Web Application template</h2>
+                     
+                     <section>
+                        <span id="c01-sec-0053"></span>
+                        
+                        <blockquote>
+                           <pre id="c01-code-0020"><code>public class Startup</code>
+<code>{</code>
+<code>    public Startup(IConfigurationRoot configuration)</code>
+<code>    {</code>
+<code>        Configuration = configuration;</code>
+<code>    }</code>
+<code></code>
+<code>    public IConfigurationRoot Configuration { get; }</code>
+<code></code>
+<code><span epub:type="pagebreak" id="Page_28" title="28"></span>    // This method gets called by the runtime. Use this method to add services to the container.</code>
+<code>    public void ConfigureServices(IServiceCollection services)</code>
+<code>    {</code>
+<code>        // Add framework services.</code>
+<code>        <b>services.AddMvc();</b></code>
+<code>    }</code>
+<code></code>
+<code>    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.</code>
+<code>    public void Configure(IApplicationBuilder app, IHostingEnvironment env)</code>
+<code>    {</code>
+<code>        if (env.IsDevelopment())</code>
+<code>        {</code>
+<code>            app.UseDeveloperExceptionPage();</code>
+<code>            app.UseBrowserLink();</code>
+<code>        }</code>
+<code>        else</code>
+<code>        {</code>
+<code>            app.UseExceptionHandler("/Home/Error");</code>
+<code>        }</code>
+<code></code>
+<code>        app.UseStaticFiles();</code>
+<code></code>
+<code>        <b>app.UseMvc(routes =&gt;</b></code>
+<code>        <b>{</b></code>
+<code>            <b>routes.MapRoute(</b></code>
+<code>                <b>name: "default",</b></code>
+<code>                <b>template: "{controller=Home}/{action=Index}/{id?}");</b></code>
+<code>        <b>});</b></code>
+<code>    }</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p id="c01-para-0150">In addition to what has already been described in previous sections of this chapter
+                  (diagnostics, error handling, and serving of static files), the default template adds
+                  the <code>Mvc</code> middleware to the pipeline and the <code>Mvc</code> services to the built‐in IoC container.
+               </p>
+               
+               <p id="c01-para-0151">While adding the <code>Mvc</code> middleware, routing is configured as well. In this case the default route is specified.
+                  It matches the first segment of an URL to the controller name, the second to the action
+                  name, and the third to the argument named <code>id</code> of action method. And if they are not specified, the request will be handled by the
+                  action named <code>Index</code> and by the controller named <code>Home</code>.
+               </p>
+               
+               <p id="c01-para-0152">It doesn’t differ from the previous ASP.NET MVC framework. It’s just a different way
+                  of defining the routing table. Instead of doing it inside the <code>global.asax</code> file, it is done inside the configuration of the middleware.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0054"></span>
+               
+               <h3 id="head-3-24">Using Dependency Injection in Controllers</h3>
+               
+               <p id="c01-para-0153">Dependency injection was covered earlier in this chapter, together with how to add
+                  custom services into the built‐in container. Now you will take a look at how to use
+                  these services inside controllers and action methods.
+               </p>
+               
+               <p id="c01-para-0154"><span epub:type="pagebreak" id="Page_29" title="29"></span>One of the many reasons for using an abstraction is to make it easy to test the behavior
+                  of the application. For example, if an online shop has to display a special message
+                  on the first day of spring, you probably don’t want to wait till March 21st to make
+                  sure that application works correctly. So, in this case, instead of depending directly
+                  on the <code>System.DateTime.Today</code> property, it would be wiser to wrap it inside an external service so that it can
+                  later be replaced with a fake implementation that, for the purpose of testing, always
+                  returns March 21st.
+               </p>
+               
+               <p id="c01-para-0155">This is done by defining the interface, which in this case is very simple, and by
+                  implementing it in a concrete class, as is done in <a href="#c01-fea-0010">Listing 1‐9</a>.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c01-fea-0010"></span> 
+                     
+                     <h2 id="head-2-16">LISTING 1-9: IDateService interface and its implementations</h2>
+                     
+                     <section>
+                        <span id="c01-sec-0055"></span>
+                        
+                        <blockquote>
+                           <pre id="c01-code-0021"><code>public interface IDateService</code>
+<code>{</code>
+<code>    DateTime Today { get; }</code>
+<code>}</code>
+<code></code>
+<code>public class DateService: IDateService</code>
+<code>{</code>
+<code>    public DateTime Today</code>
+<code>    {</code>
+<code>        get {</code>
+<code>            return DateTime.Today;</code>
+<code>        }</code>
+<code>    } </code>
+<code>}</code>
+<code></code>
+<code>public class TestDateService : IDateService</code>
+<code>{</code>
+<code>    public DateTime Today</code>
+<code>    {</code>
+<code>        get</code>
+<code>        {</code>
+<code>            return new DateTime(2017, 3, 21);</code>
+<code>        }</code>
+<code>    }</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p id="c01-para-0157">Once the interface and the concrete class are ready, the controller must be modified
+                  to allow injection into its constructor. <a href="#c01-fea-0011">Listing 1‐10</a> shows how this is done.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c01-fea-0011"></span> 
+                     
+                     <h2 id="head-2-17">LISTING 1-10: HomeController with constructor injection</h2>
+                     
+                     <section>
+                        <span id="c01-sec-0056"></span>
+                        
+                        <blockquote>
+                           <pre id="c01-code-0022"><code>public class HomeController : Controller</code>
+<code>{</code>
+<code>    <b>private readonly IDateService _dateService;</b></code>
+<code></code>
+<code>    <b>public HomeController(IDateService dateService)</b></code>
+<code>    <b>{</b></code>
+<code>        _<b>dateService = dateService;</b></code>
+<code>    <b>}</b></code>
+<code></code>
+<code><span epub:type="pagebreak" id="Page_30" title="30"></span>    public IActionResult Index()</code>
+<code>    {</code>
+<code>        var today = _dateService.Today;</code>
+<code>        if(today.Month==3 &amp;&amp; today.Day==21)</code>
+<code>            ViewData["Message"] = "Spring has started, enjoy our spring sales!";</code>
+<code>        return View();</code>
+<code>    }</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p id="c01-para-0159">The last piece needed to tie the service and controller together is the registration
+                  of the service into the built‐in IoC Container. As previously seen, this is done inside
+                  the <code>ConfigureServices</code> method, using <code>services.AddTransient&lt;IDateService, DateService&gt;()</code>.
+               </p>
+               
+               <p id="c01-para-0160">Another way of using services inside an action method is via the new <code>[FromServices]</code> binding attribute. This is particularly useful if the service is used only inside
+                  one specific method and not throughout the entire controller. <a href="#c01-fea-0011">Listing 1‐10</a> could be rewritten using this new attribute as shown in <a href="#c01-fea-0012">Listing 1‐11</a>.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c01-fea-0012"></span> 
+                     
+                     <h2 id="head-2-18">LISTING 1-11: HomeController with action method parameter injection</h2>
+                     
+                     <section>
+                        <span id="c01-sec-0057"></span>
+                        
+                        <blockquote>
+                           <pre id="c01-code-0023"><code>public class HomeController : Controller</code>
+<code>{</code>
+<code>    <b>public IActionResult Index([FromServices] IDateService dateService)</b>    </code>
+<code>    {</code>
+<code>        var today = dateService.Today;</code>
+<code>        if(today.Month==3 &amp;&amp; today.Day==21)</code>
+<code>            ViewData["Message"] = "Spring has started, enjoy our spring sales!";</code>
+<code>        return View();</code>
+<code>    }</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0058"></span>
+               
+               <h3 id="head-3-25">View Components</h3>
+               
+               <p id="c01-para-0162">Now that you have seen the setup procedure and some new features of the controller,
+                  you will take a look at what’s new on the View side, starting with View Components.
+                  They are in a way similar to Partial Views, but they are more powerful and are used
+                  in different scenarios.
+               </p>
+               
+               <p id="c01-para-0163">Partial Views are, as the name suggests, views. They are used to split a complex view
+                  into many smaller and reusable parts. They are executed in the context of the view,
+                  so they have access to the view model, and being just razor files, they cannot have
+                  complicated logic.
+               </p>
+               
+               <p id="c01-para-0164">View Components, on the other hand, do not have access to the view model but just
+                  to the arguments that are passed to it. They are reusable components that encapsulate
+                  both backend logic and a razor view. They are therefore made of two parts: the view
+                  component class and a razor view. They are used in the same scenarios as Child Actions,
+                  which have been removed from the MVC framework in ASP.NET Core, and are reusable portions
+                  of pages that also need some logic that might involve querying a database or web services,
+                  like sidebars, menus, and so on.
+               </p>
+               
+               <p id="c01-para-0165"><span epub:type="pagebreak" id="Page_31" title="31"></span>The component class inherits from <code>ViewComponent</code> and must implement the method <code>Invoke</code> or <code>InvokeAsync</code>, which returns <code>IViewComponentResult</code>. By convention view component classes are located in a <code>ViewComponents</code> folder in the root of the project, and its name must end with <code>ViewComponent</code>. <a href="#c01-fea-0013">Listing 1‐12</a> shows a view component class named <code>SideBarViewComponent</code> that shows a list of links that need to appear in all the pages of the site.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c01-fea-0013"></span> 
+                     
+                     <h2 id="head-2-19">LISTING 1-12: ViewComponents\SideBarViewComponent.cs file</h2>
+                     
+                     <section>
+                        <span id="c01-sec-0059"></span>
+                        
+                        <blockquote>
+                           <pre id="c01-code-0024"><code>namespace MvcSample.ViewComponents</code>
+<code>{</code>
+<code>    public class SideBarViewComponent : ViewComponent</code>
+<code>    {</code>
+<code>        private readonly ILinkRepository db;</code>
+<code>        public SideBarViewComponent(ILinkRepository repository)</code>
+<code>        {</code>
+<code>            db = repository;</code>
+<code>        }</code>
+<code></code>
+<code>        <b>public IViewComponentResult Invoke (int max = 10)</b></code>
+<code>        {</code>
+<code>            var items = db.GetLinks().Take(max);</code>
+<code>            return View(items);</code>
+<code>        }</code>
+<code>    }</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p id="c01-para-0167">As shown in the example, the view component class can make use of the dependency injection
+                  framework just like controllers do (in this case it uses a repository class that returns
+                  a list of links).
+               </p>
+               
+               <p id="c01-para-0168">The view rendered by the view component is just like any other view, so it receives
+                  the view model specified in the <code>View</code> method, and it is accessible via the <code>@Model</code> variable. The only detail to remember is its name. By convention, the view must be
+                  <code>Views\Shared\Components\&lt;ComponentName&gt;\Default.cshtml</code> (so, in this example it should be <code>Views\Shared\Components\SideBar\Default.cshtml</code>), as shown in <a href="#c01-fea-0014">Listing 1‐13</a>.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c01-fea-0014"></span> 
+                     
+                     <h2 id="head-2-20">LISTING 1-13: Views\Shared\Components\SideBar\Default.cshtml</h2>
+                     
+                     <section>
+                        <span id="c01-sec-0060"></span>
+                        
+                        <blockquote>
+                           <pre id="c01-code-0025"><code>@model IEnumerable&lt;MvcSample.Model.Link&gt;</code>
+<code></code>
+<code>&lt;h2&gt;Blog Roll&lt;/h2&gt;</code>
+<code>&lt;ul&gt;</code>
+<code>    @foreach (var link in Model)</code>
+<code>    {</code>
+<code>        &lt;li&gt;&lt;a href="@link.Url"&gt;@link.Title&lt;/a&gt;&lt;/li&gt;</code>
+<code>    }</code>
+<code>&lt;/ul&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p><span epub:type="pagebreak" id="Page_32" title="32"></span>Finally, to include the view component into a view, the <code>@Component.InvokeAsync</code> method must be called, providing an anonymous class with the parameters for the view
+                  component’s <code>Invoke</code> method.
+               </p>
+               
+               <blockquote>
+                  <pre id="c01-code-0026"><code>@await Component.InvokeAsync("SideBar", new { max = 5})</code> </pre>
+                  </blockquote>
+               
+               <p id="c01-para-0171">If you used Child Actions from the previous version you will immediately notice the
+                  main difference. The parameters are provided directly by the calling method and are
+                  not extrapolated by the route via model binding. This is because view components are
+                  not action methods, but are a whole new element that doesn’t reuse the standard MVC
+                  execution pipeline. An added benefit is that you cannot expose these components by
+                  mistake to the web, like you could do with Child Actions if you forgot to specify
+                  the <code>[ChildOnly]</code> attribute.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0061"></span>
+               
+               <h3 id="head-3-26">Tag Helpers</h3>
+               
+               <p id="c01-para-0172">Tag helpers are a new concept introduced in ASP.NET Core MVC. They are a mash‐up of
+                  standard HTML tags and Razor HTML helpers, and they take the best part of both of
+                  them. Tag helpers look like standard HTML tags, so there is no more switching between
+                  writing HTML and C# code. They also have some of the server‐side logic of HTML helpers,
+                  so, for example, they can read the value of the view model and conditionally add CSS
+                  classes.
+               </p>
+               
+               <section>
+                  <span id="c01-sec-0062"></span>
+                  
+                  <h4 id="head-4-14">Using Tag Helpers from ASP.NET Core</h4>
+                  
+                  <p id="c01-para-0173">For example, take a look at how to write an input textbox for a form. With HTML helpers
+                     you would write <code>@Html.TextBoxFor(m =&gt; m.Email)</code>, while using tag helpers the code is <code>&lt;input asp‐for="Email" /&gt;</code>.The first case is C# code that returns HTML, while the second case is just HTML that
+                     is enhanced with some special attribute (<code>asp‐for</code> in this case).
+                  </p>
+                  
+                  <p id="c01-para-0174">The advantage becomes more obvious when the HTML tag needs additional attributes (for
+                     example if you want to add a specific class or some <code>data‐*</code> or <code>aria‐*</code> attributes). With HTML helpers you would need to provide an anonymous object with
+                     all the additional attributes, while with tag helpers you write as if you were writing
+                     standard static HTML and just add the special attribute.
+                  </p>
+                  
+                  <p>The differences become apparent by comparing the two syntaxes for a textbox that needs
+                     an additional class and for which you want to disable autocomplete. With HTML helpers
+                     it is:
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c01-code-0027"><code>@Html.TextBoxFor(m=&gt;m.Email, new { @class = "form-control", autocomplete="off" })</code> </pre>
+                     </blockquote>
+                  
+                  <p>The same textbox using a tag helper is:</p>
+                  
+                  <blockquote>
+                     <pre id="c01-code-0028"><code>&lt;input asp-for="Email" class="form-control" autocomplete="off"/&gt;</code> </pre>
+                     </blockquote>
+                  
+                  <p id="c01-para-0177">Another added value of using tag helpers is the support inside Visual Studio. Tag
+                     helpers get IntelliSense and have a different syntax highlighting.
+                  </p>
+                  
+                  <p id="c01-para-0178"><a href="#c01-fig-0010" id="R_c01-fig-0010">Figures 1‐10</a> through <a href="#c01-fig-0012" id="R_c01-fig-0012">1‐12</a> show what happens when you start typing in Visual Studio a tag that could be a tag
+                     helper. In the IntelliSense list, you can identify which tags could be tag helpers
+                     because of the new icon (the <code>@</code> sign with <code>&lt; &gt;</code> angular brackets). Once you select the tag, IntelliSense shows all the possible attributes,
+                     again identifying the tag helpers with the new icon. Finally, when the attribute is
+                     typed as well, Visual Studio recognizes it as a tag helper; it colorizes it differently
+                     and also provides IntelliSense for the value of the property <code>asp‐for</code>.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Identifying which tags can be tag helpers." src="images/c01f010.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c01-fig-0010" id="c01-fig-0010"><b>FIGURE 1-10</b></a><b>:</b></span> Identifying which tags can be tag helpers
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <figure> <img alt="Illustration of Attributes for a tag." src="images/c01f011.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c01-fig-0010" id="c01-fig-0011"><b>FIGURE 1-11</b></a><b>:</b></span> Attributes for a tag
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <figure> <img alt="Illustration of a well-typed attribute." src="images/c01f012.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c01-fig-0012" id="c01-fig-0012"><b>FIGURE 1-12</b></a><b>:</b></span> A well‐typed attribute
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+                  <p id="c01-para-0179"><span epub:type="pagebreak" id="Page_33" title="33"></span><span epub:type="pagebreak" id="Page_34" title="34"></span>ASP.NET Core MVC comes with many tag helpers for rendering forms but also for other
+                     tasks, such as an <code>Image</code> tag helper that can also add a version number to the URL to make sure it is not cached
+                     or an <code>Environment</code> tag helper for conditionally rendering different HTML fragments depending on which
+                     environment it is.
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c01-sec-0063"></span>
+                  
+                  <h4 id="head-4-15">Writing Custom Tag Helpers</h4>
+                  
+                  <p id="c01-para-0180">In addition to the one available built‐in, custom tag helpers can be easily created.
+                     They are very useful when you need to output a long and repetitive piece of HTML code
+                     that changes very little from one instance to another.
+                  </p>
+                  
+                  <p id="c01-para-0181">To see how to build a custom tag helper, let’s make one that automatically creates
+                     an email link by specifying the email address. We’ll create something that converts
+                     <code>&lt;email&gt;info@wrox.com&lt;/email&gt;</code> to <code>&lt;a href="mailto:info@wrox.com"&gt;info@wrox.com&lt;/a&gt;</code>.
+                  </p>
+                  
+                  <p id="c01-para-0182">The tag helper is a class, named <code>&lt;Helper&gt;TagHelper</code>, that inherits from <code>TagHelper</code> and implements the <code>Process</code> or <code>ProcessAsync</code> methods.
+                  </p>
+                  
+                  <p>Those two methods have the two following parameters:</p>
+                  
+                  <ul class="check" id="c01-list-0014">
+                     
+                     <li id="c01-li-0050"><code>context</code> contains the information on the current execution context.
+                     </li>
+                     
+                     <li id="c01-li-0051"><code>output</code> contains a model of the original HTML and has to be modified by the tag helper.
+                     </li>
+                     
+                  </ul>
+                  
+                  <p id="c01-para-0184"><a href="#c01-fea-0015">Listing 1‐14</a> shows the full code for the tag helper.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c01-fea-0015"></span> 
+                        
+                        <h2 id="head-2-21">LISTING 1-14: EmailTagHelper.cs</h2>
+                        
+                        <section>
+                           <span id="c01-sec-0064"></span>
+                           
+                           <blockquote>
+                              <pre id="c01-code-0029"><code>public class EmailTagHelper: TagHelper</code>
+<code>{</code>
+<code>    public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)</code>
+<code>    {</code>
+<code>        output.TagName = "a";</code>
+<code>        var content = await output.GetChildContentAsync();</code>
+<code>        output.Attributes.SetAttribute("href", "mailto:"+content.GetContent());</code>
+<code>    }</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p id="c01-para-0186">Let’s see what the code does.</p>
+                  
+                  <p id="c01-para-0187">The first line replaces the tag name (which in our case is <code>email</code>) with the one needed in the HTML code. Since we are generating a link, it must be
+                     an <code>a</code> tag.
+                  </p>
+                  
+                  <p id="c01-para-0188">The second line gets the content of the element. This is done using the <code>GetChildContentAsync</code> method, which also takes care of executing any Razor expression present.
+                  </p>
+                  
+                  <p id="c01-para-0189">Finally, the <code>href</code> attribute is set to the previously retrieved string.
+                  </p>
+                  
+                  <p id="c01-para-0190">Before using the newly created tag helper, we must instruct the framework where to
+                     look for tag helpers. This is done in the <code>_ViewImports.cshtml</code> file. See <a href="#c01-fea-0016">Listing 1‐15</a>.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c01-fea-0016"></span> 
+                        
+                        <h2 id="head-2-22"><span epub:type="pagebreak" id="Page_35" title="35"></span>LISTING 1-15: ViewImports.cshtml
+                        </h2>
+                        
+                        <section>
+                           <span id="c01-sec-0065"></span>
+                           
+                           <blockquote>
+                              <pre id="c01-code-0030"><code>@using MvcSample</code>
+<code>@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers</code>
+<code>@addTagHelper "*, MvcSample"</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p id="c01-para-0192">The first line is added by the default project and is needed to be able to use the
+                     built‐in tag helpers, while the second instructs the framework to look for new tag
+                     helpers in any class of the project.
+                  </p>
+                  
+                  <p>Finally we can use the tag helper by typing the following:</p>
+                  
+                  <blockquote>
+                     <pre id="c01-code-0031"><code>&lt;email&gt;info@wrox.com&lt;/email&gt; </code> </pre>
+                     </blockquote>
+                  
+                  <p id="c01-para-0194">In addition to this sample, <a href="c04.xhtml">Chapter 4</a> shows the code for a tag helper that renders a Bootstrap component.
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c01-sec-0066"></span>
+                  
+                  <h4 id="head-4-16">View Components as Tag Helpers</h4>
+                  
+                  <p id="c01-para-0195">We’ve seen how to add a View Component in a razor view by using the <code>InvokeAsync</code> method. But starting with ASP.NET Core 1.1, View Components can also be included
+                     using the same syntax as tag helpers (and IntelliSense) by appending the prefix <code>vc</code>.
+                  </p>
+                  
+                  <p id="c01-para-0196">With this syntax, the View Component of <a href="#c01-fea-0013">Listings 1‐12</a> and <a href="#c01-fea-0014">1‐13</a> can also be instantiated using <code>&lt;vc:sidebar max="5"&gt;&lt;/sidebar&gt;</code>, and also gets IntelliSense as shown in <a href="#c01-fig-0013" id="R_c01-fig-0013">Figure 1‐13</a>.
+                  </p>
+                  
+                  <figure> <img alt="Illustration of Intellisense on View Components." src="images/c01f013.jpg" />
+                     
+                     <figcaption>
+                        <p><span class="figureLabel"><a href="#R_c01-fig-0013" id="c01-fig-0013"><b>FIGURE 1-13</b></a><b>:</b></span> IntelliSense on View Components
+                        </p>
+                     </figcaption>
+                     
+                  </figure>
+                  
+               </section>
+               
+            </section>
+            
+            <section>
+               <span id="c01-sec-0067"></span>
+               
+               <h3 id="head-3-27">Web API</h3>
+               
+               <p id="c01-para-0197">Unlike previous versions of Web API, with ASP.NET Core, Web API applications reuse
+                  all the same features and configurations of MVC ones.
+               </p>
+               
+               <p id="c01-para-0198">For example, to write an API that returns the list of links used in the side bar of
+                  <a href="#c01-fea-0013">Listing 1‐12</a>, you just need to create a controller that adheres to the Web API routing conventions
+                  and that specifies the HTTP verbs to which each action responds. See <a href="#c01-fea-0017">Listing 1‐16</a>.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c01-fea-0017"></span> 
+                     
+                     <h2 id="head-2-23">LISTING 1-16: LinksController.cs</h2>
+                     
+                     <section>
+                        <span id="c01-sec-0068"></span>
+                        
+                        <blockquote>
+                           <pre id="c01-code-0032"><code>[Route("api/[controller]")]</code>
+<code>public class LinksController : Controller</code>
+<code>{</code>
+<code>    private readonly ILinkRepository db;</code>
+<code>    public LinksController(ILinkRepository repository)</code>
+<code>    {</code>
+<code><span epub:type="pagebreak" id="Page_36" title="36"></span>        db = repository;</code>
+<code>    }</code>
+<code></code>
+<code>    [HttpGet]</code>
+<code>    public IEnumerable&lt;Link&gt; Get()</code>
+<code>    {</code>
+<code>        return db.GetLinks();</code>
+<code>    }</code>
+<code></code>
+<code>    [HttpGet("{id}")]</code>
+<code>    public Link Get(int id)</code>
+<code>    {</code>
+<code>        return db.GetLinks().SingleOrDefault(l=&gt;l.Id==id);</code>
+<code>    }</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p id="c01-para-0200">This controller will respond to HTTP GET requests to the URL <code>/api/Links</code> by returning the list of all links in JSON format, and to <code>/api/Links/4</code> by returning the link whose id is 4. This behavior is specified by the <code>Route</code> attribute, which configures the name of the API method, and by the <code>HttpGet</code> method, which specifies which action to execute when the API is called with GET.
+               </p>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c01-sec-0069"></span>
+            
+            <h2 id="head-2-24">SUMMARY</h2>
+            
+            <p id="c01-para-0201">ASP.NET Core introduces a new, more modern framework that encourages writing code
+               of good quality thanks to the built‐in support for dependency injection and the easy‐to‐use
+               component model. Together with this better framework, the whole development experience
+               got an overhaul. New command‐line‐based developer tools make it possible to develop
+               with a lighter IDE, and the introduction of elements typical of the front‐end development
+               world like Bower, NPM, and Gulp make the new .NET stack more appealing for developers
+               coming from different backgrounds.
+            </p>
+            
+            <p id="c01-para-0202">But all these changes also bring new challenges. .NET developers have to evolve and
+               start learning new technologies and get fluent in other languages. The rest of the
+               book covers in detail all these new technologies and languages that are now required
+               in order to be a skilled .NET web developer.
+            </p>
+            
+         </section>
+         
+      </section>
+      
+   </body>
+   
+</html>

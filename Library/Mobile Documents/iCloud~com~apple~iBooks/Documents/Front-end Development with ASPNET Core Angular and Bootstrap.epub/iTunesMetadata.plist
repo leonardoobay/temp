@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>artistName</key>
+	<string>Simone Chiaretta</string>
+	<key>book-info</key>
+	<dict>
+		<key>cover-image-hash</key>
+		<string>F2153CF4DC85B7F1615B3C019E3EE08A</string>
+		<key>cover-image-path</key>
+		<string>OPS/images/9781119181316.jpg</string>
+		<key>mime-type</key>
+		<string>application/epub+zip</string>
+		<key>package-file-hash</key>
+		<string>DAE27B123EA35FDC54F1252EDC891C82</string>
+		<key>publisher-unique-id</key>
+		<string>urn:isbn:9781119181408</string>
+		<key>unique-id</key>
+		<integer>895029347712891042</integer>
+		<key>update-level</key>
+		<integer>2</integer>
+	</dict>
+	<key>itemName</key>
+	<string>Front-end Development with ASP.NET Core, Angular, and Bootstrap</string>
+	<key>playlistName</key>
+	<string>Front-end Development with ASP.NET Core, Angular, and Bootstrap</string>
+	<key>releaseDate</key>
+	<string>2018-03-07T00:00:00Z</string>
+</dict>
+</plist>

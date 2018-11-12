@@ -1,0 +1,90 @@
+2018-07-04 14:25:28:589|AppleMobileDeviceHelper|1256|0x7f9d20006b80|ISyncManager|Warning| Sync Server default was not found, assuming server was active
+2018-07-04 14:25:28:634|SyncServer|1257|0x7fe44bc066a0|Logging|Info| Logging initialized, engine version 727 : log level 3
+2018-07-04 14:25:29:231|SyncServer|1257|0x7fe44bf014e0|SyncManager|Info| Really resetting all sync data
+2018-07-04 14:25:29:231|SyncServer|1257|0x7fe44bf014e0|DataManager|Warning| Resetting Sync Data - Including Clients and Schemas=YES
+2018-07-04 14:25:29:232|SyncServer|1257|0x7fe44bf014e0|Server|Warning| Admin database corrupted. Resetting data directory.
+2018-07-04 14:25:29:253|SyncServer|1257|0x7fe44bf014e0|Server|Info| Cancelling all sync plans.
+2018-07-04 14:25:29:255|SyncServer|1257|0x7fe44bf014e0|Server|Info| Goodnight, Gracie.
+2018-07-04 14:25:39:522|SyncServer|1263|0x7fd624606ae0|Logging|Info| Logging initialized, engine version 727 : log level 3
+2018-07-04 14:25:43:508|AppleMobileDeviceHelper|1256|0x7f9d20006b80|ISyncManager|Warning| Sync Server was - Active Last Time
+2018-07-04 14:28:01:852|SyncServer|1263|0x7fd624606ae0|Server|Info| Cancelling all sync plans.
+2018-07-04 14:28:01:853|SyncServer|1263|0x7fd624606ae0|Server|Info| Goodnight, Gracie.
+2018-07-04 14:28:04:242|SyncServer|1314|0x7f86bb404530|Logging|Info| Logging initialized, engine version 727 : log level 3
+2018-07-04 14:29:25:511|AppleMobileDeviceHelper|1256|0x7f9d20006b80|ISyncManager|Warning| Sync Server was - Active Last Time
+2018-07-04 14:31:29:173|SyncServer|1314|0x7f86bb404530|Server|Info| Cancelling all sync plans.
+2018-07-04 14:31:29:179|SyncServer|1314|0x7f86bb404530|Server|Info| Goodnight, Gracie.
+2018-07-04 14:33:14:821|SyncServer|1407|0x7fae1f606b60|Logging|Info| Logging initialized, engine version 727 : log level 3
+2018-07-04 14:33:14:903|AppleMobileDeviceHelper|1256|0x7f9d20006b80|ISyncManager|Warning| Sync Server was - Active Last Time
+2018-07-04 14:35:45:820|SyncServer|1407|0x7fae1f606b60|Server|Info| Cancelling all sync plans.
+2018-07-04 14:35:45:824|SyncServer|1407|0x7fae1f606b60|Server|Info| Goodnight, Gracie.
+2018-07-04 14:37:19:841|SyncServer|1502|0x7fc07be0e700|Logging|Info| Logging initialized, engine version 727 : log level 3
+2018-07-04 14:39:59:726|SyncServer|1502|0x7fc07be0e700|Server|Info| Cancelling all sync plans.
+2018-07-04 14:39:59:727|SyncServer|1502|0x7fc07be0e700|Server|Info| Goodnight, Gracie.
+2018-07-05 16:51:49:948|AppleMobileDeviceHelper|569|0x7f867250f6b0|ISyncManager|Warning| Sync Server was - Active Last Time
+2018-07-05 16:51:49:980|SyncServer|570|0x7fad5bd06a50|Logging|Info| Logging initialized, engine version 727 : log level 3
+2018-07-05 16:53:51:555|SyncServer|570|0x7fad5bd06a50|Server|Info| Cancelling all sync plans.
+2018-07-05 16:53:51:562|SyncServer|570|0x7fad5bd06a50|Server|Info| Goodnight, Gracie.
+2018-07-05 16:57:16:872|SyncServer|627|0x7f87b3f06ad0|Logging|Info| Logging initialized, engine version 727 : log level 3
+2018-07-05 16:57:19:827|AppleMobileDeviceHelper|569|0x7f867250f6b0|ISyncManager|Warning| Sync Server was - Active Last Time
+2018-07-05 16:59:53:075|SyncServer|627|0x7f87b3f06ad0|Server|Info| Cancelling all sync plans.
+2018-07-05 16:59:53:076|SyncServer|627|0x7f87b3f06ad0|Server|Info| Goodnight, Gracie.
+2018-07-05 17:01:06:502|SyncServer|631|0x7fa266f06aa0|Logging|Info| Logging initialized, engine version 727 : log level 3
+2018-07-05 17:01:12:126|AppleMobileDeviceHelper|569|0x7f867250f6b0|ISyncManager|Warning| Sync Server was - Active Last Time
+2018-07-05 17:03:44:821|SyncServer|631|0x7fa266f06aa0|Server|Info| Cancelling all sync plans.
+2018-07-05 17:03:44:822|SyncServer|631|0x7fa266f06aa0|Server|Info| Goodnight, Gracie.
+2018-07-05 17:16:25:423|SyncServer|676|0x7ff8f65089f0|Logging|Info| Logging initialized, engine version 727 : log level 3
+2018-07-05 17:18:25:975|SyncServer|676|0x7ff8f65089f0|Server|Info| Cancelling all sync plans.
+2018-07-05 17:18:25:989|SyncServer|676|0x7ff8f65089f0|Server|Info| Goodnight, Gracie.
+2018-07-05 18:09:28:247|AppleMobileDeviceHelper|569|0x7f867250f6b0|ISyncManager|Warning| Sync Server was - Active Last Time
+2018-07-05 18:09:28:271|SyncServer|766|0x7fce9fc067e0|Logging|Info| Logging initialized, engine version 727 : log level 3
+2018-07-05 18:11:34:396|SyncServer|766|0x7fce9fc067e0|Server|Info| Cancelling all sync plans.
+2018-07-05 18:11:34:407|SyncServer|766|0x7fce9fc067e0|Server|Info| Goodnight, Gracie.
+2018-07-05 18:24:43:465|SyncServer|776|0x7fa5dfc00e40|Logging|Info| Logging initialized, engine version 727 : log level 3
+2018-07-05 18:25:42:962|AppleMobileDeviceHelper|569|0x7f867250f6b0|ISyncManager|Warning| Sync Server was - Active Last Time
+2018-07-05 18:27:46:469|SyncServer|776|0x7fa5dfc00e40|Server|Info| Cancelling all sync plans.
+2018-07-05 18:27:46:471|SyncServer|776|0x7fa5dfc00e40|Server|Info| Goodnight, Gracie.
+2018-07-05 18:30:09:691|AppleMobileDeviceHelper|569|0x7f867250f6b0|ISyncManager|Warning| Sync Server was - Active Last Time
+2018-07-05 18:30:09:729|SyncServer|800|0x7f8afaf08f50|Logging|Info| Logging initialized, engine version 727 : log level 3
+2018-07-05 18:32:09:766|SyncServer|800|0x7f8afaf08f50|Server|Info| Cancelling all sync plans.
+2018-07-05 18:32:09:776|SyncServer|800|0x7f8afaf08f50|Server|Info| Goodnight, Gracie.
+2018-07-05 18:33:24:676|SyncServer|802|0x7fd527f06640|Logging|Info| Logging initialized, engine version 727 : log level 3
+2018-07-05 18:34:19:158|AppleMobileDeviceHelper|569|0x7f867250f6b0|ISyncManager|Warning| Sync Server was - Active Last Time
+2018-07-05 18:36:14:245|AppleMobileDeviceHelper|569|0x7f867250f6b0|ISyncManager|Info| register client com.apple.MobileSync.c4c26b3ab522350a7029cf15142f7922d25c3e8d from /System/Library/PrivateFrameworks/MobileDevice.framework/Versions/Current/AppleMobileDeviceHelper.app/Contents/Resources/ClientDescription50.plist (bundleId = (null), bundleRelativePath = (null))
+2018-07-05 18:36:17:242|AppleMobileSync|820|0x7fada8c0f320|ISyncManager|Warning| Sync Server was - Active Last Time
+2018-07-05 18:36:17:408|AddressBookSync|821|0x7fd758611880|ISyncManager|Warning| Sync Server was - Active Last Time
+2018-07-05 18:36:17:523|AddressBookSync|821|0x7fd758611880|Stats|Stats| com.apple.AddressBook: refresh sync com.apple.contacts.CalendarURI, com.apple.contacts.Contact, com.apple.contacts.Date, com.apple.contacts.Email Address, com.apple.contacts.Group, com.apple.contacts.IM, com.apple.contacts.ImageTransformationInfo, com.apple.contacts.Phone Number, com.apple.contacts.Related Name, com.apple.contacts.SmartGroup, com.apple.contacts.Street Address, com.apple.contacts.URL
+2018-07-05 18:36:17:524|AddressBookSync|821|0x7fd758611880|ISyncSession|Info| com.apple.AddressBook: prepare to refresh com.apple.contacts.CalendarURI,com.apple.contacts.Contact,com.apple.contacts.Date,com.apple.contacts.Email Address,com.apple.contacts.Group,com.apple.contacts.IM,com.apple.contacts.ImageTransformationInfo,com.apple.contacts.Phone Number,com.apple.contacts.Related Name,com.apple.contacts.SmartGroup,com.apple.contacts.Street Address,com.apple.contacts.URL
+2018-07-05 18:36:17:568|AppleMobileSync|820|0x7fada8c0f320|Stats|Stats| com.apple.MobileSync.c4c26b3ab522350a7029cf15142f7922d25c3e8d: refresh sync com.apple.contacts.IM, com.apple.contacts.Related Name, com.apple.contacts.URL, com.apple.contacts.Street Address, com.apple.contacts.Phone Number, com.apple.contacts.Contact, com.apple.contacts.Group, com.apple.contacts.Date, com.apple.contacts.Email Address
+2018-07-05 18:36:17:568|AppleMobileSync|820|0x7fada8c0f320|ISyncSession|Info| com.apple.MobileSync.c4c26b3ab522350a7029cf15142f7922d25c3e8d: prepare to refresh com.apple.contacts.IM,com.apple.contacts.Related Name,com.apple.contacts.URL,com.apple.contacts.Street Address,com.apple.contacts.Phone Number,com.apple.contacts.Contact,com.apple.contacts.Group,com.apple.contacts.Date,com.apple.contacts.Email Address
+2018-07-05 18:36:37:023|AddressBookSync|835|0x7fc7b590df20|ISyncManager|Warning| Sync Server was - Active Last Time
+2018-07-05 18:36:37:093|AddressBookSync|835|0x7fc7b590df20|Stats|Stats| com.apple.AddressBook: fast sync com.apple.contacts.CalendarURI, com.apple.contacts.Contact, com.apple.contacts.Date, com.apple.contacts.Email Address, com.apple.contacts.Group, com.apple.contacts.IM, com.apple.contacts.ImageTransformationInfo, com.apple.contacts.Phone Number, com.apple.contacts.Related Name, com.apple.contacts.SmartGroup, com.apple.contacts.Street Address, com.apple.contacts.URL
+2018-07-05 18:38:37:172|SyncServer|802|0x7fd527f06640|Server|Info| Cancelling all sync plans.
+2018-07-05 18:38:37:173|SyncServer|802|0x7fd527f06640|Server|Info| Goodnight, Gracie.
+2018-07-31 15:18:42:306|SyncServer|1750|0x7fa0c8a06640|Logging|Info| Logging initialized, engine version 727 : log level 3
+2018-07-31 15:18:42:784|AddressBookSync|1744|0x7ffd83808910|ISyncManager|Info| unregister com.apple.AddressBook
+2018-07-31 15:18:42:790|SyncServer|1750|0x7fa0c8a06640|Server|Info| unregister client com.apple.AddressBook
+2018-07-31 15:18:42:821|AddressBookSync|1744|0x7ffd83808910|ISyncManager|Info| unregister com.apple.MobileSync.c4c26b3ab522350a7029cf15142f7922d25c3e8d
+2018-07-31 15:18:42:825|SyncServer|1750|0x7fa0c8a06640|Server|Info| unregister client com.apple.MobileSync.c4c26b3ab522350a7029cf15142f7922d25c3e8d
+2018-07-31 15:18:42:852|AddressBookSync|1744|0x7ffd83808910|ISyncManager|Info| register client com.apple.Clearifier from plist (bundleId = (null), bundleRelativePath = (null))
+2018-07-31 15:18:42:886|AddressBookSync|1744|0x7ffd83808910|ISyncManager|Warning| Sync Server was - Active Last Time
+2018-07-31 15:18:43:864|AddressBookSync|1744|0x7ffd83808910|Stats|Stats| com.apple.Clearifier: push Truth for com.apple.contacts.Email Address, com.apple.contacts.Contact, com.apple.contacts.Date, com.apple.contacts.Related Name, com.apple.contacts.CalendarURI, com.apple.contacts.URL, com.apple.contacts.Group, com.apple.contacts.Custom Field, com.apple.contacts.ImageTransformationInfo, com.apple.palm.contacts.Category, com.apple.contacts.Street Address, com.apple.contacts.Phone Number, com.apple.contacts.IM, com.apple.contacts.SmartGroup
+2018-07-31 15:18:43:865|AddressBookSync|1744|0x7ffd83808910|ISyncSession|Info| com.apple.Clearifier: prepare to push Truth for com.apple.contacts.Email Address,com.apple.contacts.Contact,com.apple.contacts.Date,com.apple.contacts.Related Name,com.apple.contacts.CalendarURI,com.apple.contacts.URL,com.apple.contacts.Group,com.apple.contacts.Custom Field,com.apple.contacts.ImageTransformationInfo,com.apple.palm.contacts.Category,com.apple.contacts.Street Address,com.apple.contacts.Phone Number,com.apple.contacts.IM,com.apple.contacts.SmartGroup
+2018-07-31 15:18:44:322|AddressBookSync|1744|0x7ffd83808910|Stats|Stats| com.apple.Clearifier: fast sync com.apple.contacts.Email Address, com.apple.contacts.Contact, com.apple.contacts.Date, com.apple.contacts.Related Name, com.apple.contacts.CalendarURI, com.apple.contacts.URL, com.apple.contacts.Group, com.apple.contacts.Custom Field, com.apple.contacts.ImageTransformationInfo, com.apple.palm.contacts.Category, com.apple.contacts.Street Address, com.apple.contacts.Phone Number, com.apple.contacts.IM, com.apple.contacts.SmartGroup
+2018-07-31 15:18:44:352|AddressBookSync|1744|0x7ffd83808910|ISyncManager|Info| unregister com.apple.Clearifier
+2018-07-31 15:18:44:354|SyncServer|1750|0x7fa0c8a06640|Server|Info| unregister client com.apple.Clearifier
+2018-07-31 15:18:44:379|AddressBookSync|1744|0x7ffd83808910|ISyncManager|Info| register client com.apple.AddressBook from /System/Library/Frameworks/AddressBook.framework/Helpers/AddressBookSync.app/Contents/Resources/ClientDescriptionTemplate.plist (bundleId = (null), bundleRelativePath = (null))
+2018-07-31 15:18:44:568|AddressBookSync|1744|0x7ffd83808910|Stats|Stats| com.apple.AddressBook: refresh sync com.apple.contacts.ImageTransformationInfo, com.apple.contacts.Related Name, com.apple.contacts.Group, com.apple.contacts.SmartGroup, com.apple.contacts.URL, com.apple.contacts.IM, com.apple.contacts.Street Address, com.apple.contacts.Phone Number, com.apple.contacts.Date, com.apple.contacts.CalendarURI, com.apple.contacts.Contact, com.apple.contacts.Email Address
+2018-07-31 15:18:44:568|AddressBookSync|1744|0x7ffd83808910|ISyncSession|Info| com.apple.AddressBook: prepare to refresh com.apple.contacts.ImageTransformationInfo,com.apple.contacts.Related Name,com.apple.contacts.Group,com.apple.contacts.SmartGroup,com.apple.contacts.URL,com.apple.contacts.IM,com.apple.contacts.Street Address,com.apple.contacts.Phone Number,com.apple.contacts.Date,com.apple.contacts.CalendarURI,com.apple.contacts.Contact,com.apple.contacts.Email Address
+2018-07-31 15:20:44:832|SyncServer|1750|0x7fa0c8a06640|Server|Info| Cancelling all sync plans.
+2018-07-31 15:20:44:889|SyncServer|1750|0x7fa0c8a06640|Server|Info| Goodnight, Gracie.
+2018-07-31 15:20:48:819|SyncServer|1813|0x7fe19d806ae0|Logging|Info| Logging initialized, engine version 727 : log level 3
+2018-07-31 15:22:23:332|SyncServer|1813|0x7fe19d806ae0|SyncServer|Warning| Refreshing watchdog because of a calendar time change alert.
+2018-07-31 15:24:23:336|SyncServer|1813|0x7fe19d806ae0|Server|Info| Cancelling all sync plans.
+2018-07-31 15:24:23:337|SyncServer|1813|0x7fe19d806ae0|Server|Info| Goodnight, Gracie.
+2018-09-14 18:11:47:743|AppleMobileDeviceHelper|1261|0x7fb036006d10|ISyncManager|Warning| Sync Server was - Active Last Time
+2018-09-14 18:11:47:788|SyncServer|1262|0x7fc3bcd067a0|Logging|Info| Logging initialized, engine version 727 : log level 3
+2018-09-14 18:14:15:581|SyncServer|1262|0x7fc3bcd067a0|Server|Info| Cancelling all sync plans.
+2018-09-14 18:14:15:611|SyncServer|1262|0x7fc3bcd067a0|Server|Info| Goodnight, Gracie.
+2018-09-14 18:17:24:791|SyncServer|1325|0x7fafc6e06e50|Logging|Info| Logging initialized, engine version 727 : log level 3
+2018-09-14 18:19:24:832|SyncServer|1325|0x7fafc6e06e50|Server|Info| Cancelling all sync plans.
+2018-09-14 18:19:24:833|SyncServer|1325|0x7fafc6e06e50|Server|Info| Goodnight, Gracie.

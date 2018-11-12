@@ -1,0 +1,1943 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" epub:prefix="index: http://www.index.com/" lang="en" xml:lang="en">
+   
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      
+      <title>Putting It All Together</title>
+      
+      <link href="WileyTemplate_v5.3.css" rel="stylesheet" type="text/css" />
+      
+      <meta content="urn:uuid:68078093-7b10-42b9-8f32-0db0ecece3d2" name="Adept.expected.resource" />
+      
+   </head>
+   
+   <body epub:type="bodymatter">
+      
+      <section epub:type="chapter">
+         
+         <header>
+            
+            <h1><span epub:type="pagebreak" id="Page_207" title="207"></span><a id="c9"></a><span class="chapterNumber">9</span><br /><span class="chapterTitle">Putting It All Together</span></h1>
+         </header>
+         
+         <section>
+            <span id="c9-sec-0001"></span>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"> 
+                  
+                  <h3>WHAT’S IN THIS CHAPTER?</h3>
+                  
+                  <ul class="check1" id="c9-list-0001">
+                     
+                     <li id="c9-li-0001">How to use Entity Framework Core</li>
+                     
+                     <li id="c9-li-0002">Authenticating users with OAuth</li>
+                     
+                     <li id="c9-li-0003">Taking advantage of Visual Studio scaffolding</li>
+                     
+                  </ul>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p>Throughout the book, you have learned individually all the various technologies and
+               languages needed to develop and deploy modern web applications using ASP.NET Core,
+               but you haven’t yet used them all together to build a complete application.
+            </p>
+            
+            <p>This chapter covers this gap and shows how to use all the technologies together to
+               build (part of) a real‐life application. In the process it shows some features of
+               ASP.NET Core that were not covered in previous chapters, like authentication with
+               OAuth (Facebook or Twitter) and data persistence with Entity Framework Core.
+            </p>
+            
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"> 
+                  
+                  <h3>WROX.COM CODE DOWNLOADS FOR THIS CHAPTER</h3>
+                  
+                  <p>The <a href="http://wrox.com">wrox.com</a> code downloads for this chapter are found at <a href="http://www.wrox.com"><code>www.wrox.com</code></a>. Search for the book’s ISBN (978‐1‐119‐18131‐6), and you will find the code in the
+                     <a href="c09.xhtml">chapter 9</a> download and individually named according to the names throughout the chapter.
+                  </p>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+         </section>
+         
+         <section>
+            <span id="c9-sec-0002"></span>
+            
+            <h2 id="head-2-146">BUILDING A TRIATHLON RACE RESULTS WEB SITE</h2>
+            
+            <p>As you might have guessed from some of the samples in the other chapters, I am into
+               triathlons. Despite the very high quality of web applications that help track training,
+               the sites for race registration and results are mostly stuck 10 years or more in the
+               past, and very few race <span epub:type="pagebreak" id="Page_208" title="208"></span>tracking sites have some kind of live tracking and comparison of performances among
+               different races.
+            </p>
+            
+            <p>The application used as a sample in this chapter is a very simple version of such
+               a web application.
+            </p>
+            
+            <p>The full site is made of three main sub‐sites:</p>
+            
+            <ul class="check" id="c9-list-0002">
+               
+               <li id="c9-li-0004">The back‐office, where administrators can create races, enter results, register athletes,
+                  and do any kind of manual intervention to the data.
+               </li>
+               
+               <li id="c9-li-0005">The public site, where users can enroll in races and the public can track the results
+                  of athletes and see the final standings of a race.
+               </li>
+               
+               <li id="c9-li-0006">A set of APIs that can be called by IoT devices like timing mats or GPS trackers to
+                  update the results or the position of athletes along the race course.
+               </li>
+               
+            </ul>
+            
+            <p>Obviously, the samples available in this chapter are not implementing the full feature
+               set of the project but are just used to show the development flow and some examples
+               of usage of the technologies shown in the book.
+            </p>
+            
+            <p>If you are interested in the fully functional triathlon race‐tracking site, you can
+               get on my GitHub repository <a href="http://github.com/simonech/TriathlonRaceTracking"><code>http://github.com/simonech/TriathlonRaceTracking</code></a> and clone the repository.
+            </p>
+            
+         </section>
+         
+         <section>
+            <span id="c9-sec-0003"></span>
+            
+            <h2 id="head-2-147">BUILDING THE BACK‐OFFICE SITE</h2>
+            
+            <p>The back‐office site is a traditional web application that does not make use of Angular
+               or other single‐page application frameworks. It uses Bootstrap to make it easy to
+               style the site and uses the features of ASP.NET Core MVC like tag helpers to simplify
+               the creation of repetitive editing screens.
+            </p>
+            
+            <p>To build this project you can use the MVC application project template available in
+               the New Project dialog (<a href="#c9-fig-0001" id="R_c9-fig-0001">Figure 9‐1</a>). This sets up a project with all the dependencies needed by an MVC project.
+            </p>
+            
+            <figure> <img alt="Illustration of New Project Dialog." src="images/c09f001.jpg" />
+               
+               <figcaption>
+                  <p><span class="figureLabel"><a href="#R_c9-fig-0001" id="c9-fig-0001"><b>FIGURE 9-1</b></a><b>:</b></span> New Project dialog
+                  </p>
+               </figcaption>
+               
+            </figure>
+            
+            <p>The first step is to build the general layout of the back‐office, with a menu to access
+               the various areas of the site. The project template already installs Bootstrap, so
+               designing a menu bar for the various functions of the site is an easy task.
+            </p>
+            
+            <p>The menu will contain the links to the various sections of the back‐office: races,
+               athletes, and results. <a href="#c9-fea-0001">Listing 9‐1</a> shows the master layout for the back‐office, including the navigation bar and all
+               the script references added by the project template.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"><span id="c9-fea-0001"></span> 
+                  
+                  <h2 id="head-2-148">LISTING 9-1: Views/Shared/_Layout.cshtml</h2>
+                  
+                  <section>
+                     <span id="c9-sec-0004"></span>
+                     
+                     <blockquote>
+                        <pre id="c9-code-0001"><code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html&gt;</code>
+<code>&lt;head&gt;</code>
+<code>    &lt;meta charset="utf-8" /&gt;</code>
+<code>    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</code>
+<code>    &lt;title&gt;@ViewData["Title"] - TriathlonRaceTracking&lt;/title&gt;</code>
+<code></code>
+<code>    &lt;environment include="Development"&gt;</code>
+<code><span epub:type="pagebreak" id="Page_209" title="209"></span>       &lt;link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" /&gt;</code>
+<code>       &lt;link rel="stylesheet" href="~/css/site.css" /&gt;</code>
+<code>    &lt;/environment&gt;</code>
+<code>    &lt;environment exclude="Development"&gt;</code>
+<code>       &lt;link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"</code>
+<code>              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"</code>
+<code>              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" /&gt;</code>
+<code>       &lt;link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" /&gt;</code>
+<code>    &lt;/environment&gt;</code>
+<code>&lt;/head&gt;</code>
+<code>&lt;body&gt;</code>
+<code>    &lt;nav class="navbar navbar-inverse navbar-fixed-top"&gt;</code>
+<code>        &lt;div class="container"&gt;</code>
+<code>            &lt;div class="navbar-header"&gt;</code>
+<code>                &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"&gt;</code>
+<code>                    &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;</code>
+<code>                    &lt;span class="icon-bar"&gt;&lt;/span&gt;</code>
+<code>                    &lt;span class="icon-bar"&gt;&lt;/span&gt;</code>
+<code>                    &lt;span class="icon-bar"&gt;&lt;/span&gt;</code>
+<code>                &lt;/button&gt;</code>
+<code>                &lt;a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand"&gt;TriathlonRaceTracking&lt;/a&gt;</code>
+<code>            &lt;/div&gt;</code>
+<code>            &lt;div class="navbar-collapse collapse"&gt;</code>
+<code>                &lt;ul class="nav navbar-nav"&gt;</code>
+<code>                  &lt;li class="dropdown"&gt;</code>
+<code>                        &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown"&gt;Races &lt;span class="caret"&gt;&lt;/span&gt;&lt;/a&gt;</code>
+<code>                        &lt;ul class="dropdown-menu"&gt;</code>
+<code>                  &lt;li&gt;&lt;a asp-area="" asp-controller="Races" asp-action="Create"&gt;Add Race&lt;/a&gt;&lt;/li&gt;</code>
+<code>                  &lt;li&gt;&lt;a asp-area="" asp-controller="Races" asp-action="Index"&gt;List Races&lt;/a&gt;&lt;/li&gt;</code>
+<code>                        &lt;/ul&gt;</code>
+<code>                   &lt;/li&gt;</code>
+<code>                   &lt;li class="dropdown"&gt;</code>
+<code>                        &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown"&gt;Athletes &lt;span class="caret"&gt;&lt;/span&gt;&lt;/a&gt;</code>
+<code>                        &lt;ul class="dropdown-menu"&gt;</code>
+<code>                          &lt;li&gt;&lt;a asp-area="" asp-controller="Athletes" asp-action="Create"&gt;Add Athlete&lt;/a&gt;&lt;/li&gt;</code>
+<code>                          &lt;li&gt;&lt;a asp-area="" asp-controller="Athletes" asp-action="Index"&gt;List Athletes&lt;/a&gt;&lt;/li&gt;</code>
+<code>                        &lt;/ul&gt;</code>
+<code>                      &lt;/li&gt;</code>
+<code>                      &lt;li&gt;&lt;a asp-area="" asp-controller="Results" asp-action="Index"&gt;Results&lt;/a&gt;&lt;/li&gt;</code>
+<code>                      &lt;li&gt;&lt;a asp-area="" asp-controller="Home" asp-action="About"&gt;About&lt;/a&gt;&lt;/li&gt;</code>
+<code>                &lt;/ul&gt;</code>
+<code>            &lt;/div&gt;</code>
+<code><span epub:type="pagebreak" id="Page_210" title="210"></span>        &lt;/div&gt;</code>
+<code>    &lt;/nav&gt;</code>
+<code>    &lt;div class="container body-content"&gt;</code>
+<code>        @RenderBody()</code>
+<code>        &lt;hr /&gt;</code>
+<code>        &lt;footer&gt;</code>
+<code>            &lt;p&gt;&amp;copy; 2017 - TriathlonRaceTracking&lt;/p&gt;</code>
+<code>        &lt;/footer&gt;</code>
+<code>    &lt;/div&gt;</code>
+<code></code>
+<code>    &lt;environment include="Development"&gt;</code>
+<code>        &lt;script src="~/lib/jquery/dist/jquery.js"&gt;&lt;/script&gt;</code>
+<code>        &lt;script src="~/lib/bootstrap/dist/js/bootstrap.js"&gt;&lt;/script&gt;</code>
+<code>        &lt;script src="~/js/site.js" asp-append-version="true"&gt;&lt;/script&gt;</code>
+<code>    &lt;/environment&gt;</code>
+<code>    &lt;environment exclude="Development"&gt;</code>
+<code>        &lt;script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"</code>
+<code>                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"</code>
+<code>                asp-fallback-test="window.jQuery"</code>
+<code>                crossorigin="anonymous"</code>
+<code>                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk"&gt;</code>
+<code>        &lt;/script&gt;</code>
+<code>        &lt;script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"</code>
+<code>                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"</code>
+<code>                asp-fallback-test="window.jQuery &amp;&amp; window.jQuery.fn &amp;&amp; window.jQuery.fn.modal"</code>
+<code>                crossorigin="anonymous"</code>
+<code>                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"&gt;</code>
+<code>        &lt;/script&gt;</code>
+<code>        &lt;script src="~/js/site.min.js" asp-append-version="true"&gt;&lt;/script&gt;</code>
+<code>    &lt;/environment&gt;</code>
+<code></code>
+<code>    @RenderSection("Scripts", required: false)</code>
+<code>&lt;/body&gt;</code>
+<code>&lt;/html&gt;</code> </pre>
+                        </blockquote>
+                     
+                  </section>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p>The navigation bar, created using Bootstrap, links directly to the various actions
+               inside the controllers. It does so with the help of the link tag helper, which generates
+               the link controllers’ actions just by specifying their name.
+            </p>
+            
+            <blockquote>
+               <pre id="c9-code-0002"><code>&lt;a asp-area="" asp-controller="Athletes" asp-action="New"&gt;Add Athlete&lt;/a&gt;</code> </pre>
+               </blockquote>
+            
+            <p>Besides the navigation bar, <a href="#c9-fea-0001">Listing 9‐1</a> shows the usage of many tag helpers like <code>environment</code>, which is used to render whatever is inside depending on which environment the site
+               runs on, and <code>link</code>, which adds references to JavaScript or CSS files directly from a CDN or locally
+               in case the CDN is down.
+            </p>
+            
+            <p><span epub:type="pagebreak" id="Page_211" title="211"></span>As example, you’ll implement the screens to list, create, and edit a race. A race
+               is made of a certain number of pieces of textual information and a list of intermediate
+               timing points, each of which might define a fraction of the race. In order to start
+               with the implementation, first you need to set up the database.
+            </p>
+            
+            <section>
+               <span id="c9-sec-0005"></span>
+               
+               <h3 id="head-3-116">Setting Up Entity Framework</h3>
+               
+               <p>There are a variety of options when it comes to data persistence. You can you use
+                  an ORM like Entity Framework to connect to a standard SQL database, or you can use
+                  a document database. For this sample the simplest solution is using Entity Framework
+                  Core (also known as EF Core).
+               </p>
+               
+               <section>
+                  <span id="c9-sec-0006"></span>
+                  
+                  <h4 id="head-4-64">The Object Model</h4>
+                  
+                  <p>To use Entity Framework Core, the first step is to define the object model of the
+                     application without worrying about how the underlying database tables will be created.
+                     In this simple scenario you are going to have two classes that have a one‐to‐many
+                     relationship:
+                  </p>
+                  
+                  <ul class="check" id="c9-list-0003">
+                     
+                     <li id="c9-li-0007">A <code>Race</code> class, with the main information about a race
+                     </li>
+                     
+                     <li id="c9-li-0008">A <code>TimingPoint</code> class, which specifies where timing mats are located
+                     </li>
+                     
+                  </ul>
+                  
+                  <p><span epub:type="pagebreak" id="Page_212" title="212"></span><a href="#c9-fea-0002">Listings 9‐2</a> and <a href="#c9-fea-0003">9‐3</a> show the two classes.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c9-fea-0002"></span> 
+                        
+                        <h2 id="head-2-149">LISTING 9-2: Models/Race.cs</h2>
+                        
+                        <section>
+                           <span id="c9-sec-0007"></span>
+                           
+                           <blockquote>
+                              <pre id="c9-code-0003"><code>using System;</code>
+<code>using System.Collections.Generic;</code>
+<code></code>
+<code>namespace TriathlonRaceTracking.Models</code>
+<code>{</code>
+<code>    public class Race</code>
+<code>    {</code>
+<code>        public int ID { get; set; }</code>
+<code>        public string Name { get; set; }</code>
+<code>        public string Location { get; set; }</code>
+<code>        public DateTime Date { get; set; }</code>
+<code></code>
+<code>        public ICollection&lt;TimingPoint&gt; TimingPoints { get; set; }</code>
+<code>    }</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p> </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c9-fea-0003"></span> 
+                        
+                        <h2 id="head-2-150">LISTING 9-3: Models/TimingPoint.cs</h2>
+                        
+                        <section>
+                           <span id="c9-sec-0008"></span>
+                           
+                           <blockquote>
+                              <pre id="c9-code-0004"><code>namespace TriathlonRaceTracking.Models</code>
+<code>{</code>
+<code>    public enum TimingType</code>
+<code>    {</code>
+<code>        Start,</code>
+<code>        SwimEnd,</code>
+<code>        BikeStart,</code>
+<code>        BikeEnd,</code>
+<code>        RunStart,</code>
+<code>        End,</code>
+<code>        Intermediate</code>
+<code>    }</code>
+<code></code>
+<code>    public class TimingPoint</code>
+<code>    {</code>
+<code>        public int ID { get; set; }</code>
+<code>        public int RaceID { get; set; }</code>
+<code>        public string Name { get; set; }</code>
+<code>        public TimingType Type { get; set; }</code>
+<code></code>
+<code>        public Race Race { get; set; }</code>
+<code>    }</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p>Notice how the one‐to‐many relationship between the race and its timing points is
+                     defined by both adding a <code>TimingPoint</code> list to the <code>Race</code> object and specifying the <code>RaceID</code> and the actual reference to the <code>Race</code> object in the <code>TimingPoint</code>. A timing point can define either an official start or end of a fraction (the swim,
+                     the bike, the run, or the two transitions), or it can be just a lap in the course
+                     or <span epub:type="pagebreak" id="Page_213" title="213"></span>any other intermediate point without any meaning in the context of the results. For
+                     simplicity, this is implemented as an enumeration in the same file.
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c9-sec-0009"></span>
+                  
+                  <h4 id="head-4-65">The EF Core Context</h4>
+                  
+                  <p>Once the object model is defined, you need to register the two classes in the Entity
+                     Framework context object, which acts as single point of entry for operations on data.
+                     <a href="#c9-fea-0004">Listing 9‐4</a> shows the Entity Framework context for the application.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c9-fea-0004"></span> 
+                        
+                        <h2 id="head-2-151">LISTING 9-4: Data/TriathlonRaceTrackingContext.cs</h2>
+                        
+                        <section>
+                           <span id="c9-sec-0010"></span>
+                           
+                           <blockquote>
+                              <pre id="c9-code-0005"><code>using Microsoft.EntityFrameworkCore;</code>
+<code></code>
+<code>namespace TriathlonRaceTracking.Data</code>
+<code>{</code>
+<code>    public class TriathlonRaceTrackingContext : DbContext</code>
+<code>    {</code>
+<code>        public TriathlonRaceTrackingContext (DbContextOptions &lt;TriathlonRaceTrackingContext&gt; options)</code>
+<code>            : base(options)</code>
+<code>        {</code>
+<code>        }</code>
+<code></code>
+<code>        public DbSet&lt;TriathlonRaceTracking.Models.Race&gt; Race { get; set; }</code>
+<code></code>
+<code>        public DbSet&lt;TriathlonRaceTracking.Models.TimingPoint&gt; TimingPoint { get; set; }</code>
+<code>    }</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p>In addition, the connection string must be specified and passed to the context object
+                     inside <code>ConfigureServices</code> in the <code>Startup</code> class.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c9-code-0006"><code>public void ConfigureServices(IServiceCollection services)</code>
+<code>{</code>
+<code>  services.AddMvc();</code>
+<code></code>
+<code>  services.AddDbContext&lt;TriathlonRaceTrackingContext&gt; (</code>
+<code>   options =&gt;</code>
+<code>            options.UseSqlServer( Configuration.GetConnectionString("TriathlonRaceTrackingContext")));</code>
+<code>}</code> </pre>
+                     </blockquote>
+                  
+                  <p>The connection string can be defined in the <code>appsettings.json</code> file (<a href="#c9-fea-0005">Listing 9‐5</a>).
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c9-fea-0005"></span> 
+                        
+                        <h2 id="head-2-152">LISTING 9-5: appsettings.json</h2>
+                        
+                        <section>
+                           <span id="c9-sec-0011"></span>
+                           
+                           <blockquote>
+                              <pre id="c9-code-0007"><code>{</code>
+<code>  "Logging": {</code>
+<code>    "IncludeScopes": false,</code>
+<code>    "LogLevel": {</code>
+<code><span epub:type="pagebreak" id="Page_214" title="214"></span>      "Default": "Warning"</code>
+<code>    }</code>
+<code>  },</code>
+<code>  "ConnectionStrings": {</code>
+<code>    "TriathlonRaceTrackingContext": "Server=(localdb)\\mssqllocaldb;Database=TriathlonRaceTrackingContext-19f1651f-d333-4fe1-9301-e75c84ec0b6e;Trusted_Connection=True;MultipleActiveResultSets=true"</code>
+<code>  }</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p>The creation of the context class and the changes in the <code>Startup.cs</code> and <code>appsettings.json</code> files are done automatically the first time you scaffold a controller from the Add
+                     Controller dialog in Visual Studio 2017.
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c9-sec-0012"></span>
+                  
+                  <h4 id="head-4-66">Migrations</h4>
+                  
+                  <p>Now you need a database where EF Core can store the data. By default, EF Core populates
+                     the objects of the data model from tables named exactly like the classes, with columns
+                     named like the properties. In addition, it expects the ID to be the primary key and
+                     everything that represents a relationship (for example <code>RaceID</code> of <a href="#c9-fea-0003">Listing 9‐3</a>) to be a foreign key. The easiest way to create the correct tables and keys based
+                     on the default mapping conventions is to use a feature called <i>migrations</i>. Migrations can be used for the first setup of the database but more importantly
+                     later in the development when adding more features that require new tables or properties
+                     for existing tables.
+                  </p>
+                  
+                  <p>To create the baseline migration for the two classes <code>Race</code> and <code>TimingPoint</code>, you first need to install the <code>Microsoft.EntityFrameworkCore.Tools</code> package.
+                  </p>
+                  
+                  <p>Then you need to run the <b>Add Migration</b> command to generate the code to create the database schema (it gets stored in the
+                     <code>Migrations</code> folder), followed by the <b>Update Database</b> command to run this code on the database.
+                  </p>
+                  
+                  <p>These two commands can be run either inside Visual Studio 2017, the Package Manager
+                     Console, or using the <code>dotnet</code> command‐line tool.
+                  </p>
+                  
+                  <p>In the first option type the following:</p>
+                  
+                  <blockquote>
+                     <pre id="c9-code-0008"><code>PM&gt; Add-Migration Initial</code>
+<code>PM&gt; Update-Database</code> </pre>
+                     </blockquote>
+                  
+                  <p>If you prefer using the <code>dotnet</code> command line, type these lines in the command prompt:
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c9-code-0009"><code>&gt;dotnet ef migration Initial</code>
+<code>&gt;dotnet ef database update</code> </pre>
+                     </blockquote>
+                  
+                  <p>You have just scratched the surface of Entity Framework, a topic that entire books
+                     have been written about it. I hope this little introduction helps with the basics
+                     needed for building a simple application.
+                  </p>
+                  
+                  <p>Another interesting feature is the possibility of “seeding” the database with an initial
+                     set of data. This is going to be very useful in this sample application for setting
+                     up the database for the frontend to work.
+                  </p>
+                  
+                  <p>Together with adding the initial data, you can also run any pending migration directly
+                     in code. <a href="#c9-fea-0006">Listing 9‐6</a> shows a simple data seed class that adds a race with its timing points.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c9-fea-0006"></span> 
+                        
+                        <h2 id="head-2-153"><span epub:type="pagebreak" id="Page_215" title="215"></span>LISTING 9-6: Models/InitialData.cs
+                        </h2>
+                        
+                        <section>
+                           <span id="c9-sec-0013"></span>
+                           
+                           <blockquote>
+                              <pre id="c9-code-0010"><code>using Microsoft.EntityFrameworkCore;</code>
+<code>using Microsoft.Extensions.DependencyInjection;</code>
+<code>using System;</code>
+<code>using System.Collections.Generic;</code>
+<code>using System.Linq;</code>
+<code>using System.Threading.Tasks;</code>
+<code>using TriathlonRaceTracking.Data;</code>
+<code></code>
+<code>namespace TriathlonRaceTracking.Models</code>
+<code>{</code>
+<code>    public static class InitialData</code>
+<code>    {</code>
+<code>        public static async Task InitializeAsync(IServiceProvider service)</code>
+<code>        {</code>
+<code>            using (var serviceScope = service.CreateScope())</code>
+<code>            {</code>
+<code>                var scopeServiceProvider = serviceScope.ServiceProvider;</code>
+<code>                var db=scopeServiceProvider.GetService &lt;TriathlonRaceTrackingContext&gt; ();</code>
+<code>                <b>db.Database.Migrate();</b></code>
+<code>                await InsertTestData(db);</code>
+<code>            }</code>
+<code>        }</code>
+<code></code>
+<code>        private static async Task InsertTestData(TriathlonRaceTrackingContext context)</code>
+<code>        {</code>
+<code>            if(context.Races.Any())</code>
+<code>                return;</code>
+<code>            var race = new Race { Name="Ironman World Championship 2017",Location="Kona, Hawaii",Date=new DateTime(2017,10,14,7,0,0) };</code>
+<code></code>
+<code>            var timingPoints = new List&lt;TimingPoint&gt;</code>
+<code>            {</code>
+<code>                new TimingPoint{ Race=race, Name="Start", Type=TimingType.Start},</code>
+<code>                new TimingPoint{ Race=race, Name="Stairs", Type=TimingType.SwimEnd},</code>
+<code>                new TimingPoint{ Race=race, Name="T1 Exit", Type=TimingType.BikeStart},</code>
+<code>                new TimingPoint{ Race=race, Name="Turnaround", Type=TimingType.Intermediate},</code>
+<code>                new TimingPoint{ Race=race, Name="T2 Entrance", Type=TimingType.BikeEnd},</code>
+<code>                new TimingPoint{ Race=race, Name="T2 Exit", Type=TimingType.RunStart},</code>
+<code>                new TimingPoint{ Race=race, Name="End", Type=TimingType.End}</code>
+<code>            };</code>
+<code></code>
+<code>            context.Add(race);</code>
+<code>            context.AddRange(timingPoints);</code>
+<code>            await context.SaveChangesAsync();</code>
+<code>        }</code>
+<code>    }</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p><span epub:type="pagebreak" id="Page_216" title="216"></span>This code does a very basic check to understand whether the initial data has to be
+                     added (<code>if(context.Races.Any())</code>), but in a real‐life application probably something more elaborate might be needed.
+                  </p>
+                  
+                  <p>To launch this procedure, just call the <code>InitializeAsync</code> method from the <code>Configure</code> method in the <code>Startup</code> class.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c9-code-0011"><code>InitialData.InitializeAsync(app.ApplicationServices).Wait();</code> </pre>
+                     </blockquote>
+                  
+               </section>
+               
+            </section>
+            
+            <section>
+               <span id="c9-sec-0014"></span>
+               
+               <h3 id="head-3-117">Building CRUD Screens</h3>
+               
+               <p>Now that the database has been configured, it’s time to build the controllers and
+                  more importantly the views.
+               </p>
+               
+               <p>Start by creating <code>RacesController</code>. If you use the Add Controller (<a href="#c9-fig-0002" id="R_c9-fig-0002">Figure 9‐2</a> and <a href="#c9-fig-0003" id="R_c9-fig-0003">Figure 9‐3</a>) wizard of Visual Studio, the scaffolding engine creates the skeleton code for you
+                  to extend and build upon.
+               </p>
+               
+               <figure> <img alt="Illustration of Add Scaffold… Dialog." src="images/c09f002.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c9-fig-0002" id="c9-fig-0002"><b>FIGURE 9-2</b></a><b>:</b></span> Add Scaffold… dialog
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <figure> <img alt="Illustration of Add Controller… Dialog." src="images/c09f003.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c9-fig-0003" id="c9-fig-0003"><b>FIGURE 9-3</b></a><b>:</b></span> Add Controller… dialog
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature1">
+                     
+                     <h3><span epub:type="pagebreak" id="Page_217" title="217"></span>WARNING
+                     </h3>
+                     
+                     <p><i>In this sample, the model coming from Entity Framework is also used as a ViewModel
+                           sent to the view. This has been done just to avoid making the code too complex for
+                           the sample. In a real production‐grade application, you might want to keep the two
+                           models separate and map properties from the data model to the ViewModel using mapping
+                           libraries like Automapper.</i></p>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>The next step is to examine the code (both in the controller and in the views) needed
+                  to add a new race to the database. This operation uses the standard pattern Post‐Redirect‐Get
+                  to avoid duplication of data in case the user refreshes the page after the form has
+                  been submitted:
+               </p>
+               
+               <ol class="decimal" id="c9-list-0004">
+                  
+                  <li id="c9-li-0009">The Create form is rendered in the browser.</li>
+                  
+                  <li id="c9-li-0010">The user enters data and presses the Submit button.</li>
+                  
+                  <li id="c9-li-0011">The form is submitted using the <code>POST</code> HTTP method to the controller.
+                  </li>
+                  
+                  <li id="c9-li-0012">The controller checks if the data is valid and does one of the following:
+                     
+                     <ul class="check" id="c9-list-0004a">
+                        
+                        <li id="c9-li-0013">If the data is valid, it redirects the user to the subsequent page, in the sample
+                           to the Index, which is requested with the <code>GET</code> method.
+                        </li>
+                        
+                        <li id="c9-li-0014">If the data is not valid, the controller just renders the edit form again with the
+                           validation errors highlighted.
+                        </li>
+                        
+                     </ul>
+                  </li>
+                  
+               </ol>
+               
+               <section>
+                  <span id="c9-sec-0015"></span>
+                  
+                  <h4 id="head-4-67">The Controller</h4>
+                  
+                  <p>There are two action methods needed for the Create operation. The first simply returns
+                     the empty editing form.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c9-code-0012"><code>public IActionResult Create()</code>
+<code><span epub:type="pagebreak" id="Page_218" title="218"></span>{</code>
+<code>    return View();</code>
+<code>}</code> </pre>
+                     </blockquote>
+                  
+                  <p>The second method, still called <code>Create</code>, is invoked when the form is submitted with POST.
+                  </p>
+                  
+                  <blockquote>
+                     <pre id="c9-code-0013"><code>[HttpPost]</code>
+<code>[ValidateAntiForgeryToken]</code>
+<code>public async Task&lt;IActionResult&gt; Create([Bind("ID,Name,Location,Date")] Race race)</code>
+<code>{</code>
+<code>    if (ModelState.IsValid)</code>
+<code>    {</code>
+<code>        _context.Add(race);</code>
+<code>        await _context.SaveChangesAsync();</code>
+<code>        return RedirectToAction(nameof(Index));</code>
+<code>    }</code>
+<code>    return View(race);</code>
+<code>}</code> </pre>
+                     </blockquote>
+                  
+                  <p>The generated code incorporates a lot of the best practices for securing the application.
+                     It uses the <code>ValidateAntiForgeryToken</code> attribute to check the token added by the form tag helper. This is used to prevent
+                     cross‐site request forgery (also known as CSRF).
+                  </p>
+                  
+                  <p>It also uses the <code>Bind</code> attribute in the model binding to avoid overposting. This prevents malicious users
+                     from tampering with the request, adding properties that were not supposed to be edited
+                     via the editing form. This attribute is especially needed when the data model is exposed
+                     directly to the views instead of using a specific ViewModel.
+                  </p>
+                  
+                  <p>The action method then goes on checking the validity of the request, adds the object
+                     to the database, and finally redirects to the Index action method, which renders the
+                     list of races.
+                  </p>
+                  
+               </section>
+               
+               <section>
+                  <span id="c9-sec-0016"></span>
+                  
+                  <h4 id="head-4-68">The View</h4>
+                  
+                  <p>The <code>Create</code> view (<a href="#c9-fea-0007">Listing 9‐7</a>) is a bit more interesting than the action method.
+                  </p>
+                  
+                  <aside>
+                     <div class="top hr">
+                        <hr />
+                     </div>
+                     
+                     <section class="feature3"><span id="c9-fea-0007"></span> 
+                        
+                        <h2 id="head-2-154">LISTING 9-7: Views/Races/Create.cshtml</h2>
+                        
+                        <section>
+                           <span id="c9-sec-0017"></span>
+                           
+                           <blockquote>
+                              <pre id="c9-code-0014"><code>@model TriathlonRaceTracking.Models.Race</code>
+<code></code>
+<code>@{</code>
+<code>    ViewData["Title"] = "Create";</code>
+<code>}</code>
+<code></code>
+<code>&lt;h2&gt; Create&lt;/h2&gt;</code>
+<code></code>
+<code>&lt;h4&gt; Race&lt;/h4&gt;</code>
+<code>&lt;hr /&gt;</code>
+<code>&lt;div class="row"&gt;</code>
+<code>    &lt;div class="col-md-4"&gt;</code>
+<code>        &lt;form asp-action="Create"&gt;</code>
+<code>            &lt;div asp-validation-summary="ModelOnly" class="text-danger"&gt;&lt;/div&gt;</code>
+<code>            &lt;div class="form-group"&gt;</code>
+<code>                &lt;label asp-for="Name" class="control-label"&gt;&lt;/label&gt; </code>
+<code>                &lt;input asp-for="Name" class="form-control" /&gt;</code>
+<code><span epub:type="pagebreak" id="Page_219" title="219"></span>                &lt;span asp-validation-for="Name" class="text-danger"&gt;&lt;/span&gt;</code>
+<code>            &lt;/div&gt;</code>
+<code>            &lt;div class="form-group"&gt;</code>
+<code>                &lt;label asp-for="Location" class="control-label"&gt;&lt;/label&gt; </code>
+<code>                &lt;input asp-for="Location" class="form-control" /&gt;</code>
+<code>                &lt;span asp-validation-for="Location" class="text-danger"&gt;&lt;/span&gt;</code>
+<code>            &lt;/div&gt;</code>
+<code>            &lt;div class="form-group"&gt;</code>
+<code>                &lt;label asp-for="Date" class="control-label"&gt;&lt;/label&gt; </code>
+<code>                &lt;input asp-for="Date" class="form-control" /&gt;</code>
+<code>                &lt;span asp-validation-for="Date" class="text-danger"&gt;&lt;/span&gt;</code>
+<code>            &lt;/div&gt;</code>
+<code>            &lt;div class="form-group"&gt;</code>
+<code>                &lt;input type="submit" value="Create" class="btn btn-default" /&gt;</code>
+<code>            &lt;/div&gt;</code>
+<code>        &lt;/form&gt;</code>
+<code>    &lt;/div&gt;</code>
+<code>&lt;/div&gt;</code>
+<code></code>
+<code>&lt;div&gt;</code>
+<code>    &lt;a asp-action="Index"&gt;Back to List&lt;/a&gt;</code>
+<code>&lt;/div&gt;</code>
+<code></code>
+<code>@section Scripts {</code>
+<code>    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}</code>
+<code>}</code> </pre>
+                              </blockquote>
+                           
+                        </section>
+                        
+                        <div class="bottom hr">
+                           <hr />
+                        </div>
+                     </section>
+                  </aside>
+                  
+                  <p>As seen in <a href="c01.xhtml">Chapter 1</a>, ASP.NET Core MVC introduced the tag helpers to make writing views easier. This is
+                     an example of the form, label, input, and validation helpers in action. Just by adding
+                     the <code>asp‐for</code> or <code>asp‐validation‐for</code> attributes, the standard HTML tags become aware of the ViewModel and render the values
+                     of the properties and, if needed, also the HTML attributes needed for the Bootstrap‐based
+                     validation framework.
+                  </p>
+                  
+                  <p>Bootstrap is also used extensively. Notice the <code>.col‐md‐4</code> class name used to instruct the grid to use just 4 out of the 12 columns to render
+                     this form (so using only one‐third of the width of the page).
+                  </p>
+                  
+                  <p>The form is styled using Bootstrap classes using the <code>.form‐group</code> to define individual elements of the form and <code>.form‐control</code> to identify the actual input field. Finally, also the button is styled using the
+                     <code>btn btn‐default</code> classes from Bootstrap. For more formatting options for forms using Bootstrap, you
+                     can refer back to <a href="c04.xhtml">Chapter 4</a> and <a href="c04.xhtml#c04-fea-0006">Listing 4‐6</a>.
+                  </p>
+                  
+               </section>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c9-sec-0018"></span>
+            
+            <h2 id="head-2-155">BUILDING THE REGISTRATION PAGE</h2>
+            
+            <p>In the back‐office someone has created the race. Now it is time for athletes to register
+               for it. For this feature, a user will be able to log in using a social media login
+               like Facebook or Twitter, and once registered they can choose which race to participate
+               in.
+            </p>
+            
+            <p>You are going to create a new Visual Studio project for this, but you want to keep
+               on using the same Entity Framework data model, so you need to refactor the solution
+               and move all the EF‐related classes to a separate Class Library project. Once the
+               project is created and all the content of the Data and Model folders has been moved
+               to the new project, you have to reference the <span epub:type="pagebreak" id="Page_220" title="220"></span><code>EntityFrameworkCore</code> and <code>EntityFrameworkCore.SqlServer</code> NuGet packages. This was not needed before because they were part of the mega‐package
+               <code>Microsoft.AspNetCore.All</code> used in the ASP.NET Core MVC project. You will also need to configure the <code>appsettings.json</code> file and <code>Startup</code> class the same way they were done for the backoffice project.
+            </p>
+            
+            <p>Adding social media authentication is easy with ASP.NET Core. You start by creating
+               another project, still as an ASP.NET Core MVC project, and selecting Individual User
+               Accounts as the Authentication mode. This way the project template will add the database
+               entities, controllers, and views to collect and store all the information needed to
+               create a private site where users can register either directly (providing a username
+               and password) or via OAuth providers like Facebook, Twitter, Google, Microsoft, GitHub,
+               and others.
+            </p>
+            
+            <p>Adding a social login is just a matter of adding the right NuGet package and configuring
+               the authentication provider in the <code>ConfigureService</code> method in the <code>Startup</code> class. For example, to add a Facebook login, add the NuGet package <code>Microsoft.AspNetCore.Authentication.Facebook</code>. Then add the following lines of code in the <code>ConfigureService</code> method:
+            </p>
+            
+            <blockquote>
+               <pre id="c9-code-0015"><code>            services.AddAuthentication().AddFacebook(facebookOptions =&gt;</code>
+<code>            {</code>
+<code>                facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];</code>
+<code>                facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];</code>
+<code>            });</code> </pre>
+               </blockquote>
+            
+            <p>Now you have to register a new application on the Facebook developer portal in order
+               to get the <code>AppId</code> and <code>AppSecret</code> needed to authenticate your application with Facebook. Go to the URL <a href="https://developers.facebook.com/apps/"><code>https://developers.facebook.com/apps/</code></a> and click on the Add a New App button (<a href="#c9-fig-0004" id="R_c9-fig-0004">Figure 9‐4</a>).
+            </p>
+            
+            <figure> <img alt="Illustration of Facebook developer portal." src="images/c09f004.jpg" />
+               
+               <figcaption>
+                  <p><span class="figureLabel"><a href="#R_c9-fig-0004" id="c9-fig-0004"><b>FIGURE 9-4</b></a><b>:</b></span> Facebook developer portal
+                  </p>
+               </figcaption>
+               
+            </figure>
+            
+            <p>Then enter the name of your app and your email address (<a href="#c9-fig-0005" id="R_c9-fig-0005">Figure 9‐5</a>).
+            </p>
+            
+            <figure> <img alt="Illustration of Create New App ID." src="images/c09f005.jpg" />
+               
+               <figcaption>
+                  <p><span class="figureLabel"><a href="#R_c9-fig-0005" id="c9-fig-0005"><b>FIGURE 9-5</b></a><b>:</b></span> Create New App ID
+                  </p>
+               </figcaption>
+               
+            </figure>
+            
+            <p><span epub:type="pagebreak" id="Page_221" title="221"></span>And then select Facebook Login as the product to set up (<a href="#c9-fig-0006" id="R_c9-fig-0006">Figure 9‐6</a>).
+            </p>
+            
+            <figure> <img alt="Illustration of Select the product to set up screen." src="images/c09f006.jpg" />
+               
+               <figcaption>
+                  <p><span class="figureLabel"><a href="#R_c9-fig-0006" id="c9-fig-0006"><b>FIGURE 9-6</b></a><b>:</b></span> Select the product to set up
+                  </p>
+               </figcaption>
+               
+            </figure>
+            
+            <p>Then skip the wizard that pops up and select Settings from the sidebar on the left.
+               Inside this page enter the absolute URL of the route <code>/signin‐facebook</code>. This route has been added by the NuGet package. Leave all the other settings untouched
+               (<a href="#c9-fig-0007" id="R_c9-fig-0007">Figure 9‐7</a>).
+            </p>
+            
+            <figure> <img alt="Illustration of OAuth Settings page." src="images/c09f007.jpg" />
+               
+               <figcaption>
+                  <p><span class="figureLabel"><a href="#R_c9-fig-0007" id="c9-fig-0007"><b>FIGURE 9-7</b></a><b>:</b></span> OAuth Settings page
+                  </p>
+               </figcaption>
+               
+            </figure>
+            
+            <p>The last thing is to retrieve the <code>AppId</code> and <code>AppSecrets</code> needed for the application to work. For this go to the Dashboard inside the developer
+               portal (<a href="#c9-fig-0008" id="R_c9-fig-0008">Figure 9‐8</a>).
+            </p>
+            
+            <figure> <img alt="Illustration of The Dashboard." src="images/c09f008.jpg" />
+               
+               <figcaption>
+                  <p><span class="figureLabel"><a href="#R_c9-fig-0008" id="c9-fig-0008"><b>FIGURE 9-8</b></a><b>:</b></span> The Dashboard
+                  </p>
+               </figcaption>
+               
+            </figure>
+            
+            <p><span epub:type="pagebreak" id="Page_222" title="222"></span>Now you can save them either in the <code>appsettings.json</code> file or using the user secret management. The second option is better because it
+               stores the configuration outside of the application folder (in the user’s profile)
+               and avoids the common mistake of storing such sensitive information as the social
+               login key and secrets in the source repositories. <a href="#c9-fig-0009" id="R_c9-fig-0009">Figure 9‐9</a> shows how to open the user secrets file from within Visual Studio via the Manage
+               User Secrets context menu item on the project node inside the Solution Explorer.
+            </p>
+            
+            <figure> <img alt="Illustration of the Dashboard of Manage User Secrets menu item." src="images/c09f009.jpg" />
+               
+               <figcaption>
+                  <p><span class="figureLabel"><a href="#R_c9-fig-0009" id="c9-fig-0009"><b>FIGURE 9-9</b></a><b>:</b></span> Manage User Secrets menu item
+                  </p>
+               </figcaption>
+               
+            </figure>
+            
+            <p><span epub:type="pagebreak" id="Page_223" title="223"></span>Next type the following configuration (obviously putting in your own values instead
+               of the placeholders) in the <code>secrets.json</code> file:
+            </p>
+            
+            <blockquote>
+               <pre id="c9-code-0016"><code>{</code>
+<code>  "Authentication": {</code>
+<code>    "Facebook": {</code>
+<code>      "AppId": "myappId",</code>
+<code>      "AppSecret": "myappsecret"</code>
+<code>    }</code>
+<code>  }</code>
+<code>}</code> </pre>
+               </blockquote>
+            
+            <p>Now launch the project and go to the login page, and you’ll see a new button under
+               the text that says “Use another system to log in” (<a href="#c9-fig-0010" id="R_c9-fig-0010">Figure 9‐10</a>).
+            </p>
+            
+            <figure> <img alt="Illustration of Login page." src="images/c09f010.jpg" />
+               
+               <figcaption>
+                  <p><span class="figureLabel"><a href="#R_c9-fig-0010" id="c9-fig-0010"><b>FIGURE 9-10</b></a><b>:</b></span> Login page
+                  </p>
+               </figcaption>
+               
+            </figure>
+            
+            <p>At this point, once a user authenticates to your system, you can prompt them with
+               a page to register for a race.
+            </p>
+            
+         </section>
+         
+         <section>
+            <span id="c9-sec-0019"></span>
+            
+            <h2 id="head-2-156">SHOWING REAL‐TIME RESULTS</h2>
+            
+            <p>Unlike the previous two sites, where the interaction with the data was relatively
+               simple, showing real‐time results requires a more complicated UI. For this purpose,
+               you are going to use Angular coupled with some web APIs to retrieve the data from
+               the database.
+            </p>
+            
+            <section>
+               <span id="c9-sec-0020"></span>
+               
+               <h3 id="head-3-118">Creating the Angular Client‐Side Application</h3>
+               
+               <p>For this site, you can use the Angular project template provide by Visual Studio 2017.
+                  This sets up a project using the JavaScript services mentioned at the end of <a href="c03.xhtml">Chapter 3</a> (<a href="#c9-fig-0011" id="R_c9-fig-0011">Figure 9‐11</a>).
+               </p>
+               
+               <figure> <img alt="Illustration of New Project Dialog Angular." src="images/c09f011.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c9-fig-0011" id="c9-fig-0011"><b>FIGURE 9-11</b></a><b>:</b></span> New Project dialog, Angular
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p><span epub:type="pagebreak" id="Page_224" title="224"></span>The architecture of this application is going to be very simple. The web service sends
+                  the list of athletes with all their timing points to the JavaScript frontend,which
+                  will then show them and allow filters to be applied and statistics to be analyzed.
+                  As explained in <a href="c03.xhtml">Chapter 3</a>, the frontend is implemented with a specific set of Angular components and services.
+                  The final result is shown in <a href="#c9-fig-0012" id="R_c9-fig-0012">Figure 9‐12</a>.
+               </p>
+               
+               <figure> <img alt="Illustration of Result list." src="images/c09f012.jpg" />
+                  
+                  <figcaption>
+                     <p><span class="figureLabel"><a href="#R_c9-fig-0012" id="c9-fig-0012"><b>FIGURE 9-12</b></a><b>:</b></span> Results list
+                     </p>
+                  </figcaption>
+                  
+               </figure>
+               
+               <p>As with any non‐trivial Angular application, this one is made of a cascade of components.</p>
+               
+               <p>The root element is the <code>Results</code> component, which is responsible for the general layout of the page and for handling
+                  the interaction between the child components. <a href="#c9-fea-0008">Listing 9‐8</a> shows both the TypeScript file and the HTML template file.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c9-fea-0008"></span> 
+                     
+                     <h2 id="head-2-157">LISTING 9-8: Results Component</h2>
+                     
+                     <section>
+                        <span id="c9-sec-0021"></span>
+                        
+                        <h4><i>TEMPLATE FILE</i></h4>
+                        
+                        <blockquote>
+                           <pre id="c9-code-0017"><code>Kona Ironman Top 5 men&lt;/h1&gt;</code>
+<code>&lt;results-list (selected)=showDetails($event)&gt; Loading athlete list…&lt;/results-list&gt;</code>
+<code>  You selected: &lt;app-athlete-details [athlete]="selectedAthlete"&gt;</code>
+<code>&lt;/app-athlete-details&gt;</code>
+</pre>
+                           </blockquote>
+                        
+                        <h4><i>TYPESCRIPT FILE</i></h4>
+                        
+                        <blockquote>
+                           <pre id="c9-code-0017a"><code>import { Component } from '@angular/core';</code>
+<code><span epub:type="pagebreak" id="Page_225" title="225"></span>import { Athlete } from './athlete';</code>
+<code></code>
+<code>@Component({</code>
+<code>    selector: 'results',</code>
+<code>    templateUrl: 'results.component.html'</code>
+<code>})</code>
+<code>export class ResultsComponent {</code>
+<code>    selectedAthlete: Athlete;</code>
+<code></code>
+<code>    showDetails(selectedAthlete: Athlete) {</code>
+<code>        this.selectedAthlete = selectedAthlete;</code>
+<code>    }</code>
+<code>} </code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>This component includes two child components and handles the selected event of the
+                  results list in order to show the details of the results list to the user.
+               </p>
+               
+               <p>The first child component is <code>results‐list</code>, which builds the table that contains the results list, as shown in <a href="#c9-fea-0009">Listing 9‐9</a>. The table is styled using the <code>table</code> class of Bootstrap to make a bordered table with highlighting of the line on which
+                  the mouse pointer is.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c9-fea-0009"></span> 
+                     
+                     <h2 id="head-2-158">LISTING 9-9: Results‐list.component.html</h2>
+                     
+                     <section>
+                        <span id="c9-sec-0022"></span>
+                        
+                        <blockquote>
+                           <pre id="c9-code-0018"><code>&lt;table class="table table-bordered table-hover"&gt;</code>
+<code>    &lt;tr&gt;</code>
+<code>        &lt;th&gt; Position&lt;/th&gt;</code>
+<code>        &lt;th&gt; Name&lt;/th&gt;</code>
+<code><span epub:type="pagebreak" id="Page_226" title="226"></span>        &lt;th&gt; Nationality&lt;/th&gt;</code>
+<code>        &lt;th *ngFor="let point of timingPoints"&gt;{{point.name}}&lt;/th&gt;</code>
+<code>        &lt;th&gt; Total&lt;/th&gt;</code>
+<code>    &lt;/tr&gt;</code>
+<code>    &lt;tr app-athlete *ngFor="let athlete of athletes | slice:0:5;let i = index"&gt;</code>
+<code>         (click)="select(athlete)"</code>
+<code>         [athlete]="athlete"</code>
+<code>         [timingPoints]="timingPoints"</code>
+<code>         [position]="i+1"&gt;</code>
+<code>    &lt;/tr&gt;</code>
+<code>&lt;/table&gt;</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>The header of the table is also built dynamically, adding one column per each intermediate
+                  point. And obviously, the rows of the table are displayed iterating over the <code>athletes</code> property of the component, which contains the list of all athletes participating
+                  in the race. Notice the usage of the pipe <code>slice:0:5</code> to just show the top five athletes. This last part is the one that requires most
+                  of the code. <a href="#c9-fea-0010">Listing 9‐10</a> shows the TypeScript class that handles this template.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c9-fea-0010"></span> 
+                     
+                     <h2 id="head-2-159">LISTING 9-10: Results‐list.component.ts</h2>
+                     
+                     <section>
+                        <span id="c9-sec-0023"></span>
+                        
+                        <blockquote>
+                           <pre id="c9-code-0019"><code>import { Component, Output, EventEmitter, OnInit } from '@angular/core';</code>
+<code>import { AthleteService } from './athlete.service';</code>
+<code>import { Athlete } from "./athlete";</code>
+<code>import { TimingPoint } from "./TimingPoint";</code>
+<code>import { Observable } from "rxjs/Observable";</code>
+<code></code>
+<code></code>
+<code>@Component({</code>
+<code>    selector: 'results-list',</code>
+<code>    templateUrl: 'results-list.component.html'</code>
+<code>})</code>
+<code>export class ResultsListComponent implements OnInit {</code>
+<code>    athletes: Athlete[];</code>
+<code>    timingPoints: TimingPoint[];</code>
+<code>    @Output() selected = new EventEmitter&lt;Athlete&gt; ();</code>
+<code>    constructor(private athleteService: AthleteService) { }</code>
+<code></code>
+<code>    getAthletes() {</code>
+<code>        this.athleteService.getAthletes()</code>
+<code>            .then(list =&gt; {</code>
+<code>                for (var i = 0; i &lt; list.length; i++) {</code>
+<code>                    var athlete = list[i];</code>
+<code>                    athlete.timingValues = new Map&lt;string, string&gt;();</code>
+<code>                    for (var j = 0; j &lt; athlete.timings.length; j++) {</code>
+<code>                        athlete.timingValues.set(athlete.timings[j].code, athlete.timings[j].time);</code>
+<code>                    }</code>
+<code>                }</code>
+<code>                this.athletes=list;</code>
+<code>            });</code>
+<code>    }</code>
+<code></code>
+<code><span epub:type="pagebreak" id="Page_227" title="227"></span>    getTimingPoints() {</code>
+<code>        this.athleteService.getTimingPoints()</code>
+<code>            .then(list = &gt; this.timingPoints = list);</code>
+<code>    }</code>
+<code></code>
+<code>    ngOnInit() {</code>
+<code>        this.getAthletes();</code>
+<code>        this.getTimingPoints();</code>
+<code>    }</code>
+<code></code>
+<code>    select(selectedAthlete: Athlete) {</code>
+<code>        this.selected.emit(selectedAthlete);</code>
+<code>    }</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>The implementation is very similar to the one shown at the end of <a href="c03.xhtml">Chapter 3</a>. During the <code>ngOnInit</code> event, the lists of athletes and intermediate timing points are retrieved by calling
+                  an external service (<code>AthleteService</code>), which is the one responsible for the actual HTTP request to the web APIs. In the
+                  method <code>getAthletes</code>, the response coming from the service is processed and a bit elaborated in order
+                  to craft the ViewModel needed to easily render the template.
+               </p>
+               
+               <p>The final element in the graph of components is the one that renders each row of the
+                  results list table, and it’s shown in <a href="#c9-fea-0011">Listing 9‐11</a>.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c9-fea-0011"></span> 
+                     
+                     <h2 id="head-2-160">LISTING 9-11: Athlete.Component</h2>
+                     
+                     <section>
+                        <span id="c9-sec-0024"></span>
+                        
+                        <h4><i>TEMPLATE FILE</i></h4>
+                        
+                        <blockquote>
+                           <pre id="c9-code-0020"><code>&lt;td&gt;{{position}}&lt;/td&gt;</code>
+<code>&lt;td&gt;{{athlete.name}}&lt;/td&gt;</code>
+<code>&lt;td&gt;{{athlete.country}}&lt;/td&gt;</code>
+<code><b>&lt;td *ngFor="let timing of timingPoints"&gt;</b></code>
+<code>    <b>{{athlete.timingValues.get(timing.code)}}</b></code>
+<code><b>&lt;/td&gt;</b></code>
+<code>&lt;td&gt;{{athlete.time}}&lt;/td&gt;</code>
+</pre></blockquote>
+                        
+                        <h4><i>TYPESCRIPT FILE</i></h4>
+                        
+                        <blockquote>
+                           <pre id="c9-code-0020a"><code>import { Component, Input } from '@angular/core';</code>
+<code>import { Athlete } from './athlete'; </code>
+<code>import { TimingPoint } from './timingpoint';</code>
+<code></code>
+<code>@Component({</code>
+<code>    selector: 'tr[app-athlete]',</code>
+<code>    templateUrl: 'athlete.component.html'</code>
+<code>})</code>
+<code>export class AthleteComponent {</code>
+<code>    @Input() athlete: Athlete;</code>
+<code>    @Input() position: string;</code>
+<code>    @Input() timingPoints: TimingPoint[];</code>
+<code>  constructor() { }</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p><span epub:type="pagebreak" id="Page_228" title="228"></span>Also in this case, the template iterates over the list of intermediate points and
+                  displays the timing for the athlete at that specific point. The highlighted lines
+                  are the ones for which the results coming from the server are manipulated, as will
+                  be explored in the upcoming “Building the Web APIs” section.
+               </p>
+               
+               <p>This component cannot know in which position it is rendered, so, to render the position
+                  of the athlete, it has an input parameter called <code>position</code> that is supplied by the parent component.
+               </p>
+               
+               <p>The final missing piece is the service that actually calls the server. This is pretty
+                  simple, as you can see in <a href="#c9-fea-0012">Listing 9‐12</a>.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c9-fea-0012"></span> 
+                     
+                     <h2 id="head-2-161">LISTING 9-12: athlete.service.ts</h2>
+                     
+                     <section>
+                        <span id="c9-sec-0025"></span>
+                        
+                        <blockquote>
+                           <pre id="c9-code-0021"><code>import { Injectable } from '@angular/core';</code>
+<code>import { TimingPoint } from './TimingPoint';</code>
+<code>import { Athlete } from './athlete';</code>
+<code>import { Http, Response } from "@angular/http";</code>
+<code>import 'rxjs/add/operator/map';</code>
+<code>import 'rxjs/add/operator/toPromise';</code>
+<code></code>
+<code>@Injectable()</code>
+<code>export class AthleteService {</code>
+<code>  constructor(private http: Http){}</code>
+<code></code>
+<code>  getAthletes(){</code>
+<code>    return this.http.get('/api/standings')</code>
+<code>      .map((r: Response) =&gt; &lt;Athlete[]&gt; r.json().data)</code>
+<code>      .toPromise();</code>
+<code>  }</code>
+<code></code>
+<code>  getTimingPoints() {</code>
+<code>      return this.http.get('/api/timingpoints')</code>
+<code>          .map((r: Response) =&gt; &lt;TimingPoint[]&gt; r.json())</code>
+<code>          .toPromise();</code>
+<code>  }</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>All that is left to do is to build the web APIs that return the data to the Angular
+                  client‐side application.
+               </p>
+               
+            </section>
+            
+            <section>
+               <span id="c9-sec-0026"></span>
+               
+               <h3 id="head-3-119">Building the Web APIs</h3>
+               
+               <p>Returning the list of results is a very simple operation. Its only complexity is computing
+                  the intermediate time at the various timing points. For this sample, two APIs are
+                  made. The first (<a href="#c9-fea-0013">Listing 9‐13</a>) sends the list of all registered timing points to the Angular client, so that it
+                  can show them in the header of the results list.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c9-fea-0013"></span> 
+                     
+                     <h2 id="head-2-162"><span epub:type="pagebreak" id="Page_229" title="229"></span>LISTING 9-13: Controllers/TimingPointsController.cs
+                     </h2>
+                     
+                     <section>
+                        <span id="c9-sec-0027"></span>
+                        
+                        <blockquote>
+                           <pre id="c9-code-0022"><code>using System.Collections.Generic;</code>
+<code>using System.Linq;</code>
+<code>using Microsoft.AspNetCore.Mvc;</code>
+<code>using Frontend.ViewModels;</code>
+<code>using Frontend.Services;</code>
+<code></code>
+<code>namespace Frontend.Controllers</code>
+<code>{</code>
+<code>    [Produces("application/json")]</code>
+<code>    [Route("api/TimingPoints")]</code>
+<code>    public class TimingPointsController : Controller</code>
+<code>    {</code>
+<code>        private readonly ITimingService _service;</code>
+<code></code>
+<code>        public TimingPointsController(ITimingService service)</code>
+<code>        {</code>
+<code>            _service = service;</code>
+<code>        }</code>
+<code>        [HttpGet]</code>
+<code>        public IList&lt;TimingPointDefinition&gt; Get()</code>
+<code>        {</code>
+<code>            var data = _service.GetTimingPoints(1);</code>
+<code></code>
+<code>            var model = data.Select(tp =&gt; new TimingPointDefinition</code>
+<code>            {</code>
+<code>                Code = tp.Code,</code>
+<code>                Name = tp.Name,</code>
+<code>                Order = tp.ID</code>
+<code>            }).ToList();</code>
+<code></code>
+<code>            return model;</code>
+<code>        }</code>
+<code>    }</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>The second web API is used to provide all the athletes that are on the course with
+                  a list of all their intermediate timing points. In this case the controller is very
+                  basic as it delegates the complex operations of calculating intermediate times to
+                  a service, the <code>TimingService</code>, injected via DI. <a href="#c9-fea-0014">Listing 9‐14</a> shows the simple API.
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c9-fea-0014"></span> 
+                     
+                     <h2 id="head-2-163">LISTING 9-14: Controllers/StandingsController.cs</h2>
+                     
+                     <section>
+                        <span id="c9-sec-0028"></span>
+                        
+                        <blockquote>
+                           <pre id="c9-code-0023"><code>using Frontend.Services;</code>
+<code>using Frontend.ViewModels;</code>
+<code>using Microsoft.AspNetCore.Mvc;</code>
+<code>using System;</code>
+<code><span epub:type="pagebreak" id="Page_230" title="230"></span>using System.Collections.Generic;</code>
+<code>using System.Linq;</code>
+<code>using System.Threading.Tasks;</code>
+<code>using TriathlonRaceTracking.Data;</code>
+<code></code>
+<code>namespace Frontend.Controllers</code>
+<code>{</code>
+<code>    [Route("api/[controller]")]</code>
+<code>    public class StandingsController : Controller</code>
+<code>    {</code>
+<code></code>
+<code>        private readonly ITimingService _service;</code>
+<code></code>
+<code>        public StandingsController(ITimingService service)</code>
+<code>        {</code>
+<code>            _service = service;</code>
+<code>        }</code>
+<code></code>
+<code>        [HttpGet]</code>
+<code>        public AthletesViewModel Get()</code>
+<code>        {</code>
+<code>            var data = _service.GetStandings(1);</code>
+<code></code>
+<code>            var model = new AthletesViewModel(data);</code>
+<code>            return model;</code>
+<code>        }</code>
+<code>    }</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>As you can see, not much is going on in <a href="#c9-fea-0014">Listing 9‐14</a>. The actual computation happens in the service (<a href="#c9-fea-0015">Listing 9‐15</a>).
+               </p>
+               
+               <aside>
+                  <div class="top hr">
+                     <hr />
+                  </div>
+                  
+                  <section class="feature3"><span id="c9-fea-0015"></span> 
+                     
+                     <h2 id="head-2-164">LISTING 9-15: Services/TimingService.cs</h2>
+                     
+                     <section>
+                        <span id="c9-sec-0029"></span>
+                        
+                        <blockquote>
+                           <pre id="c9-code-0024"><code>using Frontend.ViewModels;</code>
+<code>using Microsoft.EntityFrameworkCore;</code>
+<code>using System;</code>
+<code>using System.Collections.Generic;</code>
+<code>using System.Linq;</code>
+<code>using System.Threading.Tasks;</code>
+<code>using TriathlonRaceTracking.Data;</code>
+<code>using TriathlonRaceTracking.Models;</code>
+<code></code>
+<code>namespace Frontend.Services</code>
+<code>{</code>
+<code>    public class TimingService : ITimingService</code>
+<code>    {</code>
+<code>        private readonly TriathlonRaceTrackingContext _context;</code>
+<code>        public TimingService(TriathlonRaceTrackingContext context)</code>
+<code>        {</code>
+<code>            _context = context;</code>
+<code>        }</code>
+<code></code>
+<code><span epub:type="pagebreak" id="Page_231" title="231"></span>        public IList&lt;AthleteViewModel&gt; GetStandings(int raceId)</code>
+<code>        {</code>
+<code>            var data = _context.Registrations</code>
+<code>                .Include(r = &gt; r.Timings)</code>
+<code>                    .ThenInclude(t = &gt; t.TimingPoint)</code>
+<code>                .Include(r = &gt; r.Athlete)</code>
+<code>                .Where(r = &gt; r.RaceID == raceId);</code>
+<code></code>
+<code>            var result = new List&lt;AthleteViewModel&gt;();</code>
+<code>            foreach (var position in data)</code>
+<code>            {</code>
+<code>                var athleteVM = new AthleteViewModel(position.Athlete.FullName, position.Athlete.Nationality);</code>
+<code>                if (position.Timings.Count == 0)</code>
+<code>                {</code>
+<code>                    athleteVM.Time = "DNS";</code>
+<code>                }</code>
+<code>                else</code>
+<code>                {</code>
+<code>                    var start=position.Timings.Where(t =&gt; t.TimingPoint.Type == TimingType.Start).Max(t =&gt; t.Time);</code>
+<code>                    var furthestPosition = GetFurthestPosition(position.Timings);</code>
+<code>                    athleteVM.Time = TimeFromStart(start, furthestPosition).ToString();</code>
+<code>                    athleteVM.Timings = position.Timings.Select(t =&gt; new TimingPointViewModel</code>
+<code>                    {</code>
+<code>                        Time = TimeFromStart(start, t),</code>
+<code>                        Order = (int)t.TimingPoint.Type,</code>
+<code>                        Name = t.TimingPoint.Name</code>
+<code>                    }).ToList();</code>
+<code>                }</code>
+<code></code>
+<code>                result.Add(athleteVM);</code>
+<code>            }</code>
+<code></code>
+<code>            return result;</code>
+<code></code>
+<code>        }</code>
+<code></code>
+<code>        private static TimeSpan TimeFromStart(DateTime start, Timing timingPoint)</code>
+<code>        {</code>
+<code>            return timingPoint.Time.Subtract(start);</code>
+<code>        }</code>
+<code></code>
+<code>        private Timing GetFurthestPosition(List&lt;Timing&gt; timings)</code>
+<code>        {</code>
+<code>            Timing furthest = new Timing() { ID = -1 };</code>
+<code>            foreach (var timing in timings)</code>
+<code>            {</code>
+<code>                if (timing.TimingPointID &gt; furthest. TimingPointID)</code>
+<code>                    furthest = timing;</code>
+<code>            }</code>
+<code>            return furthest;</code>
+<code>        }</code>
+<code></code>
+<code><span epub:type="pagebreak" id="Page_232" title="232"></span>        public IQueryable&lt;TimingPoint&gt; GetTimingPoints(int raceId)</code>
+<code>        {</code>
+<code>            return _context.TimingPoints.Where(tp = &gt; tp.RaceID == raceId);</code>
+<code>        }</code>
+<code>    }</code>
+<code>}</code> </pre>
+                           </blockquote>
+                        
+                     </section>
+                     
+                     <div class="bottom hr">
+                        <hr />
+                     </div>
+                  </section>
+               </aside>
+               
+               <p>The <code>GetStandings</code> method first retrieves all the athletes participating in the race, joining them with
+                  all their intermediate timings and as well as their details. Later, it finds the time
+                  of each departure (in many races nowadays the start time is different for everyone)
+                  and identifies the difference with each intermediate timing to get the various splits.
+                  Finally, it returns all the data back to the controller so that it can be sent back
+                  to the web browser.
+               </p>
+               
+            </section>
+            
+         </section>
+         
+         <section>
+            <span id="c9-sec-0030"></span>
+            
+            <h2 id="head-2-165">CONNECTING WITH IOT DEVICES</h2>
+            
+            <p>Nobody is going to sit in front of a laptop entering data as soon as an athlete passes
+               from a timing point. This task is left to machines, which can sense when an athlete,
+               who is wearing an RFID chip, crosses a timing mat. This information needs to be sent
+               to the server so that it can show the real‐time standing of athletes.
+            </p>
+            
+            <p>Implementing the full solution that tracks athletes is complicated, but you are just
+               going to create the API that receives the raw data, and you’ll later test it by simulating
+               the calls using a REST client emulator.
+            </p>
+            
+            <p>You do this with an API controller that receives the race number of the athlete and
+               some identifiers for both the race and the timing point, together with the time of
+               the day. <a href="#c9-fea-0016">Listing 9‐16</a> shows the code for the API.
+            </p>
+            
+            <aside>
+               <div class="top hr">
+                  <hr />
+               </div>
+               
+               <section class="feature3"><span id="c9-fea-0016"></span> 
+                  
+                  <h2 id="head-2-166">LISTING 9-16: Controllers/TimingsController.cs</h2>
+                  
+                  <section>
+                     <span id="c9-sec-0031"></span>
+                     
+                     <blockquote>
+                        <pre id="c9-code-0025"><code>using System;</code>
+<code>using System.Collections.Generic;</code>
+<code>using System.Linq;</code>
+<code>using System.Threading.Tasks;</code>
+<code>using Microsoft.AspNetCore.Http;</code>
+<code>using Microsoft.AspNetCore.Mvc;</code>
+<code>using Microsoft.EntityFrameworkCore;</code>
+<code>using TriathlonRaceTracking.Data;</code>
+<code>using TriathlonRaceTracking.Models;</code>
+<code></code>
+<code>namespace TriathlonRaceTracking.Controllers</code>
+<code>{</code>
+<code>    [Produces("application/json")]</code>
+<code>    [Route("api/Timings")]</code>
+<code>    public class TimingsController : Controller</code>
+<code>    {</code>
+<code>        private readonly TriathlonRaceTrackingContext _context;</code>
+<code></code>
+<code>        public TimingsController(TriathlonRaceTrackingContext context)</code>
+<code><span epub:type="pagebreak" id="Page_233" title="233"></span>        {</code>
+<code>            _context = context;</code>
+<code>        }</code>
+<code></code>
+<code></code>
+<code>        // GET: api/Timings/5</code>
+<code>        [HttpGet("{id}")]</code>
+<code>        public async Task&lt;IActionResult&gt; GetTiming([FromRoute] int id)</code>
+<code>        {</code>
+<code>            if (!ModelState.IsValid)</code>
+<code>            {</code>
+<code>                return BadRequest(ModelState);</code>
+<code>            }</code>
+<code></code>
+<code>            var timing = await _context.Timings.SingleOrDefaultAsync(m =&gt; m.ID == id);</code>
+<code></code>
+<code>            if (timing == null)</code>
+<code>            {</code>
+<code>                return NotFound();</code>
+<code>            }</code>
+<code></code>
+<code>            return Ok(timing);</code>
+<code>        }</code>
+<code></code>
+<code>        // POST: api/Timings</code>
+<code>        [HttpPost]</code>
+<code>        public async Task&lt;IActionResult&gt; PostTiming([FromBody] TimingPostModel model)</code>
+<code>        {</code>
+<code>            if (!ModelState.IsValid)</code>
+<code>            {</code>
+<code>                return BadRequest(ModelState);</code>
+<code>            }</code>
+<code></code>
+<code>            var registration = _context.Registrations.SingleOrDefault(r =&gt; r.BibNumber == model.BibNumber &amp;&amp; r.RaceID == model.RaceId);</code>
+<code>            var timingPoint = _context.TimingPoints.SingleOrDefault(tp =&gt; tp.Code.Equals(model.TPCode) &amp;&amp; tp.RaceID == model.RaceId);</code>
+<code></code>
+<code>            var timing = new Timing</code>
+<code>            {</code>
+<code>                RegistrationID=registration.ID,</code>
+<code>                TimingPointID=timingPoint.ID,</code>
+<code>                Time=model.Time</code>
+<code>            };</code>
+<code></code>
+<code>            _context.Timings.Add(timing);</code>
+<code>            await _context.SaveChangesAsync();</code>
+<code></code>
+<code>            return CreatedAtAction("GetTiming", new { id = timing.ID }, timing);</code>
+<code>        }</code>
+<code></code>
+<code>    }</code>
+<code></code>
+<code><span epub:type="pagebreak" id="Page_234" title="234"></span>    public class TimingPostModel</code>
+<code>    {</code>
+<code>        public int BibNumber { get; set; }</code>
+<code>        public int RaceId { get; set; }</code>
+<code>        public string TPCode { get; set; }</code>
+<code>        public DateTime Time { get; set; }</code>
+<code>    }</code>
+<code>}</code> </pre>
+                        </blockquote>
+                     
+                  </section>
+                  
+                  <div class="bottom hr">
+                     <hr />
+                  </div>
+               </section>
+            </aside>
+            
+            <p>There is nothing particularly complicated here, but there a few noteworthy elements.
+               The most important thing is that the <code>PostTiming</code> method doesn’t use a <code>Timing</code> object as an input parameter but as a post model. The reason, apart from avoiding
+               possible over‐posting, is because the time‐keeping device at a timing point won’t
+               know the IDs used in the database but will most likely have some other code and will
+               know the race number of the athlete.
+            </p>
+            
+            <p>Another element is the usage of <code>CreatedAtAction</code>, which will make the REST API return the 201 HTTP code that is typically used when
+               a new object is created by a REST call.
+            </p>
+            
+            <p>Since you don’t have a time‐keeping point to connect to the system, you can test the
+               REST endpoint using any REST client. I like to use Postman, which is available both
+               as a Google Chrome extension and as a standalone application.
+            </p>
+            
+            <p>You can directly specify the request body in JSON and send the request to the server.
+               The request body must be a JSON representation of the <code>TimingPostModel</code> class, for example:
+            </p>
+            
+            <blockquote>
+               <pre id="c9-code-0026"><code>    {</code>
+<code>        "bibNumber": 1,</code>
+<code>        "raceId": 1,</code>
+<code>        "time": "2017-10-08T20:49:54.730Z",</code>
+<code>        "TPCode": "T1S"</code>
+<code>    }</code> </pre>
+               </blockquote>
+            
+            <p>Postman has the possibility of executing some scripts (in JavaScript) before the execution
+               of the request, so you can replace the hard‐coded timestamp with a variable that contains
+               the exact moment in which the request is executed. This makes it easy to test the
+               API without changing the <code>time</code> parameter each time. To do this, just add the following line of code into the Pre‐request
+               Script tab:
+            </p>
+            
+            <blockquote>
+               <pre id="c9-code-0027"><code>postman.setGlobalVariable('timestampUtcIso8601', (new Date()).toISOString());</code> </pre>
+               </blockquote>
+            
+            <p>Then replace the time parameter with the variable <code>{{timestampUtcIso8601}}</code>. <a href="#c9-fig-0013" id="R_c9-fig-0013">Figure 9‐13</a> shows the Postman request builder screen ready to add new timing information to the
+               system.
+            </p>
+            
+            <figure> <img alt="Illustration of Postman request builder screen." src="images/c09f013.jpg" />
+               
+               <figcaption>
+                  <p><span class="figureLabel"><a href="#R_c9-fig-0013" id="c9-fig-0013"><b>FIGURE 9-13</b></a><b>:</b></span> Postman request builder screen
+                  </p>
+               </figcaption>
+               
+            </figure>
+            
+         </section>
+         
+         <section>
+            <span id="c9-sec-0032"></span>
+            
+            <h2 id="head-2-167"><span epub:type="pagebreak" id="Page_235" title="235"></span>DEPLOYING
+            </h2>
+            
+            <p>Now that the projects are developed, it is time to publish them to allow triathletes
+               to register online for races. For this purpose you are going to deploy them on Azure.
+            </p>
+            
+            <p><a href="c07.xhtml">Chapter 7</a> contains a step‐by‐step procedure for deploying the sites, so here I’ll skip explaining
+               the steps in detail and just highlight the main points.
+            </p>
+            
+            <p><span epub:type="pagebreak" id="Page_236" title="236"></span>You’ll start by publishing the back‐office site first. When going through the publishing
+               dialogs I recommend creating a Resource Group specific to these sets of applications.
+               In addition to what is shown in <a href="c07.xhtml#c7-fig-0012">Figures 7‐12</a> and <a href="c07.xhtml#c7-fig-0013">7‐13</a>, you must also create a DB server (if needed) and a SQL Database. <a href="#c9-fig-0014" id="R_c9-fig-0014">Figure 9‐14</a> shows the two dialogs that contain the forms to create both the database and the
+               server.
+            </p>
+            
+            <figure> <img alt="Illustration of Database and server creation dialogs." src="images/c09f014.jpg" />
+               
+               <figcaption>
+                  <p><span class="figureLabel"><a href="#R_c9-fig-0014" id="c9-fig-0014"><b>FIGURE 9-14</b></a><b>:</b></span> Server and database creation dialogs
+                  </p>
+               </figcaption>
+               
+            </figure>
+            
+            <p>Once the publishing process is complete, there is still one small detail to change.
+               In the dialog for the creation of the database, you left <code>DefaultConnection</code> as the name for the connection string. Now you have to go in the Application settings
+               blade on Azure portal (<a href="#c9-fig-0015" id="R_c9-fig-0015">Figure 9‐15</a>) and change it to the name used by the application, which is <code>TriathlonRaceTrackingContext</code>, as shown in <a href="#c9-fea-0004">Listing 9‐4</a>.
+            </p>
+            
+            <figure> <img alt="Illustration of Connection string settings on the Azure portal." src="images/c09f015.jpg" />
+               
+               <figcaption>
+                  <p><span class="figureLabel"><a href="#R_c9-fig-0015" id="c9-fig-0015"><b>FIGURE 9-15</b></a><b>:</b></span> Connection string settings on the Azure portal
+                  </p>
+               </figcaption>
+               
+            </figure>
+            
+            <p>Now just browse to the URL of the Azure app service, and Entity Framework Core will
+               automatically create the tables and fill them with the data specified in the <code>InitialData.cs</code> file.
+            </p>
+            
+            <p>After the back‐office, it is time for the Angular‐based frontend. Just follow the
+               same procedure as previously, but choose the now existing Resource Group instead of
+               creating a new one. And do not create a SQL Database because the application uses
+               the same database as the back‐office.
+            </p>
+            
+            <p><span epub:type="pagebreak" id="Page_237" title="237"></span>For this application, the connection string has to be set manually, copying the value
+               of the one set for the back‐office.
+            </p>
+            
+            <p>For the frontend, the publishing takes a bit more time than the back‐office because
+               all NPM packages have to be installed, and also webpack, being the application in
+               release mode, has to generate a minified and bundled version of all TypeScript classes
+               used to develop the Angular frontend.
+            </p>
+            
+            <p>After having deployed the two applications, the Resource Group will contain, as shown
+               in <a href="#c9-fig-0016" id="R_c9-fig-0016">Figure 9‐16</a>, five items:
+            </p>
+            
+            <ul class="check" id="c9-list-0005">
+               
+               <li id="c9-li-0015">The two web applications</li>
+               
+               <li id="c9-li-0016">The database server and the database</li>
+               
+               <li id="c9-li-0017">The App Service Plan</li>
+               
+            </ul>
+            
+            <figure> <img alt="Illustration of Content of the Resource Group." src="images/c09f016.jpg" />
+               
+               <figcaption>
+                  <p><span class="figureLabel"><a href="#R_c9-fig-0016" id="c9-fig-0016"><b>FIGURE 9-16</b></a><b>:</b></span> Content of the Resource Group
+                  </p>
+               </figcaption>
+               
+            </figure>
+            
+            <p>Now, if you just followed the chapter for testing, remember to delete the resource
+               group to avoid incurring any unexpected expenses.
+            </p>
+            
+         </section>
+         
+         <section>
+            <span id="c9-sec-0033"></span>
+            
+            <h2 id="head-2-168">SUMMARY</h2>
+            
+            <p>This chapter showed how all the technologies explained in the book can (and must)
+               be used together to build a complete solution made of a “classic” ASP.NET Core MVC‐based
+               back‐office, a more modern single‐page application for the frontend, and a REST service.
+            </p>
+            
+            <p>It also showed how to publish everything on the cloud for it to be accessible by anyone
+               else.
+            </p>
+            
+            <p>The code in this chapter is just the tip of the iceberg for the application. You can
+               have a look at the complete example on my GitHub repository <a href="http://github.com/simonech/TriathlonRaceTracking"><code>http://github.com/simonech/TriathlonRaceTracking</code></a>.
+            </p>
+            
+            <p>I hope you enjoyed reading the book as much as I enjoyed writing it and that you have
+               learned how to develop ASP.NET Core applications that include a lot of frontend development
+               techniques.
+            </p>
+            
+         </section>
+         
+      </section>
+      
+   </body>
+   
+</html>

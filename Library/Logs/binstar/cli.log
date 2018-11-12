@@ -1,0 +1,24 @@
+2018-10-27 01:24:37,924 INFO     binstar         Using Anaconda API: https://api.anaconda.org
+2018-10-27 01:24:37,924 DEBUG    binstar         Found login token: /Users/mac/Library/Application Support/binstar/https%3A%2F%2Fapi.anaconda.org.token
+2018-10-27 01:24:38,699 INFO     binstar.upload  Using "leonardoobay" as upload username
+2018-10-27 01:24:38,699 ERROR    binstar.upload  File "HW3.ipynb" does not exist
+2018-10-27 01:25:22,201 INFO     binstar         Using Anaconda API: https://api.anaconda.org
+2018-10-27 01:25:22,202 DEBUG    binstar         Found login token: /Users/mac/Library/Application Support/binstar/https%3A%2F%2Fapi.anaconda.org.token
+2018-10-27 01:25:23,072 INFO     binstar.upload  Using "leonardoobay" as upload username
+2018-10-27 01:25:23,072 INFO     binstar.upload  Detecting file type...
+2018-10-27 01:25:23,072 DEBUG    binstar.detect  Testing if conda package ..
+2018-10-27 01:25:23,072 DEBUG    binstar.detect  Not conda package (file ext is not .tar.bz2)
+2018-10-27 01:25:23,072 DEBUG    binstar.detect  Testing if pypi package ..
+2018-10-27 01:25:23,072 DEBUG    binstar.detect  This not is a pypi package (expected .tgz, .tar.gz or .whl)
+2018-10-27 01:25:23,073 DEBUG    binstar.detect  Testing if R package ..
+2018-10-27 01:25:23,073 DEBUG    binstar.detect  This not is an R package (expected .tgz, .tar.gz).
+2018-10-27 01:25:23,073 DEBUG    binstar.detect  Testing if ipynb file ..
+2018-10-27 01:25:23,073 INFO     binstar.upload  File type is "ipynb"
+2018-10-27 01:25:23,121 INFO     binstar.upload  Extracting notebook attributes for upload
+2018-10-27 01:25:23,178 INFO     binstar.upload  Creating package "hw3"
+2018-10-27 01:25:23,484 INFO     binstar.upload  Creating release "2018.10.27.0125"
+2018-10-27 01:25:23,796 INFO     binstar.upload  Uploading file "leonardoobay/hw3/2018.10.27.0125/HW3.ipynb"
+2018-10-27 01:25:27,894 INFO     binstar.upload  Upload complete
+2018-10-27 01:25:27,895 INFO     binstar.upload  notebook located at:
+https://anaconda.org/leonardoobay/hw3
+
