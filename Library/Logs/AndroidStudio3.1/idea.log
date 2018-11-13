@@ -1,0 +1,187 @@
+2018-11-13 10:35:33,059 [itFor: git]   INFO -  #git4idea.commands.GitHandler - [MESH&SENSOR 4a46e3f] mesh & sensor
+ Date: Tue Nov 13 10:35:31 2018 -0800
+ 222 files changed, 8853 insertions(+), 6353 deletions(-)
+ create mode 100644 Desktop/LEO/.idea/LEO.iml
+ create mode 100644 Desktop/LEO/.idea/modules.xml
+ create mode 100644 Desktop/LEO/.idea/workspace.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/.gitignore
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/GraphView/public/GraphView-3.1.1.jar
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/GraphView/public/GraphView-3.1.2.jar
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/GraphView/public/GraphView-3.1.3.jar
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/GraphView/public/GraphView-3.1.4.jar
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/GraphView/public/GraphView-4.0.0.jar
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/GraphView/public/GraphView-4.0.1.jar
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/GraphView/public/GraphView-4.1.0.jar
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/GraphView/public/GraphView-4.1.1.jar
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/GraphView/public/GraphView-4.2.0.jar
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/GraphView/public/GraphView-4.2.1.jar
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/GraphView/public/graphview-3.1.jar
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/README.md
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/.gitignore
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/build.gradle
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/proguard-rules.pro
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/androidTest/java/edu/calstatela/jplone/arframework/ExampleInstrumentedTest.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/AndroidManifest.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/camera/Camera3D.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/drawable/Billboard.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/drawable/BillboardMaker.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/drawable/ColorHolder.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/drawable/Colorable.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/drawable/Drawable.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/drawable/LitModel.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/drawable/Model.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/entity/Entity.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/entity/ScaleObject.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/helper/BufferHelper.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/helper/MeshHelper.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/helper/ResourceHelper.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/helper/ShaderHelper.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/helper/TextureHelper.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/matrix/ImprovedModelMatrix.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/matrix/MatrixMath.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/matrix/ModelMatrix.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/matrix/Projection.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/matrix/ScaledModelMatrix.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/matrix/ViewMatrix.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/scene/CircleScene.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/scene/ScalingCircleScene.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/scene/Scene.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/graphics3d/scene/TouchScene.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/landmark/Landmark.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/landmark/LandmarkTable.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/landmark/MountainData.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/sensor/ARGps.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/sensor/ARSensor.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/ui/ARActivity.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/ui/ARView.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/ui/CameraView.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/ui/SensorARActivity.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/ui/SensorARView.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/util/GeoMath.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/util/Orientation.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/util/Permissions.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/java/edu/calstatela/jplone/arframework/util/VectorMath.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/res/drawable/ara_icon.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/main/res/values/strings.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/arlib/src/test/java/edu/calstatela/jplone/arframework/ExampleUnitTest.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/build.gradle
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/gradle.properties
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/gradle/wrapper/gradle-wrapper.jar
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/gradle/wrapper/gradle-wrapper.properties
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/gradlew
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/gradlew.bat
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/settings.gradle
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/.gitignore
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/build.gradle
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/proguard-rules.pro
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/androidTest/java/edu/calstatela/jplone/watertrekapp/ExampleInstrumentedTest.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/AndroidManifest.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/Data/DatabaseHelper.java
+ create mode 100644 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/Data/MeshData.java
+ create mode 100644 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/Data/Mountain.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/Data/Record.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/Data/Reservoir.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/Data/River.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/Data/Snotel.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/Data/SoilMoisture.java
+ create mode 100644 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/Data/Vector3.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/Data/Well.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/DataService/ElevationObstructionService.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/DataService/ReservoirService.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/DataService/SnotelService.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/DataService/SoilMoistureService.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/DataService/WellService.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/NetworkUtils/NetworkTask.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/NetworkUtils/NetworkTaskJSON.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/WatertrekCredentials.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/activities/CredentialsActivity.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/activities/DatePickerFragment.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/activities/HistoryActivity.java
+ create mode 100644 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/activities/MeshDemoActivity.java
+ create mode 100644 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/activities/MountainActivity.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/activities/PickerDialog.java
+ create mode 100644 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/activities/ReservoirActivity.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/activities/SplashActivity.java
+ create mode 100644 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/activities/WellActivity.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/billboardview/BillboardView_depthTest.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/java/edu/calstatela/jplone/watertrekapp/billboardview/BillboardView_sorting.java
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/anim/mytransition.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable-v24/eye24.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable-v24/eye48.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable-v24/ic_launcher_foreground.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable-v24/well_color.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable-v24/well_res_ico_clr_marker.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable/ara_background.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable/ara_icon.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable/gear_settings.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable/grass_res_ico_clr.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable/ic_launcher_background.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable/ic_launcher_foreground.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable/icon2_trans.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable/mtn_res_ico_clr.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable/reservoir_bb_icon.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable/reservoir_res_ico_clr.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable/river_res_ico_clr.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable/soil_bb_icon.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable/well_bb_icon.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable/well_color.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable/well_pipe.jpg
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable/well_res_ico.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/drawable/well_res_ico_clr.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/layout/activity_credentials.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/layout/activity_details.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/layout/activity_history.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/layout/activity_main.xml
+ create mode 100644 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/layout/activity_mesh_demo.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/layout/activity_splash.xml
+ create mode 100644 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/layout/mountain_activity.xml
+ create mode 100644 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/layout/reservoir_activity.xml
+ create mode 100644 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/layout/well_activity.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/menu/menu_details.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-anydpi-v26/app_ico_round.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-hdpi/app_ico_round.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-hdpi/ic_launcher.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-hdpi/ic_launcher_foreground.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-hdpi/ic_launcher_round.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-mdpi/app_ico_round.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-mdpi/ic_launcher.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-mdpi/ic_launcher_foreground.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-mdpi/ic_launcher_round.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-xhdpi/app_ico_round.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-xhdpi/ic_launcher.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-xhdpi/ic_launcher_round.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-xxhdpi/app_ico_round.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-xxhdpi/ic_launcher.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-xxhdpi/ic_launcher_round.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-xxxhdpi/app_ico_round.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/values-hy-rAM/strings.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/values/colors.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/values/strings.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/main/res/values/styles.xml
+ create mode 100755 Desktop/LEO/AugmentedRealityHydrology-Sensor/watertrekapp/src/test/java/edu/calstatela/jplone/watertrekapp/ExampleUnitTest.java
+ rewrite Library/Keychains/37502AC5-742D-5DB1-A847-724EA8741960/keychain-2.db-wal (71%)
+ rewrite Library/LanguageModeling/en-dynamic.lm/dynamic.dat (83%)
+ rewrite Library/Logs/AndroidStudio3.1/idea.log (100%)
+ rewrite Library/Passes/PaymentWebServiceContext.archive (97%)
+ create mode 100644 Library/Preferences/AndroidStudio3.1/options/github_settings.xml
+ rewrite Library/Preferences/ByHost/com.apple.loginwindow.37502AC5-742D-5DB1-A847-724EA8741960.plist (100%)
+ rewrite Library/Preferences/com.apple.CoreDuet.plist (96%)
+ rewrite Library/Preferences/com.apple.GEO.plist (96%)
+ rewrite Library/Preferences/com.apple.commerce.plist (60%)
+ rewrite Library/Preferences/com.apple.driver.AppleBluetoothMultitouch.trackpad.plist (97%)
+ rewrite Library/Preferences/com.apple.finder.plist (65%)
+ rewrite Library/Preferences/com.apple.ncprefs.plist (92%)
+ rewrite Library/Preferences/com.apple.spaces.plist (95%) 
+2018-11-13 10:36:16,942 [ thread 10]   INFO - g.FileBasedIndexProjectHandler - Reindexing refreshed files: 0 to update, calculated in 0ms 
+2018-11-13 10:36:20,708 [ thread 10]   INFO - .script.IdeScriptEngineManager - javax.script.ScriptEngineManager initialized in 27 ms 
+2018-11-13 10:36:40,525 [d thread 9]   INFO -  #git4idea.commands.GitHandler - [../../../../mac] git -c core.quotepath=false -c log.showSignature=false push --progress --porcelain origin refs/heads/MESH&SENSOR:MESH&SENSOR 
+2018-11-13 10:36:40,919 [eam of git]   INFO -  #git4idea.commands.GitHandler - remote: Repository not found. 
+2018-11-13 10:36:40,924 [eam of git]   INFO -  #git4idea.commands.GitHandler - fatal: repository 'https://github.com/leonardoobay/Arwatertrek.git/' not found 
+2018-11-13 10:38:56,406 [ thread 16]   INFO -  #git4idea.commands.GitHandler - [../../../../mac] git -c core.quotepath=false -c log.showSignature=false commit --only -F /private/var/folders/4g/g_wwmlvd4llgsnn09vqkp0br0000gn/T/git-commit-msg-.txt -- Library/Logs/AndroidStudio3.1/idea.log.10 Library/Logs/AndroidStudio3.1/idea.log.12 Library/Logs/AndroidStudio3.1/idea.log.11 Library/Logs/AndroidStudio3.1/idea.log.4 Library/Logs/AndroidStudio3.1/idea.log.5 Library/Logs/AndroidStudio3.1/idea.log.2 Library/Logs/AndroidStudio3.1/idea.log Library/Logs/AndroidStudio3.1/idea.log.3 Library/Logs/AndroidStudio3.1/idea.log.8 Library/Logs/AndroidStudio3.1/idea.log.9 Library/Logs/AndroidStudio3.1/idea.log.6 Library/Logs/AndroidStudio3.1/idea.log.7 Library/Logs/AndroidStudio3.1/idea.log.1 Library/Preferences/AndroidStudio3.1/tasks/AugmentedRealityHydrology_Sensor.tasks.zip 
